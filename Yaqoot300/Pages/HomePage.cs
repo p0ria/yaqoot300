@@ -11,6 +11,7 @@ using Yaqoot300.Commons;
 using Yaqoot300.Controls;
 using Yaqoot300.Interfaces;
 using Yaqoot300.Modals;
+using Yaqoot300.Properties;
 using Yaqoot300.State;
 using Yaqoot300.State.App.Actions;
 using Yaqoot300.State.Home.Actions;
@@ -80,7 +81,7 @@ namespace Yaqoot300.Pages
                     this.SafeInvoke(() => pb.Image = ServiceProvider.ImageList32.Images[1]);
                     break;
                 case ConnectionStatus.Connecting:
-                    this.SafeInvoke(() => pb.Image = ServiceProvider.ImageList32.Images[2]);
+                    this.SafeInvoke(() => pb.Image = Resources.loading_32x32);
                     break;
             }
         }

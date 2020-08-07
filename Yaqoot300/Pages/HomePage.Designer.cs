@@ -62,6 +62,8 @@
             this.reader1 = new Yaqoot300.Controls.ReaderController();
             this.gbReaders = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.lblChipsPercentValue = new System.Windows.Forms.Label();
             this.lblChipsPercent = new System.Windows.Forms.Label();
             this.lblChipsFailedValue = new System.Windows.Forms.Label();
@@ -95,8 +97,6 @@
             this.lampCtrlRed = new Yaqoot300.Controls.LampControl();
             this.lblMode = new System.Windows.Forms.Label();
             this.btnSelectJob = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.gpReaders.SuspendLayout();
             this.panel3.SuspendLayout();
             this.gbReaders.SuspendLayout();
@@ -526,6 +526,26 @@
             this.panel1.Size = new System.Drawing.Size(562, 131);
             this.panel1.TabIndex = 0;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label7.Location = new System.Drawing.Point(439, 53);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(116, 24);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "2000 chips/h";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label6.Location = new System.Drawing.Point(320, 53);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(114, 24);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Throughput:";
+            // 
             // lblChipsPercentValue
             // 
             this.lblChipsPercentValue.AutoSize = true;
@@ -856,26 +876,6 @@
             this.btnSelectJob.Text = "Select Job";
             this.btnSelectJob.UseVisualStyleBackColor = true;
             this.btnSelectJob.Click += new System.EventHandler(this.btnSelectJob_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label6.Location = new System.Drawing.Point(320, 53);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 24);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "Throughput:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label7.Location = new System.Drawing.Point(439, 53);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(116, 24);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "2000 chips/h";
             // 
             // HomePage
             // 
