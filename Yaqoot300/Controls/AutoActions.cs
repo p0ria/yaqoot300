@@ -40,9 +40,9 @@ namespace Yaqoot300.Controls
             
         }
 
-        private void OnStoreChanged(object sender, string actionType)
+        private void OnStoreChanged(object sender, string changeType)
         {
-            switch (actionType)
+            switch (changeType)
             {
                 case null:
                 case HomeActionTypes.CHANGE_AUTO_START:

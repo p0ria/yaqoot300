@@ -11,7 +11,7 @@ namespace Yaqoot300.State.App
     {
         private static readonly AppState _instance = new AppState
         {
-            SelectedMode = Mode.Service,
+            SelectedMode = Mode.Auto,
             Connections =
             {
                 DbConnection = ConnectionStatus.Connecting,
@@ -19,8 +19,7 @@ namespace Yaqoot300.State.App
                 ThinClient1Connection = ConnectionStatus.Connecting,
                 ThinClient2Connection = ConnectionStatus.Connecting,
                 ThinClient3Conenction = ConnectionStatus.Connecting
-            },
-            SelectedJob = null
+            }
         };
 
         public static AppState Instance => _instance;

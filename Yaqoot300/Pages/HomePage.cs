@@ -10,9 +10,11 @@ using System.Windows.Forms;
 using Yaqoot300.Commons;
 using Yaqoot300.Controls;
 using Yaqoot300.Interfaces;
+using Yaqoot300.Modals;
 using Yaqoot300.State;
 using Yaqoot300.State.App.Actions;
 using Yaqoot300.State.Home.Actions;
+using Yaqoot300.State.Job.Actions;
 
 namespace Yaqoot300.Pages
 {
@@ -111,7 +113,12 @@ namespace Yaqoot300.Pages
 
         private void btnSelectJob_Click(object sender, EventArgs e)
         {
-            Store.Dispatch(new AppChangeModeAction(Mode.Auto));
+            using (var dlg = new JobDialog())
+            {
+                dlg.ShowDialog();
+                MessageBox.Show(dlg.SelectedJob.LotNumber);
+            }
+            
         }
     }
 }

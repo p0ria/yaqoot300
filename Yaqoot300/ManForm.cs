@@ -69,5 +69,6 @@ namespace Yaqoot300
             }
             _currentPage = newPage;
         }
+
     }
 }

@@ -48,14 +48,14 @@
             this.tpReadersConfig = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.lbReaders = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.sensor14 = new Yaqoot300.Controls.SensorControl();
             this.sensor13 = new Yaqoot300.Controls.SensorControl();
             this.sensor12 = new Yaqoot300.Controls.SensorControl();
@@ -152,9 +152,9 @@
             this.tpReadersConfig.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabService
@@ -261,9 +261,9 @@
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(18, 253);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(164, 25);
+            this.label8.Size = new System.Drawing.Size(178, 25);
             this.label8.TabIndex = 24;
-            this.label8.Text = "M3StepLength";
+            this.label8.Text = "M3 Step Length";
             // 
             // label7
             // 
@@ -272,9 +272,9 @@
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(18, 158);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(144, 25);
+            this.label7.Size = new System.Drawing.Size(158, 25);
             this.label7.TabIndex = 22;
-            this.label7.Text = "FeedInSteps";
+            this.label7.Text = "Feed In Steps";
             // 
             // label6
             // 
@@ -434,6 +434,54 @@
             this.panel5.Size = new System.Drawing.Size(1231, 483);
             this.panel5.TabIndex = 0;
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.label11);
+            this.panel6.Controls.Add(this.label10);
+            this.panel6.Controls.Add(this.panel8);
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Location = new System.Drawing.Point(445, 35);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(315, 83);
+            this.panel6.TabIndex = 31;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(240, 35);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(50, 13);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Assigned";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(82, 35);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(27, 13);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "N/A";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.White;
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Location = new System.Drawing.Point(192, 21);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(42, 38);
+            this.panel8.TabIndex = 1;
+            // 
+            // panel7
+            // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Location = new System.Drawing.Point(34, 21);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(42, 38);
+            this.panel7.TabIndex = 0;
+            // 
             // lbReaders
             // 
             this.lbReaders.Dock = System.Windows.Forms.DockStyle.Left;
@@ -494,54 +542,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1231, 316);
             this.panel4.TabIndex = 0;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.label11);
-            this.panel6.Controls.Add(this.label10);
-            this.panel6.Controls.Add(this.panel8);
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Location = new System.Drawing.Point(445, 35);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(315, 83);
-            this.panel6.TabIndex = 31;
-            // 
-            // panel7
-            // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Location = new System.Drawing.Point(34, 21);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(42, 38);
-            this.panel7.TabIndex = 0;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Location = new System.Drawing.Point(192, 21);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(42, 38);
-            this.panel8.TabIndex = 1;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(82, 35);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(27, 13);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "N/A";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(240, 35);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(50, 13);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Assigned";
             // 
             // sensor14
             // 
@@ -795,7 +795,9 @@
             // 
             this.sr30.BackColor = System.Drawing.Color.Transparent;
             this.sr30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr30.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr30.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr30.ForeColor = System.Drawing.Color.Black;
+            this.sr30.IsActive = false;
             this.sr30.Location = new System.Drawing.Point(1145, 287);
             this.sr30.Name = "sr30";
             this.sr30.Number = 30;
@@ -807,7 +809,9 @@
             // 
             this.sr28.BackColor = System.Drawing.Color.Transparent;
             this.sr28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr28.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr28.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr28.ForeColor = System.Drawing.Color.Black;
+            this.sr28.IsActive = false;
             this.sr28.Location = new System.Drawing.Point(1081, 287);
             this.sr28.Name = "sr28";
             this.sr28.Number = 28;
@@ -819,7 +823,9 @@
             // 
             this.sr26.BackColor = System.Drawing.Color.Transparent;
             this.sr26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr26.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr26.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr26.ForeColor = System.Drawing.Color.Black;
+            this.sr26.IsActive = false;
             this.sr26.Location = new System.Drawing.Point(1017, 287);
             this.sr26.Name = "sr26";
             this.sr26.Number = 26;
@@ -831,7 +837,9 @@
             // 
             this.sr24.BackColor = System.Drawing.Color.Transparent;
             this.sr24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr24.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr24.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr24.ForeColor = System.Drawing.Color.Black;
+            this.sr24.IsActive = false;
             this.sr24.Location = new System.Drawing.Point(953, 287);
             this.sr24.Name = "sr24";
             this.sr24.Number = 24;
@@ -843,7 +851,9 @@
             // 
             this.sr22.BackColor = System.Drawing.Color.Transparent;
             this.sr22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr22.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr22.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr22.ForeColor = System.Drawing.Color.Black;
+            this.sr22.IsActive = false;
             this.sr22.Location = new System.Drawing.Point(889, 287);
             this.sr22.Name = "sr22";
             this.sr22.Number = 22;
@@ -855,7 +865,9 @@
             // 
             this.sr20.BackColor = System.Drawing.Color.Transparent;
             this.sr20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr20.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr20.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr20.ForeColor = System.Drawing.Color.Black;
+            this.sr20.IsActive = false;
             this.sr20.Location = new System.Drawing.Point(794, 287);
             this.sr20.Name = "sr20";
             this.sr20.Number = 20;
@@ -867,7 +879,9 @@
             // 
             this.sr18.BackColor = System.Drawing.Color.Transparent;
             this.sr18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr18.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr18.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr18.ForeColor = System.Drawing.Color.Black;
+            this.sr18.IsActive = false;
             this.sr18.Location = new System.Drawing.Point(730, 287);
             this.sr18.Name = "sr18";
             this.sr18.Number = 18;
@@ -879,7 +893,9 @@
             // 
             this.sr16.BackColor = System.Drawing.Color.Transparent;
             this.sr16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr16.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr16.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr16.ForeColor = System.Drawing.Color.Black;
+            this.sr16.IsActive = false;
             this.sr16.Location = new System.Drawing.Point(666, 287);
             this.sr16.Name = "sr16";
             this.sr16.Number = 16;
@@ -891,7 +907,9 @@
             // 
             this.sr14.BackColor = System.Drawing.Color.Transparent;
             this.sr14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr14.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr14.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr14.ForeColor = System.Drawing.Color.Black;
+            this.sr14.IsActive = false;
             this.sr14.Location = new System.Drawing.Point(602, 287);
             this.sr14.Name = "sr14";
             this.sr14.Number = 14;
@@ -903,7 +921,9 @@
             // 
             this.sr12.BackColor = System.Drawing.Color.Transparent;
             this.sr12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr12.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr12.ForeColor = System.Drawing.Color.Black;
+            this.sr12.IsActive = false;
             this.sr12.Location = new System.Drawing.Point(538, 287);
             this.sr12.Name = "sr12";
             this.sr12.Number = 12;
@@ -915,7 +935,9 @@
             // 
             this.sr10.BackColor = System.Drawing.Color.Transparent;
             this.sr10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr10.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr10.ForeColor = System.Drawing.Color.Black;
+            this.sr10.IsActive = false;
             this.sr10.Location = new System.Drawing.Point(445, 287);
             this.sr10.Name = "sr10";
             this.sr10.Number = 10;
@@ -927,7 +949,9 @@
             // 
             this.sr8.BackColor = System.Drawing.Color.Transparent;
             this.sr8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr8.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr8.ForeColor = System.Drawing.Color.Black;
+            this.sr8.IsActive = false;
             this.sr8.Location = new System.Drawing.Point(381, 287);
             this.sr8.Name = "sr8";
             this.sr8.Number = 8;
@@ -939,7 +963,9 @@
             // 
             this.sr6.BackColor = System.Drawing.Color.Transparent;
             this.sr6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr6.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr6.ForeColor = System.Drawing.Color.Black;
+            this.sr6.IsActive = false;
             this.sr6.Location = new System.Drawing.Point(317, 287);
             this.sr6.Name = "sr6";
             this.sr6.Number = 6;
@@ -951,7 +977,9 @@
             // 
             this.sr4.BackColor = System.Drawing.Color.Transparent;
             this.sr4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr4.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr4.ForeColor = System.Drawing.Color.Black;
+            this.sr4.IsActive = false;
             this.sr4.Location = new System.Drawing.Point(253, 287);
             this.sr4.Name = "sr4";
             this.sr4.Number = 4;
@@ -963,7 +991,9 @@
             // 
             this.sr2.BackColor = System.Drawing.Color.Transparent;
             this.sr2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr2.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr2.ForeColor = System.Drawing.Color.Black;
+            this.sr2.IsActive = false;
             this.sr2.Location = new System.Drawing.Point(189, 287);
             this.sr2.Name = "sr2";
             this.sr2.Number = 2;
@@ -975,7 +1005,9 @@
             // 
             this.sr29.BackColor = System.Drawing.Color.Transparent;
             this.sr29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr29.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr29.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr29.ForeColor = System.Drawing.Color.Black;
+            this.sr29.IsActive = false;
             this.sr29.Location = new System.Drawing.Point(1145, 198);
             this.sr29.Name = "sr29";
             this.sr29.Number = 29;
@@ -987,7 +1019,9 @@
             // 
             this.sr27.BackColor = System.Drawing.Color.Transparent;
             this.sr27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr27.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr27.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr27.ForeColor = System.Drawing.Color.Black;
+            this.sr27.IsActive = false;
             this.sr27.Location = new System.Drawing.Point(1081, 198);
             this.sr27.Name = "sr27";
             this.sr27.Number = 27;
@@ -999,7 +1033,9 @@
             // 
             this.sr25.BackColor = System.Drawing.Color.Transparent;
             this.sr25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr25.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr25.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr25.ForeColor = System.Drawing.Color.Black;
+            this.sr25.IsActive = false;
             this.sr25.Location = new System.Drawing.Point(1017, 198);
             this.sr25.Name = "sr25";
             this.sr25.Number = 25;
@@ -1011,7 +1047,9 @@
             // 
             this.sr23.BackColor = System.Drawing.Color.Transparent;
             this.sr23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr23.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr23.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr23.ForeColor = System.Drawing.Color.Black;
+            this.sr23.IsActive = false;
             this.sr23.Location = new System.Drawing.Point(953, 198);
             this.sr23.Name = "sr23";
             this.sr23.Number = 23;
@@ -1023,7 +1061,9 @@
             // 
             this.sr21.BackColor = System.Drawing.Color.Transparent;
             this.sr21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr21.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr21.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr21.ForeColor = System.Drawing.Color.Black;
+            this.sr21.IsActive = false;
             this.sr21.Location = new System.Drawing.Point(889, 198);
             this.sr21.Name = "sr21";
             this.sr21.Number = 21;
@@ -1035,7 +1075,9 @@
             // 
             this.sr19.BackColor = System.Drawing.Color.Transparent;
             this.sr19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr19.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr19.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr19.ForeColor = System.Drawing.Color.Black;
+            this.sr19.IsActive = false;
             this.sr19.Location = new System.Drawing.Point(794, 198);
             this.sr19.Name = "sr19";
             this.sr19.Number = 19;
@@ -1047,7 +1089,9 @@
             // 
             this.sr17.BackColor = System.Drawing.Color.Transparent;
             this.sr17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr17.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr17.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr17.ForeColor = System.Drawing.Color.Black;
+            this.sr17.IsActive = false;
             this.sr17.Location = new System.Drawing.Point(730, 198);
             this.sr17.Name = "sr17";
             this.sr17.Number = 17;
@@ -1059,7 +1103,9 @@
             // 
             this.sr15.BackColor = System.Drawing.Color.Transparent;
             this.sr15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr15.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr15.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr15.ForeColor = System.Drawing.Color.Black;
+            this.sr15.IsActive = false;
             this.sr15.Location = new System.Drawing.Point(666, 198);
             this.sr15.Name = "sr15";
             this.sr15.Number = 15;
@@ -1071,7 +1117,9 @@
             // 
             this.sr13.BackColor = System.Drawing.Color.Transparent;
             this.sr13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr13.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr13.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr13.ForeColor = System.Drawing.Color.Black;
+            this.sr13.IsActive = false;
             this.sr13.Location = new System.Drawing.Point(602, 198);
             this.sr13.Name = "sr13";
             this.sr13.Number = 13;
@@ -1083,7 +1131,9 @@
             // 
             this.sr11.BackColor = System.Drawing.Color.Transparent;
             this.sr11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr11.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr11.ForeColor = System.Drawing.Color.Black;
+            this.sr11.IsActive = false;
             this.sr11.Location = new System.Drawing.Point(538, 198);
             this.sr11.Name = "sr11";
             this.sr11.Number = 11;
@@ -1095,7 +1145,9 @@
             // 
             this.sr9.BackColor = System.Drawing.Color.Transparent;
             this.sr9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr9.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr9.ForeColor = System.Drawing.Color.Black;
+            this.sr9.IsActive = false;
             this.sr9.Location = new System.Drawing.Point(445, 198);
             this.sr9.Name = "sr9";
             this.sr9.Number = 9;
@@ -1107,7 +1159,9 @@
             // 
             this.sr7.BackColor = System.Drawing.Color.Transparent;
             this.sr7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr7.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr7.ForeColor = System.Drawing.Color.Black;
+            this.sr7.IsActive = false;
             this.sr7.Location = new System.Drawing.Point(381, 198);
             this.sr7.Name = "sr7";
             this.sr7.Number = 7;
@@ -1119,7 +1173,9 @@
             // 
             this.sr5.BackColor = System.Drawing.Color.Transparent;
             this.sr5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr5.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr5.ForeColor = System.Drawing.Color.Black;
+            this.sr5.IsActive = false;
             this.sr5.Location = new System.Drawing.Point(317, 198);
             this.sr5.Name = "sr5";
             this.sr5.Number = 5;
@@ -1131,7 +1187,9 @@
             // 
             this.sr3.BackColor = System.Drawing.Color.Transparent;
             this.sr3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr3.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr3.ForeColor = System.Drawing.Color.Black;
+            this.sr3.IsActive = false;
             this.sr3.Location = new System.Drawing.Point(253, 198);
             this.sr3.Name = "sr3";
             this.sr3.Number = 3;
@@ -1143,7 +1201,9 @@
             // 
             this.sr1.BackColor = System.Drawing.Color.Transparent;
             this.sr1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sr1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sr1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.sr1.ForeColor = System.Drawing.Color.Black;
+            this.sr1.IsActive = false;
             this.sr1.Location = new System.Drawing.Point(189, 198);
             this.sr1.Name = "sr1";
             this.sr1.Number = 1;
@@ -1541,10 +1601,10 @@
             this.tpReadersConfig.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

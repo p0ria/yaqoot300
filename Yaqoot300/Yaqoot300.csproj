@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commons\Constants.cs" />
+    <Compile Include="Commons\UiExtensionMethods.cs" />
     <Compile Include="Controls\LoadingButtonControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -131,6 +136,13 @@
     <Compile Include="ManForm.Designer.cs">
       <DependentUpon>ManForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modals\JobDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modals\JobDialog.Designer.cs">
+      <DependentUpon>JobDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Job.cs" />
     <Compile Include="Pages\HomePage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -160,7 +172,17 @@
     <Compile Include="State\Home\State\AutoState.cs" />
     <Compile Include="State\Home\State\HomeReaderState.cs" />
     <Compile Include="State\Home\State\HomeState.cs" />
-    <Compile Include="State\App\State\JobState.cs" />
+    <Compile Include="State\Job\Actions\JobActionTypes.cs" />
+    <Compile Include="State\Job\Actions\JobCreateJobAction.cs" />
+    <Compile Include="State\Job\Actions\JobCreateJobFailAction.cs" />
+    <Compile Include="State\Job\Actions\JobCreateJobSuccessAction.cs" />
+    <Compile Include="State\Job\Actions\JobGetJobsAction.cs" />
+    <Compile Include="State\Job\Actions\JobGetJobsFailsAction.cs" />
+    <Compile Include="State\Job\Actions\JobGetJobsSuccessAction.cs" />
+    <Compile Include="State\Job\Actions\JobSelectJobAction.cs" />
+    <Compile Include="State\Job\InitialJobState.cs" />
+    <Compile Include="State\Job\JobReducer.cs" />
+    <Compile Include="State\Job\State\JobState.cs" />
     <Compile Include="State\RootReducer.cs" />
     <Compile Include="State\Service\Actions\ServiceAssignReaderAction.cs" />
     <Compile Include="State\Service\Actions\ServiceAssignReaderActionPayload.cs" />
@@ -229,6 +251,9 @@
       <DependentUpon>ManForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modals\JobDialog.resx">
+      <DependentUpon>JobDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
@@ -245,6 +270,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -258,9 +287,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Modals\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\Images\cross_32x32.png" />
     <Content Include="Resources\Images\error_64x64.png" />

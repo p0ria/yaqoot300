@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Yaqoot300.Controls
 {
+    [DefaultEvent("BtnClicked")]
     public partial class LoadingButtonControl : UserControl
     {
         public enum LoadingButtonControlStatus

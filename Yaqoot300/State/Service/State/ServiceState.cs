@@ -22,6 +22,7 @@ namespace Yaqoot300.State.Service
             this.Sensors = new[] {false};
             this.Settings = new ServiceSettingsState();
             this.TestReaders = new ServiceTestReadersState();
+            this.SetupReaders = new ServiceSetupReadersState();
         }
     }
 }

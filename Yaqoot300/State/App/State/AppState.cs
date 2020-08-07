@@ -12,6 +12,5 @@ namespace Yaqoot300.State.App
 
         public ConnectionsState Connections { get; }
         public Mode SelectedMode { get; set; }
-        public JobState SelectedJob { get; set; }
     }
 }

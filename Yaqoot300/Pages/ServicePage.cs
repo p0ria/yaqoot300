@@ -32,7 +32,6 @@ namespace Yaqoot300.Pages
             this.InitSettings();
             this.InitTestReaders();
             this.InitSetupReaders();
-            tabService.SelectTab(1);
         }
 
         private void InitMotors()
