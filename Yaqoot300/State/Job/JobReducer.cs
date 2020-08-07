@@ -39,19 +39,21 @@ namespace Yaqoot300.State.Job
                         }
                     });
                     break;
+
                 case JobActionTypes.GET_JOBS_SUCCESS:
                     var getJobsSuccessPayload = ((JobGetJobsSuccessAction)action).Payload;
                     state.Jobs = getJobsSuccessPayload;
                     break;
+
                 case JobActionTypes.GET_JOBS_FAIL:
                     MessageBox.Show("GET JOBS FAILED");
                     break;
+
                 case JobActionTypes.SELECT_JOB:
                     var selectJobPayload = ((JobSelectJobAction)action).Payload;
-                    state.SelectedJob = selectJobPayload != null
-                        ? state.Jobs.Find(j => j.JobId == selectJobPayload)
-                        : null;
+                    state.SelectedJobId = selectJobPayload;
                     break;
+
                 case JobActionTypes.CREATE_JOB:
                     var createJobPayload = ((JobCreateJobAction)action).Payload;
                     Task.Run(() =>
@@ -61,6 +63,7 @@ namespace Yaqoot300.State.Job
                         ServiceProvider.Store.Dispatch(new JobCreateJobSuccessAction(createJobPayload));
                     });
                     break;
+
                 case JobActionTypes.CREATE_JOB_SUCCESS:
                     var createJobSuccessPayload = ((JobCreateJobSuccessAction)action).Payload;
                     state.Jobs.Insert(0, createJobSuccessPayload);
@@ -70,8 +73,28 @@ namespace Yaqoot300.State.Job
                         ServiceProvider.Store.Dispatch(new JobSelectJobAction(createJobSuccessPayload.JobId));
                     });
                     break;
+
                 case JobActionTypes.CREATE_JOB_FAIL:
                     MessageBox.Show("CREATE JOB FAILED");
+                    break;
+
+                case JobActionTypes.UPDATE_JOB:
+                    var updateJobPayload = ((JobUpdateJobAction)action).Payload;
+                    Task.Run(() =>
+                    {
+                        Thread.Sleep(1000);
+                        ServiceProvider.Store.Dispatch(new JobUpdateJobSuccessAction(updateJobPayload));
+                    });
+                    break;
+
+                case JobActionTypes.UPDATE_JOB_SUCCESS:
+                    var updateJobSuccessPayload = ((JobUpdateJobSuccessAction)action).Payload;
+                    var toBeUpdatedIndex = state.Jobs.FindIndex(j => j.JobId == updateJobSuccessPayload.JobId);
+                    state.Jobs[toBeUpdatedIndex] = updateJobSuccessPayload;
+                    break;
+
+                case JobActionTypes.UPDATE_JOB_FAIL:
+                    MessageBox.Show("UPDATE JOB FAILED");
                     break;
             }
         }

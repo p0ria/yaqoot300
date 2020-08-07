@@ -138,7 +138,7 @@ namespace Yaqoot300.Pages
             using (var dlg = new JobDialog())
             {
                 dlg.ShowDialog();
-                Store.Dispatch(new JobSelectJobAction(dlg.SelectedJob?.JobId));
+                Store.Dispatch(new JobSelectJobAction(dlg.SelectedJobId));
             }
             
         }

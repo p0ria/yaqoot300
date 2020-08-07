@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using log4net.Appender;
+using Syncfusion.WinForms.DataGrid.Events;
+using Syncfusion.WinForms.DataGrid.Styles;
 using Yaqoot300.Commons;
 using Yaqoot300.Controls;
 using Yaqoot300.Models;
@@ -18,28 +21,34 @@ namespace Yaqoot300.Modals
 {
     public partial class JobDialog : Form
     {
-        private Job _selectedJob;
-        private List<Job> ds;
+        private int? _selectedJobId;
         public JobDialog()
         {
             InitializeComponent();
+            InitializeDataGrid();
             this.Load += OnLoad;
             this.Store.StoreChanged += OnStoreChanged;
             this.btnCreate.BtnClicked += OnBtnCreateClicked;
-            this.dgJobs.SelectionChanged += OnSelectionChanged;
-            ds = new List<Job>();
-            this.dgJobs.DataSource = ds;
         }
 
-        private void OnSelectionChanged(object sender, EventArgs eventArgs)
+        private void InitializeDataGrid()
         {
-            if (this.dgJobs.SelectedRows.Count == 0) _selectedJob = null;
-            else _selectedJob = this.dgJobs.SelectedRows[0].DataBoundItem as Job;
+            this.dgv.Style.CurrentCellStyle.BackColor = this.dgv.Style.SelectionStyle.BackColor;
+            this.dgv.Style.CurrentCellStyle.BorderThickness = GridBorderWeight.ExtraThin;
+            this.dgv.Style.CurrentCellStyle.BorderColor = Color.FromArgb(0, 0, 0, 0);
+            this.dgv.SelectionChanged += OnSelectionChanged;
         }
 
-        public Job SelectedJob
+        private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            get { return _selectedJob; }
+            SelectedJobId = (e.AddedItems[0] as Job)?.JobId;
+        }
+
+
+        public int? SelectedJobId
+        {
+            get { return _selectedJobId; }
+            private set { _selectedJobId = value; }
         }
 
         private void OnLoad(object sender, EventArgs eventArgs)
@@ -70,6 +79,10 @@ namespace Yaqoot300.Modals
                 case JobActionTypes.CREATE_JOB_FAIL:
                     ChangeBtnCreateStatus(LoadingButtonControl.LoadingButtonControlStatus.Visible);
                     break;
+                case JobActionTypes.UPDATE_JOB_FAIL:
+                    SetJobs();
+                    SetSelectedJob();
+                    break;
             }
         }
 
@@ -79,49 +92,33 @@ namespace Yaqoot300.Modals
         {
             this.SafeInvoke(() =>
             {
-                ds.Clear();
-                ds.AddRange(Store.Job.Jobs);
-                dgJobs.Refresh();
-                dgJobs.Invalidate(true);
-                Invalidate(true);
+                this.dgv.DataSource = null;
+                this.dgv.DataSource = Store.Job.Jobs.Select(j => j.DeepClone());
             });
         }
 
         private void SetSelectedJob()
         {
+            ChangeSelection(Store.Job.SelectedJobId);
+        }
+
+        private void ChangeSelection(int? selectedJobId = null)
+        {
             this.SafeInvoke(() =>
             {
-                if (Store.Job.SelectedJob == null)
+                if (selectedJobId != null)
                 {
-                    ResetSelection();
-                    return;
-                }
-                DataGridViewRow selectedRow = null;
-                foreach (DataGridViewRow row in dgJobs.Rows)
-                {
-                    Job job = row.DataBoundItem as Job;
-                    if (job.JobId == Store.Job.SelectedJob.JobId)
-                    {
-                        selectedRow = row;
-                        break;
-                    }
-                }
-                if (selectedRow != null)
-                {
-                    dgJobs.CurrentCell = selectedRow.Cells[1];
+                    var ds = (this.dgv.DataSource as IEnumerable<Job>).ToList();
+                    var selectedJob = ds.Find(j => j.JobId == selectedJobId);
+                    this.dgv.SelectedItems.Clear();
+                    this.dgv.SelectedItems.Add(selectedJob);
                 }
                 else
                 {
-                    ResetSelection();
-                    return;
+                    this.dgv.ClearSelection();
                 }
+                SelectedJobId = selectedJobId;
             });
-        }
-
-        private void ResetSelection()
-        {
-            if(this.dgJobs.Rows.Count > 0)
-                this.dgJobs.CurrentCell = this.dgJobs.Rows[0].Cells[1];
         }
 
         private void OnBtnCreateClicked(object sender, EventArgs eventArgs)
@@ -158,6 +155,12 @@ namespace Yaqoot300.Modals
         {
             base.OnClosed(e);
             Store.StoreChanged -= OnStoreChanged;
+        }
+
+        private void dgv_CurrentCellEndEdit(object sender, Syncfusion.WinForms.DataGrid.Events.CurrentCellEndEditEventArgs e)
+        {
+            Job job = e.DataRow.RowData as Job;
+            Store.Dispatch(new JobUpdateJobAction(job));
         }
     }
 }
