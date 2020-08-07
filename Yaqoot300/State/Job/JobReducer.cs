@@ -22,28 +22,35 @@ namespace Yaqoot300.State.Job
                     Task.Run(() =>
                     {
                         Thread.Sleep(1000);
-                        var jobs = new List<Models.Job>
+                        if (state.Jobs == null || state.Jobs.Count == 0)
                         {
-                            new Models.Job {JobId = 1, LotNumber = "LOT 1", Total = 5000, Good = 4900},
-                            new Models.Job {JobId = 2, LotNumber = "LOT 2", Total = 6000, Good = 5900},
-                            new Models.Job {JobId = 3, LotNumber = "LOT 3", Total = 9000, Good = 8900},
-                            new Models.Job {JobId = 4, LotNumber = "LOT 4", Total = 4000, Good = 3900}
-                        };
-                        ServiceProvider.Store.Dispatch(new JobGetJobsSuccessAction(jobs));
+                            var jobs = new List<Models.Job>
+                            {
+                                new Models.Job {JobId = 1, LotNumber = "LOT 1", Total = 5000, Good = 4900},
+                                new Models.Job {JobId = 2, LotNumber = "LOT 2", Total = 6000, Good = 5900},
+                                new Models.Job {JobId = 3, LotNumber = "LOT 3", Total = 9000, Good = 8900},
+                                new Models.Job {JobId = 4, LotNumber = "LOT 4", Total = 4000, Good = 3900}
+                            };
+                            ServiceProvider.Store.Dispatch(new JobGetJobsSuccessAction(jobs));
+                        }
+                        else
+                        {
+                            ServiceProvider.Store.Dispatch(new JobGetJobsSuccessAction(state.Jobs));
+                        }
                     });
                     break;
                 case JobActionTypes.GET_JOBS_SUCCESS:
                     var getJobsSuccessPayload = ((JobGetJobsSuccessAction)action).Payload;
                     state.Jobs = getJobsSuccessPayload;
-                    state.SelectedJob = null;
                     break;
                 case JobActionTypes.GET_JOBS_FAIL:
                     MessageBox.Show("GET JOBS FAILED");
                     break;
                 case JobActionTypes.SELECT_JOB:
                     var selectJobPayload = ((JobSelectJobAction)action).Payload;
-                    var selectedJob = state.Jobs.Find(j => j.JobId == selectJobPayload);
-                    state.SelectedJob = selectedJob;
+                    state.SelectedJob = selectJobPayload != null
+                        ? state.Jobs.Find(j => j.JobId == selectJobPayload)
+                        : null;
                     break;
                 case JobActionTypes.CREATE_JOB:
                     var createJobPayload = ((JobCreateJobAction)action).Payload;
@@ -57,6 +64,11 @@ namespace Yaqoot300.State.Job
                 case JobActionTypes.CREATE_JOB_SUCCESS:
                     var createJobSuccessPayload = ((JobCreateJobSuccessAction)action).Payload;
                     state.Jobs.Insert(0, createJobSuccessPayload);
+                    Task.Run(() =>
+                    {
+                        Thread.Sleep(200);
+                        ServiceProvider.Store.Dispatch(new JobSelectJobAction(createJobSuccessPayload.JobId));
+                    });
                     break;
                 case JobActionTypes.CREATE_JOB_FAIL:
                     MessageBox.Show("CREATE JOB FAILED");

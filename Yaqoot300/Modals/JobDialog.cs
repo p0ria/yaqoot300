@@ -19,6 +19,7 @@ namespace Yaqoot300.Modals
     public partial class JobDialog : Form
     {
         private Job _selectedJob;
+        private List<Job> ds;
         public JobDialog()
         {
             InitializeComponent();
@@ -26,6 +27,8 @@ namespace Yaqoot300.Modals
             this.Store.StoreChanged += OnStoreChanged;
             this.btnCreate.BtnClicked += OnBtnCreateClicked;
             this.dgJobs.SelectionChanged += OnSelectionChanged;
+            ds = new List<Job>();
+            this.dgJobs.DataSource = ds;
         }
 
         private void OnSelectionChanged(object sender, EventArgs eventArgs)
@@ -76,14 +79,49 @@ namespace Yaqoot300.Modals
         {
             this.SafeInvoke(() =>
             {
-                this.dgJobs.DataSource = null;
-                this.dgJobs.DataSource = Store.Job.Jobs;
+                ds.Clear();
+                ds.AddRange(Store.Job.Jobs);
+                dgJobs.Refresh();
+                dgJobs.Invalidate(true);
+                Invalidate(true);
             });
         }
 
         private void SetSelectedJob()
         {
-            
+            this.SafeInvoke(() =>
+            {
+                if (Store.Job.SelectedJob == null)
+                {
+                    ResetSelection();
+                    return;
+                }
+                DataGridViewRow selectedRow = null;
+                foreach (DataGridViewRow row in dgJobs.Rows)
+                {
+                    Job job = row.DataBoundItem as Job;
+                    if (job.JobId == Store.Job.SelectedJob.JobId)
+                    {
+                        selectedRow = row;
+                        break;
+                    }
+                }
+                if (selectedRow != null)
+                {
+                    dgJobs.CurrentCell = selectedRow.Cells[1];
+                }
+                else
+                {
+                    ResetSelection();
+                    return;
+                }
+            });
+        }
+
+        private void ResetSelection()
+        {
+            if(this.dgJobs.Rows.Count > 0)
+                this.dgJobs.CurrentCell = this.dgJobs.Rows[0].Cells[1];
         }
 
         private void OnBtnCreateClicked(object sender, EventArgs eventArgs)
@@ -99,7 +137,10 @@ namespace Yaqoot300.Modals
 
         private void ChangeBtnCreateStatus(LoadingButtonControl.LoadingButtonControlStatus status)
         {
-            this.btnCreate.Status = status;
+            this.SafeInvoke(() =>
+            {
+                this.btnCreate.Status = status;
+            });  
         }
 
         private void ResetFields()

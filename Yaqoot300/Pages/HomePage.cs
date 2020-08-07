@@ -47,6 +47,7 @@ namespace Yaqoot300.Pages
             {
                 case null:
                     SetHeader();
+                    SetSelectedJob();
                     SetImage(pbConnectionDb, Store.App.Connections.DbConnection);
                     SetImage(pbConnectionPLC, Store.App.Connections.PLCConnection);
                     SetImage(pbConnectionClient1, Store.App.Connections.ThinClient1Connection);
@@ -59,6 +60,10 @@ namespace Yaqoot300.Pages
                     SetHeader();
                     SetActions();
                     break;
+
+                case JobActionTypes.SELECT_JOB:
+                    SetSelectedJob();
+                    break;
             }
         }
 
@@ -69,13 +74,13 @@ namespace Yaqoot300.Pages
             switch (status)
             {
                 case ConnectionStatus.Connected:
-                    pb.Image = ServiceProvider.ImageList32.Images[0];
+                    this.SafeInvoke(() => pb.Image = ServiceProvider.ImageList32.Images[0]);
                     break;
                 case ConnectionStatus.Disconnected:
-                    pb.Image = ServiceProvider.ImageList32.Images[1];
+                    this.SafeInvoke(() => pb.Image = ServiceProvider.ImageList32.Images[1]);
                     break;
                 case ConnectionStatus.Connecting:
-                    pb.Image = ServiceProvider.ImageList32.Images[2];
+                    this.SafeInvoke(() => pb.Image = ServiceProvider.ImageList32.Images[2]);
                     break;
             }
         }
@@ -85,12 +90,23 @@ namespace Yaqoot300.Pages
             switch (Store.App.SelectedMode)
             {
                 case Mode.Auto:
-                    this.lblMode.Text = "AUTO";
+                    this.SafeInvoke(() => this.lblMode.Text = "AUTO");
                     break;
                 case Mode.Manual:
-                    this.lblMode.Text = "MANUAL";
+                    this.SafeInvoke(() => this.lblMode.Text = "MANUAL");
                     break;
             }
+        }
+
+        private void SetSelectedJob()
+        {
+            this.SafeInvoke(() =>
+            {
+                var selectedJob = Store.Job.SelectedJob;
+                lblJobValue.Text = selectedJob?.LotNumber;
+                lblChipsTotalValue.Text = selectedJob?.Total.ToString();
+                lblChipsGoodValue.Text = selectedJob?.Good.ToString();
+            });
         }
 
         private void SetActions()
@@ -99,13 +115,19 @@ namespace Yaqoot300.Pages
             switch (Store.App.SelectedMode)
             {
                 case Mode.Auto:
-                    this.panelActions.Controls.Clear();
-                    this.panelActions.Controls.Add(_autoActions);
+                    this.SafeInvoke(() =>
+                    {
+                        this.panelActions.Controls.Clear();
+                        this.panelActions.Controls.Add(_autoActions);
+                    });
                     break;
 
                 case Mode.Manual:
-                    this.panelActions.Controls.Clear();
-                    this.panelActions.Controls.Add(_manualActions);
+                    this.SafeInvoke(() =>
+                    {
+                        this.panelActions.Controls.Clear();
+                        this.panelActions.Controls.Add(_manualActions);
+                    });
                     break;
             }
             _currentMode = Store.App.SelectedMode;
@@ -116,7 +138,7 @@ namespace Yaqoot300.Pages
             using (var dlg = new JobDialog())
             {
                 dlg.ShowDialog();
-                MessageBox.Show(dlg.SelectedJob.LotNumber);
+                Store.Dispatch(new JobSelectJobAction(dlg.SelectedJob?.JobId));
             }
             
         }

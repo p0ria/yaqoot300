@@ -31,10 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgJobs = new System.Windows.Forms.DataGridView();
-            this.JobId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LotNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Good = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbGood = new System.Windows.Forms.NumericUpDown();
@@ -44,6 +40,10 @@
             this.tbLotNumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCreate = new Yaqoot300.Controls.LoadingButtonControl();
+            this.JobId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LotNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Good = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgJobs)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -82,42 +82,16 @@
             this.dgJobs.MultiSelect = false;
             this.dgJobs.Name = "dgJobs";
             this.dgJobs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgJobs.Size = new System.Drawing.Size(504, 791);
+            this.dgJobs.Size = new System.Drawing.Size(652, 791);
             this.dgJobs.TabIndex = 0;
-            // 
-            // JobId
-            // 
-            this.JobId.DataPropertyName = "JobId";
-            this.JobId.HeaderText = "Job Id";
-            this.JobId.Name = "JobId";
-            this.JobId.Visible = false;
-            // 
-            // LotNumber
-            // 
-            this.LotNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.LotNumber.DataPropertyName = "LotNumber";
-            this.LotNumber.HeaderText = "LOT Number";
-            this.LotNumber.Name = "LotNumber";
-            // 
-            // Total
-            // 
-            this.Total.DataPropertyName = "Total";
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            // 
-            // Good
-            // 
-            this.Good.DataPropertyName = "Good";
-            this.Good.HeaderText = "Good";
-            this.Good.Name = "Good";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.groupBox1.Location = new System.Drawing.Point(571, 36);
+            this.groupBox1.Location = new System.Drawing.Point(710, 36);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(481, 792);
+            this.groupBox1.Size = new System.Drawing.Size(342, 792);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Create Job";
@@ -135,7 +109,7 @@
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.panel1.Location = new System.Drawing.Point(3, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(475, 762);
+            this.panel1.Size = new System.Drawing.Size(336, 762);
             this.panel1.TabIndex = 0;
             // 
             // tbGood
@@ -189,7 +163,7 @@
             this.tbLotNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.tbLotNumber.Location = new System.Drawing.Point(24, 98);
             this.tbLotNumber.Name = "tbLotNumber";
-            this.tbLotNumber.Size = new System.Drawing.Size(421, 29);
+            this.tbLotNumber.Size = new System.Drawing.Size(286, 29);
             this.tbLotNumber.TabIndex = 1;
             // 
             // label1
@@ -205,12 +179,37 @@
             // btnCreate
             // 
             this.btnCreate.Label = "Create";
-            this.btnCreate.Location = new System.Drawing.Point(232, 635);
+            this.btnCreate.Location = new System.Drawing.Point(97, 630);
             this.btnCreate.Margin = new System.Windows.Forms.Padding(6);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(213, 63);
             this.btnCreate.Status = Yaqoot300.Controls.LoadingButtonControl.LoadingButtonControlStatus.Visible;
             this.btnCreate.TabIndex = 7;
+            // 
+            // JobId
+            // 
+            this.JobId.DataPropertyName = "JobId";
+            this.JobId.HeaderText = "Job Id";
+            this.JobId.Name = "JobId";
+            // 
+            // LotNumber
+            // 
+            this.LotNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.LotNumber.DataPropertyName = "LotNumber";
+            this.LotNumber.HeaderText = "LOT Number";
+            this.LotNumber.Name = "LotNumber";
+            // 
+            // Total
+            // 
+            this.Total.DataPropertyName = "Total";
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            // 
+            // Good
+            // 
+            this.Good.DataPropertyName = "Good";
+            this.Good.HeaderText = "Good";
+            this.Good.Name = "Good";
             // 
             // JobDialog
             // 
@@ -235,10 +234,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgJobs;
-        private System.Windows.Forms.DataGridViewTextBoxColumn JobId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LotNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Good;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.NumericUpDown tbGood;
@@ -248,5 +243,9 @@
         private System.Windows.Forms.TextBox tbLotNumber;
         private System.Windows.Forms.Label label1;
         private Controls.LoadingButtonControl btnCreate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn JobId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LotNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Good;
     }
 }
