@@ -29,30 +29,45 @@
         private void InitializeComponent()
         {
             this.btnStart = new System.Windows.Forms.Button();
+            this.pbLoading = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
             this.SuspendLayout();
             // 
             // btnStart
             // 
             this.btnStart.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnStart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.btnStart.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnStart.Location = new System.Drawing.Point(166, 3);
+            this.btnStart.Location = new System.Drawing.Point(166, 13);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(368, 124);
+            this.btnStart.Size = new System.Drawing.Size(368, 100);
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
+            // pbLoading
+            // 
+            this.pbLoading.BackColor = System.Drawing.Color.Transparent;
+            this.pbLoading.Image = global::Yaqoot300.Properties.Resources.loading_64x64;
+            this.pbLoading.Location = new System.Drawing.Point(323, 27);
+            this.pbLoading.Name = "pbLoading";
+            this.pbLoading.Size = new System.Drawing.Size(64, 64);
+            this.pbLoading.TabIndex = 1;
+            this.pbLoading.TabStop = false;
+            this.pbLoading.Visible = false;
             // 
             // AutoActions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.pbLoading);
             this.Controls.Add(this.btnStart);
             this.Name = "AutoActions";
             this.Size = new System.Drawing.Size(700, 130);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -60,5 +75,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.PictureBox pbLoading;
     }
 }

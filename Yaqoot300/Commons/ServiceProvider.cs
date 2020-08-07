@@ -10,8 +10,6 @@ namespace Yaqoot300.Commons
 {
     public static class ServiceProvider
     {
-        public static ImageList ImageList32 { get; set; }
-        public static ImageList ImageList64 { get; set; }
         public static Store Store { get; }
 
         static ServiceProvider()

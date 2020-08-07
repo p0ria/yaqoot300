@@ -41,17 +41,17 @@
             this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSave.Location = new System.Drawing.Point(3, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(203, 56);
+            this.btnSave.Size = new System.Drawing.Size(203, 64);
             this.btnSave.TabIndex = 0;
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Visible = false;
             // 
             // pbLoading
             // 
-            this.pbLoading.Image = global::Yaqoot300.Properties.Resources.loading_32x32;
-            this.pbLoading.Location = new System.Drawing.Point(80, 18);
+            this.pbLoading.Image = global::Yaqoot300.Properties.Resources.loading_46x46;
+            this.pbLoading.Location = new System.Drawing.Point(80, 13);
             this.pbLoading.Name = "pbLoading";
-            this.pbLoading.Size = new System.Drawing.Size(32, 32);
+            this.pbLoading.Size = new System.Drawing.Size(46, 46);
             this.pbLoading.TabIndex = 1;
             this.pbLoading.TabStop = false;
             this.pbLoading.Visible = false;
@@ -63,7 +63,7 @@
             this.Controls.Add(this.pbLoading);
             this.Controls.Add(this.btnSave);
             this.Name = "LoadingButtonControl";
-            this.Size = new System.Drawing.Size(213, 63);
+            this.Size = new System.Drawing.Size(213, 70);
             ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();
             this.ResumeLayout(false);
 

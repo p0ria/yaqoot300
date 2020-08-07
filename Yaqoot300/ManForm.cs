@@ -24,8 +24,6 @@ namespace Yaqoot300
         public MainForm()
         {
             InitializeComponent();
-            ServiceProvider.ImageList32 = this.imageList32;
-            ServiceProvider.ImageList64 = this.imageList64;
             _homePage = new HomePage();
             _servicePage = new ServicePage();
             ServiceProvider.Store.StoreChanged += OnStoreChanged;

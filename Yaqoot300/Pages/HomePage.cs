@@ -75,10 +75,10 @@ namespace Yaqoot300.Pages
             switch (status)
             {
                 case ConnectionStatus.Connected:
-                    this.SafeInvoke(() => pb.Image = ServiceProvider.ImageList32.Images[0]);
+                    this.SafeInvoke(() => pb.Image = Resources.tick_32x32);
                     break;
                 case ConnectionStatus.Disconnected:
-                    this.SafeInvoke(() => pb.Image = ServiceProvider.ImageList32.Images[1]);
+                    this.SafeInvoke(() => pb.Image = Resources.cross_32x32);
                     break;
                 case ConnectionStatus.Connecting:
                     this.SafeInvoke(() => pb.Image = Resources.loading_32x32);

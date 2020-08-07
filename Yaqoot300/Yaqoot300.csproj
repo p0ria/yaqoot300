@@ -309,6 +309,10 @@
     <Content Include="Resources\Images\gear_128x128.gif" />
     <Content Include="Resources\Images\gray_circle_64x64.png" />
     <Content Include="Resources\Images\green_circle_64x64.png" />
+    <Content Include="Resources\Images\loading_128x128.gif" />
+    <None Include="Resources\Images\loading_38x38.gif" />
+    <None Include="Resources\Images\loading_46x46.gif" />
+    <Content Include="Resources\Images\loading_64x64.gif" />
     <Content Include="Resources\Images\red_circle_64x64.png" />
     <Content Include="Resources\Images\loading_32x32.gif" />
     <Content Include="Resources\Images\sync_32x32.png" />

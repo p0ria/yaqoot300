@@ -37,10 +37,10 @@
             // 
             this.btnOsLoad.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnOsLoad.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOsLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnOsLoad.Location = new System.Drawing.Point(0, -3);
+            this.btnOsLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnOsLoad.Location = new System.Drawing.Point(0, 13);
             this.btnOsLoad.Name = "btnOsLoad";
-            this.btnOsLoad.Size = new System.Drawing.Size(183, 130);
+            this.btnOsLoad.Size = new System.Drawing.Size(200, 100);
             this.btnOsLoad.TabIndex = 1;
             this.btnOsLoad.Text = "Load OS";
             this.btnOsLoad.UseVisualStyleBackColor = false;
@@ -49,10 +49,10 @@
             // 
             this.btnCycle.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnCycle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCycle.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnCycle.Location = new System.Drawing.Point(253, 0);
+            this.btnCycle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnCycle.Location = new System.Drawing.Point(250, 13);
             this.btnCycle.Name = "btnCycle";
-            this.btnCycle.Size = new System.Drawing.Size(183, 130);
+            this.btnCycle.Size = new System.Drawing.Size(200, 100);
             this.btnCycle.TabIndex = 2;
             this.btnCycle.Text = "Cycle";
             this.btnCycle.UseVisualStyleBackColor = false;
@@ -61,10 +61,10 @@
             // 
             this.btnFeedIn.BackColor = System.Drawing.Color.BurlyWood;
             this.btnFeedIn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFeedIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnFeedIn.Location = new System.Drawing.Point(514, 0);
+            this.btnFeedIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnFeedIn.Location = new System.Drawing.Point(500, 13);
             this.btnFeedIn.Name = "btnFeedIn";
-            this.btnFeedIn.Size = new System.Drawing.Size(183, 130);
+            this.btnFeedIn.Size = new System.Drawing.Size(200, 100);
             this.btnFeedIn.TabIndex = 3;
             this.btnFeedIn.Text = "Feed In";
             this.btnFeedIn.UseVisualStyleBackColor = false;

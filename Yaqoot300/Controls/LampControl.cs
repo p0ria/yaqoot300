@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Yaqoot300.Commons;
+using Yaqoot300.Properties;
 
 namespace Yaqoot300.Controls
 {
@@ -42,13 +43,13 @@ namespace Yaqoot300.Controls
                 switch (value)
                 {
                     case LampControlType.Red:
-                        this._image = ServiceProvider.ImageList64.Images[2];
+                        this._image = Resources.red_circle_64x64;
                         break;
                     case LampControlType.Green:
-                        this._image = ServiceProvider.ImageList64.Images[3];
+                        this._image = Resources.green_circle_64x64;
                         break;
                     case LampControlType.Yellow:
-                        this._image = ServiceProvider.ImageList64.Images[4];
+                        this._image = Resources.yellow_circle_64x64;
                         break;
                 }
             }
@@ -61,7 +62,7 @@ namespace Yaqoot300.Controls
             set
             {
                 _status = value;
-                this.pbLamp.Image = (value == LampControlStatus.Off) ? ServiceProvider.ImageList64.Images[1] : _image;
+                this.pbLamp.Image = (value == LampControlStatus.Off) ? Resources.gray_circle_64x64 : _image;
             }
         }
     }

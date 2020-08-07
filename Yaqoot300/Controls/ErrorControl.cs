@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Yaqoot300.Commons;
+using Yaqoot300.Properties;
 
 namespace Yaqoot300.Controls
 {
@@ -16,7 +17,7 @@ namespace Yaqoot300.Controls
         public ErrorControl()
         {
             InitializeComponent();
-            this.btnError.Image= ServiceProvider.ImageList64.Images[0];
+            this.btnError.Image= Resources.error_64x64;
         }
     }
 }

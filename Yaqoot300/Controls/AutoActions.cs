@@ -52,16 +52,19 @@ namespace Yaqoot300.Controls
                             this.btnStart.Text = "Start";
                             this.btnStart.ForeColor = Color.White;
                             this.btnStart.BackColor = Color.DodgerBlue;
+                            this.pbLoading.Visible = false;
+                            this.btnStart.Visible = true;
                             break;
                         case AutoStartBtnStatus.Starting:
-                            this.btnStart.Text = "Starting...";
-                            this.btnStart.ForeColor = Color.Black;
-                            this.btnStart.BackColor = Color.Yellow;
+                            this.btnStart.Visible = false;
+                            this.pbLoading.Visible = true;
                             break;
                         case AutoStartBtnStatus.Started:
                             this.btnStart.Text = "Stop";
                             this.btnStart.ForeColor = Color.White;
                             this.btnStart.BackColor = Color.DarkOrange;
+                            this.pbLoading.Visible = false;
+                            this.btnStart.Visible = true;
                             break;
                     }
                     this.btnStart.Enabled = Store.Home.Auto.StartBtn.IsEnabled;
