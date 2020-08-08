@@ -39,6 +39,7 @@
             this.btnError.Size = new System.Drawing.Size(70, 70);
             this.btnError.TabIndex = 2;
             this.btnError.UseVisualStyleBackColor = true;
+            this.btnError.Click += new System.EventHandler(this.btnError_Click);
             // 
             // ErrorControl
             // 

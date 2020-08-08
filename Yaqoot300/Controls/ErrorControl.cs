@@ -19,5 +19,10 @@ namespace Yaqoot300.Controls
             InitializeComponent();
             this.btnError.Image= Resources.error_64x64;
         }
+
+        private void btnError_Click(object sender, EventArgs e)
+        {
+            ServiceProvider.MessagesDlg.ShowDialog();
+        }
     }
 }
