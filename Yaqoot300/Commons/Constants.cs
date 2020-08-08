@@ -10,5 +10,6 @@ namespace Yaqoot300.Commons
     {
         public const int READERS_COUNT = 30;
         public const int SENSORS_LENGTH = 14;
+        public const int MESSAGES_MAX = 50;
     }
 }

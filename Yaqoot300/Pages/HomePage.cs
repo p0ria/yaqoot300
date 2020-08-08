@@ -136,12 +136,12 @@ namespace Yaqoot300.Pages
 
         private void btnSelectJob_Click(object sender, EventArgs e)
         {
-            using (var dlg = new JobDialog())
+            /*using (var dlg = new JobsDialog())
             {
                 dlg.ShowDialog();
                 Store.Dispatch(new JobSelectJobAction(dlg.SelectedJobId));
-            }
-            
+            }*/
+            ServiceProvider.MessagesDlg.ShowDialog();
         }
     }
 }

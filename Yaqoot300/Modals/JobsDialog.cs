@@ -19,10 +19,10 @@ using Yaqoot300.State.Job.Actions;
 
 namespace Yaqoot300.Modals
 {
-    public partial class JobDialog : Form
+    public partial class JobsDialog : Form
     {
         private int? _selectedJobId;
-        public JobDialog()
+        public JobsDialog()
         {
             InitializeComponent();
             InitializeDataGrid();

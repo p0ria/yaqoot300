@@ -113,6 +113,36 @@ namespace Yaqoot300.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap icon_error_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("icon_error_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icon_info_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("icon_info_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icon_warning_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("icon_warning_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap loading_128x128 {
             get {
                 object obj = ResourceManager.GetObject("loading_128x128", resourceCulture);

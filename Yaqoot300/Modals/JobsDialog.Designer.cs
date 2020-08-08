@@ -1,6 +1,6 @@
 ﻿namespace Yaqoot300.Modals
 {
-    partial class JobDialog
+    partial class JobsDialog
     {
         /// <summary>
         /// Required designer variable.

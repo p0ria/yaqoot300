@@ -45,6 +45,7 @@
             this.ClientSize = new System.Drawing.Size(1264, 985);
             this.Controls.Add(this.panelPage);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Yaqoot 300";
             this.ResumeLayout(false);
 
