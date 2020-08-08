@@ -78,7 +78,7 @@ namespace Yaqoot300.Modals
             List<Severity> selectedSeverities = new List<Severity>();
             if(cbError.Checked) selectedSeverities.Add(Severity.Error);
             if(cbWarning.Checked) selectedSeverities.Add(Severity.Warning);
-            if(cbInfo.Checked) selectedSeverities.Add(Severity.Info);
+            if (cbInfo.Checked) selectedSeverities.Add(Severity.Info);
 
             List<MessageCategory> selectedCategories = new List<MessageCategory>();
             if(cbPLC.Checked) selectedCategories.Add(MessageCategory.PLC);
