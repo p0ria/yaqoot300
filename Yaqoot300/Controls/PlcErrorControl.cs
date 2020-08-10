@@ -8,21 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Yaqoot300.Commons;
+using Yaqoot300.Modals;
 using Yaqoot300.Properties;
+using Yaqoot300.State.Home;
 
 namespace Yaqoot300.Controls
 {
-    public partial class ErrorControl : UserControl
+    public partial class PlcErrorControl : UserControl
     {
-        public ErrorControl()
+        public PlcErrorControl()
         {
             InitializeComponent();
             this.btnError.Image= Resources.error_64x64;
         }
 
+        public PlcErrorState Error { get; set; }
+
         private void btnError_Click(object sender, EventArgs e)
         {
-            ServiceProvider.MessagesDlg.ShowDialog();
+            var dlg = new PlcErrorDialog(Error);
+            dlg.Show(this);
         }
     }
 }

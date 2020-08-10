@@ -1,6 +1,6 @@
 ﻿namespace Yaqoot300.Controls
 {
-    partial class ErrorControl
+    partial class PlcErrosControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,32 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnError = new System.Windows.Forms.Button();
+            this.panelErrors = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // btnError
+            // panelErrors
             // 
-            this.btnError.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnError.Location = new System.Drawing.Point(0, 0);
-            this.btnError.Name = "btnError";
-            this.btnError.Size = new System.Drawing.Size(70, 70);
-            this.btnError.TabIndex = 2;
-            this.btnError.UseVisualStyleBackColor = true;
-            this.btnError.Click += new System.EventHandler(this.btnError_Click);
+            this.panelErrors.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelErrors.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.panelErrors.Location = new System.Drawing.Point(0, 0);
+            this.panelErrors.Name = "panelErrors";
+            this.panelErrors.Size = new System.Drawing.Size(1230, 100);
+            this.panelErrors.TabIndex = 2;
             // 
-            // ErrorControl
+            // PlcErrosControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.btnError);
-            this.Name = "ErrorControl";
-            this.Size = new System.Drawing.Size(70, 70);
+            this.Controls.Add(this.panelErrors);
+            this.Name = "PlcErrosControl";
+            this.Size = new System.Drawing.Size(1230, 100);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnError;
+
+        private System.Windows.Forms.FlowLayoutPanel panelErrors;
     }
 }

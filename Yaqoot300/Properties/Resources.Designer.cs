@@ -193,6 +193,16 @@ namespace Yaqoot300.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap red_close_64x64 {
+            get {
+                object obj = ResourceManager.GetObject("red_close_64x64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap tick_32x32 {
             get {
                 object obj = ResourceManager.GetObject("tick_32x32", resourceCulture);
@@ -206,6 +216,16 @@ namespace Yaqoot300.Properties {
         public static System.Drawing.Bitmap yellow_circle_64x64 {
             get {
                 object obj = ResourceManager.GetObject("yellow_circle_64x64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap yellow_close_64x64 {
+            get {
+                object obj = ResourceManager.GetObject("yellow_close_64x64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

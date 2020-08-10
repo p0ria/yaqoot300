@@ -11,10 +11,13 @@ namespace Yaqoot300.State.Home
         public HomeReaderState[] HomeReaders { get; set; }
         public AutoState Auto { get; set; }
 
+        public List<PlcErrorState> PlcErrors { get; set; }
+
         public HomeState()
         {
             this.HomeReaders = new HomeReaderState[30];
             this.Auto = new AutoState();
+            this.PlcErrors = new List<PlcErrorState>();
         }
     }
 }

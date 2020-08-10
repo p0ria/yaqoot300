@@ -55,7 +55,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panelActions = new System.Windows.Forms.Panel();
             this.panelFooter = new System.Windows.Forms.Panel();
-            this.panelErrors = new System.Windows.Forms.FlowLayoutPanel();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblMode = new System.Windows.Forms.Label();
             this.btnSelectJob = new System.Windows.Forms.Button();
@@ -67,6 +66,7 @@
             this.lampCtrlYellow = new Yaqoot300.Controls.LampControl();
             this.lampCtrlGreen = new Yaqoot300.Controls.LampControl();
             this.lampCtrlRed = new Yaqoot300.Controls.LampControl();
+            this.plcErrosControl1 = new Yaqoot300.Controls.PlcErrosControl();
             this.reader30 = new Yaqoot300.Controls.ReaderController();
             this.reader29 = new Yaqoot300.Controls.ReaderController();
             this.reader28 = new Yaqoot300.Controls.ReaderController();
@@ -97,6 +97,7 @@
             this.reader4 = new Yaqoot300.Controls.ReaderController();
             this.reader2 = new Yaqoot300.Controls.ReaderController();
             this.reader1 = new Yaqoot300.Controls.ReaderController();
+            this.btnMessages = new System.Windows.Forms.Button();
             this.gpReaders.SuspendLayout();
             this.panel3.SuspendLayout();
             this.gbReaders.SuspendLayout();
@@ -434,23 +435,16 @@
             // panelFooter
             // 
             this.panelFooter.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panelFooter.Controls.Add(this.panelErrors);
+            this.panelFooter.Controls.Add(this.plcErrosControl1);
             this.panelFooter.Location = new System.Drawing.Point(0, 833);
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Size = new System.Drawing.Size(1280, 157);
             this.panelFooter.TabIndex = 8;
             // 
-            // panelErrors
-            // 
-            this.panelErrors.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.panelErrors.Location = new System.Drawing.Point(28, 37);
-            this.panelErrors.Name = "panelErrors";
-            this.panelErrors.Size = new System.Drawing.Size(1228, 100);
-            this.panelErrors.TabIndex = 0;
-            // 
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panelHeader.Controls.Add(this.btnMessages);
             this.panelHeader.Controls.Add(this.lampCtrlYellow);
             this.panelHeader.Controls.Add(this.lampCtrlGreen);
             this.panelHeader.Controls.Add(this.lampCtrlRed);
@@ -552,6 +546,13 @@
             this.lampCtrlRed.Status = Yaqoot300.Controls.LampControl.LampControlStatus.Off;
             this.lampCtrlRed.TabIndex = 12;
             this.lampCtrlRed.Type = Yaqoot300.Controls.LampControl.LampControlType.Red;
+            // 
+            // plcErrosControl1
+            // 
+            this.plcErrosControl1.Location = new System.Drawing.Point(27, 34);
+            this.plcErrosControl1.Name = "plcErrosControl1";
+            this.plcErrosControl1.Size = new System.Drawing.Size(1230, 100);
+            this.plcErrosControl1.TabIndex = 0;
             // 
             // reader30
             // 
@@ -883,6 +884,18 @@
             this.reader1.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
             this.reader1.TabIndex = 62;
             // 
+            // btnMessages
+            // 
+            this.btnMessages.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMessages.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnMessages.Location = new System.Drawing.Point(252, 34);
+            this.btnMessages.Name = "btnMessages";
+            this.btnMessages.Size = new System.Drawing.Size(179, 46);
+            this.btnMessages.TabIndex = 15;
+            this.btnMessages.Text = "Messages";
+            this.btnMessages.UseVisualStyleBackColor = true;
+            this.btnMessages.Click += new System.EventHandler(this.btnMessages_Click);
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -923,7 +936,6 @@
         private System.Windows.Forms.GroupBox gpConnectionsStatus;
         private System.Windows.Forms.Panel panelActions;
         private System.Windows.Forms.Panel panelFooter;
-        private System.Windows.Forms.FlowLayoutPanel panelErrors;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Button btnSelectJob;
         private System.Windows.Forms.Label lblMode;
@@ -987,5 +999,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private Controls.PlcErrosControl plcErrosControl1;
+        private System.Windows.Forms.Button btnMessages;
     }
 }

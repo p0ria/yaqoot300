@@ -29,8 +29,6 @@ namespace Yaqoot300.Pages
             InitializeComponent();
             _autoActions = new AutoActions();
             _manualActions = new ManualActions();
-            this.panelErrors.Controls.Add(new ErrorControl());
-            this.panelErrors.Controls.Add(new ErrorControl());
             this.lampCtrlRed.Type = LampControl.LampControlType.Red;
             this.lampCtrlGreen.Type = LampControl.LampControlType.Green;
             this.lampCtrlYellow.Type = LampControl.LampControlType.Yellow;
@@ -141,6 +139,11 @@ namespace Yaqoot300.Pages
                 dlg.ShowDialog();
                 Store.Dispatch(new JobSelectJobAction(dlg.SelectedJobId));
             }
+        }
+
+        private void btnMessages_Click(object sender, EventArgs e)
+        {
+            ServiceProvider.MessagesDlg.ShowDialog();
         }
     }
 }

@@ -35,14 +35,14 @@
             // 
             this.panelPage.Location = new System.Drawing.Point(-6, -1);
             this.panelPage.Name = "panelPage";
-            this.panelPage.Size = new System.Drawing.Size(1280, 990);
+            this.panelPage.Size = new System.Drawing.Size(1282, 990);
             this.panelPage.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 985);
+            this.ClientSize = new System.Drawing.Size(1279, 985);
             this.Controls.Add(this.panelPage);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

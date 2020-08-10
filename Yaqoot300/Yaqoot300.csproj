@@ -98,6 +98,12 @@
     <Compile Include="Controls\LoadingButtonControl.Designer.cs">
       <DependentUpon>LoadingButtonControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\PlcErrosControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PlcErrosControl.Designer.cs">
+      <DependentUpon>PlcErrosControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\SensorControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -139,11 +145,11 @@
     <Compile Include="Controls\AutoActions.Designer.cs">
       <DependentUpon>AutoActions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ErrorControl.cs">
+    <Compile Include="Controls\PlcErrorControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ErrorControl.Designer.cs">
-      <DependentUpon>ErrorControl.cs</DependentUpon>
+    <Compile Include="Controls\PlcErrorControl.Designer.cs">
+      <DependentUpon>PlcErrorControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\LampControl.cs">
       <SubType>UserControl</SubType>
@@ -179,6 +185,12 @@
     <Compile Include="ManForm.Designer.cs">
       <DependentUpon>ManForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modals\PlcErrorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modals\PlcErrorDialog.Designer.cs">
+      <DependentUpon>PlcErrorDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modals\JobsDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,12 +225,15 @@
     <Compile Include="State\App\State\ConnectionsState.cs" />
     <Compile Include="State\App\Actions\AppChangeModeAction.cs" />
     <Compile Include="State\Home\Actions\HomeActionTypes.cs" />
+    <Compile Include="State\Home\Actions\HomeAddPlcErrorAction.cs" />
     <Compile Include="State\Home\Actions\HomeChangeAutoStartAction.cs" />
     <Compile Include="State\Home\Actions\HomeChangeAutoStartActionPayload.cs" />
+    <Compile Include="State\Home\Actions\HomeRemovePlcErrorAction.cs" />
     <Compile Include="State\Home\HomeReducer.cs" />
     <Compile Include="State\Home\InitialHomeState.cs" />
     <Compile Include="State\Home\State\AutoStartBtnState.cs" />
     <Compile Include="State\Home\State\AutoState.cs" />
+    <Compile Include="State\Home\State\PlcErrorState.cs" />
     <Compile Include="State\Home\State\HomeReaderState.cs" />
     <Compile Include="State\Home\State\HomeState.cs" />
     <Compile Include="State\Job\Actions\JobActionTypes.cs" />
@@ -266,8 +281,8 @@
     <EmbeddedResource Include="Controls\AutoActions.resx">
       <DependentUpon>AutoActions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ErrorControl.resx">
-      <DependentUpon>ErrorControl.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\PlcErrorControl.resx">
+      <DependentUpon>PlcErrorControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\LampControl.resx">
       <DependentUpon>LampControl.cs</DependentUpon>
@@ -280,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MotorControl.resx">
       <DependentUpon>MotorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PlcErrosControl.resx">
+      <DependentUpon>PlcErrosControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ReaderController.resx">
       <DependentUpon>ReaderController.cs</DependentUpon>
@@ -302,6 +320,9 @@
     <EmbeddedResource Include="ManForm.resx">
       <DependentUpon>ManForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modals\PlcErrorDialog.resx">
+      <DependentUpon>PlcErrorDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modals\JobsDialog.resx">
       <DependentUpon>JobsDialog.cs</DependentUpon>
@@ -349,6 +370,7 @@
     <Content Include="Resources\Images\gear_128x128.gif" />
     <Content Include="Resources\Images\gray_circle_64x64.png" />
     <Content Include="Resources\Images\green_circle_64x64.png" />
+    <None Include="Resources\Images\yellow_close_64x64.png" />
     <None Include="Resources\Images\icon_error_32x32.png" />
     <None Include="Resources\Images\icon_info_32x32.png" />
     <None Include="Resources\Images\icon_warning_32x32.png" />
@@ -358,6 +380,7 @@
     <Content Include="Resources\Images\loading_64x64.gif" />
     <Content Include="Resources\Images\red_circle_64x64.png" />
     <Content Include="Resources\Images\loading_32x32.gif" />
+    <None Include="Resources\Images\red_close_64x64.png" />
     <Content Include="Resources\Images\sync_32x32.png" />
     <Content Include="Resources\Images\sync_blue_32x32.png" />
     <Content Include="Resources\Images\tick_32x32.png" />

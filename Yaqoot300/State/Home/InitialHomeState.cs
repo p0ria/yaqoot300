@@ -19,7 +19,11 @@ namespace Yaqoot300.State.Home
                     IsEnabled = true
                 }
             },
-            HomeReaders = new HomeReaderState[30]
+            HomeReaders = new HomeReaderState[30],
+            PlcErrors = new List<PlcErrorState>
+            {
+                PlcErrors.DoorOpen
+            }
         };
 
         public static HomeState Instance => _instance;
