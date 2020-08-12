@@ -36,6 +36,10 @@
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SimpleTcp, Version=2.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SuperSimpleTcp.2.0.6\lib\net461\SimpleTcp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Syncfusion.Core.WinForms, Version=18.2460.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\Syncfusion.Core.WinForms.dll</HintPath>
@@ -206,7 +210,7 @@
     </Compile>
     <Compile Include="Models\Job.cs" />
     <Compile Include="Models\Signal\GuiSignals.cs" />
-    <Compile Include="Models\Signal\PlcConnection.cs" />
+    <Compile Include="Connections\PlcConnection.cs" />
     <Compile Include="Models\Signal\PlcSignals.cs" />
     <Compile Include="Models\Signal\SignalAttribute.cs" />
     <Compile Include="Models\Signal\Signals.cs" />
