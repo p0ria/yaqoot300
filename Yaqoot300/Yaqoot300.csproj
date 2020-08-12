@@ -205,6 +205,11 @@
       <DependentUpon>MessagesDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Job.cs" />
+    <Compile Include="Models\Signal\GuiSignals.cs" />
+    <Compile Include="Models\Signal\PlcConnection.cs" />
+    <Compile Include="Models\Signal\PlcSignals.cs" />
+    <Compile Include="Models\Signal\SignalAttribute.cs" />
+    <Compile Include="Models\Signal\Signals.cs" />
     <Compile Include="Models\ThinClient\ReaderResponse.cs" />
     <Compile Include="Pages\HomePage.cs">
       <SubType>UserControl</SubType>
