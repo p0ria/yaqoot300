@@ -31,20 +31,12 @@ namespace Yaqoot300.Controls
                 case AutoStartBtnStatus.Stoped:
                     Store.Dispatch(new HomeChangeAutoStartAction(
                         new HomeChangeAutoStartActionPayload(AutoStartBtnStatus.Starting, false)));
-                    Task.Run(() =>
-                    {
-                        Thread.Sleep(2000);
-                        Store.Dispatch(new HomeChangeAutoStartAction(
-                            new HomeChangeAutoStartActionPayload(AutoStartBtnStatus.Started, true)));
-                    });
                     break;
                 case AutoStartBtnStatus.Started:
                     Store.Dispatch(new HomeChangeAutoStartAction(
                         new HomeChangeAutoStartActionPayload(AutoStartBtnStatus.Stoped)));
                     break;
             }
-
-            
         }
 
         private void OnStoreChanged(object sender, string changeType)
