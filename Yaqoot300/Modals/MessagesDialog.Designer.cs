@@ -34,6 +34,9 @@
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn2 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             this.dgv = new Syncfusion.WinForms.DataGrid.SfDataGrid();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbDatabase = new System.Windows.Forms.CheckBox();
             this.cbReaders = new System.Windows.Forms.CheckBox();
             this.cbPLC = new System.Windows.Forms.CheckBox();
@@ -41,14 +44,12 @@
             this.cbInfo = new System.Windows.Forms.CheckBox();
             this.cbWarning = new System.Windows.Forms.CheckBox();
             this.cbError = new System.Windows.Forms.CheckBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.cbApp = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv
@@ -107,6 +108,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbApp);
             this.groupBox1.Controls.Add(this.pictureBox3);
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.pictureBox1);
@@ -125,12 +127,39 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filters";
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Yaqoot300.Properties.Resources.icon_info_32x32;
+            this.pictureBox3.Location = new System.Drawing.Point(141, 139);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox3.TabIndex = 9;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Yaqoot300.Properties.Resources.icon_warning_32x32;
+            this.pictureBox2.Location = new System.Drawing.Point(141, 95);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Yaqoot300.Properties.Resources.icon_error_32x32;
+            this.pictureBox1.Location = new System.Drawing.Point(141, 51);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // cbDatabase
             // 
             this.cbDatabase.AutoSize = true;
             this.cbDatabase.Checked = true;
             this.cbDatabase.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbDatabase.Location = new System.Drawing.Point(24, 320);
+            this.cbDatabase.Location = new System.Drawing.Point(24, 360);
             this.cbDatabase.Name = "cbDatabase";
             this.cbDatabase.Size = new System.Drawing.Size(123, 29);
             this.cbDatabase.TabIndex = 6;
@@ -143,7 +172,7 @@
             this.cbReaders.AutoSize = true;
             this.cbReaders.Checked = true;
             this.cbReaders.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbReaders.Location = new System.Drawing.Point(24, 274);
+            this.cbReaders.Location = new System.Drawing.Point(24, 314);
             this.cbReaders.Name = "cbReaders";
             this.cbReaders.Size = new System.Drawing.Size(112, 29);
             this.cbReaders.TabIndex = 5;
@@ -156,7 +185,7 @@
             this.cbPLC.AutoSize = true;
             this.cbPLC.Checked = true;
             this.cbPLC.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbPLC.Location = new System.Drawing.Point(24, 228);
+            this.cbPLC.Location = new System.Drawing.Point(24, 268);
             this.cbPLC.Name = "cbPLC";
             this.cbPLC.Size = new System.Drawing.Size(72, 29);
             this.cbPLC.TabIndex = 4;
@@ -211,32 +240,17 @@
             this.cbError.UseVisualStyleBackColor = true;
             this.cbError.CheckedChanged += new System.EventHandler(this.cbCheckedChanged);
             // 
-            // pictureBox1
+            // cbApp
             // 
-            this.pictureBox1.Image = global::Yaqoot300.Properties.Resources.icon_error_32x32;
-            this.pictureBox1.Location = new System.Drawing.Point(141, 51);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Yaqoot300.Properties.Resources.icon_warning_32x32;
-            this.pictureBox2.Location = new System.Drawing.Point(141, 95);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Yaqoot300.Properties.Resources.icon_info_32x32;
-            this.pictureBox3.Location = new System.Drawing.Point(141, 139);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox3.TabIndex = 9;
-            this.pictureBox3.TabStop = false;
+            this.cbApp.AutoSize = true;
+            this.cbApp.Checked = true;
+            this.cbApp.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbApp.Location = new System.Drawing.Point(24, 222);
+            this.cbApp.Name = "cbApp";
+            this.cbApp.Size = new System.Drawing.Size(73, 29);
+            this.cbApp.TabIndex = 10;
+            this.cbApp.Text = "APP";
+            this.cbApp.UseVisualStyleBackColor = true;
             // 
             // MessagesDialog
             // 
@@ -252,9 +266,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -273,5 +287,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox cbApp;
     }
 }

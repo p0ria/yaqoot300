@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Yaqoot300.Commons;
@@ -30,6 +31,12 @@ namespace Yaqoot300.Controls
                 case AutoStartBtnStatus.Stoped:
                     Store.Dispatch(new HomeChangeAutoStartAction(
                         new HomeChangeAutoStartActionPayload(AutoStartBtnStatus.Starting, false)));
+                    Task.Run(() =>
+                    {
+                        Thread.Sleep(2000);
+                        Store.Dispatch(new HomeChangeAutoStartAction(
+                            new HomeChangeAutoStartActionPayload(AutoStartBtnStatus.Started, true)));
+                    });
                     break;
                 case AutoStartBtnStatus.Started:
                     Store.Dispatch(new HomeChangeAutoStartAction(

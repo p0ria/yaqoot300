@@ -2,6 +2,6 @@
 {
     public enum MessageCategory
     {
-        PLC, Reader, Database
+        App, PLC, Reader, Database
     }
 }

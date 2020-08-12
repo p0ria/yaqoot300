@@ -1,4 +1,7 @@
-﻿using Yaqoot300.Commons;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using Yaqoot300.Commons;
 
 namespace Yaqoot300.State.Service
 {
@@ -6,12 +9,25 @@ namespace Yaqoot300.State.Service
     {
         public ServiceSetupReadersState()
         {
-            this.Readers = new SetupReaderState[Constants.READERS_COUNT];
-            for (int i = 0; i < Constants.READERS_COUNT; i++)
+            this.Readers = new List<SetupReaderState>();
+        }
+        public int? this[string readerName]
+        {
+            get
             {
-                Readers[i] = new SetupReaderState {ReaderNumber = i + 1};
+                var reader = this.Readers.FirstOrDefault(r => r.ReaderName.Equals(readerName));
+                return reader?.ReaderNumber;
             }
         }
-        public SetupReaderState[] Readers { get; set; }
+
+        public string this[int readerNumber]
+        {
+            get
+            {
+                var reader = this.Readers.FirstOrDefault(r => r.ReaderNumber == readerNumber);
+                return reader?.ReaderName;
+            }
+        }
+        public List<SetupReaderState> Readers { get; set; }
     }
 }

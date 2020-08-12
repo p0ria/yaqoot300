@@ -1,4 +1,6 @@
-﻿namespace Yaqoot300.Pages
+﻿using Yaqoot300.Interfaces;
+
+namespace Yaqoot300.Pages
 {
     partial class HomePage
     {
@@ -63,6 +65,7 @@
             this.pbConnectionClient1 = new System.Windows.Forms.PictureBox();
             this.pbConnectionPLC = new System.Windows.Forms.PictureBox();
             this.pbConnectionDb = new System.Windows.Forms.PictureBox();
+            this.btnMessages = new System.Windows.Forms.Button();
             this.lampCtrlYellow = new Yaqoot300.Controls.LampControl();
             this.lampCtrlGreen = new Yaqoot300.Controls.LampControl();
             this.lampCtrlRed = new Yaqoot300.Controls.LampControl();
@@ -97,7 +100,6 @@
             this.reader4 = new Yaqoot300.Controls.ReaderController();
             this.reader2 = new Yaqoot300.Controls.ReaderController();
             this.reader1 = new Yaqoot300.Controls.ReaderController();
-            this.btnMessages = new System.Windows.Forms.Button();
             this.gpReaders.SuspendLayout();
             this.panel3.SuspendLayout();
             this.gbReaders.SuspendLayout();
@@ -459,7 +461,7 @@
             // 
             this.lblMode.AutoSize = true;
             this.lblMode.Font = new System.Drawing.Font("Baskerville Old Face", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMode.Location = new System.Drawing.Point(547, 23);
+            this.lblMode.Location = new System.Drawing.Point(546, 26);
             this.lblMode.Name = "lblMode";
             this.lblMode.Size = new System.Drawing.Size(168, 54);
             this.lblMode.TabIndex = 11;
@@ -517,6 +519,18 @@
             this.pbConnectionDb.TabIndex = 18;
             this.pbConnectionDb.TabStop = false;
             // 
+            // btnMessages
+            // 
+            this.btnMessages.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMessages.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnMessages.Location = new System.Drawing.Point(252, 34);
+            this.btnMessages.Name = "btnMessages";
+            this.btnMessages.Size = new System.Drawing.Size(179, 46);
+            this.btnMessages.TabIndex = 15;
+            this.btnMessages.Text = "Messages";
+            this.btnMessages.UseVisualStyleBackColor = true;
+            this.btnMessages.Click += new System.EventHandler(this.btnMessages_Click);
+            // 
             // lampCtrlYellow
             // 
             this.lampCtrlYellow.BackColor = System.Drawing.Color.Transparent;
@@ -562,7 +576,7 @@
             this.reader30.Number = 30;
             this.reader30.Percent = 0F;
             this.reader30.Size = new System.Drawing.Size(55, 109);
-            this.reader30.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader30.Status = ReaderStatus.Off;
             this.reader30.TabIndex = 91;
             // 
             // reader29
@@ -573,7 +587,7 @@
             this.reader29.Number = 29;
             this.reader29.Percent = 0F;
             this.reader29.Size = new System.Drawing.Size(55, 109);
-            this.reader29.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader29.Status = ReaderStatus.Off;
             this.reader29.TabIndex = 90;
             // 
             // reader28
@@ -584,7 +598,7 @@
             this.reader28.Number = 28;
             this.reader28.Percent = 0F;
             this.reader28.Size = new System.Drawing.Size(55, 109);
-            this.reader28.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader28.Status = ReaderStatus.Off;
             this.reader28.TabIndex = 89;
             // 
             // reader27
@@ -595,7 +609,7 @@
             this.reader27.Number = 27;
             this.reader27.Percent = 0F;
             this.reader27.Size = new System.Drawing.Size(55, 109);
-            this.reader27.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader27.Status = ReaderStatus.Off;
             this.reader27.TabIndex = 88;
             // 
             // reader26
@@ -606,7 +620,7 @@
             this.reader26.Number = 26;
             this.reader26.Percent = 0F;
             this.reader26.Size = new System.Drawing.Size(55, 109);
-            this.reader26.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader26.Status = ReaderStatus.Off;
             this.reader26.TabIndex = 87;
             // 
             // reader25
@@ -617,7 +631,7 @@
             this.reader25.Number = 25;
             this.reader25.Percent = 0F;
             this.reader25.Size = new System.Drawing.Size(55, 109);
-            this.reader25.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader25.Status = ReaderStatus.Off;
             this.reader25.TabIndex = 86;
             // 
             // reader24
@@ -628,7 +642,7 @@
             this.reader24.Number = 24;
             this.reader24.Percent = 0F;
             this.reader24.Size = new System.Drawing.Size(55, 109);
-            this.reader24.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader24.Status = ReaderStatus.Off;
             this.reader24.TabIndex = 85;
             // 
             // reader23
@@ -639,7 +653,7 @@
             this.reader23.Number = 23;
             this.reader23.Percent = 0F;
             this.reader23.Size = new System.Drawing.Size(55, 109);
-            this.reader23.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader23.Status = ReaderStatus.Off;
             this.reader23.TabIndex = 84;
             // 
             // reader22
@@ -650,7 +664,7 @@
             this.reader22.Number = 22;
             this.reader22.Percent = 0F;
             this.reader22.Size = new System.Drawing.Size(55, 109);
-            this.reader22.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader22.Status = ReaderStatus.Off;
             this.reader22.TabIndex = 83;
             // 
             // reader21
@@ -661,7 +675,7 @@
             this.reader21.Number = 21;
             this.reader21.Percent = 0F;
             this.reader21.Size = new System.Drawing.Size(55, 109);
-            this.reader21.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader21.Status = ReaderStatus.Off;
             this.reader21.TabIndex = 82;
             // 
             // reader20
@@ -672,7 +686,7 @@
             this.reader20.Number = 20;
             this.reader20.Percent = 0F;
             this.reader20.Size = new System.Drawing.Size(55, 109);
-            this.reader20.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader20.Status = ReaderStatus.Off;
             this.reader20.TabIndex = 81;
             // 
             // reader19
@@ -683,7 +697,7 @@
             this.reader19.Number = 19;
             this.reader19.Percent = 0F;
             this.reader19.Size = new System.Drawing.Size(55, 109);
-            this.reader19.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader19.Status = ReaderStatus.Off;
             this.reader19.TabIndex = 80;
             // 
             // reader18
@@ -694,7 +708,7 @@
             this.reader18.Number = 18;
             this.reader18.Percent = 0F;
             this.reader18.Size = new System.Drawing.Size(55, 109);
-            this.reader18.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader18.Status = ReaderStatus.Off;
             this.reader18.TabIndex = 79;
             // 
             // reader17
@@ -705,7 +719,7 @@
             this.reader17.Number = 17;
             this.reader17.Percent = 0F;
             this.reader17.Size = new System.Drawing.Size(55, 109);
-            this.reader17.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader17.Status = ReaderStatus.Off;
             this.reader17.TabIndex = 78;
             // 
             // reader16
@@ -716,7 +730,7 @@
             this.reader16.Number = 16;
             this.reader16.Percent = 0F;
             this.reader16.Size = new System.Drawing.Size(55, 109);
-            this.reader16.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader16.Status = ReaderStatus.Off;
             this.reader16.TabIndex = 77;
             // 
             // reader15
@@ -727,7 +741,7 @@
             this.reader15.Number = 15;
             this.reader15.Percent = 0F;
             this.reader15.Size = new System.Drawing.Size(55, 109);
-            this.reader15.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader15.Status = ReaderStatus.Off;
             this.reader15.TabIndex = 76;
             // 
             // reader14
@@ -738,7 +752,7 @@
             this.reader14.Number = 14;
             this.reader14.Percent = 0F;
             this.reader14.Size = new System.Drawing.Size(55, 109);
-            this.reader14.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader14.Status = ReaderStatus.Off;
             this.reader14.TabIndex = 75;
             // 
             // reader13
@@ -749,7 +763,7 @@
             this.reader13.Number = 13;
             this.reader13.Percent = 0F;
             this.reader13.Size = new System.Drawing.Size(55, 109);
-            this.reader13.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader13.Status = ReaderStatus.Off;
             this.reader13.TabIndex = 74;
             // 
             // reader11
@@ -760,7 +774,7 @@
             this.reader11.Number = 12;
             this.reader11.Percent = 0F;
             this.reader11.Size = new System.Drawing.Size(55, 109);
-            this.reader11.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader11.Status = ReaderStatus.Off;
             this.reader11.TabIndex = 73;
             // 
             // reader12
@@ -771,7 +785,7 @@
             this.reader12.Number = 11;
             this.reader12.Percent = 0F;
             this.reader12.Size = new System.Drawing.Size(55, 109);
-            this.reader12.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader12.Status = ReaderStatus.Off;
             this.reader12.TabIndex = 72;
             // 
             // reader10
@@ -782,7 +796,7 @@
             this.reader10.Number = 10;
             this.reader10.Percent = 0F;
             this.reader10.Size = new System.Drawing.Size(55, 109);
-            this.reader10.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader10.Status = ReaderStatus.Off;
             this.reader10.TabIndex = 71;
             // 
             // reader9
@@ -793,7 +807,7 @@
             this.reader9.Number = 9;
             this.reader9.Percent = 0F;
             this.reader9.Size = new System.Drawing.Size(55, 109);
-            this.reader9.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader9.Status = ReaderStatus.Off;
             this.reader9.TabIndex = 70;
             // 
             // reader5
@@ -804,7 +818,7 @@
             this.reader5.Number = 5;
             this.reader5.Percent = 0F;
             this.reader5.Size = new System.Drawing.Size(55, 109);
-            this.reader5.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader5.Status = ReaderStatus.Off;
             this.reader5.TabIndex = 69;
             // 
             // reader6
@@ -815,7 +829,7 @@
             this.reader6.Number = 6;
             this.reader6.Percent = 0F;
             this.reader6.Size = new System.Drawing.Size(55, 109);
-            this.reader6.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader6.Status = ReaderStatus.Off;
             this.reader6.TabIndex = 68;
             // 
             // reader7
@@ -826,7 +840,7 @@
             this.reader7.Number = 7;
             this.reader7.Percent = 0F;
             this.reader7.Size = new System.Drawing.Size(55, 109);
-            this.reader7.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader7.Status = ReaderStatus.Off;
             this.reader7.TabIndex = 67;
             // 
             // reader8
@@ -837,7 +851,7 @@
             this.reader8.Number = 8;
             this.reader8.Percent = 0F;
             this.reader8.Size = new System.Drawing.Size(55, 109);
-            this.reader8.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader8.Status = ReaderStatus.Off;
             this.reader8.TabIndex = 66;
             // 
             // reader3
@@ -848,7 +862,7 @@
             this.reader3.Number = 3;
             this.reader3.Percent = 0F;
             this.reader3.Size = new System.Drawing.Size(55, 109);
-            this.reader3.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader3.Status = ReaderStatus.Off;
             this.reader3.TabIndex = 65;
             // 
             // reader4
@@ -859,7 +873,7 @@
             this.reader4.Number = 4;
             this.reader4.Percent = 0F;
             this.reader4.Size = new System.Drawing.Size(55, 109);
-            this.reader4.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader4.Status = ReaderStatus.Off;
             this.reader4.TabIndex = 64;
             // 
             // reader2
@@ -870,7 +884,7 @@
             this.reader2.Number = 2;
             this.reader2.Percent = 0F;
             this.reader2.Size = new System.Drawing.Size(55, 109);
-            this.reader2.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader2.Status = ReaderStatus.Off;
             this.reader2.TabIndex = 63;
             // 
             // reader1
@@ -881,20 +895,8 @@
             this.reader1.Number = 1;
             this.reader1.Percent = 0F;
             this.reader1.Size = new System.Drawing.Size(55, 109);
-            this.reader1.Status = Yaqoot300.Controls.ReaderController.ReaderStatus.Off;
+            this.reader1.Status = ReaderStatus.Off;
             this.reader1.TabIndex = 62;
-            // 
-            // btnMessages
-            // 
-            this.btnMessages.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMessages.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnMessages.Location = new System.Drawing.Point(252, 34);
-            this.btnMessages.Name = "btnMessages";
-            this.btnMessages.Size = new System.Drawing.Size(179, 46);
-            this.btnMessages.TabIndex = 15;
-            this.btnMessages.Text = "Messages";
-            this.btnMessages.UseVisualStyleBackColor = true;
-            this.btnMessages.Click += new System.EventHandler(this.btnMessages_Click);
             // 
             // HomePage
             // 

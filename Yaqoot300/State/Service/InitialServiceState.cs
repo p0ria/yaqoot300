@@ -56,7 +56,7 @@ namespace Yaqoot300.State.Service
             },
             SetupReaders = new ServiceSetupReadersState
             {
-                Readers = new SetupReaderState[]
+                Readers = new List<SetupReaderState>
                 {
                     new SetupReaderState {ReaderName = "ACS 39U 0"},
                     new SetupReaderState {ReaderName = "ACS 39U 1"},

@@ -12,12 +12,12 @@ namespace Yaqoot300.Commons
     public static class ServiceProvider
     {
         public static Store Store { get; }
-        public static MessagesDialog MessagesDlg { get; }
+        public static MessagesDialog Messages { get; }
 
         static ServiceProvider()
         {
             Store = new Store();
-            MessagesDlg = new MessagesDialog();
+            Messages = new MessagesDialog();
         }
     }
 }

@@ -33,9 +33,6 @@ namespace Yaqoot300.Modals
         {
             InitializeComponent();
             InitializeDataGrid();
-            Error("Error 1", MessageCategory.PLC);
-            Warning("Warning1", MessageCategory.Reader);
-            Info("Info 1", MessageCategory.Database);
         }
 
         public void Error(string message, MessageCategory category)
@@ -81,6 +78,7 @@ namespace Yaqoot300.Modals
             if (cbInfo.Checked) selectedSeverities.Add(Severity.Info);
 
             List<MessageCategory> selectedCategories = new List<MessageCategory>();
+            if(cbApp.Checked) selectedCategories.Add(MessageCategory.App);
             if(cbPLC.Checked) selectedCategories.Add(MessageCategory.PLC);
             if(cbReaders.Checked) selectedCategories.Add(MessageCategory.Reader);
             if(cbDatabase.Checked) selectedCategories.Add(MessageCategory.Database);

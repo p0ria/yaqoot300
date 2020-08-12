@@ -7,17 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Yaqoot300.Interfaces;
 using Color = System.Drawing.Color;
 
 namespace Yaqoot300.Controls
 {
     public partial class ReaderController : UserControl
     {
-        public enum ReaderStatus
-        {
-            Off, Busy, Success, Fail
-        }
-
         private int _number;
         private ReaderStatus _status;
         private float _percent;
@@ -36,8 +32,11 @@ namespace Yaqoot300.Controls
                 _status = value;
                 switch (value)
                 {
-                    case ReaderStatus.Off:
+                    case ReaderStatus.Idle:
                         this.BackColor = Color.DarkGray;
+                        break;
+                    case ReaderStatus.Off:
+                        this.BackColor = Color.Black;
                         break;
                     case ReaderStatus.Busy:
                         this.BackColor = Color.Yellow;

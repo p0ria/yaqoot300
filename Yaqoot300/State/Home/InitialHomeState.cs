@@ -3,28 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Yaqoot300.Commons;
 using Yaqoot300.Interfaces;
 
 namespace Yaqoot300.State.Home
 {
     public static class InitialHomeState
     {
-        private static readonly HomeState _instance = new HomeState
+        private static HomeState _instance
         {
-            Auto = new AutoState
+            get
             {
-                StartBtn = new AutoStartBtnState
+                var state = new HomeState
                 {
-                    Status = AutoStartBtnStatus.Stoped,
-                    IsEnabled = true
-                }
-            },
-            HomeReaders = new HomeReaderState[30],
-            PlcErrors = new List<PlcErrorState>
-            {
-                PlcErrors.DoorOpen
+                    Auto = new AutoState
+                    {
+                        StartBtn = new AutoStartBtnState
+                        {
+                            Status = AutoStartBtnStatus.Stoped,
+                            IsEnabled = true
+                        }
+                    },
+                    HomeReaders = new HomeReadersState(),
+                    PlcErrors = new List<PlcErrorState>
+                    {
+                        PlcErrors.DoorOpen,
+                        PlcErrors.EndOfReel
+                    }
+                };
+                for (int i = 0; i < Constants.READERS_COUNT; i++)
+                    state.HomeReaders.Readers.Add(new HomeReaderState(i + 1, ReaderStatus.Idle));
+                return state;
             }
-        };
+        }
 
         public static HomeState Instance => _instance;
     }
