@@ -26,6 +26,7 @@ namespace Yaqoot300.Models.Signal
 
         public void Receive(params byte[] bytes)
         {
+            Services.Messages.Info($"Signal Received: {Utils.ByteArrayToHexString(bytes)}", MessageCategory.PLC);
             foreach (var pi in _plcProps)
             {
                 var sr = pi.GetCustomAttribute<SignalAttribute>();

@@ -52,8 +52,8 @@ namespace Yaqoot300.Modals
 
         private void AddMessage(Severity severity, string message, MessageCategory category)
         {
-            if(_messages.Count >= Constants.MESSAGES_MAX) _messages.RemoveAt(_messages.Count - 1);
-            this._messages.Insert(0, new Item
+            if(_messages.Count >= Constants.MESSAGES_MAX) _messages.RemoveAt(0);
+            this._messages.Add(new Item
             {
                 Time = DateTime.Now,
                 Severity = severity,
