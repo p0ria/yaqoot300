@@ -63,6 +63,6 @@ namespace Yaqoot300.Modals
             }
         }
 
-        private Store Store => ServiceProvider.Store;
+        private Store Store => Services.Store;
     }
 }

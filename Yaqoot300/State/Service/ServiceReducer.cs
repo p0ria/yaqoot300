@@ -49,7 +49,7 @@ namespace Yaqoot300.State.Service
                     Task.Run(() =>
                     {
                         Thread.Sleep(3000);
-                        ServiceProvider.Store.Dispatch(new ServiceChangeSettingsSuccessAction(changeSettingsPayload));
+                        Services.Store.Dispatch(new ServiceChangeSettingsSuccessAction(changeSettingsPayload));
                     });
                     break;
                 case ServiceActionTypes.CHANGE_SETTINGS_SUCCESS:
@@ -72,7 +72,7 @@ namespace Yaqoot300.State.Service
                         readersStatus[7] = TestReaderStatus.Fail;
                         readersStatus[28] = TestReaderStatus.Off;
                         readersStatus[29] = TestReaderStatus.Off;
-                        ServiceProvider.Store.Dispatch(new ServiceTestReadersSuccessAction(readersStatus));
+                        Services.Store.Dispatch(new ServiceTestReadersSuccessAction(readersStatus));
                     });
                     break;
                 case ServiceActionTypes.TEST_READERS_SUCCESS:

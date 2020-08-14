@@ -34,6 +34,7 @@
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn2 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             this.dgv = new Syncfusion.WinForms.DataGrid.SfDataGrid();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbApp = new System.Windows.Forms.CheckBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -44,7 +45,6 @@
             this.cbInfo = new System.Windows.Forms.CheckBox();
             this.cbWarning = new System.Windows.Forms.CheckBox();
             this.cbError = new System.Windows.Forms.CheckBox();
-            this.cbApp = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -86,6 +86,7 @@
             gridTextColumn1.HeaderStyle.Font.Size = 14F;
             gridTextColumn1.HeaderText = "Message";
             gridTextColumn1.MappingName = "Message";
+            gridTextColumn1.ShowToolTip = true;
             gridTextColumn2.AllowEditing = false;
             gridTextColumn2.AllowGrouping = false;
             gridTextColumn2.AllowSorting = false;
@@ -126,6 +127,19 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filters";
+            // 
+            // cbApp
+            // 
+            this.cbApp.AutoSize = true;
+            this.cbApp.Checked = true;
+            this.cbApp.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbApp.Location = new System.Drawing.Point(24, 222);
+            this.cbApp.Name = "cbApp";
+            this.cbApp.Size = new System.Drawing.Size(73, 29);
+            this.cbApp.TabIndex = 10;
+            this.cbApp.Text = "APP";
+            this.cbApp.UseVisualStyleBackColor = true;
+            this.cbApp.CheckedChanged += new System.EventHandler(this.cbCheckedChanged);
             // 
             // pictureBox3
             // 
@@ -239,18 +253,6 @@
             this.cbError.Text = "Error";
             this.cbError.UseVisualStyleBackColor = true;
             this.cbError.CheckedChanged += new System.EventHandler(this.cbCheckedChanged);
-            // 
-            // cbApp
-            // 
-            this.cbApp.AutoSize = true;
-            this.cbApp.Checked = true;
-            this.cbApp.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbApp.Location = new System.Drawing.Point(24, 222);
-            this.cbApp.Name = "cbApp";
-            this.cbApp.Size = new System.Drawing.Size(73, 29);
-            this.cbApp.TabIndex = 10;
-            this.cbApp.Text = "APP";
-            this.cbApp.UseVisualStyleBackColor = true;
             // 
             // MessagesDialog
             // 

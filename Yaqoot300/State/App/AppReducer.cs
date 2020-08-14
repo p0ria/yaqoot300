@@ -30,7 +30,7 @@ namespace Yaqoot300.State.App
                     if (connectionsStatusChangedPayload.ThinClient2Connection.HasValue)
                         state.Connections.ThinClient2Connection = connectionsStatusChangedPayload.ThinClient2Connection.Value;
                     if (connectionsStatusChangedPayload.ThinClient3Connection.HasValue)
-                        state.Connections.ThinClient3Conenction = connectionsStatusChangedPayload.ThinClient3Connection.Value;
+                        state.Connections.ThinClient3Connection = connectionsStatusChangedPayload.ThinClient3Connection.Value;
                     break;
             }
         }

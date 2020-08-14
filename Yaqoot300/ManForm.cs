@@ -26,11 +26,11 @@ namespace Yaqoot300
             InitializeComponent();
             _homePage = new HomePage();
             _servicePage = new ServicePage();
-            ServiceProvider.Store.StoreChanged += OnStoreChanged;
-            ServiceProvider.Store.RaiseStoreChangedEvent();
+            Services.Store.StoreChanged += OnStoreChanged;
+            Services.Store.RaiseStoreChangedEvent();
         }
 
-        private Store Store => ServiceProvider.Store;
+        private Store Store => Services.Store;
 
         private void OnStoreChanged(object sender, string changeType)
         {

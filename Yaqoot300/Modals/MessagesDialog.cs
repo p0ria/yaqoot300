@@ -96,10 +96,12 @@ namespace Yaqoot300.Modals
                     Message = m.Message,
                     Category = m.Category
                 });
-            this.dgv.DataSource = null;
-            if(ds.Any()) this.dgv.DataSource = ds;
+            this.SafeInvoke(() =>
+            {
+                dgv.DataSource = null;
+                if (ds.Any()) this.dgv.DataSource = ds;
 
-
+            });
         }
 
         private void cbCheckedChanged(object sender, EventArgs e)

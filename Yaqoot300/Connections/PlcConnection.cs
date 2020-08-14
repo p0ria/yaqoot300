@@ -22,12 +22,15 @@ namespace Yaqoot300.Connections
         {
             try
             {
-                server = new TcpServer(ServiceProvider.Config.Server.Ip, ServiceProvider.Config.Server.Port, false, null, null);
+                server = new TcpServer(Services.Config.Server.Ip, Services.Config.Server.Port, false, null, null);
                 server.IdleClientTimeoutSeconds = int.MaxValue;
 
                 server.ClientConnected += ClientConnected;
                 server.ClientDisconnected += ClientDisconnected;
                 server.DataReceived += OnDataReceived;
+
+                //TODO: It must be moved after log in
+                Listen();
             }
             catch (Exception ex)
             {
@@ -48,18 +51,19 @@ namespace Yaqoot300.Connections
             try
             {
                 server.Start();
+                Services.Messages.Info($"The server is listening on {Services.Config.Server.Ip}:{Services.Config.Server.Port}", MessageCategory.App);
             }
             catch (Exception e)
             {
-                ServiceProvider.Messages.Error($"Server unable to listen on '{ServiceProvider.Config.Server.Ip}:{ServiceProvider.Config.Server.Port}'", MessageCategory.App);
+                Services.Messages.Error($"Server unable to listen on '{Services.Config.Server.Ip}:{Services.Config.Server.Port}'", MessageCategory.App);
             }
         }
 
         private void ClientConnected(object sender, ClientConnectedEventArgs e)
         {
             client = e.IpPort;
-            ServiceProvider.Messages.Info($"Client '{e.IpPort}' connected to server", MessageCategory.App);
-            ServiceProvider.Store.Dispatch(new AppConnectionsChangedAction(new AppConnectionsChangedActionPayload
+            Services.Messages.Info($"Client '{e.IpPort}' connected to server", MessageCategory.App);
+            Services.Store.Dispatch(new AppConnectionsChangedAction(new AppConnectionsChangedActionPayload
             {
                 PLCConnection = ConnectionStatus.Connected
             }));
@@ -67,14 +71,14 @@ namespace Yaqoot300.Connections
 
         private void OnDataReceived(object sender, DataReceivedFromClientEventArgs e)
         {
-            ServiceProvider.Signals.FromPlc(e.Data);
+            Services.Signals.Receive(e.Data);
         }
 
         private void ClientDisconnected(object sender, ClientDisconnectedEventArgs e)
         {
             client = null;
-            ServiceProvider.Messages.Info($"Client '{e.IpPort}' disconnected from server, {e.Reason}", MessageCategory.App);
-            ServiceProvider.Store.Dispatch(new AppConnectionsChangedAction(new AppConnectionsChangedActionPayload
+            Services.Messages.Info($"Client '{e.IpPort}' disconnected from server, {e.Reason}", MessageCategory.App);
+            Services.Store.Dispatch(new AppConnectionsChangedAction(new AppConnectionsChangedActionPayload
             {
                 PLCConnection = ConnectionStatus.Disconnected
             }));

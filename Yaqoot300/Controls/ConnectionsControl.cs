@@ -40,7 +40,7 @@ namespace Yaqoot300.Controls
             SetImage(pbConnectionPLC, Store.App.Connections.PLCConnection);
             SetImage(pbConnectionClient1, Store.App.Connections.ThinClient1Connection);
             SetImage(pbConnectionClient2, Store.App.Connections.ThinClient2Connection);
-            SetImage(pbConnectionClient3, Store.App.Connections.ThinClient3Conenction);
+            SetImage(pbConnectionClient3, Store.App.Connections.ThinClient3Connection);
         }
 
         private void SetImage(PictureBox pb, ConnectionStatus status)
@@ -48,10 +48,10 @@ namespace Yaqoot300.Controls
             switch (status)
             {
                 case ConnectionStatus.Connected:
-                    this.SafeInvoke(() => pb.Image = Resources.tick_32x32);
+                    this.SafeInvoke(() => pb.Image = Resources.circle_tick_32x32);
                     break;
                 case ConnectionStatus.Disconnected:
-                    this.SafeInvoke(() => pb.Image = Resources.cross_32x32);
+                    this.SafeInvoke(() => pb.Image = Resources.circle_cross_32x32);
                     break;
                 case ConnectionStatus.Connecting:
                     this.SafeInvoke(() => pb.Image = Resources.loading_32x32);
@@ -59,6 +59,6 @@ namespace Yaqoot300.Controls
             }
         }
 
-        private Store Store => ServiceProvider.Store;
+        private Store Store => Services.Store;
     }
 }

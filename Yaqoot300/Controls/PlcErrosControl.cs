@@ -47,6 +47,6 @@ namespace Yaqoot300.Controls
             }
         }
 
-        private Store Store => ServiceProvider.Store;
+        private Store Store => Services.Store;
     }
 }

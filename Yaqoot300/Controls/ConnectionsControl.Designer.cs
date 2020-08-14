@@ -28,62 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pbConnectionClient3 = new System.Windows.Forms.PictureBox();
-            this.pbConnectionClient2 = new System.Windows.Forms.PictureBox();
-            this.pbConnectionClient1 = new System.Windows.Forms.PictureBox();
-            this.pbConnectionPLC = new System.Windows.Forms.PictureBox();
-            this.pbConnectionDb = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pbConnectionClient3 = new System.Windows.Forms.PictureBox();
+            this.pbConnectionClient2 = new System.Windows.Forms.PictureBox();
+            this.pbConnectionClient1 = new System.Windows.Forms.PictureBox();
+            this.pbConnectionPLC = new System.Windows.Forms.PictureBox();
+            this.pbConnectionDb = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbConnectionClient3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbConnectionClient2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbConnectionClient1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbConnectionPLC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbConnectionDb)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pbConnectionClient3
-            // 
-            this.pbConnectionClient3.Location = new System.Drawing.Point(544, 75);
-            this.pbConnectionClient3.Name = "pbConnectionClient3";
-            this.pbConnectionClient3.Size = new System.Drawing.Size(32, 32);
-            this.pbConnectionClient3.TabIndex = 32;
-            this.pbConnectionClient3.TabStop = false;
-            // 
-            // pbConnectionClient2
-            // 
-            this.pbConnectionClient2.Location = new System.Drawing.Point(361, 75);
-            this.pbConnectionClient2.Name = "pbConnectionClient2";
-            this.pbConnectionClient2.Size = new System.Drawing.Size(32, 32);
-            this.pbConnectionClient2.TabIndex = 31;
-            this.pbConnectionClient2.TabStop = false;
-            // 
-            // pbConnectionClient1
-            // 
-            this.pbConnectionClient1.Location = new System.Drawing.Point(147, 75);
-            this.pbConnectionClient1.Name = "pbConnectionClient1";
-            this.pbConnectionClient1.Size = new System.Drawing.Size(32, 32);
-            this.pbConnectionClient1.TabIndex = 30;
-            this.pbConnectionClient1.TabStop = false;
-            // 
-            // pbConnectionPLC
-            // 
-            this.pbConnectionPLC.Location = new System.Drawing.Point(300, 23);
-            this.pbConnectionPLC.Name = "pbConnectionPLC";
-            this.pbConnectionPLC.Size = new System.Drawing.Size(32, 32);
-            this.pbConnectionPLC.TabIndex = 29;
-            this.pbConnectionPLC.TabStop = false;
-            // 
-            // pbConnectionDb
-            // 
-            this.pbConnectionDb.Location = new System.Drawing.Point(126, 23);
-            this.pbConnectionDb.Name = "pbConnectionDb";
-            this.pbConnectionDb.Size = new System.Drawing.Size(32, 32);
-            this.pbConnectionDb.TabIndex = 28;
-            this.pbConnectionDb.TabStop = false;
             // 
             // label5
             // 
@@ -134,6 +94,46 @@
             this.label1.Size = new System.Drawing.Size(93, 24);
             this.label1.TabIndex = 23;
             this.label1.Text = "Database:";
+            // 
+            // pbConnectionClient3
+            // 
+            this.pbConnectionClient3.Location = new System.Drawing.Point(544, 75);
+            this.pbConnectionClient3.Name = "pbConnectionClient3";
+            this.pbConnectionClient3.Size = new System.Drawing.Size(32, 32);
+            this.pbConnectionClient3.TabIndex = 32;
+            this.pbConnectionClient3.TabStop = false;
+            // 
+            // pbConnectionClient2
+            // 
+            this.pbConnectionClient2.Location = new System.Drawing.Point(361, 75);
+            this.pbConnectionClient2.Name = "pbConnectionClient2";
+            this.pbConnectionClient2.Size = new System.Drawing.Size(32, 32);
+            this.pbConnectionClient2.TabIndex = 31;
+            this.pbConnectionClient2.TabStop = false;
+            // 
+            // pbConnectionClient1
+            // 
+            this.pbConnectionClient1.Location = new System.Drawing.Point(147, 75);
+            this.pbConnectionClient1.Name = "pbConnectionClient1";
+            this.pbConnectionClient1.Size = new System.Drawing.Size(32, 32);
+            this.pbConnectionClient1.TabIndex = 30;
+            this.pbConnectionClient1.TabStop = false;
+            // 
+            // pbConnectionPLC
+            // 
+            this.pbConnectionPLC.Location = new System.Drawing.Point(300, 23);
+            this.pbConnectionPLC.Name = "pbConnectionPLC";
+            this.pbConnectionPLC.Size = new System.Drawing.Size(32, 32);
+            this.pbConnectionPLC.TabIndex = 29;
+            this.pbConnectionPLC.TabStop = false;
+            // 
+            // pbConnectionDb
+            // 
+            this.pbConnectionDb.Location = new System.Drawing.Point(126, 23);
+            this.pbConnectionDb.Name = "pbConnectionDb";
+            this.pbConnectionDb.Size = new System.Drawing.Size(32, 32);
+            this.pbConnectionDb.TabIndex = 28;
+            this.pbConnectionDb.TabStop = false;
             // 
             // ConnectionsControl
             // 

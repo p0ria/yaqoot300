@@ -9,6 +9,7 @@ using Yaqoot300.State.App;
 using Yaqoot300.State.Home;
 using Yaqoot300.State.Job;
 using Yaqoot300.State.Job.State;
+using Yaqoot300.State.PLC;
 using Yaqoot300.State.Service;
 
 namespace Yaqoot300.State
@@ -21,6 +22,7 @@ namespace Yaqoot300.State
         public HomeState Home { get; }
         public ServiceState Service { get; set; }
         public JobState Job {get; set; }
+        public PlcState Plc { get; set; }
 
         private readonly RootReducer _reducer;
 
@@ -30,6 +32,7 @@ namespace Yaqoot300.State
             this.Home = InitialHomeState.Instance;
             this.Service = InitialServiceState.Instance;
             this.Job = InitialJobState.Instance;
+            this.Plc = InitialPlcState.Instance;
             _reducer = new RootReducer(this);
         }
 

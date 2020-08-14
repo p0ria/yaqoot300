@@ -96,6 +96,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commons\CheckingsService.cs" />
     <Compile Include="Commons\Config.cs" />
     <Compile Include="Commons\Constants.cs" />
     <Compile Include="Commons\IBA.cs" />
@@ -154,7 +155,7 @@
     <Compile Include="Interfaces\AutoStartBtnStatus.cs" />
     <Compile Include="Interfaces\MessageCategory.cs" />
     <Compile Include="Interfaces\Mode.cs" />
-    <Compile Include="Commons\ServiceProvider.cs" />
+    <Compile Include="Commons\Services.cs" />
     <Compile Include="Controls\AutoActions.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -202,6 +203,12 @@
     <Compile Include="ManForm.Designer.cs">
       <DependentUpon>ManForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modals\CheckingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modals\CheckingsDialog.Designer.cs">
+      <DependentUpon>CheckingsDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modals\PlcErrorDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +248,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="State\App\Actions\AppActionTypes.cs" />
     <Compile Include="State\App\Actions\AppConnectionsChangedAction.cs" />
     <Compile Include="State\App\Actions\AppConnectionsChangedActionPayload.cs" />
@@ -279,6 +291,11 @@
     <Compile Include="State\Job\InitialJobState.cs" />
     <Compile Include="State\Job\JobReducer.cs" />
     <Compile Include="State\Job\State\JobState.cs" />
+    <Compile Include="State\PLC\Actions\PlcActionTypes.cs" />
+    <Compile Include="State\PLC\Actions\PlcStartReadyChangedAction.cs" />
+    <Compile Include="State\PLC\InitialPlcState.cs" />
+    <Compile Include="State\PLC\PlcReducer.cs" />
+    <Compile Include="State\PLC\State\PlcState.cs" />
     <Compile Include="State\RootReducer.cs" />
     <Compile Include="State\Service\Actions\ServiceAssignReaderAction.cs" />
     <Compile Include="State\Service\Actions\ServiceAssignReaderActionPayload.cs" />
@@ -353,6 +370,9 @@
       <DependentUpon>ManForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modals\CheckingsDialog.resx">
+      <DependentUpon>CheckingsDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modals\PlcErrorDialog.resx">
       <DependentUpon>PlcErrorDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -370,14 +390,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="config.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -400,6 +415,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\Images\circle_cross_32x32.png" />
+    <None Include="Resources\Images\circle_tick_32x32.png" />
+    <None Include="Resources\Images\cross_24x24.png" />
     <Content Include="Resources\Images\cross_32x32.png" />
     <Content Include="Resources\Images\error_64x64.png" />
     <Content Include="Resources\Images\gear_128x128.gif" />
@@ -409,15 +427,17 @@
     <None Include="Resources\Images\icon_error_32x32.png" />
     <None Include="Resources\Images\icon_info_32x32.png" />
     <None Include="Resources\Images\icon_warning_32x32.png" />
+    <None Include="Resources\Images\loading2_24x24.gif" />
     <Content Include="Resources\Images\loading_128x128.gif" />
     <None Include="Resources\Images\loading_46x46.gif" />
+    <None Include="Resources\Images\loading_24x24.gif" />
     <Content Include="Resources\Images\loading_64x64.gif" />
     <Content Include="Resources\Images\red_circle_64x64.png" />
     <Content Include="Resources\Images\loading_32x32.gif" />
     <None Include="Resources\Images\red_close_64x64.png" />
-    <Content Include="Resources\Images\sync_32x32.png" />
-    <Content Include="Resources\Images\sync_blue_32x32.png" />
+    <None Include="Resources\Images\tick_24x24.png" />
     <Content Include="Resources\Images\tick_32x32.png" />
+    <None Include="Resources\Images\tick_64x64.png" />
     <Content Include="Resources\Images\yellow_circle_64x64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

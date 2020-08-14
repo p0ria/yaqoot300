@@ -9,6 +9,6 @@ namespace Yaqoot300.State.App
         public ConnectionStatus PLCConnection { get; set; }
         public ConnectionStatus ThinClient1Connection { get; set; }
         public ConnectionStatus ThinClient2Connection { get; set; }
-        public ConnectionStatus ThinClient3Conenction { get; set; }
+        public ConnectionStatus ThinClient3Connection { get; set; }
     }
 }

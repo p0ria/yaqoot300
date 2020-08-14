@@ -38,7 +38,6 @@ namespace Yaqoot300.Pages
             this.lampCtrlRed.Status = LampControl.LampControlStatus.On;
             this.lampCtrlGreen.Status = LampControl.LampControlStatus.On;
             this.lampCtrlYellow.Status = LampControl.LampControlStatus.On;
-            this.Controls.Add(new LampControl{Type = LampControl.LampControlType.Green, Status = LampControl.LampControlStatus.On});
 
             Store.StoreChanged += OnStoreChanged;
         }
@@ -107,7 +106,7 @@ namespace Yaqoot300.Pages
             }
         }
 
-        private Store Store => ServiceProvider.Store;
+        private Store Store => Services.Store;
 
         private void SetReaders()
         {
@@ -184,7 +183,7 @@ namespace Yaqoot300.Pages
 
         private void btnMessages_Click(object sender, EventArgs e)
         {
-            ServiceProvider.Messages.ShowDialog();
+            Services.Messages.ShowDialog();
         }
     }
 }

@@ -14,11 +14,11 @@ namespace Yaqoot300.State.App
             SelectedMode = Mode.Auto,
             Connections =
             {
-                DbConnection = ConnectionStatus.Connecting,
+                DbConnection = ConnectionStatus.Connected,
                 PLCConnection = ConnectionStatus.Disconnected,
                 ThinClient1Connection = ConnectionStatus.Connecting,
                 ThinClient2Connection = ConnectionStatus.Connecting,
-                ThinClient3Conenction = ConnectionStatus.Connecting
+                ThinClient3Connection = ConnectionStatus.Connecting
             }
         };
 

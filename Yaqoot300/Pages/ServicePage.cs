@@ -271,7 +271,7 @@ namespace Yaqoot300.Pages
         }
 
 
-        private Store Store => ServiceProvider.Store;
+        private Store Store => Services.Store;
 
         private void OnMotorMouseDown(object sender, MouseEventArgs mouseEventArgs)
         {

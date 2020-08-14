@@ -10,8 +10,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Yaqoot300.Commons;
 using Yaqoot300.Interfaces;
+using Yaqoot300.Models.Signal;
 using Yaqoot300.State;
 using Yaqoot300.State.Home.Actions;
+using Yaqoot300.State.PLC.Actions;
 using Timer = System.Threading.Timer;
 
 namespace Yaqoot300.Controls
@@ -29,6 +31,8 @@ namespace Yaqoot300.Controls
             switch (Store.Home.Auto.StartBtn.Status)
             {
                 case AutoStartBtnStatus.Stoped:
+                    Services.Store.Dispatch(new PlcStartReadyChangedAction(null));
+                    Services.Signals.Send(GuiSignals.StartReady);
                     Store.Dispatch(new HomeChangeAutoStartAction(
                         new HomeChangeAutoStartActionPayload(AutoStartBtnStatus.Starting, false)));
                     break;
@@ -74,7 +78,7 @@ namespace Yaqoot300.Controls
 
         private Store Store
         {
-            get { return ServiceProvider.Store; }
+            get { return Services.Store; }
         }
     }
 }
