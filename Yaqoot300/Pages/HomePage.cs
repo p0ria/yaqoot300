@@ -40,7 +40,7 @@ namespace Yaqoot300.Pages
             this.lampCtrlYellow.Status = LampControl.LampControlStatus.On;
             this.Controls.Add(new LampControl{Type = LampControl.LampControlType.Green, Status = LampControl.LampControlStatus.On});
 
-            ServiceProvider.Store.StoreChanged += OnStoreChanged;
+            Store.StoreChanged += OnStoreChanged;
         }
 
         private void InitiReaders()
@@ -86,11 +86,7 @@ namespace Yaqoot300.Pages
                     SetHeader();
                     SetReaders();
                     SetSelectedJob();
-                    SetImage(pbConnectionDb, Store.App.Connections.DbConnection);
-                    SetImage(pbConnectionPLC, Store.App.Connections.PLCConnection);
-                    SetImage(pbConnectionClient1, Store.App.Connections.ThinClient1Connection);
-                    SetImage(pbConnectionClient2, Store.App.Connections.ThinClient2Connection);
-                    SetImage(pbConnectionClient3, Store.App.Connections.ThinClient3Conenction);
+                    
                     SetActions();
                     break;
 
@@ -127,22 +123,6 @@ namespace Yaqoot300.Pages
                     }
                 }
             });
-        }
-
-        private void SetImage(PictureBox pb, ConnectionStatus status)
-        {
-            switch (status)
-            {
-                case ConnectionStatus.Connected:
-                    this.SafeInvoke(() => pb.Image = Resources.tick_32x32);
-                    break;
-                case ConnectionStatus.Disconnected:
-                    this.SafeInvoke(() => pb.Image = Resources.cross_32x32);
-                    break;
-                case ConnectionStatus.Connecting:
-                    this.SafeInvoke(() => pb.Image = Resources.loading_32x32);
-                    break;
-            }
         }
 
         private void SetHeader()

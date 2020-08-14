@@ -18,6 +18,20 @@ namespace Yaqoot300.State.App
                     var changeModePayload = ((AppChangeModeAction)action).Payload;
                     state.SelectedMode = changeModePayload;
                     break;
+
+                case AppActionTypes.CONENCTIONS_CHANGED:
+                    var connectionsStatusChangedPayload = ((AppConnectionsChangedAction)action).Payload;
+                    if (connectionsStatusChangedPayload.DbConnection.HasValue)
+                        state.Connections.DbConnection = connectionsStatusChangedPayload.DbConnection.Value;
+                    if (connectionsStatusChangedPayload.PLCConnection.HasValue)
+                        state.Connections.PLCConnection = connectionsStatusChangedPayload.PLCConnection.Value;
+                    if (connectionsStatusChangedPayload.ThinClient1Connection.HasValue)
+                        state.Connections.ThinClient1Connection = connectionsStatusChangedPayload.ThinClient1Connection.Value;
+                    if (connectionsStatusChangedPayload.ThinClient2Connection.HasValue)
+                        state.Connections.ThinClient2Connection = connectionsStatusChangedPayload.ThinClient2Connection.Value;
+                    if (connectionsStatusChangedPayload.ThinClient3Connection.HasValue)
+                        state.Connections.ThinClient3Conenction = connectionsStatusChangedPayload.ThinClient3Connection.Value;
+                    break;
             }
         }
     }
