@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yaqoot300", "Yaqoot300\Yaqoot300.csproj", "{D40F4A12-5317-4208-93F6-144E20A3EC33}"
 EndProject
@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{7D6E9AB4
 	ProjectSection(SolutionItems) = preProject
 		notes.txt = notes.txt
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlcSimulator", "PlcSimulator\PlcSimulator.csproj", "{53B7AC66-C2DD-4F05-ACAC-C28825DED7C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,8 +22,15 @@ Global
 		{D40F4A12-5317-4208-93F6-144E20A3EC33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D40F4A12-5317-4208-93F6-144E20A3EC33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D40F4A12-5317-4208-93F6-144E20A3EC33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53B7AC66-C2DD-4F05-ACAC-C28825DED7C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53B7AC66-C2DD-4F05-ACAC-C28825DED7C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53B7AC66-C2DD-4F05-ACAC-C28825DED7C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53B7AC66-C2DD-4F05-ACAC-C28825DED7C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {77068F08-C004-41EE-999C-0209DE9ADBC5}
 	EndGlobalSection
 EndGlobal

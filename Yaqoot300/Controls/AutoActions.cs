@@ -32,7 +32,7 @@ namespace Yaqoot300.Controls
             {
                 case AutoStartBtnStatus.Stoped:
                     Services.Store.Dispatch(new PlcStartReadyChangedAction(null));
-                    Services.Signals.Send(GuiSignals.StartReady);
+                    Services.Signals.Send(GuiSignals.Start);
                     Store.Dispatch(new HomeChangeAutoStartAction(
                         new HomeChangeAutoStartActionPayload(AutoStartBtnStatus.Starting, false)));
                     break;

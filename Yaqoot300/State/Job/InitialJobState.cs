@@ -12,7 +12,7 @@ namespace Yaqoot300.State.Job
         private static readonly JobState _instance = new JobState
         {
             Jobs = new List<Models.Job>(),
-            SelectedJobId = null
+            SelectedJobId = 0
         };
 
         public static JobState Instance => _instance;

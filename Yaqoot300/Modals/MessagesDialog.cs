@@ -108,5 +108,11 @@ namespace Yaqoot300.Modals
         {
             InvalidateDS();
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            this._messages.Clear();
+            InvalidateDS();
+        }
     }
 }

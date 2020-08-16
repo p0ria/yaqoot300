@@ -100,6 +100,7 @@
     <Compile Include="Commons\Config.cs" />
     <Compile Include="Commons\Constants.cs" />
     <Compile Include="Commons\IBA.cs" />
+    <Compile Include="Commons\SignalUtils.cs" />
     <Compile Include="Controls\ConnectionsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -193,6 +194,7 @@
       <DependentUpon>ReaderController.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\ReaderStatus.cs" />
+    <Compile Include="Interfaces\Signal.cs" />
     <Compile Include="Interfaces\TestReaderStatus.cs" />
     <Compile Include="Interfaces\UpDownMotorStatus.cs" />
     <Compile Include="Interfaces\RotateMotorStatus.cs" />
@@ -418,6 +420,7 @@
     <None Include="Resources\Images\circle_cross_32x32.png" />
     <None Include="Resources\Images\circle_tick_32x32.png" />
     <None Include="Resources\Images\cross_24x24.png" />
+    <None Include="Resources\Images\clear_16x16.png" />
     <Content Include="Resources\Images\cross_32x32.png" />
     <Content Include="Resources\Images\error_64x64.png" />
     <Content Include="Resources\Images\gear_128x128.gif" />

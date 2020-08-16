@@ -127,19 +127,20 @@ namespace Yaqoot300.Modals
 
         private bool? CheckClose()
         {
-            if(Store.App.Connections.PLCConnection == ConnectionStatus.Connecting) return null;
-            if (Store.App.Connections.DbConnection == ConnectionStatus.Connecting) return null;
-            if (Store.App.Connections.ThinClient1Connection == ConnectionStatus.Connecting) return null;
-            if (Store.App.Connections.ThinClient2Connection == ConnectionStatus.Connecting) return null;
-            if (Store.App.Connections.ThinClient3Connection == ConnectionStatus.Connecting) return null;
-            if (Store.Plc.IsStartReady.HasValue == false) return null;
-
             if (Store.App.Connections.PLCConnection == ConnectionStatus.Disconnected) return false;
             if (Store.App.Connections.DbConnection == ConnectionStatus.Disconnected) return false;
             if (Store.App.Connections.ThinClient1Connection == ConnectionStatus.Disconnected) return false;
             if (Store.App.Connections.ThinClient2Connection == ConnectionStatus.Disconnected) return false;
             if (Store.App.Connections.ThinClient3Connection == ConnectionStatus.Disconnected) return false;
-            if (Store.Plc.IsStartReady.Value == false) return false;
+            if (!Store.Job.SelectedJobId.HasValue) return false;
+            if (Store.Plc.IsStartReady.HasValue && Store.Plc.IsStartReady.Value == false) return false;
+
+            if (Store.App.Connections.PLCConnection == ConnectionStatus.Connecting) return null;
+            if (Store.App.Connections.DbConnection == ConnectionStatus.Connecting) return null;
+            if (Store.App.Connections.ThinClient1Connection == ConnectionStatus.Connecting) return null;
+            if (Store.App.Connections.ThinClient2Connection == ConnectionStatus.Connecting) return null;
+            if (Store.App.Connections.ThinClient3Connection == ConnectionStatus.Connecting) return null;
+            if (Store.Plc.IsStartReady.HasValue == false) return null;
 
             return true;
         }
