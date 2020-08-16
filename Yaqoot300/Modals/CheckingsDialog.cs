@@ -111,6 +111,7 @@ namespace Yaqoot300.Modals
 
         private void SetConnections()
         {
+            SetImage(pbServerListening, Store.App.Connections.ServerConnection);
             SetImage(pbPlcConnected, Store.App.Connections.PLCConnection);
             SetImage(pbDatabase, Store.App.Connections.DbConnection);
             SetImage(pbClient1, Store.App.Connections.ThinClient1Connection);
@@ -160,14 +161,15 @@ namespace Yaqoot300.Modals
 
         private bool? FirstCheck()
         {
+            if (Store.App.Connections.ServerConnection == ConnectionStatus.Disconnected) return false;
             if (Store.App.Connections.PLCConnection == ConnectionStatus.Disconnected) return false;
             if (Store.App.Connections.DbConnection == ConnectionStatus.Disconnected) return false;
             if (Store.App.Connections.ThinClient1Connection == ConnectionStatus.Disconnected) return false;
             if (Store.App.Connections.ThinClient2Connection == ConnectionStatus.Disconnected) return false;
             if (Store.App.Connections.ThinClient3Connection == ConnectionStatus.Disconnected) return false;
             if (!Store.Job.SelectedJobId.HasValue) return false;
-            
 
+            if (Store.App.Connections.PLCConnection == ConnectionStatus.Connecting) return null;
             if (Store.App.Connections.PLCConnection == ConnectionStatus.Connecting) return null;
             if (Store.App.Connections.DbConnection == ConnectionStatus.Connecting) return null;
             if (Store.App.Connections.ThinClient1Connection == ConnectionStatus.Connecting) return null;

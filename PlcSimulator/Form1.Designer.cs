@@ -100,6 +100,7 @@
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(23, 22);
             this.btnClear.Text = "toolStripButton1";
+            this.btnClear.ToolTipText = "Clear logs";
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // lbSignals
