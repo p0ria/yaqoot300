@@ -8,6 +8,7 @@ using SimpleTcp;
 using Yaqoot300.Commons;
 using Yaqoot300.Interfaces;
 using Yaqoot300.State.App.Actions;
+using Yaqoot300.State.Home.Actions;
 
 namespace Yaqoot300.Connections
 {
@@ -51,10 +52,14 @@ namespace Yaqoot300.Connections
             try
             {
                 server.Start();
+                Services.Store.Dispatch(new AppConnectionsChangedAction(
+                    new AppConnectionsChangedActionPayload {ServerConnected = ConnectionStatus.Connected}));
                 Services.Messages.Info($"The server is listening on {Services.Config.Server.Ip}:{Services.Config.Server.Port}", MessageCategory.PLC);
             }
             catch (Exception e)
             {
+                Services.Store.Dispatch(new AppConnectionsChangedAction(
+                    new AppConnectionsChangedActionPayload { ServerConnected = ConnectionStatus.Disconnected }));
                 Services.Messages.Error($"Server unable to listen on '{Services.Config.Server.Ip}:{Services.Config.Server.Port}'", MessageCategory.PLC);
             }
         }
@@ -78,6 +83,8 @@ namespace Yaqoot300.Connections
         {
             client = null;
             Services.Messages.Info($"Client '{e.IpPort}' disconnected from server, {e.Reason}", MessageCategory.PLC);
+            Services.Store.Dispatch(new HomeChangeAutoStartAction(
+                new HomeChangeAutoStartActionPayload(AutoStartBtnStatus.Stoped, true)));
             Services.Store.Dispatch(new AppConnectionsChangedAction(new AppConnectionsChangedActionPayload
             {
                 PLCConnection = ConnectionStatus.Disconnected

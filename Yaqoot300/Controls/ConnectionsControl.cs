@@ -36,6 +36,7 @@ namespace Yaqoot300.Controls
 
         private void SetConnections()
         {
+            SetImage(pbConnectionServer, Store.App.Connections.ServerConnection);
             SetImage(pbConnectionDb, Store.App.Connections.DbConnection);
             SetImage(pbConnectionPLC, Store.App.Connections.PLCConnection);
             SetImage(pbConnectionClient1, Store.App.Connections.ThinClient1Connection);

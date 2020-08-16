@@ -13,6 +13,7 @@ namespace Yaqoot300.Models.Signal
         {
             set
             {
+                Services.Store.Dispatch(new PlcStartReadyChangedAction(true));
                 Services.Store.Dispatch(new HomeChangeAutoStartAction(
                     new HomeChangeAutoStartActionPayload(AutoStartBtnStatus.Starting)));
             }
@@ -33,7 +34,10 @@ namespace Yaqoot300.Models.Signal
         [Signal(0x02)]
         public byte[] Stop
         {
-            set { MessageBox.Show("STOP SIGNAL FROM MACHINE"); }
+            set {
+                Services.Store.Dispatch(new HomeChangeAutoStartAction(
+                    new HomeChangeAutoStartActionPayload(AutoStartBtnStatus.Stoped)));
+            }
         }
     }
 }

@@ -38,32 +38,35 @@
             this.pbConnectionClient1 = new System.Windows.Forms.PictureBox();
             this.pbConnectionPLC = new System.Windows.Forms.PictureBox();
             this.pbConnectionDb = new System.Windows.Forms.PictureBox();
+            this.pbConnectionServer = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbConnectionClient3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbConnectionClient2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbConnectionClient1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbConnectionPLC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbConnectionDb)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionServer)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label5.Location = new System.Drawing.Point(423, 79);
+            this.label5.Location = new System.Drawing.Point(422, 79);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(115, 24);
+            this.label5.Size = new System.Drawing.Size(120, 24);
             this.label5.TabIndex = 27;
-            this.label5.Text = "Thin Client3:";
+            this.label5.Text = "Thin Client 3:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label4.Location = new System.Drawing.Point(240, 79);
+            this.label4.Location = new System.Drawing.Point(224, 79);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 24);
+            this.label4.Size = new System.Drawing.Size(120, 24);
             this.label4.TabIndex = 26;
-            this.label4.Text = "Thin Client2:";
+            this.label4.Text = "Thin Client 2:";
             // 
             // label3
             // 
@@ -71,15 +74,15 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label3.Location = new System.Drawing.Point(26, 79);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 24);
+            this.label3.Size = new System.Drawing.Size(120, 24);
             this.label3.TabIndex = 25;
-            this.label3.Text = "Thin Client1:";
+            this.label3.Text = "Thin Client 1:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label2.Location = new System.Drawing.Point(240, 27);
+            this.label2.Location = new System.Drawing.Point(423, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 24);
             this.label2.TabIndex = 24;
@@ -89,7 +92,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label1.Location = new System.Drawing.Point(26, 27);
+            this.label1.Location = new System.Drawing.Point(224, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 24);
             this.label1.TabIndex = 23;
@@ -97,7 +100,7 @@
             // 
             // pbConnectionClient3
             // 
-            this.pbConnectionClient3.Location = new System.Drawing.Point(544, 75);
+            this.pbConnectionClient3.Location = new System.Drawing.Point(548, 75);
             this.pbConnectionClient3.Name = "pbConnectionClient3";
             this.pbConnectionClient3.Size = new System.Drawing.Size(32, 32);
             this.pbConnectionClient3.TabIndex = 32;
@@ -105,7 +108,7 @@
             // 
             // pbConnectionClient2
             // 
-            this.pbConnectionClient2.Location = new System.Drawing.Point(361, 75);
+            this.pbConnectionClient2.Location = new System.Drawing.Point(350, 75);
             this.pbConnectionClient2.Name = "pbConnectionClient2";
             this.pbConnectionClient2.Size = new System.Drawing.Size(32, 32);
             this.pbConnectionClient2.TabIndex = 31;
@@ -113,7 +116,7 @@
             // 
             // pbConnectionClient1
             // 
-            this.pbConnectionClient1.Location = new System.Drawing.Point(147, 75);
+            this.pbConnectionClient1.Location = new System.Drawing.Point(152, 75);
             this.pbConnectionClient1.Name = "pbConnectionClient1";
             this.pbConnectionClient1.Size = new System.Drawing.Size(32, 32);
             this.pbConnectionClient1.TabIndex = 30;
@@ -121,7 +124,7 @@
             // 
             // pbConnectionPLC
             // 
-            this.pbConnectionPLC.Location = new System.Drawing.Point(300, 23);
+            this.pbConnectionPLC.Location = new System.Drawing.Point(548, 18);
             this.pbConnectionPLC.Name = "pbConnectionPLC";
             this.pbConnectionPLC.Size = new System.Drawing.Size(32, 32);
             this.pbConnectionPLC.TabIndex = 29;
@@ -129,16 +132,36 @@
             // 
             // pbConnectionDb
             // 
-            this.pbConnectionDb.Location = new System.Drawing.Point(126, 23);
+            this.pbConnectionDb.Location = new System.Drawing.Point(350, 18);
             this.pbConnectionDb.Name = "pbConnectionDb";
             this.pbConnectionDb.Size = new System.Drawing.Size(32, 32);
             this.pbConnectionDb.TabIndex = 28;
             this.pbConnectionDb.TabStop = false;
             // 
+            // pbConnectionServer
+            // 
+            this.pbConnectionServer.Location = new System.Drawing.Point(152, 18);
+            this.pbConnectionServer.Name = "pbConnectionServer";
+            this.pbConnectionServer.Size = new System.Drawing.Size(32, 32);
+            this.pbConnectionServer.TabIndex = 34;
+            this.pbConnectionServer.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label6.Location = new System.Drawing.Point(26, 26);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 24);
+            this.label6.TabIndex = 33;
+            this.label6.Text = "Server:";
+            // 
             // ConnectionsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pbConnectionServer);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.pbConnectionClient3);
             this.Controls.Add(this.pbConnectionClient2);
             this.Controls.Add(this.pbConnectionClient1);
@@ -156,6 +179,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbConnectionClient1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbConnectionPLC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbConnectionDb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbConnectionServer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,5 +197,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pbConnectionServer;
+        private System.Windows.Forms.Label label6;
     }
 }

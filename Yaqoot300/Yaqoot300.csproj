@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
@@ -100,6 +103,7 @@
     <Compile Include="Commons\Config.cs" />
     <Compile Include="Commons\Constants.cs" />
     <Compile Include="Commons\IBA.cs" />
+    <Compile Include="Commons\MessagesService.cs" />
     <Compile Include="Commons\SignalUtils.cs" />
     <Compile Include="Controls\ConnectionsControl.cs">
       <SubType>UserControl</SubType>
@@ -421,6 +425,9 @@
     <None Include="Resources\Images\circle_tick_32x32.png" />
     <None Include="Resources\Images\cross_24x24.png" />
     <None Include="Resources\Images\clear_16x16.png" />
+    <Content Include="logo.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Images\cross_32x32.png" />
     <Content Include="Resources\Images\error_64x64.png" />
     <Content Include="Resources\Images\gear_128x128.gif" />

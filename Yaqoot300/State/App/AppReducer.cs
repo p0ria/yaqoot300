@@ -21,6 +21,8 @@ namespace Yaqoot300.State.App
 
                 case AppActionTypes.CONENCTIONS_CHANGED:
                     var connectionsStatusChangedPayload = ((AppConnectionsChangedAction)action).Payload;
+                    if (connectionsStatusChangedPayload.ServerConnected.HasValue)
+                        state.Connections.ServerConnection = connectionsStatusChangedPayload.ServerConnected.Value;
                     if (connectionsStatusChangedPayload.DbConnection.HasValue)
                         state.Connections.DbConnection = connectionsStatusChangedPayload.DbConnection.Value;
                     if (connectionsStatusChangedPayload.PLCConnection.HasValue)

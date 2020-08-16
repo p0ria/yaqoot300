@@ -4,6 +4,7 @@ namespace Yaqoot300.State.App.Actions
 {
     public class AppConnectionsChangedActionPayload
     {
+        public ConnectionStatus? ServerConnected { get; set; }
         public ConnectionStatus? DbConnection { get; set; }
         public ConnectionStatus? PLCConnection { get; set; }
         public ConnectionStatus? ThinClient1Connection { get; set; }

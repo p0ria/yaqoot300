@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Yaqoot300.Commons;
 using Yaqoot300.Interfaces;
+using Yaqoot300.Models.Signal;
 using Yaqoot300.Properties;
 using Yaqoot300.State;
 using Yaqoot300.State.App.Actions;
@@ -21,8 +22,9 @@ namespace Yaqoot300.Modals
     {
         private readonly Timer _timer;
         private int ticks;
-        private const int MIN_SHOW_SECONDS = 4;
-        private const int MAX_SHOW_SECONDS = 10;
+        private const int FIRST_CHECK = 2;
+        private const int TIMEOUT = 4;
+        private bool _isStartSent = false;
         public CheckingsDialog()
         {
             InitializeComponent();
@@ -32,26 +34,57 @@ namespace Yaqoot300.Modals
             _timer.Tick += TimerOnTick;
             _timer.Start();
             OnStoreChanged(this, null);
+            this.Focus();
         }
 
         private void TimerOnTick(object sender, EventArgs eventArgs)
         {
             ticks++;
-            if(ticks < MIN_SHOW_SECONDS) return;
+            if(ticks < FIRST_CHECK) return;
   
-            var close = CheckClose();
-            if (close.HasValue)
+            var first = FirstCheck();
+            if (first.HasValue)
             {
-                this.DialogResult = close.Value ? DialogResult.OK : DialogResult.No;
-                this.Close();
+                if (first.Value)
+                {
+                    SendStartSignalIfNotSent();
+                    var second = SecondCheck();
+                    if (second.HasValue)
+                    {
+                        CloseDialog(second.Value ? DialogResult.OK : DialogResult.No);
+                    }
+                    else
+                    {
+                        if (ticks >= TIMEOUT * 2)
+                        {
+                            CloseDialog(DialogResult.Cancel);
+                        }
+                    }
+                }
+                else if(ticks >= TIMEOUT)
+                {
+                    CloseDialog(DialogResult.No);
+                }
+                
             }
             else
             {
-                if (ticks >= MAX_SHOW_SECONDS)
+                if (ticks >= TIMEOUT)
                 {
-                    this.DialogResult = DialogResult.Cancel;
-                    this.Close();
+                    CloseDialog(DialogResult.Cancel);
                 }
+            }
+        }
+
+        private void SendStartSignalIfNotSent()
+        {
+            if (!_isStartSent)
+            {
+                _isStartSent = true;
+                if (!Store.Plc.IsStartReady.HasValue)
+                {
+                    Services.Signals.Send(GuiSignals.Start);
+                } 
             }
         }
 
@@ -125,7 +158,7 @@ namespace Yaqoot300.Modals
             }
         }
 
-        private bool? CheckClose()
+        private bool? FirstCheck()
         {
             if (Store.App.Connections.PLCConnection == ConnectionStatus.Disconnected) return false;
             if (Store.App.Connections.DbConnection == ConnectionStatus.Disconnected) return false;
@@ -133,16 +166,28 @@ namespace Yaqoot300.Modals
             if (Store.App.Connections.ThinClient2Connection == ConnectionStatus.Disconnected) return false;
             if (Store.App.Connections.ThinClient3Connection == ConnectionStatus.Disconnected) return false;
             if (!Store.Job.SelectedJobId.HasValue) return false;
-            if (Store.Plc.IsStartReady.HasValue && Store.Plc.IsStartReady.Value == false) return false;
+            
 
             if (Store.App.Connections.PLCConnection == ConnectionStatus.Connecting) return null;
             if (Store.App.Connections.DbConnection == ConnectionStatus.Connecting) return null;
             if (Store.App.Connections.ThinClient1Connection == ConnectionStatus.Connecting) return null;
             if (Store.App.Connections.ThinClient2Connection == ConnectionStatus.Connecting) return null;
             if (Store.App.Connections.ThinClient3Connection == ConnectionStatus.Connecting) return null;
-            if (Store.Plc.IsStartReady.HasValue == false) return null;
 
             return true;
+        }
+
+        private bool? SecondCheck()
+        {
+            if (Store.Plc.IsStartReady.HasValue && Store.Plc.IsStartReady.Value == false) return false;
+            if (Store.Plc.IsStartReady.HasValue == false) return null;
+            return true;
+        }
+
+        private void CloseDialog(DialogResult result)
+        {
+            this.DialogResult = result;
+            this.Close();
         }
 
         protected override void OnClosed(EventArgs e)

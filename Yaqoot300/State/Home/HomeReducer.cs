@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Yaqoot300.Commons;
@@ -23,7 +24,7 @@ namespace Yaqoot300.State.Home
                     if (changeAutoStartPayload.Status.HasValue)
                     {
                         state.Auto.StartBtn.Status = changeAutoStartPayload.Status.Value;
-                        Services.Messages.Info("Auto Button State Changed To " + state.Auto.StartBtn.Status, MessageCategory.App);
+                        // Services.Messages.Info("Auto Button State Changed To " + state.Auto.StartBtn.Status, MessageCategory.App);
                         switch (changeAutoStartPayload.Status)
                         {
                             case AutoStartBtnStatus.Starting:
@@ -33,24 +34,24 @@ namespace Yaqoot300.State.Home
                                     switch (canStart)
                                     {
                                         case null:
-                                            Services.Messages.Info("Start is in progress", MessageCategory.App);
+                                            // Services.Messages.Info("Start is in progress", MessageCategory.App);
                                             break;
                                         case true:
+                                            Services.Signals.Send(GuiSignals.Started);
                                             Services.Store.Dispatch(new HomeChangeAutoStartAction(
                                                 new HomeChangeAutoStartActionPayload(AutoStartBtnStatus.Started, true)));
                                             break;
-                                        case false: 
+                                        case false:
+                                            Services.Signals.Send(GuiSignals.Stop);
                                             Services.Store.Dispatch(new HomeChangeAutoStartAction(
-                                                new HomeChangeAutoStartActionPayload(AutoStartBtnStatus.Stoped, true)));       
+                                                new HomeChangeAutoStartActionPayload(AutoStartBtnStatus.Stoped, true)));
                                             break;
                                     }
                                 });
                                 break;
                             case AutoStartBtnStatus.Started:
-                                Services.Signals.Send(GuiSignals.Started);
                                 break;
                             case AutoStartBtnStatus.Stoped:
-                                Services.Signals.Send(GuiSignals.Stop);
                                 Services.Store.Dispatch(new PlcStartReadyChangedAction(false));
                                 break;
                         }
@@ -65,8 +66,8 @@ namespace Yaqoot300.State.Home
                     if (state.PlcErrors.Any(error => error.Id != addPlcErrorPayload.Id))
                     {
                         state.PlcErrors.Add(addPlcErrorPayload);
-                        if(addPlcErrorPayload.Type == PlcErrorType.Error) Services.Messages.Error(addPlcErrorPayload.Message, MessageCategory.PLC);
-                        else Services.Messages.Warning(addPlcErrorPayload.Message, MessageCategory.PLC);
+//                        if(addPlcErrorPayload.Type == PlcErrorType.Error) Services.Messages.Error(addPlcErrorPayload.Message, MessageCategory.PLC);
+//                        else Services.Messages.Warning(addPlcErrorPayload.Message, MessageCategory.PLC);
                     }
                     break;
 

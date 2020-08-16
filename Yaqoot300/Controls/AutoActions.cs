@@ -32,11 +32,11 @@ namespace Yaqoot300.Controls
             {
                 case AutoStartBtnStatus.Stoped:
                     Services.Store.Dispatch(new PlcStartReadyChangedAction(null));
-                    Services.Signals.Send(GuiSignals.Start);
                     Store.Dispatch(new HomeChangeAutoStartAction(
                         new HomeChangeAutoStartActionPayload(AutoStartBtnStatus.Starting, false)));
                     break;
                 case AutoStartBtnStatus.Started:
+                    Services.Signals.Send(GuiSignals.Stop);
                     Store.Dispatch(new HomeChangeAutoStartAction(
                         new HomeChangeAutoStartActionPayload(AutoStartBtnStatus.Stoped)));
                     break;
@@ -52,25 +52,36 @@ namespace Yaqoot300.Controls
                     switch (Store.Home.Auto.StartBtn.Status)
                     {
                         case AutoStartBtnStatus.Stoped:
-                            this.btnStart.Text = "Start";
-                            this.btnStart.ForeColor = Color.White;
-                            this.btnStart.BackColor = Color.DodgerBlue;
-                            this.pbLoading.Visible = false;
-                            this.btnStart.Visible = true;
+                            this.SafeInvoke(() =>
+                            {
+                                this.btnStart.Text = "Start";
+                                this.btnStart.ForeColor = Color.White;
+                                this.btnStart.BackColor = Color.DodgerBlue;
+                                this.pbLoading.Visible = false;
+                                this.btnStart.Visible = true;
+                                this.btnStart.Enabled = Store.Home.Auto.StartBtn.IsEnabled;
+                            });
                             break;
                         case AutoStartBtnStatus.Starting:
-                            this.btnStart.Visible = false;
-                            this.pbLoading.Visible = true;
+                            this.SafeInvoke(() =>
+                            {
+                                this.btnStart.Visible = false;
+                                this.pbLoading.Visible = true;
+                                this.btnStart.Enabled = Store.Home.Auto.StartBtn.IsEnabled;
+                            });
                             break;
                         case AutoStartBtnStatus.Started:
-                            this.btnStart.Text = "Stop";
-                            this.btnStart.ForeColor = Color.White;
-                            this.btnStart.BackColor = Color.DarkOrange;
-                            this.pbLoading.Visible = false;
-                            this.btnStart.Visible = true;
+                            this.SafeInvoke(() =>
+                            {
+                                this.btnStart.Text = "Stop";
+                                this.btnStart.ForeColor = Color.White;
+                                this.btnStart.BackColor = Color.DarkOrange;
+                                this.pbLoading.Visible = false;
+                                this.btnStart.Visible = true;
+                                this.btnStart.Enabled = Store.Home.Auto.StartBtn.IsEnabled;
+                            });
                             break;
                     }
-                    this.btnStart.Enabled = Store.Home.Auto.StartBtn.IsEnabled;
                     break;
 
             }

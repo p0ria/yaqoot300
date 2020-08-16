@@ -1,6 +1,6 @@
 ﻿namespace PlcSimulator
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnClear = new System.Windows.Forms.ToolStripButton();
             this.lbSignals = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSend = new System.Windows.Forms.Button();
@@ -45,6 +48,7 @@
             this.lbLogs = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
@@ -64,6 +68,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.toolStrip1);
             this.tabPage1.Controls.Add(this.lbSignals);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.btnSend);
@@ -77,13 +82,33 @@
             this.tabPage1.Text = "Dashboard";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnClear});
+            this.toolStrip1.Location = new System.Drawing.Point(3, 3);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(596, 25);
+            this.toolStrip1.TabIndex = 5;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnClear
+            // 
+            this.btnClear.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnClear.Image = global::PlcSimulator.Properties.Resources.clean;
+            this.btnClear.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(23, 22);
+            this.btnClear.Text = "toolStripButton1";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // lbSignals
             // 
             this.lbSignals.FormattingEnabled = true;
             this.lbSignals.ItemHeight = 20;
             this.lbSignals.Location = new System.Drawing.Point(32, 93);
             this.lbSignals.Name = "lbSignals";
-            this.lbSignals.Size = new System.Drawing.Size(532, 284);
+            this.lbSignals.Size = new System.Drawing.Size(532, 304);
             this.lbSignals.TabIndex = 4;
             // 
             // label3
@@ -203,17 +228,20 @@
             this.lbLogs.Size = new System.Drawing.Size(596, 411);
             this.lbLogs.TabIndex = 2;
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(610, 450);
             this.Controls.Add(this.tabControl1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "MainForm";
+            this.Text = "PLC Simulator";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -238,6 +266,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lbLogs;
         private System.Windows.Forms.ListBox lbSignals;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton btnClear;
     }
 }
 

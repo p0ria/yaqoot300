@@ -15,10 +15,10 @@ using Yaqoot300.Interfaces;
 
 namespace PlcSimulator
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private readonly ClientConnection _client;
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             cbSignalIds.ValueMember = "Name";
@@ -75,6 +75,11 @@ namespace PlcSimulator
         {
             var selectedSignal = cbSignalIds.SelectedItem as Signal;
             tbSignalData.Enabled = selectedSignal.value.Length <= 1;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            this.lbSignals.Items.Clear();
         }
     }
 }
