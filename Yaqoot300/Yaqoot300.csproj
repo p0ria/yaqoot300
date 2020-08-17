@@ -308,6 +308,8 @@
     <Compile Include="State\Service\Actions\ServiceChangeSettingsAction.cs" />
     <Compile Include="State\Service\Actions\ServiceChangeSettingsFailAction.cs" />
     <Compile Include="State\Service\Actions\ServiceChangeSettingsSuccessAction.cs" />
+    <Compile Include="State\Service\Actions\ServiceSensorsChangedAction.cs" />
+    <Compile Include="State\Service\Actions\ServiceSensorsChangedActionPayload.cs" />
     <Compile Include="State\Service\Actions\ServiceTestReadersAction.cs" />
     <Compile Include="State\Service\Actions\ServiceTestReadersFailAction.cs" />
     <Compile Include="State\Service\Actions\ServiceTestReadersSuccessAction.cs" />

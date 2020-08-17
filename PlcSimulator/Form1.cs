@@ -28,6 +28,7 @@ namespace PlcSimulator
             Logs.LogsListBox = lbLogs;
             SignalLogs.SignalsListBox = lbSignals;
             this.Closed += OnClosed;
+            this.tabControl1.SelectedIndex = 1;
         }
 
         private void ClientOnConnectChanged(object sender, bool isConnected)

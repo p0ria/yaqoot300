@@ -13,7 +13,7 @@ namespace Yaqoot300.State.Service
     {
         private static readonly ServiceState _instance = new ServiceState
         {
-            Sensors = new [] { false, false, true, true, true, true, false, false, false, false, false, true, true, false },
+            Sensors = new List<bool> { false, false, false, false, false, false, false, false, false, false, false, false, false, false },
             Motors = new ServiceMotorsState
             {
                 M0 = new ServiceMotorState

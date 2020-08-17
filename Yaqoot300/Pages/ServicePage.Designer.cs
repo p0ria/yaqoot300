@@ -32,6 +32,30 @@
             this.tpPlcConfig = new System.Windows.Forms.TabPage();
             this.gbSensors = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.bbSettings = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.gbMotors = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tpReadersConfig = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.lbReaders = new System.Windows.Forms.ListBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.sensor14 = new Yaqoot300.Controls.SensorControl();
             this.sensor13 = new Yaqoot300.Controls.SensorControl();
             this.sensor12 = new Yaqoot300.Controls.SensorControl();
@@ -46,37 +70,16 @@
             this.sensor3 = new Yaqoot300.Controls.SensorControl();
             this.sensor1 = new Yaqoot300.Controls.SensorControl();
             this.sensor2 = new Yaqoot300.Controls.SensorControl();
-            this.bbSettings = new System.Windows.Forms.GroupBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btnSave = new Yaqoot300.Controls.LoadingButtonControl();
-            this.label9 = new System.Windows.Forms.Label();
             this.scM4Speed = new Yaqoot300.Controls.SliderControl();
-            this.label8 = new System.Windows.Forms.Label();
             this.scM3StepLength = new Yaqoot300.Controls.SliderControl();
-            this.label7 = new System.Windows.Forms.Label();
             this.scFeedInSteps = new Yaqoot300.Controls.SliderControl();
-            this.label6 = new System.Windows.Forms.Label();
             this.scActiveReaders = new Yaqoot300.Controls.SliderControl();
-            this.gbMotors = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.mt4 = new Yaqoot300.Controls.UpDownMotorControl();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.mt3 = new Yaqoot300.Controls.MotorControl();
-            this.label3 = new System.Windows.Forms.Label();
             this.mt2 = new Yaqoot300.Controls.MotorControl();
-            this.label2 = new System.Windows.Forms.Label();
             this.mt0 = new Yaqoot300.Controls.MotorControl();
-            this.label1 = new System.Windows.Forms.Label();
             this.mt1 = new Yaqoot300.Controls.MotorControl();
-            this.tpReadersConfig = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.sr30 = new Yaqoot300.Controls.SetupReaderControl();
             this.sr28 = new Yaqoot300.Controls.SetupReaderControl();
             this.sr26 = new Yaqoot300.Controls.SetupReaderControl();
@@ -107,9 +110,6 @@
             this.sr5 = new Yaqoot300.Controls.SetupReaderControl();
             this.sr3 = new Yaqoot300.Controls.SetupReaderControl();
             this.sr1 = new Yaqoot300.Controls.SetupReaderControl();
-            this.lbReaders = new System.Windows.Forms.ListBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.btnTestReaders = new Yaqoot300.Controls.LoadingButtonControl();
             this.tr30 = new Yaqoot300.Controls.TestReaderControl();
             this.tr29 = new Yaqoot300.Controls.TestReaderControl();
@@ -184,7 +184,7 @@
             // gbSensors
             // 
             this.gbSensors.Controls.Add(this.panel3);
-            this.gbSensors.Location = new System.Drawing.Point(16, 16);
+            this.gbSensors.Location = new System.Drawing.Point(17, 13);
             this.gbSensors.Name = "gbSensors";
             this.gbSensors.Size = new System.Drawing.Size(1224, 277);
             this.gbSensors.TabIndex = 2;
@@ -213,6 +213,335 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1218, 247);
             this.panel3.TabIndex = 0;
+            // 
+            // bbSettings
+            // 
+            this.bbSettings.Controls.Add(this.panel2);
+            this.bbSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbSettings.Location = new System.Drawing.Point(654, 311);
+            this.bbSettings.Name = "bbSettings";
+            this.bbSettings.Size = new System.Drawing.Size(586, 597);
+            this.bbSettings.TabIndex = 1;
+            this.bbSettings.TabStop = false;
+            this.bbSettings.Text = "Settings";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnSave);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.scM4Speed);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.scM3StepLength);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.scFeedInSteps);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.scActiveReaders);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(3, 27);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(580, 567);
+            this.panel2.TabIndex = 0;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(18, 348);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(118, 25);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "M4 Speed";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(18, 253);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(178, 25);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "M3 Step Length";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(18, 158);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(158, 25);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Feed In Steps";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(18, 63);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(172, 25);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Active Readers";
+            // 
+            // gbMotors
+            // 
+            this.gbMotors.Controls.Add(this.panel1);
+            this.gbMotors.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbMotors.Location = new System.Drawing.Point(16, 311);
+            this.gbMotors.Name = "gbMotors";
+            this.gbMotors.Size = new System.Drawing.Size(597, 594);
+            this.gbMotors.TabIndex = 0;
+            this.gbMotors.TabStop = false;
+            this.gbMotors.Text = "Motors";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.mt4);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.mt3);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.mt2);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.mt0);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.mt1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(3, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(591, 564);
+            this.panel1.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(308, 288);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 31);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "M4";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(122, 288);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 31);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "M3";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(454, 42);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 31);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "M2";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(90, 42);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 31);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "M0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(276, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 31);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "M1";
+            // 
+            // tpReadersConfig
+            // 
+            this.tpReadersConfig.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tpReadersConfig.Controls.Add(this.groupBox2);
+            this.tpReadersConfig.Controls.Add(this.groupBox1);
+            this.tpReadersConfig.Location = new System.Drawing.Point(4, 34);
+            this.tpReadersConfig.Name = "tpReadersConfig";
+            this.tpReadersConfig.Padding = new System.Windows.Forms.Padding(3);
+            this.tpReadersConfig.Size = new System.Drawing.Size(1280, 952);
+            this.tpReadersConfig.TabIndex = 1;
+            this.tpReadersConfig.Text = "Readers Configuration";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.panel5);
+            this.groupBox2.Location = new System.Drawing.Point(17, 395);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1237, 532);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Setup Readers";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Controls.Add(this.sr30);
+            this.panel5.Controls.Add(this.sr28);
+            this.panel5.Controls.Add(this.sr26);
+            this.panel5.Controls.Add(this.sr24);
+            this.panel5.Controls.Add(this.sr22);
+            this.panel5.Controls.Add(this.sr20);
+            this.panel5.Controls.Add(this.sr18);
+            this.panel5.Controls.Add(this.sr16);
+            this.panel5.Controls.Add(this.sr14);
+            this.panel5.Controls.Add(this.sr12);
+            this.panel5.Controls.Add(this.sr10);
+            this.panel5.Controls.Add(this.sr8);
+            this.panel5.Controls.Add(this.sr6);
+            this.panel5.Controls.Add(this.sr4);
+            this.panel5.Controls.Add(this.sr2);
+            this.panel5.Controls.Add(this.sr29);
+            this.panel5.Controls.Add(this.sr27);
+            this.panel5.Controls.Add(this.sr25);
+            this.panel5.Controls.Add(this.sr23);
+            this.panel5.Controls.Add(this.sr21);
+            this.panel5.Controls.Add(this.sr19);
+            this.panel5.Controls.Add(this.sr17);
+            this.panel5.Controls.Add(this.sr15);
+            this.panel5.Controls.Add(this.sr13);
+            this.panel5.Controls.Add(this.sr11);
+            this.panel5.Controls.Add(this.sr9);
+            this.panel5.Controls.Add(this.sr7);
+            this.panel5.Controls.Add(this.sr5);
+            this.panel5.Controls.Add(this.sr3);
+            this.panel5.Controls.Add(this.sr1);
+            this.panel5.Controls.Add(this.lbReaders);
+            this.panel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel5.Location = new System.Drawing.Point(3, 46);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1231, 483);
+            this.panel5.TabIndex = 0;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.label11);
+            this.panel6.Controls.Add(this.label10);
+            this.panel6.Controls.Add(this.panel8);
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Location = new System.Drawing.Point(445, 35);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(315, 83);
+            this.panel6.TabIndex = 31;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(240, 35);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(50, 13);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Assigned";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(82, 35);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(27, 13);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "N/A";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.White;
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Location = new System.Drawing.Point(192, 21);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(42, 38);
+            this.panel8.TabIndex = 1;
+            // 
+            // panel7
+            // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Location = new System.Drawing.Point(34, 21);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(42, 38);
+            this.panel7.TabIndex = 0;
+            // 
+            // lbReaders
+            // 
+            this.lbReaders.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lbReaders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbReaders.FormattingEnabled = true;
+            this.lbReaders.ItemHeight = 20;
+            this.lbReaders.Location = new System.Drawing.Point(0, 0);
+            this.lbReaders.Name = "lbReaders";
+            this.lbReaders.Size = new System.Drawing.Size(158, 483);
+            this.lbReaders.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.panel4);
+            this.groupBox1.Location = new System.Drawing.Point(17, 13);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1237, 346);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Test Readers";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnTestReaders);
+            this.panel4.Controls.Add(this.tr30);
+            this.panel4.Controls.Add(this.tr29);
+            this.panel4.Controls.Add(this.tr28);
+            this.panel4.Controls.Add(this.tr27);
+            this.panel4.Controls.Add(this.tr26);
+            this.panel4.Controls.Add(this.tr25);
+            this.panel4.Controls.Add(this.tr24);
+            this.panel4.Controls.Add(this.tr23);
+            this.panel4.Controls.Add(this.tr22);
+            this.panel4.Controls.Add(this.tr21);
+            this.panel4.Controls.Add(this.tr20);
+            this.panel4.Controls.Add(this.tr19);
+            this.panel4.Controls.Add(this.tr18);
+            this.panel4.Controls.Add(this.tr17);
+            this.panel4.Controls.Add(this.tr16);
+            this.panel4.Controls.Add(this.tr15);
+            this.panel4.Controls.Add(this.tr14);
+            this.panel4.Controls.Add(this.tr13);
+            this.panel4.Controls.Add(this.tr12);
+            this.panel4.Controls.Add(this.tr11);
+            this.panel4.Controls.Add(this.tr10);
+            this.panel4.Controls.Add(this.tr9);
+            this.panel4.Controls.Add(this.tr8);
+            this.panel4.Controls.Add(this.tr7);
+            this.panel4.Controls.Add(this.tr6);
+            this.panel4.Controls.Add(this.tr5);
+            this.panel4.Controls.Add(this.tr4);
+            this.panel4.Controls.Add(this.tr3);
+            this.panel4.Controls.Add(this.tr2);
+            this.panel4.Controls.Add(this.tr1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel4.Location = new System.Drawing.Point(3, 27);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1231, 316);
+            this.panel4.TabIndex = 0;
             // 
             // sensor14
             // 
@@ -354,54 +683,14 @@
             this.sensor2.Size = new System.Drawing.Size(120, 40);
             this.sensor2.TabIndex = 1;
             // 
-            // bbSettings
-            // 
-            this.bbSettings.Controls.Add(this.panel2);
-            this.bbSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bbSettings.Location = new System.Drawing.Point(654, 311);
-            this.bbSettings.Name = "bbSettings";
-            this.bbSettings.Size = new System.Drawing.Size(586, 597);
-            this.bbSettings.TabIndex = 1;
-            this.bbSettings.TabStop = false;
-            this.bbSettings.Text = "Settings";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnSave);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.scM4Speed);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.scM3StepLength);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.scFeedInSteps);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.scActiveReaders);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(3, 27);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(580, 567);
-            this.panel2.TabIndex = 0;
-            // 
             // btnSave
             // 
             this.btnSave.Label = "SAVE";
             this.btnSave.Location = new System.Drawing.Point(354, 413);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(213, 63);
+            this.btnSave.Size = new System.Drawing.Size(213, 75);
             this.btnSave.Status = Yaqoot300.Controls.LoadingButtonControl.LoadingButtonControlStatus.Invisible;
             this.btnSave.TabIndex = 27;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(18, 348);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(118, 25);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "M4 Speed";
             // 
             // scM4Speed
             // 
@@ -414,17 +703,6 @@
             this.scM4Speed.TickFrequency = 1;
             this.scM4Speed.Value = 2;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(18, 253);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(178, 25);
-            this.label8.TabIndex = 24;
-            this.label8.Text = "M3 Step Length";
-            // 
             // scM3StepLength
             // 
             this.scM3StepLength.Location = new System.Drawing.Point(191, 231);
@@ -435,17 +713,6 @@
             this.scM3StepLength.TabIndex = 23;
             this.scM3StepLength.TickFrequency = 1;
             this.scM3StepLength.Value = 6;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(18, 158);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(158, 25);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Feed In Steps";
             // 
             // scFeedInSteps
             // 
@@ -458,17 +725,6 @@
             this.scFeedInSteps.TickFrequency = 1;
             this.scFeedInSteps.Value = 5;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(18, 63);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(172, 25);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "Active Readers";
-            // 
             // scActiveReaders
             // 
             this.scActiveReaders.Location = new System.Drawing.Point(191, 39);
@@ -479,36 +735,6 @@
             this.scActiveReaders.TabIndex = 0;
             this.scActiveReaders.TickFrequency = 2;
             this.scActiveReaders.Value = 30;
-            // 
-            // gbMotors
-            // 
-            this.gbMotors.Controls.Add(this.panel1);
-            this.gbMotors.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbMotors.Location = new System.Drawing.Point(16, 311);
-            this.gbMotors.Name = "gbMotors";
-            this.gbMotors.Size = new System.Drawing.Size(597, 594);
-            this.gbMotors.TabIndex = 0;
-            this.gbMotors.TabStop = false;
-            this.gbMotors.Text = "Motors";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.mt4);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.mt3);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.mt2);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.mt0);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.mt1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(3, 27);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(591, 564);
-            this.panel1.TabIndex = 0;
             // 
             // mt4
             // 
@@ -521,28 +747,6 @@
             this.mt4.Status = Yaqoot300.Interfaces.UpDownMotorStatus.Idle;
             this.mt4.TabIndex = 19;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(308, 288);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 31);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "M4";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(122, 288);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 31);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "M3";
-            // 
             // mt3
             // 
             this.mt3.BackColor = System.Drawing.Color.Transparent;
@@ -553,17 +757,6 @@
             this.mt3.Name = "mt3";
             this.mt3.Size = new System.Drawing.Size(130, 128);
             this.mt3.TabIndex = 16;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(454, 42);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 31);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "M2";
             // 
             // mt2
             // 
@@ -576,17 +769,6 @@
             this.mt2.Size = new System.Drawing.Size(128, 130);
             this.mt2.TabIndex = 14;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(90, 42);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 31);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "M0";
-            // 
             // mt0
             // 
             this.mt0.BackColor = System.Drawing.Color.Transparent;
@@ -598,17 +780,6 @@
             this.mt0.Size = new System.Drawing.Size(128, 123);
             this.mt0.TabIndex = 12;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(276, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 31);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "M1";
-            // 
             // mt1
             // 
             this.mt1.BackColor = System.Drawing.Color.Transparent;
@@ -619,116 +790,6 @@
             this.mt1.Name = "mt1";
             this.mt1.Size = new System.Drawing.Size(128, 128);
             this.mt1.TabIndex = 10;
-            // 
-            // tpReadersConfig
-            // 
-            this.tpReadersConfig.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tpReadersConfig.Controls.Add(this.groupBox2);
-            this.tpReadersConfig.Controls.Add(this.groupBox1);
-            this.tpReadersConfig.Location = new System.Drawing.Point(4, 34);
-            this.tpReadersConfig.Name = "tpReadersConfig";
-            this.tpReadersConfig.Padding = new System.Windows.Forms.Padding(3);
-            this.tpReadersConfig.Size = new System.Drawing.Size(1280, 952);
-            this.tpReadersConfig.TabIndex = 1;
-            this.tpReadersConfig.Text = "Readers Configuration";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.panel5);
-            this.groupBox2.Location = new System.Drawing.Point(17, 395);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1237, 532);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Setup Readers";
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Controls.Add(this.sr30);
-            this.panel5.Controls.Add(this.sr28);
-            this.panel5.Controls.Add(this.sr26);
-            this.panel5.Controls.Add(this.sr24);
-            this.panel5.Controls.Add(this.sr22);
-            this.panel5.Controls.Add(this.sr20);
-            this.panel5.Controls.Add(this.sr18);
-            this.panel5.Controls.Add(this.sr16);
-            this.panel5.Controls.Add(this.sr14);
-            this.panel5.Controls.Add(this.sr12);
-            this.panel5.Controls.Add(this.sr10);
-            this.panel5.Controls.Add(this.sr8);
-            this.panel5.Controls.Add(this.sr6);
-            this.panel5.Controls.Add(this.sr4);
-            this.panel5.Controls.Add(this.sr2);
-            this.panel5.Controls.Add(this.sr29);
-            this.panel5.Controls.Add(this.sr27);
-            this.panel5.Controls.Add(this.sr25);
-            this.panel5.Controls.Add(this.sr23);
-            this.panel5.Controls.Add(this.sr21);
-            this.panel5.Controls.Add(this.sr19);
-            this.panel5.Controls.Add(this.sr17);
-            this.panel5.Controls.Add(this.sr15);
-            this.panel5.Controls.Add(this.sr13);
-            this.panel5.Controls.Add(this.sr11);
-            this.panel5.Controls.Add(this.sr9);
-            this.panel5.Controls.Add(this.sr7);
-            this.panel5.Controls.Add(this.sr5);
-            this.panel5.Controls.Add(this.sr3);
-            this.panel5.Controls.Add(this.sr1);
-            this.panel5.Controls.Add(this.lbReaders);
-            this.panel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel5.Location = new System.Drawing.Point(3, 46);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1231, 483);
-            this.panel5.TabIndex = 0;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.label11);
-            this.panel6.Controls.Add(this.label10);
-            this.panel6.Controls.Add(this.panel8);
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Location = new System.Drawing.Point(445, 35);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(315, 83);
-            this.panel6.TabIndex = 31;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(240, 35);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(50, 13);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Assigned";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(82, 35);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(27, 13);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "N/A";
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Location = new System.Drawing.Point(192, 21);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(42, 38);
-            this.panel8.TabIndex = 1;
-            // 
-            // panel7
-            // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Location = new System.Drawing.Point(34, 21);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(42, 38);
-            this.panel7.TabIndex = 0;
             // 
             // sr30
             // 
@@ -1149,67 +1210,6 @@
             this.sr1.ReaderName = null;
             this.sr1.Size = new System.Drawing.Size(50, 50);
             this.sr1.TabIndex = 1;
-            // 
-            // lbReaders
-            // 
-            this.lbReaders.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lbReaders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbReaders.FormattingEnabled = true;
-            this.lbReaders.ItemHeight = 20;
-            this.lbReaders.Location = new System.Drawing.Point(0, 0);
-            this.lbReaders.Name = "lbReaders";
-            this.lbReaders.Size = new System.Drawing.Size(158, 483);
-            this.lbReaders.TabIndex = 0;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.panel4);
-            this.groupBox1.Location = new System.Drawing.Point(17, 13);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1237, 346);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Test Readers";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.btnTestReaders);
-            this.panel4.Controls.Add(this.tr30);
-            this.panel4.Controls.Add(this.tr29);
-            this.panel4.Controls.Add(this.tr28);
-            this.panel4.Controls.Add(this.tr27);
-            this.panel4.Controls.Add(this.tr26);
-            this.panel4.Controls.Add(this.tr25);
-            this.panel4.Controls.Add(this.tr24);
-            this.panel4.Controls.Add(this.tr23);
-            this.panel4.Controls.Add(this.tr22);
-            this.panel4.Controls.Add(this.tr21);
-            this.panel4.Controls.Add(this.tr20);
-            this.panel4.Controls.Add(this.tr19);
-            this.panel4.Controls.Add(this.tr18);
-            this.panel4.Controls.Add(this.tr17);
-            this.panel4.Controls.Add(this.tr16);
-            this.panel4.Controls.Add(this.tr15);
-            this.panel4.Controls.Add(this.tr14);
-            this.panel4.Controls.Add(this.tr13);
-            this.panel4.Controls.Add(this.tr12);
-            this.panel4.Controls.Add(this.tr11);
-            this.panel4.Controls.Add(this.tr10);
-            this.panel4.Controls.Add(this.tr9);
-            this.panel4.Controls.Add(this.tr8);
-            this.panel4.Controls.Add(this.tr7);
-            this.panel4.Controls.Add(this.tr6);
-            this.panel4.Controls.Add(this.tr5);
-            this.panel4.Controls.Add(this.tr4);
-            this.panel4.Controls.Add(this.tr3);
-            this.panel4.Controls.Add(this.tr2);
-            this.panel4.Controls.Add(this.tr1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel4.Location = new System.Drawing.Point(3, 27);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1231, 316);
-            this.panel4.TabIndex = 0;
             // 
             // btnTestReaders
             // 

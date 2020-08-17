@@ -1,10 +1,13 @@
-﻿using System.Windows.Forms;
+﻿using System.Collections.Generic;
+using System.Windows.Forms;
 using Yaqoot300.Commons;
 using Yaqoot300.Interfaces;
+using Yaqoot300.Models.ThinClient;
 using Yaqoot300.State.App.Actions;
 using Yaqoot300.State.Home;
 using Yaqoot300.State.Home.Actions;
 using Yaqoot300.State.PLC.Actions;
+using Yaqoot300.State.Service.Actions;
 
 namespace Yaqoot300.Models.Signal
 {
@@ -30,7 +33,7 @@ namespace Yaqoot300.Models.Signal
             }
         }
 
-        [Signal(0x02)]
+        [Signal(0x02, 0x00)]
         public byte[] Stop
         {
             set {
@@ -59,6 +62,83 @@ namespace Yaqoot300.Models.Signal
                 
             }
         }
+
+        [Signal(0x04)]
+        public byte[] SensorsState1_8
+        {
+            set
+            {
+                var sensors = new List<bool>();
+                for (int i = 0; i < 8; i++)
+                {
+                    bool set = (value[1] & 1 << i) != 0;
+                    sensors.Add(set);
+                }
+                Services.Store.Dispatch(new ServiceSensorsChangedAction(
+                    new ServiceSensorsChangedActionPayload(sensors, 0, 7)));
+            }
+        }
+
+        [Signal(0x05)]
+        public byte[] SensorsState9_16
+        {
+            set
+            {
+                var sensors = new List<bool>();
+                for (int i = 0; i < 8; i++)
+                {
+                    bool set = (value[1] & 1 << i) != 0;
+                    sensors.Add(set);
+                }
+                Services.Store.Dispatch(new ServiceSensorsChangedAction(
+                    new ServiceSensorsChangedActionPayload(sensors, 8, 15)));
+            }
+        }
+
+        [Signal(0x07)]
+        public byte[] StepCycle
+        {
+            set
+            {
+                switch (value[1])
+                {
+                    case 0x01:
+                        // M3 Step
+                        break;
+                    case 0x02:
+                        Services.Store.Dispatch(new HomeLoadOS());
+                        break;
+                    case 0x03:
+                        Services.Store.Dispatch(new HomeLoadOSSuccess(
+                            new[]
+                            {
+                                new ReaderResponse {ReaderName = "ACS 39U 4", Status = ReaderStatus.Success},
+                                new ReaderResponse {ReaderName = "ACS 39U 6", Status = ReaderStatus.Fail},
+                            }));
+                        break;
+                }
+            }
+        }
+
+        [Signal(0x08)]
+        public byte[] SettingsAck
+        {
+            set
+            {
+                switch (value[1])
+                {
+                    case 1:
+                        Services.Store.Dispatch(new ServiceChangeSettingsSuccessAction());
+                        break;
+
+                    case 2:
+                        Services.Store.Dispatch(new ServiceChangeSettingsFailAction());
+                        break;
+                }
+                
+            }
+        }
+
 
         [Signal(0xFF)]
         public byte[] Errors
