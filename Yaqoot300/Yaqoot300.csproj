@@ -111,6 +111,18 @@
     <Compile Include="Controls\ConnectionsControl.Designer.cs">
       <DependentUpon>ConnectionsControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ServiceConnectionsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ServiceConnectionsControl.Designer.cs">
+      <DependentUpon>ServiceConnectionsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ServiceJobStatisticsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ServiceJobStatisticsControl.Designer.cs">
+      <DependentUpon>ServiceJobStatisticsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\IpPort.cs" />
     <Compile Include="Commons\UiExtensionMethods.cs" />
     <Compile Include="Commons\Utils.cs" />
@@ -361,6 +373,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SensorControl.resx">
       <DependentUpon>SensorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ServiceConnectionsControl.resx">
+      <DependentUpon>ServiceConnectionsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ServiceJobStatisticsControl.resx">
+      <DependentUpon>ServiceJobStatisticsControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SetupReaderControl.resx">
       <DependentUpon>SetupReaderControl.cs</DependentUpon>

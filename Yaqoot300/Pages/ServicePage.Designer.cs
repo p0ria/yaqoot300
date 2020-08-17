@@ -56,6 +56,11 @@
             this.lbReaders = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.btnMessages = new System.Windows.Forms.Button();
+            this.btnSelectJob = new System.Windows.Forms.Button();
+            this.serviceJobStatisticsControl1 = new Yaqoot300.Controls.ServiceJobStatisticsControl();
+            this.serviceConnectionsControl1 = new Yaqoot300.Controls.ServiceConnectionsControl();
             this.sensor14 = new Yaqoot300.Controls.SensorControl();
             this.sensor13 = new Yaqoot300.Controls.SensorControl();
             this.sensor12 = new Yaqoot300.Controls.SensorControl();
@@ -155,6 +160,7 @@
             this.panel6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabService
@@ -162,10 +168,10 @@
             this.tabService.Controls.Add(this.tpPlcConfig);
             this.tabService.Controls.Add(this.tpReadersConfig);
             this.tabService.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabService.Location = new System.Drawing.Point(0, 0);
+            this.tabService.Location = new System.Drawing.Point(223, 0);
             this.tabService.Name = "tabService";
             this.tabService.SelectedIndex = 0;
-            this.tabService.Size = new System.Drawing.Size(1288, 990);
+            this.tabService.Size = new System.Drawing.Size(1151, 776);
             this.tabService.TabIndex = 11;
             // 
             // tpPlcConfig
@@ -177,16 +183,16 @@
             this.tpPlcConfig.Location = new System.Drawing.Point(4, 34);
             this.tpPlcConfig.Name = "tpPlcConfig";
             this.tpPlcConfig.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPlcConfig.Size = new System.Drawing.Size(1280, 952);
+            this.tpPlcConfig.Size = new System.Drawing.Size(1143, 738);
             this.tpPlcConfig.TabIndex = 0;
             this.tpPlcConfig.Text = "PLC Configutaion";
             // 
             // gbSensors
             // 
             this.gbSensors.Controls.Add(this.panel3);
-            this.gbSensors.Location = new System.Drawing.Point(17, 13);
+            this.gbSensors.Location = new System.Drawing.Point(19, 19);
             this.gbSensors.Name = "gbSensors";
-            this.gbSensors.Size = new System.Drawing.Size(1224, 277);
+            this.gbSensors.Size = new System.Drawing.Size(1094, 178);
             this.gbSensors.TabIndex = 2;
             this.gbSensors.TabStop = false;
             this.gbSensors.Text = "Sensors";
@@ -211,16 +217,16 @@
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.Location = new System.Drawing.Point(3, 27);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1218, 247);
+            this.panel3.Size = new System.Drawing.Size(1088, 148);
             this.panel3.TabIndex = 0;
             // 
             // bbSettings
             // 
             this.bbSettings.Controls.Add(this.panel2);
             this.bbSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bbSettings.Location = new System.Drawing.Point(654, 311);
+            this.bbSettings.Location = new System.Drawing.Point(524, 213);
             this.bbSettings.Name = "bbSettings";
-            this.bbSettings.Size = new System.Drawing.Size(586, 597);
+            this.bbSettings.Size = new System.Drawing.Size(586, 492);
             this.bbSettings.TabIndex = 1;
             this.bbSettings.TabStop = false;
             this.bbSettings.Text = "Settings";
@@ -240,7 +246,7 @@
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(3, 27);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(580, 567);
+            this.panel2.Size = new System.Drawing.Size(580, 462);
             this.panel2.TabIndex = 0;
             // 
             // label9
@@ -248,7 +254,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(18, 348);
+            this.label9.Location = new System.Drawing.Point(16, 318);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(118, 25);
             this.label9.TabIndex = 26;
@@ -259,7 +265,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(18, 253);
+            this.label8.Location = new System.Drawing.Point(16, 223);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(178, 25);
             this.label8.TabIndex = 24;
@@ -270,7 +276,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(18, 158);
+            this.label7.Location = new System.Drawing.Point(16, 128);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(158, 25);
             this.label7.TabIndex = 22;
@@ -281,7 +287,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(18, 63);
+            this.label6.Location = new System.Drawing.Point(16, 33);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(172, 25);
             this.label6.TabIndex = 20;
@@ -291,9 +297,9 @@
             // 
             this.gbMotors.Controls.Add(this.panel1);
             this.gbMotors.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbMotors.Location = new System.Drawing.Point(16, 311);
+            this.gbMotors.Location = new System.Drawing.Point(19, 213);
             this.gbMotors.Name = "gbMotors";
-            this.gbMotors.Size = new System.Drawing.Size(597, 594);
+            this.gbMotors.Size = new System.Drawing.Size(480, 492);
             this.gbMotors.TabIndex = 0;
             this.gbMotors.TabStop = false;
             this.gbMotors.Text = "Motors";
@@ -314,7 +320,7 @@
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(3, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(591, 564);
+            this.panel1.Size = new System.Drawing.Size(474, 462);
             this.panel1.TabIndex = 0;
             // 
             // label5
@@ -322,7 +328,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(308, 288);
+            this.label5.Location = new System.Drawing.Point(238, 232);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 31);
             this.label5.TabIndex = 18;
@@ -333,7 +339,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(122, 288);
+            this.label4.Location = new System.Drawing.Point(82, 232);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 31);
             this.label4.TabIndex = 17;
@@ -344,7 +350,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(454, 42);
+            this.label3.Location = new System.Drawing.Point(359, 29);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 31);
             this.label3.TabIndex = 15;
@@ -355,7 +361,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(90, 42);
+            this.label2.Location = new System.Drawing.Point(61, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 31);
             this.label2.TabIndex = 13;
@@ -366,7 +372,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(276, 42);
+            this.label1.Location = new System.Drawing.Point(210, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 31);
             this.label1.TabIndex = 11;
@@ -380,16 +386,16 @@
             this.tpReadersConfig.Location = new System.Drawing.Point(4, 34);
             this.tpReadersConfig.Name = "tpReadersConfig";
             this.tpReadersConfig.Padding = new System.Windows.Forms.Padding(3);
-            this.tpReadersConfig.Size = new System.Drawing.Size(1280, 952);
+            this.tpReadersConfig.Size = new System.Drawing.Size(1143, 738);
             this.tpReadersConfig.TabIndex = 1;
             this.tpReadersConfig.Text = "Readers Configuration";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.panel5);
-            this.groupBox2.Location = new System.Drawing.Point(17, 395);
+            this.groupBox2.Location = new System.Drawing.Point(19, 312);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1237, 532);
+            this.groupBox2.Size = new System.Drawing.Size(1111, 412);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Setup Readers";
@@ -428,10 +434,11 @@
             this.panel5.Controls.Add(this.sr3);
             this.panel5.Controls.Add(this.sr1);
             this.panel5.Controls.Add(this.lbReaders);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel5.Location = new System.Drawing.Point(3, 46);
+            this.panel5.Location = new System.Drawing.Point(3, 27);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1231, 483);
+            this.panel5.Size = new System.Drawing.Size(1105, 382);
             this.panel5.TabIndex = 0;
             // 
             // panel6
@@ -442,7 +449,7 @@
             this.panel6.Controls.Add(this.label10);
             this.panel6.Controls.Add(this.panel8);
             this.panel6.Controls.Add(this.panel7);
-            this.panel6.Location = new System.Drawing.Point(445, 35);
+            this.panel6.Location = new System.Drawing.Point(445, 13);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(315, 83);
             this.panel6.TabIndex = 31;
@@ -490,15 +497,15 @@
             this.lbReaders.ItemHeight = 20;
             this.lbReaders.Location = new System.Drawing.Point(0, 0);
             this.lbReaders.Name = "lbReaders";
-            this.lbReaders.Size = new System.Drawing.Size(158, 483);
+            this.lbReaders.Size = new System.Drawing.Size(158, 382);
             this.lbReaders.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.panel4);
-            this.groupBox1.Location = new System.Drawing.Point(17, 13);
+            this.groupBox1.Location = new System.Drawing.Point(19, 19);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1237, 346);
+            this.groupBox1.Size = new System.Drawing.Size(1111, 276);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Test Readers";
@@ -540,15 +547,66 @@
             this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel4.Location = new System.Drawing.Point(3, 27);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1231, 316);
+            this.panel4.Size = new System.Drawing.Size(1105, 246);
             this.panel4.TabIndex = 0;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel9.Controls.Add(this.serviceJobStatisticsControl1);
+            this.panel9.Controls.Add(this.btnMessages);
+            this.panel9.Controls.Add(this.btnSelectJob);
+            this.panel9.Controls.Add(this.serviceConnectionsControl1);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(221, 768);
+            this.panel9.TabIndex = 12;
+            // 
+            // btnMessages
+            // 
+            this.btnMessages.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMessages.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnMessages.Location = new System.Drawing.Point(21, 95);
+            this.btnMessages.Name = "btnMessages";
+            this.btnMessages.Size = new System.Drawing.Size(179, 46);
+            this.btnMessages.TabIndex = 17;
+            this.btnMessages.Text = "Messages";
+            this.btnMessages.UseVisualStyleBackColor = true;
+            this.btnMessages.Click += new System.EventHandler(this.btnMessages_Click);
+            // 
+            // btnSelectJob
+            // 
+            this.btnSelectJob.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSelectJob.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnSelectJob.Location = new System.Drawing.Point(21, 32);
+            this.btnSelectJob.Name = "btnSelectJob";
+            this.btnSelectJob.Size = new System.Drawing.Size(179, 46);
+            this.btnSelectJob.TabIndex = 16;
+            this.btnSelectJob.Text = "Select Job";
+            this.btnSelectJob.UseVisualStyleBackColor = true;
+            this.btnSelectJob.Click += new System.EventHandler(this.btnSelectJob_Click);
+            // 
+            // serviceJobStatisticsControl1
+            // 
+            this.serviceJobStatisticsControl1.Location = new System.Drawing.Point(11, 183);
+            this.serviceJobStatisticsControl1.Name = "serviceJobStatisticsControl1";
+            this.serviceJobStatisticsControl1.Size = new System.Drawing.Size(200, 200);
+            this.serviceJobStatisticsControl1.TabIndex = 18;
+            // 
+            // serviceConnectionsControl1
+            // 
+            this.serviceConnectionsControl1.Location = new System.Drawing.Point(11, 405);
+            this.serviceConnectionsControl1.Name = "serviceConnectionsControl1";
+            this.serviceConnectionsControl1.Size = new System.Drawing.Size(200, 335);
+            this.serviceConnectionsControl1.TabIndex = 0;
             // 
             // sensor14
             // 
             this.sensor14.BackColor = System.Drawing.Color.LightGray;
             this.sensor14.IsOn = false;
             this.sensor14.Label = "Sensor 14";
-            this.sensor14.Location = new System.Drawing.Point(1072, 141);
+            this.sensor14.Location = new System.Drawing.Point(950, 85);
             this.sensor14.Name = "sensor14";
             this.sensor14.Size = new System.Drawing.Size(120, 40);
             this.sensor14.TabIndex = 14;
@@ -558,7 +616,7 @@
             this.sensor13.BackColor = System.Drawing.Color.LightGray;
             this.sensor13.IsOn = false;
             this.sensor13.Label = "Sensor 13";
-            this.sensor13.Location = new System.Drawing.Point(902, 141);
+            this.sensor13.Location = new System.Drawing.Point(793, 85);
             this.sensor13.Name = "sensor13";
             this.sensor13.Size = new System.Drawing.Size(120, 40);
             this.sensor13.TabIndex = 13;
@@ -568,7 +626,7 @@
             this.sensor12.BackColor = System.Drawing.Color.LightGray;
             this.sensor12.IsOn = false;
             this.sensor12.Label = "Sensor 12";
-            this.sensor12.Location = new System.Drawing.Point(732, 141);
+            this.sensor12.Location = new System.Drawing.Point(638, 85);
             this.sensor12.Name = "sensor12";
             this.sensor12.Size = new System.Drawing.Size(120, 40);
             this.sensor12.TabIndex = 12;
@@ -578,7 +636,7 @@
             this.sensor11.BackColor = System.Drawing.Color.LightGray;
             this.sensor11.IsOn = false;
             this.sensor11.Label = "Sensor 11";
-            this.sensor11.Location = new System.Drawing.Point(562, 141);
+            this.sensor11.Location = new System.Drawing.Point(483, 85);
             this.sensor11.Name = "sensor11";
             this.sensor11.Size = new System.Drawing.Size(120, 40);
             this.sensor11.TabIndex = 11;
@@ -588,7 +646,7 @@
             this.sensor10.BackColor = System.Drawing.Color.LawnGreen;
             this.sensor10.IsOn = true;
             this.sensor10.Label = "Sensor 10";
-            this.sensor10.Location = new System.Drawing.Point(392, 141);
+            this.sensor10.Location = new System.Drawing.Point(328, 85);
             this.sensor10.Name = "sensor10";
             this.sensor10.Size = new System.Drawing.Size(120, 40);
             this.sensor10.TabIndex = 10;
@@ -598,7 +656,7 @@
             this.sensor9.BackColor = System.Drawing.Color.LightGray;
             this.sensor9.IsOn = false;
             this.sensor9.Label = "Sensor 9";
-            this.sensor9.Location = new System.Drawing.Point(222, 141);
+            this.sensor9.Location = new System.Drawing.Point(173, 85);
             this.sensor9.Name = "sensor9";
             this.sensor9.Size = new System.Drawing.Size(120, 40);
             this.sensor9.TabIndex = 9;
@@ -608,7 +666,7 @@
             this.sensor8.BackColor = System.Drawing.Color.LightGray;
             this.sensor8.IsOn = false;
             this.sensor8.Label = "Sensor 8";
-            this.sensor8.Location = new System.Drawing.Point(51, 141);
+            this.sensor8.Location = new System.Drawing.Point(18, 85);
             this.sensor8.Name = "sensor8";
             this.sensor8.Size = new System.Drawing.Size(120, 40);
             this.sensor8.TabIndex = 8;
@@ -618,7 +676,7 @@
             this.sensor7.BackColor = System.Drawing.Color.LightGray;
             this.sensor7.IsOn = false;
             this.sensor7.Label = "Sensor 7";
-            this.sensor7.Location = new System.Drawing.Point(1072, 44);
+            this.sensor7.Location = new System.Drawing.Point(948, 21);
             this.sensor7.Name = "sensor7";
             this.sensor7.Size = new System.Drawing.Size(120, 40);
             this.sensor7.TabIndex = 7;
@@ -628,7 +686,7 @@
             this.sensor6.BackColor = System.Drawing.Color.LightGray;
             this.sensor6.IsOn = false;
             this.sensor6.Label = "Sensor 6";
-            this.sensor6.Location = new System.Drawing.Point(902, 44);
+            this.sensor6.Location = new System.Drawing.Point(793, 21);
             this.sensor6.Name = "sensor6";
             this.sensor6.Size = new System.Drawing.Size(120, 40);
             this.sensor6.TabIndex = 6;
@@ -638,7 +696,7 @@
             this.sensor5.BackColor = System.Drawing.Color.LightGray;
             this.sensor5.IsOn = false;
             this.sensor5.Label = "Sensor 5";
-            this.sensor5.Location = new System.Drawing.Point(732, 44);
+            this.sensor5.Location = new System.Drawing.Point(638, 21);
             this.sensor5.Name = "sensor5";
             this.sensor5.Size = new System.Drawing.Size(120, 40);
             this.sensor5.TabIndex = 5;
@@ -648,7 +706,7 @@
             this.sensor4.BackColor = System.Drawing.Color.LightGray;
             this.sensor4.IsOn = false;
             this.sensor4.Label = "Sensor 4";
-            this.sensor4.Location = new System.Drawing.Point(562, 44);
+            this.sensor4.Location = new System.Drawing.Point(483, 21);
             this.sensor4.Name = "sensor4";
             this.sensor4.Size = new System.Drawing.Size(120, 40);
             this.sensor4.TabIndex = 4;
@@ -658,7 +716,7 @@
             this.sensor3.BackColor = System.Drawing.Color.LightGray;
             this.sensor3.IsOn = false;
             this.sensor3.Label = "Sensor 3";
-            this.sensor3.Location = new System.Drawing.Point(392, 44);
+            this.sensor3.Location = new System.Drawing.Point(328, 21);
             this.sensor3.Name = "sensor3";
             this.sensor3.Size = new System.Drawing.Size(120, 40);
             this.sensor3.TabIndex = 3;
@@ -668,7 +726,7 @@
             this.sensor1.BackColor = System.Drawing.Color.LightGray;
             this.sensor1.IsOn = false;
             this.sensor1.Label = "Sensor 1";
-            this.sensor1.Location = new System.Drawing.Point(51, 44);
+            this.sensor1.Location = new System.Drawing.Point(18, 21);
             this.sensor1.Name = "sensor1";
             this.sensor1.Size = new System.Drawing.Size(120, 40);
             this.sensor1.TabIndex = 2;
@@ -678,7 +736,7 @@
             this.sensor2.BackColor = System.Drawing.Color.LawnGreen;
             this.sensor2.IsOn = true;
             this.sensor2.Label = "Sensor 2";
-            this.sensor2.Location = new System.Drawing.Point(222, 44);
+            this.sensor2.Location = new System.Drawing.Point(173, 21);
             this.sensor2.Name = "sensor2";
             this.sensor2.Size = new System.Drawing.Size(120, 40);
             this.sensor2.TabIndex = 1;
@@ -686,7 +744,7 @@
             // btnSave
             // 
             this.btnSave.Label = "SAVE";
-            this.btnSave.Location = new System.Drawing.Point(354, 413);
+            this.btnSave.Location = new System.Drawing.Point(352, 371);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(213, 75);
             this.btnSave.Status = Yaqoot300.Controls.LoadingButtonControl.LoadingButtonControlStatus.Invisible;
@@ -694,7 +752,7 @@
             // 
             // scM4Speed
             // 
-            this.scM4Speed.Location = new System.Drawing.Point(191, 327);
+            this.scM4Speed.Location = new System.Drawing.Point(189, 297);
             this.scM4Speed.Max = 4;
             this.scM4Speed.Min = 1;
             this.scM4Speed.Name = "scM4Speed";
@@ -705,7 +763,7 @@
             // 
             // scM3StepLength
             // 
-            this.scM3StepLength.Location = new System.Drawing.Point(191, 231);
+            this.scM3StepLength.Location = new System.Drawing.Point(189, 201);
             this.scM3StepLength.Max = 7;
             this.scM3StepLength.Min = 1;
             this.scM3StepLength.Name = "scM3StepLength";
@@ -716,7 +774,7 @@
             // 
             // scFeedInSteps
             // 
-            this.scFeedInSteps.Location = new System.Drawing.Point(191, 135);
+            this.scFeedInSteps.Location = new System.Drawing.Point(189, 105);
             this.scFeedInSteps.Max = 10;
             this.scFeedInSteps.Min = 1;
             this.scFeedInSteps.Name = "scFeedInSteps";
@@ -727,7 +785,7 @@
             // 
             // scActiveReaders
             // 
-            this.scActiveReaders.Location = new System.Drawing.Point(191, 39);
+            this.scActiveReaders.Location = new System.Drawing.Point(189, 9);
             this.scActiveReaders.Max = 30;
             this.scActiveReaders.Min = 0;
             this.scActiveReaders.Name = "scActiveReaders";
@@ -741,7 +799,7 @@
             this.mt4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.mt4.IsDownEnabled = false;
             this.mt4.IsUpEnabled = false;
-            this.mt4.Location = new System.Drawing.Point(270, 331);
+            this.mt4.Location = new System.Drawing.Point(200, 275);
             this.mt4.Name = "mt4";
             this.mt4.Size = new System.Drawing.Size(216, 132);
             this.mt4.Status = Yaqoot300.Interfaces.UpDownMotorStatus.Idle;
@@ -752,7 +810,7 @@
             this.mt3.BackColor = System.Drawing.Color.Transparent;
             this.mt3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mt3.IsEnabled = false;
-            this.mt3.Location = new System.Drawing.Point(86, 331);
+            this.mt3.Location = new System.Drawing.Point(46, 275);
             this.mt3.Margin = new System.Windows.Forms.Padding(48, 44, 48, 44);
             this.mt3.Name = "mt3";
             this.mt3.Size = new System.Drawing.Size(130, 128);
@@ -763,7 +821,7 @@
             this.mt2.BackColor = System.Drawing.Color.Transparent;
             this.mt2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mt2.IsEnabled = false;
-            this.mt2.Location = new System.Drawing.Point(420, 85);
+            this.mt2.Location = new System.Drawing.Point(325, 72);
             this.mt2.Margin = new System.Windows.Forms.Padding(24, 23, 24, 23);
             this.mt2.Name = "mt2";
             this.mt2.Size = new System.Drawing.Size(128, 130);
@@ -774,10 +832,10 @@
             this.mt0.BackColor = System.Drawing.Color.Transparent;
             this.mt0.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mt0.IsEnabled = false;
-            this.mt0.Location = new System.Drawing.Point(56, 85);
+            this.mt0.Location = new System.Drawing.Point(21, 72);
             this.mt0.Margin = new System.Windows.Forms.Padding(12);
             this.mt0.Name = "mt0";
-            this.mt0.Size = new System.Drawing.Size(128, 123);
+            this.mt0.Size = new System.Drawing.Size(128, 130);
             this.mt0.TabIndex = 12;
             // 
             // mt1
@@ -785,7 +843,7 @@
             this.mt1.BackColor = System.Drawing.Color.Transparent;
             this.mt1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mt1.IsEnabled = false;
-            this.mt1.Location = new System.Drawing.Point(238, 85);
+            this.mt1.Location = new System.Drawing.Point(173, 74);
             this.mt1.Margin = new System.Windows.Forms.Padding(6);
             this.mt1.Name = "mt1";
             this.mt1.Size = new System.Drawing.Size(128, 128);
@@ -798,7 +856,7 @@
             this.sr30.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr30.ForeColor = System.Drawing.Color.Black;
             this.sr30.IsActive = false;
-            this.sr30.Location = new System.Drawing.Point(1145, 287);
+            this.sr30.Location = new System.Drawing.Point(1038, 233);
             this.sr30.Name = "sr30";
             this.sr30.Number = 30;
             this.sr30.ReaderName = null;
@@ -812,7 +870,7 @@
             this.sr28.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr28.ForeColor = System.Drawing.Color.Black;
             this.sr28.IsActive = false;
-            this.sr28.Location = new System.Drawing.Point(1081, 287);
+            this.sr28.Location = new System.Drawing.Point(978, 233);
             this.sr28.Name = "sr28";
             this.sr28.Number = 28;
             this.sr28.ReaderName = null;
@@ -826,7 +884,7 @@
             this.sr26.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr26.ForeColor = System.Drawing.Color.Black;
             this.sr26.IsActive = false;
-            this.sr26.Location = new System.Drawing.Point(1017, 287);
+            this.sr26.Location = new System.Drawing.Point(918, 233);
             this.sr26.Name = "sr26";
             this.sr26.Number = 26;
             this.sr26.ReaderName = null;
@@ -840,7 +898,7 @@
             this.sr24.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr24.ForeColor = System.Drawing.Color.Black;
             this.sr24.IsActive = false;
-            this.sr24.Location = new System.Drawing.Point(953, 287);
+            this.sr24.Location = new System.Drawing.Point(858, 233);
             this.sr24.Name = "sr24";
             this.sr24.Number = 24;
             this.sr24.ReaderName = null;
@@ -854,7 +912,7 @@
             this.sr22.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr22.ForeColor = System.Drawing.Color.Black;
             this.sr22.IsActive = false;
-            this.sr22.Location = new System.Drawing.Point(889, 287);
+            this.sr22.Location = new System.Drawing.Point(798, 233);
             this.sr22.Name = "sr22";
             this.sr22.Number = 22;
             this.sr22.ReaderName = null;
@@ -868,7 +926,7 @@
             this.sr20.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr20.ForeColor = System.Drawing.Color.Black;
             this.sr20.IsActive = false;
-            this.sr20.Location = new System.Drawing.Point(794, 287);
+            this.sr20.Location = new System.Drawing.Point(726, 233);
             this.sr20.Name = "sr20";
             this.sr20.Number = 20;
             this.sr20.ReaderName = null;
@@ -882,7 +940,7 @@
             this.sr18.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr18.ForeColor = System.Drawing.Color.Black;
             this.sr18.IsActive = false;
-            this.sr18.Location = new System.Drawing.Point(730, 287);
+            this.sr18.Location = new System.Drawing.Point(664, 233);
             this.sr18.Name = "sr18";
             this.sr18.Number = 18;
             this.sr18.ReaderName = null;
@@ -896,7 +954,7 @@
             this.sr16.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr16.ForeColor = System.Drawing.Color.Black;
             this.sr16.IsActive = false;
-            this.sr16.Location = new System.Drawing.Point(666, 287);
+            this.sr16.Location = new System.Drawing.Point(602, 233);
             this.sr16.Name = "sr16";
             this.sr16.Number = 16;
             this.sr16.ReaderName = null;
@@ -910,7 +968,7 @@
             this.sr14.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr14.ForeColor = System.Drawing.Color.Black;
             this.sr14.IsActive = false;
-            this.sr14.Location = new System.Drawing.Point(602, 287);
+            this.sr14.Location = new System.Drawing.Point(540, 233);
             this.sr14.Name = "sr14";
             this.sr14.Number = 14;
             this.sr14.ReaderName = null;
@@ -924,7 +982,7 @@
             this.sr12.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr12.ForeColor = System.Drawing.Color.Black;
             this.sr12.IsActive = false;
-            this.sr12.Location = new System.Drawing.Point(538, 287);
+            this.sr12.Location = new System.Drawing.Point(478, 233);
             this.sr12.Name = "sr12";
             this.sr12.Number = 12;
             this.sr12.ReaderName = null;
@@ -938,7 +996,7 @@
             this.sr10.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr10.ForeColor = System.Drawing.Color.Black;
             this.sr10.IsActive = false;
-            this.sr10.Location = new System.Drawing.Point(445, 287);
+            this.sr10.Location = new System.Drawing.Point(407, 233);
             this.sr10.Name = "sr10";
             this.sr10.Number = 10;
             this.sr10.ReaderName = null;
@@ -952,7 +1010,7 @@
             this.sr8.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr8.ForeColor = System.Drawing.Color.Black;
             this.sr8.IsActive = false;
-            this.sr8.Location = new System.Drawing.Point(381, 287);
+            this.sr8.Location = new System.Drawing.Point(348, 233);
             this.sr8.Name = "sr8";
             this.sr8.Number = 8;
             this.sr8.ReaderName = null;
@@ -966,7 +1024,7 @@
             this.sr6.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr6.ForeColor = System.Drawing.Color.Black;
             this.sr6.IsActive = false;
-            this.sr6.Location = new System.Drawing.Point(317, 287);
+            this.sr6.Location = new System.Drawing.Point(289, 233);
             this.sr6.Name = "sr6";
             this.sr6.Number = 6;
             this.sr6.ReaderName = null;
@@ -980,7 +1038,7 @@
             this.sr4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr4.ForeColor = System.Drawing.Color.Black;
             this.sr4.IsActive = false;
-            this.sr4.Location = new System.Drawing.Point(253, 287);
+            this.sr4.Location = new System.Drawing.Point(230, 233);
             this.sr4.Name = "sr4";
             this.sr4.Number = 4;
             this.sr4.ReaderName = null;
@@ -994,7 +1052,7 @@
             this.sr2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr2.ForeColor = System.Drawing.Color.Black;
             this.sr2.IsActive = false;
-            this.sr2.Location = new System.Drawing.Point(189, 287);
+            this.sr2.Location = new System.Drawing.Point(171, 233);
             this.sr2.Name = "sr2";
             this.sr2.Number = 2;
             this.sr2.ReaderName = null;
@@ -1008,7 +1066,7 @@
             this.sr29.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr29.ForeColor = System.Drawing.Color.Black;
             this.sr29.IsActive = false;
-            this.sr29.Location = new System.Drawing.Point(1145, 198);
+            this.sr29.Location = new System.Drawing.Point(1038, 144);
             this.sr29.Name = "sr29";
             this.sr29.Number = 29;
             this.sr29.ReaderName = null;
@@ -1022,7 +1080,7 @@
             this.sr27.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr27.ForeColor = System.Drawing.Color.Black;
             this.sr27.IsActive = false;
-            this.sr27.Location = new System.Drawing.Point(1081, 198);
+            this.sr27.Location = new System.Drawing.Point(978, 144);
             this.sr27.Name = "sr27";
             this.sr27.Number = 27;
             this.sr27.ReaderName = null;
@@ -1036,7 +1094,7 @@
             this.sr25.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr25.ForeColor = System.Drawing.Color.Black;
             this.sr25.IsActive = false;
-            this.sr25.Location = new System.Drawing.Point(1017, 198);
+            this.sr25.Location = new System.Drawing.Point(918, 144);
             this.sr25.Name = "sr25";
             this.sr25.Number = 25;
             this.sr25.ReaderName = null;
@@ -1050,7 +1108,7 @@
             this.sr23.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr23.ForeColor = System.Drawing.Color.Black;
             this.sr23.IsActive = false;
-            this.sr23.Location = new System.Drawing.Point(953, 198);
+            this.sr23.Location = new System.Drawing.Point(858, 144);
             this.sr23.Name = "sr23";
             this.sr23.Number = 23;
             this.sr23.ReaderName = null;
@@ -1064,7 +1122,7 @@
             this.sr21.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr21.ForeColor = System.Drawing.Color.Black;
             this.sr21.IsActive = false;
-            this.sr21.Location = new System.Drawing.Point(889, 198);
+            this.sr21.Location = new System.Drawing.Point(798, 144);
             this.sr21.Name = "sr21";
             this.sr21.Number = 21;
             this.sr21.ReaderName = null;
@@ -1078,7 +1136,7 @@
             this.sr19.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr19.ForeColor = System.Drawing.Color.Black;
             this.sr19.IsActive = false;
-            this.sr19.Location = new System.Drawing.Point(794, 198);
+            this.sr19.Location = new System.Drawing.Point(726, 144);
             this.sr19.Name = "sr19";
             this.sr19.Number = 19;
             this.sr19.ReaderName = null;
@@ -1092,7 +1150,7 @@
             this.sr17.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr17.ForeColor = System.Drawing.Color.Black;
             this.sr17.IsActive = false;
-            this.sr17.Location = new System.Drawing.Point(730, 198);
+            this.sr17.Location = new System.Drawing.Point(664, 144);
             this.sr17.Name = "sr17";
             this.sr17.Number = 17;
             this.sr17.ReaderName = null;
@@ -1106,7 +1164,7 @@
             this.sr15.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr15.ForeColor = System.Drawing.Color.Black;
             this.sr15.IsActive = false;
-            this.sr15.Location = new System.Drawing.Point(666, 198);
+            this.sr15.Location = new System.Drawing.Point(602, 144);
             this.sr15.Name = "sr15";
             this.sr15.Number = 15;
             this.sr15.ReaderName = null;
@@ -1120,7 +1178,7 @@
             this.sr13.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr13.ForeColor = System.Drawing.Color.Black;
             this.sr13.IsActive = false;
-            this.sr13.Location = new System.Drawing.Point(602, 198);
+            this.sr13.Location = new System.Drawing.Point(540, 144);
             this.sr13.Name = "sr13";
             this.sr13.Number = 13;
             this.sr13.ReaderName = null;
@@ -1134,7 +1192,7 @@
             this.sr11.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr11.ForeColor = System.Drawing.Color.Black;
             this.sr11.IsActive = false;
-            this.sr11.Location = new System.Drawing.Point(538, 198);
+            this.sr11.Location = new System.Drawing.Point(478, 144);
             this.sr11.Name = "sr11";
             this.sr11.Number = 11;
             this.sr11.ReaderName = null;
@@ -1148,7 +1206,7 @@
             this.sr9.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr9.ForeColor = System.Drawing.Color.Black;
             this.sr9.IsActive = false;
-            this.sr9.Location = new System.Drawing.Point(445, 198);
+            this.sr9.Location = new System.Drawing.Point(407, 144);
             this.sr9.Name = "sr9";
             this.sr9.Number = 9;
             this.sr9.ReaderName = null;
@@ -1162,7 +1220,7 @@
             this.sr7.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr7.ForeColor = System.Drawing.Color.Black;
             this.sr7.IsActive = false;
-            this.sr7.Location = new System.Drawing.Point(381, 198);
+            this.sr7.Location = new System.Drawing.Point(348, 144);
             this.sr7.Name = "sr7";
             this.sr7.Number = 7;
             this.sr7.ReaderName = null;
@@ -1176,7 +1234,7 @@
             this.sr5.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr5.ForeColor = System.Drawing.Color.Black;
             this.sr5.IsActive = false;
-            this.sr5.Location = new System.Drawing.Point(317, 198);
+            this.sr5.Location = new System.Drawing.Point(289, 144);
             this.sr5.Name = "sr5";
             this.sr5.Number = 5;
             this.sr5.ReaderName = null;
@@ -1190,7 +1248,7 @@
             this.sr3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr3.ForeColor = System.Drawing.Color.Black;
             this.sr3.IsActive = false;
-            this.sr3.Location = new System.Drawing.Point(253, 198);
+            this.sr3.Location = new System.Drawing.Point(230, 144);
             this.sr3.Name = "sr3";
             this.sr3.Number = 3;
             this.sr3.ReaderName = "";
@@ -1204,7 +1262,7 @@
             this.sr1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.sr1.ForeColor = System.Drawing.Color.Black;
             this.sr1.IsActive = false;
-            this.sr1.Location = new System.Drawing.Point(189, 198);
+            this.sr1.Location = new System.Drawing.Point(171, 144);
             this.sr1.Name = "sr1";
             this.sr1.Number = 1;
             this.sr1.ReaderName = null;
@@ -1214,9 +1272,9 @@
             // btnTestReaders
             // 
             this.btnTestReaders.Label = "Test Readers";
-            this.btnTestReaders.Location = new System.Drawing.Point(467, 228);
+            this.btnTestReaders.Location = new System.Drawing.Point(411, 161);
             this.btnTestReaders.Name = "btnTestReaders";
-            this.btnTestReaders.Size = new System.Drawing.Size(213, 74);
+            this.btnTestReaders.Size = new System.Drawing.Size(213, 80);
             this.btnTestReaders.Status = Yaqoot300.Controls.LoadingButtonControl.LoadingButtonControlStatus.Visible;
             this.btnTestReaders.TabIndex = 30;
             // 
@@ -1225,7 +1283,7 @@
             this.tr30.BackColor = System.Drawing.Color.LightGray;
             this.tr30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr30.ForeColor = System.Drawing.Color.Black;
-            this.tr30.Location = new System.Drawing.Point(1149, 132);
+            this.tr30.Location = new System.Drawing.Point(1033, 93);
             this.tr30.Name = "tr30";
             this.tr30.Number = 30;
             this.tr30.Size = new System.Drawing.Size(62, 62);
@@ -1237,7 +1295,7 @@
             this.tr29.BackColor = System.Drawing.Color.LightGray;
             this.tr29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr29.ForeColor = System.Drawing.Color.Black;
-            this.tr29.Location = new System.Drawing.Point(1149, 25);
+            this.tr29.Location = new System.Drawing.Point(1033, 15);
             this.tr29.Name = "tr29";
             this.tr29.Number = 29;
             this.tr29.Size = new System.Drawing.Size(62, 62);
@@ -1249,7 +1307,7 @@
             this.tr28.BackColor = System.Drawing.Color.LightGray;
             this.tr28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr28.ForeColor = System.Drawing.Color.Black;
-            this.tr28.Location = new System.Drawing.Point(1068, 132);
+            this.tr28.Location = new System.Drawing.Point(960, 93);
             this.tr28.Name = "tr28";
             this.tr28.Number = 28;
             this.tr28.Size = new System.Drawing.Size(62, 62);
@@ -1261,7 +1319,7 @@
             this.tr27.BackColor = System.Drawing.Color.LightGray;
             this.tr27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr27.ForeColor = System.Drawing.Color.Black;
-            this.tr27.Location = new System.Drawing.Point(1068, 25);
+            this.tr27.Location = new System.Drawing.Point(960, 15);
             this.tr27.Name = "tr27";
             this.tr27.Number = 27;
             this.tr27.Size = new System.Drawing.Size(62, 62);
@@ -1273,7 +1331,7 @@
             this.tr26.BackColor = System.Drawing.Color.LightGray;
             this.tr26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr26.ForeColor = System.Drawing.Color.Black;
-            this.tr26.Location = new System.Drawing.Point(987, 132);
+            this.tr26.Location = new System.Drawing.Point(887, 93);
             this.tr26.Name = "tr26";
             this.tr26.Number = 26;
             this.tr26.Size = new System.Drawing.Size(62, 62);
@@ -1285,7 +1343,7 @@
             this.tr25.BackColor = System.Drawing.Color.LightGray;
             this.tr25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr25.ForeColor = System.Drawing.Color.Black;
-            this.tr25.Location = new System.Drawing.Point(987, 25);
+            this.tr25.Location = new System.Drawing.Point(887, 15);
             this.tr25.Name = "tr25";
             this.tr25.Number = 25;
             this.tr25.Size = new System.Drawing.Size(62, 62);
@@ -1297,7 +1355,7 @@
             this.tr24.BackColor = System.Drawing.Color.LightGray;
             this.tr24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr24.ForeColor = System.Drawing.Color.Black;
-            this.tr24.Location = new System.Drawing.Point(906, 132);
+            this.tr24.Location = new System.Drawing.Point(814, 93);
             this.tr24.Name = "tr24";
             this.tr24.Number = 24;
             this.tr24.Size = new System.Drawing.Size(62, 62);
@@ -1309,7 +1367,7 @@
             this.tr23.BackColor = System.Drawing.Color.LightGray;
             this.tr23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr23.ForeColor = System.Drawing.Color.Black;
-            this.tr23.Location = new System.Drawing.Point(906, 25);
+            this.tr23.Location = new System.Drawing.Point(814, 15);
             this.tr23.Name = "tr23";
             this.tr23.Number = 23;
             this.tr23.Size = new System.Drawing.Size(62, 62);
@@ -1321,7 +1379,7 @@
             this.tr22.BackColor = System.Drawing.Color.LightGray;
             this.tr22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr22.ForeColor = System.Drawing.Color.Black;
-            this.tr22.Location = new System.Drawing.Point(825, 132);
+            this.tr22.Location = new System.Drawing.Point(741, 93);
             this.tr22.Name = "tr22";
             this.tr22.Number = 22;
             this.tr22.Size = new System.Drawing.Size(62, 62);
@@ -1333,7 +1391,7 @@
             this.tr21.BackColor = System.Drawing.Color.LightGray;
             this.tr21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr21.ForeColor = System.Drawing.Color.Black;
-            this.tr21.Location = new System.Drawing.Point(825, 25);
+            this.tr21.Location = new System.Drawing.Point(741, 15);
             this.tr21.Name = "tr21";
             this.tr21.Number = 21;
             this.tr21.Size = new System.Drawing.Size(62, 62);
@@ -1345,7 +1403,7 @@
             this.tr20.BackColor = System.Drawing.Color.LightGray;
             this.tr20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr20.ForeColor = System.Drawing.Color.Black;
-            this.tr20.Location = new System.Drawing.Point(744, 132);
+            this.tr20.Location = new System.Drawing.Point(668, 93);
             this.tr20.Name = "tr20";
             this.tr20.Number = 20;
             this.tr20.Size = new System.Drawing.Size(62, 62);
@@ -1357,7 +1415,7 @@
             this.tr19.BackColor = System.Drawing.Color.LightGray;
             this.tr19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr19.ForeColor = System.Drawing.Color.Black;
-            this.tr19.Location = new System.Drawing.Point(744, 25);
+            this.tr19.Location = new System.Drawing.Point(668, 15);
             this.tr19.Name = "tr19";
             this.tr19.Number = 19;
             this.tr19.Size = new System.Drawing.Size(62, 62);
@@ -1369,7 +1427,7 @@
             this.tr18.BackColor = System.Drawing.Color.LightGray;
             this.tr18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr18.ForeColor = System.Drawing.Color.Black;
-            this.tr18.Location = new System.Drawing.Point(663, 132);
+            this.tr18.Location = new System.Drawing.Point(595, 93);
             this.tr18.Name = "tr18";
             this.tr18.Number = 18;
             this.tr18.Size = new System.Drawing.Size(62, 62);
@@ -1381,7 +1439,7 @@
             this.tr17.BackColor = System.Drawing.Color.LightGray;
             this.tr17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr17.ForeColor = System.Drawing.Color.Black;
-            this.tr17.Location = new System.Drawing.Point(663, 25);
+            this.tr17.Location = new System.Drawing.Point(595, 15);
             this.tr17.Name = "tr17";
             this.tr17.Number = 17;
             this.tr17.Size = new System.Drawing.Size(62, 62);
@@ -1393,7 +1451,7 @@
             this.tr16.BackColor = System.Drawing.Color.LightGray;
             this.tr16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr16.ForeColor = System.Drawing.Color.Black;
-            this.tr16.Location = new System.Drawing.Point(582, 132);
+            this.tr16.Location = new System.Drawing.Point(522, 93);
             this.tr16.Name = "tr16";
             this.tr16.Number = 16;
             this.tr16.Size = new System.Drawing.Size(62, 62);
@@ -1405,7 +1463,7 @@
             this.tr15.BackColor = System.Drawing.Color.LightGray;
             this.tr15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr15.ForeColor = System.Drawing.Color.Black;
-            this.tr15.Location = new System.Drawing.Point(582, 25);
+            this.tr15.Location = new System.Drawing.Point(522, 15);
             this.tr15.Name = "tr15";
             this.tr15.Number = 15;
             this.tr15.Size = new System.Drawing.Size(62, 62);
@@ -1417,7 +1475,7 @@
             this.tr14.BackColor = System.Drawing.Color.LightGray;
             this.tr14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr14.ForeColor = System.Drawing.Color.Black;
-            this.tr14.Location = new System.Drawing.Point(501, 132);
+            this.tr14.Location = new System.Drawing.Point(449, 93);
             this.tr14.Name = "tr14";
             this.tr14.Number = 14;
             this.tr14.Size = new System.Drawing.Size(62, 62);
@@ -1429,7 +1487,7 @@
             this.tr13.BackColor = System.Drawing.Color.LightGray;
             this.tr13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr13.ForeColor = System.Drawing.Color.Black;
-            this.tr13.Location = new System.Drawing.Point(501, 25);
+            this.tr13.Location = new System.Drawing.Point(449, 15);
             this.tr13.Name = "tr13";
             this.tr13.Number = 13;
             this.tr13.Size = new System.Drawing.Size(62, 62);
@@ -1441,7 +1499,7 @@
             this.tr12.BackColor = System.Drawing.Color.LightGray;
             this.tr12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr12.ForeColor = System.Drawing.Color.Black;
-            this.tr12.Location = new System.Drawing.Point(420, 132);
+            this.tr12.Location = new System.Drawing.Point(376, 93);
             this.tr12.Name = "tr12";
             this.tr12.Number = 12;
             this.tr12.Size = new System.Drawing.Size(62, 62);
@@ -1453,7 +1511,7 @@
             this.tr11.BackColor = System.Drawing.Color.LightGray;
             this.tr11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr11.ForeColor = System.Drawing.Color.Black;
-            this.tr11.Location = new System.Drawing.Point(420, 25);
+            this.tr11.Location = new System.Drawing.Point(376, 15);
             this.tr11.Name = "tr11";
             this.tr11.Number = 11;
             this.tr11.Size = new System.Drawing.Size(62, 62);
@@ -1465,7 +1523,7 @@
             this.tr10.BackColor = System.Drawing.Color.LightGray;
             this.tr10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr10.ForeColor = System.Drawing.Color.Black;
-            this.tr10.Location = new System.Drawing.Point(339, 132);
+            this.tr10.Location = new System.Drawing.Point(303, 93);
             this.tr10.Name = "tr10";
             this.tr10.Number = 10;
             this.tr10.Size = new System.Drawing.Size(62, 62);
@@ -1477,7 +1535,7 @@
             this.tr9.BackColor = System.Drawing.Color.LightGray;
             this.tr9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr9.ForeColor = System.Drawing.Color.Black;
-            this.tr9.Location = new System.Drawing.Point(339, 25);
+            this.tr9.Location = new System.Drawing.Point(303, 15);
             this.tr9.Name = "tr9";
             this.tr9.Number = 9;
             this.tr9.Size = new System.Drawing.Size(62, 62);
@@ -1489,7 +1547,7 @@
             this.tr8.BackColor = System.Drawing.Color.LightGray;
             this.tr8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr8.ForeColor = System.Drawing.Color.Black;
-            this.tr8.Location = new System.Drawing.Point(258, 132);
+            this.tr8.Location = new System.Drawing.Point(230, 93);
             this.tr8.Name = "tr8";
             this.tr8.Number = 8;
             this.tr8.Size = new System.Drawing.Size(62, 62);
@@ -1501,7 +1559,7 @@
             this.tr7.BackColor = System.Drawing.Color.LightGray;
             this.tr7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr7.ForeColor = System.Drawing.Color.Black;
-            this.tr7.Location = new System.Drawing.Point(258, 25);
+            this.tr7.Location = new System.Drawing.Point(230, 15);
             this.tr7.Name = "tr7";
             this.tr7.Number = 7;
             this.tr7.Size = new System.Drawing.Size(62, 62);
@@ -1513,7 +1571,7 @@
             this.tr6.BackColor = System.Drawing.Color.LightGray;
             this.tr6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr6.ForeColor = System.Drawing.Color.Black;
-            this.tr6.Location = new System.Drawing.Point(177, 132);
+            this.tr6.Location = new System.Drawing.Point(157, 93);
             this.tr6.Name = "tr6";
             this.tr6.Number = 6;
             this.tr6.Size = new System.Drawing.Size(62, 62);
@@ -1525,7 +1583,7 @@
             this.tr5.BackColor = System.Drawing.Color.LightGray;
             this.tr5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr5.ForeColor = System.Drawing.Color.Black;
-            this.tr5.Location = new System.Drawing.Point(177, 25);
+            this.tr5.Location = new System.Drawing.Point(157, 15);
             this.tr5.Name = "tr5";
             this.tr5.Number = 5;
             this.tr5.Size = new System.Drawing.Size(62, 62);
@@ -1537,7 +1595,7 @@
             this.tr4.BackColor = System.Drawing.Color.LightGray;
             this.tr4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr4.ForeColor = System.Drawing.Color.Black;
-            this.tr4.Location = new System.Drawing.Point(95, 132);
+            this.tr4.Location = new System.Drawing.Point(84, 93);
             this.tr4.Name = "tr4";
             this.tr4.Number = 4;
             this.tr4.Size = new System.Drawing.Size(62, 62);
@@ -1549,7 +1607,7 @@
             this.tr3.BackColor = System.Drawing.Color.LightGray;
             this.tr3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr3.ForeColor = System.Drawing.Color.Black;
-            this.tr3.Location = new System.Drawing.Point(96, 25);
+            this.tr3.Location = new System.Drawing.Point(84, 15);
             this.tr3.Name = "tr3";
             this.tr3.Number = 3;
             this.tr3.Size = new System.Drawing.Size(62, 62);
@@ -1561,7 +1619,7 @@
             this.tr2.BackColor = System.Drawing.Color.LightGray;
             this.tr2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr2.ForeColor = System.Drawing.Color.Black;
-            this.tr2.Location = new System.Drawing.Point(15, 132);
+            this.tr2.Location = new System.Drawing.Point(11, 93);
             this.tr2.Name = "tr2";
             this.tr2.Number = 2;
             this.tr2.Size = new System.Drawing.Size(62, 62);
@@ -1573,7 +1631,7 @@
             this.tr1.BackColor = System.Drawing.Color.LightGray;
             this.tr1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tr1.ForeColor = System.Drawing.Color.Black;
-            this.tr1.Location = new System.Drawing.Point(15, 25);
+            this.tr1.Location = new System.Drawing.Point(11, 15);
             this.tr1.Name = "tr1";
             this.tr1.Number = 1;
             this.tr1.Size = new System.Drawing.Size(62, 62);
@@ -1585,9 +1643,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.panel9);
             this.Controls.Add(this.tabService);
             this.Name = "ServicePage";
-            this.Size = new System.Drawing.Size(1280, 990);
+            this.Size = new System.Drawing.Size(1366, 768);
             this.tabService.ResumeLayout(false);
             this.tpPlcConfig.ResumeLayout(false);
             this.gbSensors.ResumeLayout(false);
@@ -1605,6 +1664,7 @@
             this.panel6.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1723,5 +1783,10 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel9;
+        private Controls.ServiceConnectionsControl serviceConnectionsControl1;
+        private System.Windows.Forms.Button btnMessages;
+        private System.Windows.Forms.Button btnSelectJob;
+        private Controls.ServiceJobStatisticsControl serviceJobStatisticsControl1;
     }
 }

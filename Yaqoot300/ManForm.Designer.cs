@@ -34,17 +34,19 @@
             // 
             // panelPage
             // 
-            this.panelPage.Location = new System.Drawing.Point(-6, -1);
+            this.panelPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPage.Location = new System.Drawing.Point(0, 0);
             this.panelPage.Name = "panelPage";
-            this.panelPage.Size = new System.Drawing.Size(1282, 990);
+            this.panelPage.Size = new System.Drawing.Size(1366, 768);
             this.panelPage.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1279, 985);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.panelPage);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

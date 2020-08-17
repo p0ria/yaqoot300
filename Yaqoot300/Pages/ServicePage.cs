@@ -10,7 +10,9 @@ using System.Windows.Forms;
 using Yaqoot300.Commons;
 using Yaqoot300.Controls;
 using Yaqoot300.Interfaces;
+using Yaqoot300.Modals;
 using Yaqoot300.State;
+using Yaqoot300.State.Job.Actions;
 using Yaqoot300.State.Service;
 using Yaqoot300.State.Service.Actions;
 
@@ -437,5 +439,20 @@ namespace Yaqoot300.Pages
             _m4Timer.Stop();
             Store.Dispatch(new ServiceChangeM4Action(new ServiceChangeM4ActionPayload(UpDownMotorStatus.Idle, true, true)));
         }
+
+        private void btnSelectJob_Click(object sender, EventArgs e)
+        {
+            using (var dlg = new JobsDialog())
+            {
+                dlg.ShowDialog();
+                Store.Dispatch(new JobSelectJobAction(dlg.SelectedJobId));
+            }
+        }
+
+        private void btnMessages_Click(object sender, EventArgs e)
+        {
+            Services.Messages.ShowDialog();
+        }
+
     }
 }
