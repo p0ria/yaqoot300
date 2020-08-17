@@ -34,6 +34,7 @@
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn2 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             this.dgv = new Syncfusion.WinForms.DataGrid.SfDataGrid();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbApp = new System.Windows.Forms.CheckBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -44,7 +45,8 @@
             this.cbInfo = new System.Windows.Forms.CheckBox();
             this.cbWarning = new System.Windows.Forms.CheckBox();
             this.cbError = new System.Windows.Forms.CheckBox();
-            this.cbApp = new System.Windows.Forms.CheckBox();
+            this.btnClear = new Syncfusion.WinForms.Controls.SfButton();
+            this.tbInnerException = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -86,6 +88,7 @@
             gridTextColumn1.HeaderStyle.Font.Size = 14F;
             gridTextColumn1.HeaderText = "Message";
             gridTextColumn1.MappingName = "Message";
+            gridTextColumn1.ShowToolTip = true;
             gridTextColumn2.AllowEditing = false;
             gridTextColumn2.AllowGrouping = false;
             gridTextColumn2.AllowSorting = false;
@@ -102,9 +105,10 @@
             this.dgv.Location = new System.Drawing.Point(34, 35);
             this.dgv.Name = "dgv";
             this.dgv.RowHeight = 40;
-            this.dgv.Size = new System.Drawing.Size(794, 784);
+            this.dgv.Size = new System.Drawing.Size(794, 673);
             this.dgv.Style.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.dgv.TabIndex = 3;
+            this.dgv.SelectionChanged += new Syncfusion.WinForms.DataGrid.Events.SelectionChangedEventHandler(this.dgv_SelectionChanged);
             // 
             // groupBox1
             // 
@@ -122,10 +126,23 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.groupBox1.Location = new System.Drawing.Point(857, 35);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 510);
+            this.groupBox1.Size = new System.Drawing.Size(200, 417);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filters";
+            // 
+            // cbApp
+            // 
+            this.cbApp.AutoSize = true;
+            this.cbApp.Checked = true;
+            this.cbApp.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbApp.Location = new System.Drawing.Point(24, 222);
+            this.cbApp.Name = "cbApp";
+            this.cbApp.Size = new System.Drawing.Size(73, 29);
+            this.cbApp.TabIndex = 10;
+            this.cbApp.Text = "APP";
+            this.cbApp.UseVisualStyleBackColor = true;
+            this.cbApp.CheckedChanged += new System.EventHandler(this.cbCheckedChanged);
             // 
             // pictureBox3
             // 
@@ -240,23 +257,36 @@
             this.cbError.UseVisualStyleBackColor = true;
             this.cbError.CheckedChanged += new System.EventHandler(this.cbCheckedChanged);
             // 
-            // cbApp
+            // btnClear
             // 
-            this.cbApp.AutoSize = true;
-            this.cbApp.Checked = true;
-            this.cbApp.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbApp.Location = new System.Drawing.Point(24, 222);
-            this.cbApp.Name = "cbApp";
-            this.cbApp.Size = new System.Drawing.Size(73, 29);
-            this.cbApp.TabIndex = 10;
-            this.cbApp.Text = "APP";
-            this.cbApp.UseVisualStyleBackColor = true;
+            this.btnClear.AccessibleName = "Button";
+            this.btnClear.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnClear.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.btnClear.Location = new System.Drawing.Point(857, 485);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(200, 47);
+            this.btnClear.Style.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnClear.Style.Image = global::Yaqoot300.Properties.Resources.clear_16x16;
+            this.btnClear.TabIndex = 6;
+            this.btnClear.Text = "CLEAR";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // tbInnerException
+            // 
+            this.tbInnerException.Location = new System.Drawing.Point(34, 728);
+            this.tbInnerException.Multiline = true;
+            this.tbInnerException.Name = "tbInnerException";
+            this.tbInnerException.Size = new System.Drawing.Size(794, 107);
+            this.tbInnerException.TabIndex = 7;
             // 
             // MessagesDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 861);
+            this.Controls.Add(this.tbInnerException);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgv);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -270,6 +300,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -288,5 +319,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckBox cbApp;
+        private Syncfusion.WinForms.Controls.SfButton btnClear;
+        private System.Windows.Forms.TextBox tbInnerException;
     }
 }

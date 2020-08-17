@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Yaqoot300</RootNamespace>
     <AssemblyName>Yaqoot300</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -31,9 +31,20 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleTcp, Version=2.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SuperSimpleTcp.2.0.6\lib\net461\SimpleTcp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Syncfusion.Core.WinForms, Version=18.2460.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
@@ -88,8 +99,19 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commons\CheckingsService.cs" />
+    <Compile Include="Commons\Config.cs" />
     <Compile Include="Commons\Constants.cs" />
     <Compile Include="Commons\IBA.cs" />
+    <Compile Include="Commons\MessagesService.cs" />
+    <Compile Include="Commons\SignalUtils.cs" />
+    <Compile Include="Controls\ConnectionsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ConnectionsControl.Designer.cs">
+      <DependentUpon>ConnectionsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IpPort.cs" />
     <Compile Include="Commons\UiExtensionMethods.cs" />
     <Compile Include="Commons\Utils.cs" />
     <Compile Include="Controls\LoadingButtonControl.cs">
@@ -138,7 +160,7 @@
     <Compile Include="Interfaces\AutoStartBtnStatus.cs" />
     <Compile Include="Interfaces\MessageCategory.cs" />
     <Compile Include="Interfaces\Mode.cs" />
-    <Compile Include="Commons\ServiceProvider.cs" />
+    <Compile Include="Commons\Services.cs" />
     <Compile Include="Controls\AutoActions.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -176,6 +198,7 @@
       <DependentUpon>ReaderController.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\ReaderStatus.cs" />
+    <Compile Include="Interfaces\Signal.cs" />
     <Compile Include="Interfaces\TestReaderStatus.cs" />
     <Compile Include="Interfaces\UpDownMotorStatus.cs" />
     <Compile Include="Interfaces\RotateMotorStatus.cs" />
@@ -185,6 +208,12 @@
     </Compile>
     <Compile Include="ManForm.Designer.cs">
       <DependentUpon>ManForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modals\CheckingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modals\CheckingsDialog.Designer.cs">
+      <DependentUpon>CheckingsDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Modals\PlcErrorDialog.cs">
       <SubType>Form</SubType>
@@ -206,7 +235,7 @@
     </Compile>
     <Compile Include="Models\Job.cs" />
     <Compile Include="Models\Signal\GuiSignals.cs" />
-    <Compile Include="Models\Signal\PlcConnection.cs" />
+    <Compile Include="Connections\PlcConnection.cs" />
     <Compile Include="Models\Signal\PlcSignals.cs" />
     <Compile Include="Models\Signal\SignalAttribute.cs" />
     <Compile Include="Models\Signal\Signals.cs" />
@@ -225,7 +254,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="State\App\Actions\AppActionTypes.cs" />
+    <Compile Include="State\App\Actions\AppConnectionsChangedAction.cs" />
+    <Compile Include="State\App\Actions\AppConnectionsChangedActionPayload.cs" />
     <Compile Include="State\App\AppReducer.cs" />
     <Compile Include="State\App\InitialAppState.cs" />
     <Compile Include="State\App\State\AppState.cs" />
@@ -261,12 +297,19 @@
     <Compile Include="State\Job\InitialJobState.cs" />
     <Compile Include="State\Job\JobReducer.cs" />
     <Compile Include="State\Job\State\JobState.cs" />
+    <Compile Include="State\PLC\Actions\PlcActionTypes.cs" />
+    <Compile Include="State\PLC\Actions\PlcStartReadyChangedAction.cs" />
+    <Compile Include="State\PLC\InitialPlcState.cs" />
+    <Compile Include="State\PLC\PlcReducer.cs" />
+    <Compile Include="State\PLC\State\PlcState.cs" />
     <Compile Include="State\RootReducer.cs" />
     <Compile Include="State\Service\Actions\ServiceAssignReaderAction.cs" />
     <Compile Include="State\Service\Actions\ServiceAssignReaderActionPayload.cs" />
     <Compile Include="State\Service\Actions\ServiceChangeSettingsAction.cs" />
     <Compile Include="State\Service\Actions\ServiceChangeSettingsFailAction.cs" />
     <Compile Include="State\Service\Actions\ServiceChangeSettingsSuccessAction.cs" />
+    <Compile Include="State\Service\Actions\ServiceSensorsChangedAction.cs" />
+    <Compile Include="State\Service\Actions\ServiceSensorsChangedActionPayload.cs" />
     <Compile Include="State\Service\Actions\ServiceTestReadersAction.cs" />
     <Compile Include="State\Service\Actions\ServiceTestReadersFailAction.cs" />
     <Compile Include="State\Service\Actions\ServiceTestReadersSuccessAction.cs" />
@@ -291,6 +334,9 @@
     <Compile Include="State\Store.cs" />
     <EmbeddedResource Include="Controls\AutoActions.resx">
       <DependentUpon>AutoActions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ConnectionsControl.resx">
+      <DependentUpon>ConnectionsControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\PlcErrorControl.resx">
       <DependentUpon>PlcErrorControl.cs</DependentUpon>
@@ -332,6 +378,9 @@
       <DependentUpon>ManForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modals\CheckingsDialog.resx">
+      <DependentUpon>CheckingsDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modals\PlcErrorDialog.resx">
       <DependentUpon>PlcErrorDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -349,14 +398,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <None Include="config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -376,6 +423,13 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\Images\circle_cross_32x32.png" />
+    <None Include="Resources\Images\circle_tick_32x32.png" />
+    <None Include="Resources\Images\cross_24x24.png" />
+    <None Include="Resources\Images\clear_16x16.png" />
+    <Content Include="logo.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Images\cross_32x32.png" />
     <Content Include="Resources\Images\error_64x64.png" />
     <Content Include="Resources\Images\gear_128x128.gif" />
@@ -385,15 +439,17 @@
     <None Include="Resources\Images\icon_error_32x32.png" />
     <None Include="Resources\Images\icon_info_32x32.png" />
     <None Include="Resources\Images\icon_warning_32x32.png" />
+    <None Include="Resources\Images\loading2_24x24.gif" />
     <Content Include="Resources\Images\loading_128x128.gif" />
     <None Include="Resources\Images\loading_46x46.gif" />
+    <None Include="Resources\Images\loading_24x24.gif" />
     <Content Include="Resources\Images\loading_64x64.gif" />
     <Content Include="Resources\Images\red_circle_64x64.png" />
     <Content Include="Resources\Images\loading_32x32.gif" />
     <None Include="Resources\Images\red_close_64x64.png" />
-    <Content Include="Resources\Images\sync_32x32.png" />
-    <Content Include="Resources\Images\sync_blue_32x32.png" />
+    <None Include="Resources\Images\tick_24x24.png" />
     <Content Include="Resources\Images\tick_32x32.png" />
+    <None Include="Resources\Images\tick_64x64.png" />
     <Content Include="Resources\Images\yellow_circle_64x64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

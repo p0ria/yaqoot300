@@ -25,11 +25,7 @@ namespace Yaqoot300.State.Home
                         }
                     },
                     HomeReaders = new HomeReadersState(),
-                    PlcErrors = new List<PlcErrorState>
-                    {
-                        PlcErrors.DoorOpen,
-                        PlcErrors.EndOfReel
-                    }
+                    PlcErrors = new List<PlcErrorState>()
                 };
                 for (int i = 0; i < Constants.READERS_COUNT; i++)
                     state.HomeReaders.Readers.Add(new HomeReaderState(i + 1, ReaderStatus.Idle));

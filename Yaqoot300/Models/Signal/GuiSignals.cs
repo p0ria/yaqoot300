@@ -6,7 +6,8 @@ namespace Yaqoot300.Models.Signal
 {
     public static class GuiSignals
     {
-        public static readonly byte[] Start = { 0x81, 0 };
+        public static readonly byte[] Start = {0x81, 0x01};
+        public static readonly byte[] Started = { 0x81, 0x02 };
         public static readonly byte[] Stop = { 0x82, 0 };
         public static readonly byte[] ManualCycle = { 0x83, 0 };
         public static readonly byte[] ManualOsLoad = { 0x84, 0 };

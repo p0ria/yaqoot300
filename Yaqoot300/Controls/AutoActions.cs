@@ -10,8 +10,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Yaqoot300.Commons;
 using Yaqoot300.Interfaces;
+using Yaqoot300.Models.Signal;
 using Yaqoot300.State;
 using Yaqoot300.State.Home.Actions;
+using Yaqoot300.State.PLC.Actions;
 using Timer = System.Threading.Timer;
 
 namespace Yaqoot300.Controls
@@ -29,10 +31,12 @@ namespace Yaqoot300.Controls
             switch (Store.Home.Auto.StartBtn.Status)
             {
                 case AutoStartBtnStatus.Stoped:
+                    Services.Store.Dispatch(new PlcStartReadyChangedAction(null));
                     Store.Dispatch(new HomeChangeAutoStartAction(
                         new HomeChangeAutoStartActionPayload(AutoStartBtnStatus.Starting, false)));
                     break;
                 case AutoStartBtnStatus.Started:
+                    Services.Signals.Send(GuiSignals.Stop);
                     Store.Dispatch(new HomeChangeAutoStartAction(
                         new HomeChangeAutoStartActionPayload(AutoStartBtnStatus.Stoped)));
                     break;
@@ -48,25 +52,36 @@ namespace Yaqoot300.Controls
                     switch (Store.Home.Auto.StartBtn.Status)
                     {
                         case AutoStartBtnStatus.Stoped:
-                            this.btnStart.Text = "Start";
-                            this.btnStart.ForeColor = Color.White;
-                            this.btnStart.BackColor = Color.DodgerBlue;
-                            this.pbLoading.Visible = false;
-                            this.btnStart.Visible = true;
+                            this.SafeInvoke(() =>
+                            {
+                                this.btnStart.Text = "Start";
+                                this.btnStart.ForeColor = Color.White;
+                                this.btnStart.BackColor = Color.DodgerBlue;
+                                this.pbLoading.Visible = false;
+                                this.btnStart.Visible = true;
+                                this.btnStart.Enabled = Store.Home.Auto.StartBtn.IsEnabled;
+                            });
                             break;
                         case AutoStartBtnStatus.Starting:
-                            this.btnStart.Visible = false;
-                            this.pbLoading.Visible = true;
+                            this.SafeInvoke(() =>
+                            {
+                                this.btnStart.Visible = false;
+                                this.pbLoading.Visible = true;
+                                this.btnStart.Enabled = Store.Home.Auto.StartBtn.IsEnabled;
+                            });
                             break;
                         case AutoStartBtnStatus.Started:
-                            this.btnStart.Text = "Stop";
-                            this.btnStart.ForeColor = Color.White;
-                            this.btnStart.BackColor = Color.DarkOrange;
-                            this.pbLoading.Visible = false;
-                            this.btnStart.Visible = true;
+                            this.SafeInvoke(() =>
+                            {
+                                this.btnStart.Text = "Stop";
+                                this.btnStart.ForeColor = Color.White;
+                                this.btnStart.BackColor = Color.DarkOrange;
+                                this.pbLoading.Visible = false;
+                                this.btnStart.Visible = true;
+                                this.btnStart.Enabled = Store.Home.Auto.StartBtn.IsEnabled;
+                            });
                             break;
                     }
-                    this.btnStart.Enabled = Store.Home.Auto.StartBtn.IsEnabled;
                     break;
 
             }
@@ -74,7 +89,7 @@ namespace Yaqoot300.Controls
 
         private Store Store
         {
-            get { return ServiceProvider.Store; }
+            get { return Services.Store; }
         }
     }
 }

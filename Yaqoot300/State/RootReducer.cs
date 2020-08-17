@@ -4,6 +4,7 @@ using Yaqoot300.Interfaces;
 using Yaqoot300.State.App;
 using Yaqoot300.State.Home;
 using Yaqoot300.State.Job;
+using Yaqoot300.State.PLC;
 using Yaqoot300.State.Service;
 
 namespace Yaqoot300.State
@@ -17,6 +18,7 @@ namespace Yaqoot300.State
         private readonly HomeReducer _homeReducer;
         private readonly ServiceReducer _serviceReducer;
         private readonly JobReducer _jobReducer;
+        private readonly PlcReducer _plcReducer;
 
         public RootReducer(Store store)
         {
@@ -26,6 +28,7 @@ namespace Yaqoot300.State
             this._homeReducer = new HomeReducer();
             this._serviceReducer = new ServiceReducer();
             this._jobReducer = new JobReducer();
+            this._plcReducer = new PlcReducer();
         }
 
         public void Reduce(IAction action)
@@ -35,6 +38,7 @@ namespace Yaqoot300.State
             this._homeReducer.Reduce(_store.Home, action);
             this._serviceReducer.Reduce(_store.Service, action);
             this._jobReducer.Reduce(_store.Job, action);
+            this._plcReducer.Reduce(_store.Plc, action);
             this._store.RaiseStoreChangedEvent(action.Type);
         }
     }

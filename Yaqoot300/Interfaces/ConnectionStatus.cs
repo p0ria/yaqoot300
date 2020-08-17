@@ -8,6 +8,6 @@ namespace Yaqoot300.Interfaces
 {
     public enum ConnectionStatus
     {
-        Connecting, Connected, Disconnected
+        Disconnected, Connecting, Connected
     }
 }

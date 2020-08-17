@@ -209,8 +209,7 @@ namespace Yaqoot300.Pages
 
         private void settingsSliderOnValueChanged(object sender, int i1)
         {
-            bool dirty = false;
-            if (this.scActiveReaders.Value != Store.Service.Settings.ActiveReaders) dirty = true;
+            bool dirty = this.scActiveReaders.Value != Store.Service.Settings.ActiveReaders;
             if (!dirty && this.scFeedInSteps.Value != Store.Service.Settings.FeedInSteps) dirty = true;
             if (!dirty && this.scM3StepLength.Value != Store.Service.Settings.M3StepLength) dirty = true;
             if (!dirty && this.scM4Speed.Value != Store.Service.Settings.M4Speed) dirty = true;
@@ -267,11 +266,14 @@ namespace Yaqoot300.Pages
                 case ServiceActionTypes.ASSIGN_READER:
                     SetSetupReaders();
                     break;
+                case ServiceActionTypes.SENSORS_CHANGED:
+                    SetSensors();
+                    break;
             }
         }
 
 
-        private Store Store => ServiceProvider.Store;
+        private Store Store => Services.Store;
 
         private void OnMotorMouseDown(object sender, MouseEventArgs mouseEventArgs)
         {
@@ -331,81 +333,97 @@ namespace Yaqoot300.Pages
 
         private void SetM0()
         {
-            mt0.IsEnabled = Store.Service.Motors.M0.Status == RotateMotorStatus.Started;
-            mt0.Cursor = Store.Service.Motors.M0.IsEnabled ? Cursors.Hand : Cursors.No;
+            this.SafeInvoke(() =>
+            {
+                mt0.IsEnabled = Store.Service.Motors.M0.Status == RotateMotorStatus.Started;
+                mt0.Cursor = Store.Service.Motors.M0.IsEnabled ? Cursors.Hand : Cursors.No;
+            });
         }
 
         private void SetM1()
         {
-            mt1.IsEnabled = Store.Service.Motors.M1.Status == RotateMotorStatus.Started;
-            mt1.Cursor = Store.Service.Motors.M1.IsEnabled ? Cursors.Hand : Cursors.No;
+            this.SafeInvoke(() =>
+            {
+                mt1.IsEnabled = Store.Service.Motors.M1.Status == RotateMotorStatus.Started;
+                mt1.Cursor = Store.Service.Motors.M1.IsEnabled ? Cursors.Hand : Cursors.No;
+            });
         }
 
         private void SetM2()
         {
-            mt2.IsEnabled = Store.Service.Motors.M2.Status == RotateMotorStatus.Started;
-            mt2.Cursor = Store.Service.Motors.M2.IsEnabled ? Cursors.Hand : Cursors.No;
+            this.SafeInvoke(() =>
+            {
+                mt2.IsEnabled = Store.Service.Motors.M2.Status == RotateMotorStatus.Started;
+                mt2.Cursor = Store.Service.Motors.M2.IsEnabled ? Cursors.Hand : Cursors.No;
+            });
         }
 
         private void SetM3()
         {
-            mt3.IsEnabled = Store.Service.Motors.M3.Status == RotateMotorStatus.Started;
-            mt3.Cursor = Store.Service.Motors.M3.IsEnabled ? Cursors.Hand : Cursors.No;
+            this.SafeInvoke(() =>
+            {
+                mt3.IsEnabled = Store.Service.Motors.M3.Status == RotateMotorStatus.Started;
+                mt3.Cursor = Store.Service.Motors.M3.IsEnabled ? Cursors.Hand : Cursors.No;
+            });
         }
 
         private void SetM4()
         {
-            mt4.Status = Store.Service.Motors.M4.Status;
-            mt4.IsUpEnabled = Store.Service.Motors.M4.IsUpEnabled;
-            mt4.IsDownEnabled = Store.Service.Motors.M4.IsDownEnabled;
+            this.SafeInvoke(() =>
+            {
+                mt4.Status = Store.Service.Motors.M4.Status;
+                mt4.IsUpEnabled = Store.Service.Motors.M4.IsUpEnabled;
+                mt4.IsDownEnabled = Store.Service.Motors.M4.IsDownEnabled;
+            });
         }
 
-        private void SetSensors(params int[] sensorIndices)
+        private void SetSensors()
         {
-            if (sensorIndices == null || sensorIndices.Length == 0)
+            this.SafeInvoke(() =>
             {
                 for (int i = 0; i < Constants.SENSORS_LENGTH; i++)
                 {
-                    this._sensors[i].IsOn = Store.Service.Sensors[i];
+                    _sensors[i].IsOn = Store.Service.Sensors[i];
                 }
-            }
-            else
-            {
-                foreach (int sensorIndex in sensorIndices)
-                {
-                    this._sensors[sensorIndex].IsOn = Store.Service.Sensors[sensorIndex];
-                }
-            }
+            });
         }
 
         private void SetSettings()
         {
-            this.scActiveReaders.Value = Store.Service.Settings.ActiveReaders;
-            this.scFeedInSteps.Value = Store.Service.Settings.FeedInSteps;
-            this.scM3StepLength.Value = Store.Service.Settings.M3StepLength;
-            this.scM4Speed.Value = Store.Service.Settings.M4Speed;
+            this.SafeInvoke(() =>
+            {
+                this.scActiveReaders.Value = Store.Service.Settings.ActiveReaders;
+                this.scFeedInSteps.Value = Store.Service.Settings.FeedInSteps;
+                this.scM3StepLength.Value = Store.Service.Settings.M3StepLength;
+                this.scM4Speed.Value = Store.Service.Settings.M4Speed;
+            });
         }
 
         private void SetSetupReaders()
         {
-            var unassginedReaders = Store.Service.SetupReaders.Readers.Where(r => !r.ReaderNumber.HasValue);
-            var assignedReaders = Store.Service.SetupReaders.Readers.Where(r => r.ReaderNumber.HasValue);
-
-            this.lbReaders.Items.Clear();
-            this.lbReaders.Items.AddRange(unassginedReaders.Select(r => r.ReaderName).ToArray());
-            foreach (var sr in assignedReaders)
+            this.SafeInvoke(() =>
             {
-                _setupReaders[sr.ReaderNumber.Value - 1].ReaderName = sr.ReaderName;
-            }
-            
+                var unassginedReaders = Store.Service.SetupReaders.Readers.Where(r => !r.ReaderNumber.HasValue);
+                var assignedReaders = Store.Service.SetupReaders.Readers.Where(r => r.ReaderNumber.HasValue);
+
+                this.lbReaders.Items.Clear();
+                this.lbReaders.Items.AddRange(unassginedReaders.Select(r => r.ReaderName).ToArray());
+                foreach (var sr in assignedReaders)
+                {
+                    _setupReaders[sr.ReaderNumber.Value - 1].ReaderName = sr.ReaderName;
+                }
+            });        
         }
 
         private void SetTestReaders()
         {
-            for (int i = 0; i < Constants.READERS_COUNT; i++)
+            this.SafeInvoke(() =>
             {
-                _testReaders[i].Status = Store.Service.TestReaders.Readers[i];
-            }
+                for (int i = 0; i < Constants.READERS_COUNT; i++)
+                {
+                    _testReaders[i].Status = Store.Service.TestReaders.Readers[i];
+                }
+            });
         }
 
         private void M3TimerOnTick(object sender, EventArgs eventArgs)

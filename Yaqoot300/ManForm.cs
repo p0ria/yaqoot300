@@ -26,11 +26,11 @@ namespace Yaqoot300
             InitializeComponent();
             _homePage = new HomePage();
             _servicePage = new ServicePage();
-            ServiceProvider.Store.StoreChanged += OnStoreChanged;
-            ServiceProvider.Store.RaiseStoreChangedEvent();
+            Services.Store.StoreChanged += OnStoreChanged;
+            Services.Store.RaiseStoreChangedEvent();
         }
 
-        private Store Store => ServiceProvider.Store;
+        private Store Store => Services.Store;
 
         private void OnStoreChanged(object sender, string changeType)
         {
@@ -52,16 +52,22 @@ namespace Yaqoot300
                 case Mode.Manual:
                     if (_currentPage == null || _currentPage == Mode.Service)
                     {
-                        this.Controls.Clear();
-                        this.Controls.Add(_homePage);
+                        this.SafeInvoke(() =>
+                        {
+                            this.Controls.Clear();
+                            this.Controls.Add(_homePage);
+                        });
                     }
                     break;
 
                 case Mode.Service:
                     if (_currentPage != Mode.Service)
                     {
-                        this.Controls.Clear();
-                        this.Controls.Add(_servicePage);
+                        this.SafeInvoke(() =>
+                        {
+                            this.Controls.Clear();
+                            this.Controls.Add(_servicePage);
+                        });
                     }
                     break;
             }

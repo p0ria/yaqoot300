@@ -20,5 +20,6 @@ namespace Yaqoot300.State.Service.Actions
         public const string TEST_READERS_SUCCESS = "[SERVICE] Test Readers Success";
         public const string TEST_READERS_FAIL = "[SERVICE] Test Readers Fail";
         public const string ASSIGN_READER = "[SERVICE] Assign Reader";
+        public const string SENSORS_CHANGED = "[SERVICE] Sensors Changed";
     }
 }

@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Reflection;
 using Yaqoot300.Commons;
+using Yaqoot300.Interfaces;
 
 namespace Yaqoot300.Models.Signal
 {
@@ -23,8 +24,9 @@ namespace Yaqoot300.Models.Signal
                 .Where(p => p.GetCustomAttribute<SignalAttribute>() != null);
         }
 
-        public void FromPlc(params byte[] bytes)
+        public void Receive(params byte[] bytes)
         {
+            Services.Messages.Info($"[Recieved] {SignalUtils.GetPlcSignalName(bytes)} 0x{Utils.ByteArrayToHexString(bytes)}", MessageCategory.PLC);
             foreach (var pi in _plcProps)
             {
                 var sr = pi.GetCustomAttribute<SignalAttribute>();
@@ -45,11 +47,13 @@ namespace Yaqoot300.Models.Signal
             }
         }
 
-        public void ToPlc(byte[] id, params byte[] data)
+        public void Send(byte[] id, params byte[] data)
         {
             var signal = new List<byte>(id);
             if(data != null && data.Length > 0 ) signal.AddRange(data);
-            ServiceProvider.PlcConnection.Send(signal.ToArray());
+            var byteArr = signal.ToArray();
+            Services.PlcConnection.Send(byteArr);
+            Services.Messages.Info($"[Sent] {SignalUtils.GetGuiSignalName(byteArr)} 0x{Utils.ByteArrayToHexString(byteArr)}", MessageCategory.PLC);
         }
     }
 }

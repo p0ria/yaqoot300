@@ -19,7 +19,7 @@ namespace Yaqoot300.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -57,6 +57,46 @@ namespace Yaqoot300.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap circle_cross_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("circle_cross_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap circle_tick_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("circle_tick_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap clear_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("clear_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap cross_24x24 {
+            get {
+                object obj = ResourceManager.GetObject("cross_24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -153,6 +193,16 @@ namespace Yaqoot300.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap loading_24x24 {
+            get {
+                object obj = ResourceManager.GetObject("loading_24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap loading_32x32 {
             get {
                 object obj = ResourceManager.GetObject("loading_32x32", resourceCulture);
@@ -183,6 +233,16 @@ namespace Yaqoot300.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap loading2_24x24 {
+            get {
+                object obj = ResourceManager.GetObject("loading2_24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap red_circle_64x64 {
             get {
                 object obj = ResourceManager.GetObject("red_circle_64x64", resourceCulture);
@@ -203,9 +263,29 @@ namespace Yaqoot300.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap tick_24x24 {
+            get {
+                object obj = ResourceManager.GetObject("tick_24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap tick_32x32 {
             get {
                 object obj = ResourceManager.GetObject("tick_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap tick_64x64 {
+            get {
+                object obj = ResourceManager.GetObject("tick_64x64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

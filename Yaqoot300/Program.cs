@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Yaqoot300.Commons;
 
 namespace Yaqoot300
 {
@@ -14,9 +15,18 @@ namespace Yaqoot300
         [STAThread]
         static void Main()
         {
+            Application.ApplicationExit += ApplicationOnApplicationExit;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            var mainForm = new MainForm();
+            Services.MainForm = mainForm;
+            Application.Run(mainForm);
+            
+        }
+
+        private static void ApplicationOnApplicationExit(object sender, EventArgs eventArgs)
+        {
+            Services.PlcConnection?.Dispose();
         }
     }
 }

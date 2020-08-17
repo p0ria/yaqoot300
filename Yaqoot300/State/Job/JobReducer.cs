@@ -31,11 +31,11 @@ namespace Yaqoot300.State.Job
                                 new Models.Job {JobId = 3, LotNumber = "LOT 3", Total = 9000, Good = 8900},
                                 new Models.Job {JobId = 4, LotNumber = "LOT 4", Total = 4000, Good = 3900}
                             };
-                            ServiceProvider.Store.Dispatch(new JobGetJobsSuccessAction(jobs));
+                            Services.Store.Dispatch(new JobGetJobsSuccessAction(jobs));
                         }
                         else
                         {
-                            ServiceProvider.Store.Dispatch(new JobGetJobsSuccessAction(state.Jobs));
+                            Services.Store.Dispatch(new JobGetJobsSuccessAction(state.Jobs));
                         }
                     });
                     break;
@@ -60,7 +60,7 @@ namespace Yaqoot300.State.Job
                     {
                         Thread.Sleep(2000);
                         createJobPayload.JobId = state.Jobs.Count + 1;
-                        ServiceProvider.Store.Dispatch(new JobCreateJobSuccessAction(createJobPayload));
+                        Services.Store.Dispatch(new JobCreateJobSuccessAction(createJobPayload));
                     });
                     break;
 
@@ -70,7 +70,7 @@ namespace Yaqoot300.State.Job
                     Task.Run(() =>
                     {
                         Thread.Sleep(200);
-                        ServiceProvider.Store.Dispatch(new JobSelectJobAction(createJobSuccessPayload.JobId));
+                        Services.Store.Dispatch(new JobSelectJobAction(createJobSuccessPayload.JobId));
                     });
                     break;
 
@@ -83,7 +83,7 @@ namespace Yaqoot300.State.Job
                     Task.Run(() =>
                     {
                         Thread.Sleep(1000);
-                        ServiceProvider.Store.Dispatch(new JobUpdateJobSuccessAction(updateJobPayload));
+                        Services.Store.Dispatch(new JobUpdateJobSuccessAction(updateJobPayload));
                     });
                     break;
 

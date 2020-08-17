@@ -11,14 +11,15 @@ namespace Yaqoot300.State.App
     {
         private static readonly AppState _instance = new AppState
         {
-            SelectedMode = Mode.Auto,
+            SelectedMode = Mode.Service,
             Connections =
             {
-                DbConnection = ConnectionStatus.Connecting,
-                PLCConnection = ConnectionStatus.Connecting,
-                ThinClient1Connection = ConnectionStatus.Connecting,
-                ThinClient2Connection = ConnectionStatus.Connecting,
-                ThinClient3Conenction = ConnectionStatus.Connecting
+                ServerConnection = ConnectionStatus.Connecting,
+                DbConnection = ConnectionStatus.Connected,
+                PLCConnection = ConnectionStatus.Disconnected,
+                ThinClient1Connection = ConnectionStatus.Connected,
+                ThinClient2Connection = ConnectionStatus.Connected,
+                ThinClient3Connection = ConnectionStatus.Connected
             }
         };
 
