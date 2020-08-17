@@ -1,6 +1,8 @@
 ﻿using System.Windows.Forms;
 using Yaqoot300.Commons;
 using Yaqoot300.Interfaces;
+using Yaqoot300.State.App.Actions;
+using Yaqoot300.State.Home;
 using Yaqoot300.State.Home.Actions;
 using Yaqoot300.State.PLC.Actions;
 
@@ -19,7 +21,6 @@ namespace Yaqoot300.Models.Signal
             }
         }
 
-
         [Signal(0x01, 0x02)]
         public byte[] Started
         {
@@ -29,8 +30,6 @@ namespace Yaqoot300.Models.Signal
             }
         }
 
-
-
         [Signal(0x02)]
         public byte[] Stop
         {
@@ -39,5 +38,114 @@ namespace Yaqoot300.Models.Signal
                     new HomeChangeAutoStartActionPayload(AutoStartBtnStatus.Stoped)));
             }
         }
+
+        [Signal(0x03)]
+        public byte[] Mode
+        {
+            set
+            {
+                switch (value[1])
+                {
+                    case 0x01:
+                        Services.Store.Dispatch(new AppChangeModeAction(Interfaces.Mode.Auto));
+                        break;
+                    case 0x02:
+                        Services.Store.Dispatch(new AppChangeModeAction(Interfaces.Mode.Manual));
+                        break;
+                    case 0x03:
+                        Services.Store.Dispatch(new AppChangeModeAction(Interfaces.Mode.Service));
+                        break;
+                }
+                
+            }
+        }
+
+        [Signal(0xFF)]
+        public byte[] Errors
+        {
+            set
+            {
+                switch (value[1])
+                {
+                    case 0x02:
+                        Services.Store.Dispatch(new HomeAddPlcErrorAction(PlcErrors.Emergency));
+                        break;
+                    case 0x03:
+                        Services.Store.Dispatch(new HomeRemovePlcErrorAction(PlcErrors.Emergency.Id));
+                        break;
+                    case 0x04:
+                        Services.Store.Dispatch(new HomeAddPlcErrorAction(PlcErrors.DoorsOpen));
+                        break;
+                    case 0x05:
+                        Services.Store.Dispatch(new HomeRemovePlcErrorAction(PlcErrors.DoorsOpen.Id));
+                        break;
+                    case 0x06:
+                        Services.Store.Dispatch(new HomeAddPlcErrorAction(PlcErrors.PowerFail));
+                        break;
+                    case 0x07:
+                        Services.Store.Dispatch(new HomeRemovePlcErrorAction(PlcErrors.PowerFail.Id));
+                        break;
+                    case 0x08:
+                        Services.Store.Dispatch(new HomeAddPlcErrorAction(PlcErrors.HomePosition));
+                        break;
+                    case 0x09:
+                        Services.Store.Dispatch(new HomeRemovePlcErrorAction(PlcErrors.HomePosition.Id));
+                        break;
+                    case 0x0A:
+                        Services.Store.Dispatch(new HomeAddPlcErrorAction(PlcErrors.DoorsOpen));
+                        break;
+                    case 0x0B:
+                        Services.Store.Dispatch(new HomeRemovePlcErrorAction(PlcErrors.DoorsOpen.Id));
+                        break;
+                    case 0x0C:
+                        Services.Store.Dispatch(new HomeAddPlcErrorAction(PlcErrors.InputSpacerEmpty));
+                        break;
+                    case 0x0D:
+                        Services.Store.Dispatch(new HomeRemovePlcErrorAction(PlcErrors.InputSpacerEmpty.Id));
+                        break;
+                    case 0x0E:
+                        Services.Store.Dispatch(new HomeAddPlcErrorAction(PlcErrors.OutputBufferFull));
+                        break;
+                    case 0x0F:
+                        Services.Store.Dispatch(new HomeRemovePlcErrorAction(PlcErrors.OutputBufferFull.Id));
+                        break;
+                    case 0x10:
+                        Services.Store.Dispatch(new HomeAddPlcErrorAction(PlcErrors.OutputSpacerEmpty));
+                        break;
+                    case 0x11:
+                        Services.Store.Dispatch(new HomeRemovePlcErrorAction(PlcErrors.OutputSpacerEmpty.Id));
+                        break;
+                    case 0x12:
+                        Services.Store.Dispatch(new HomeAddPlcErrorAction(PlcErrors.InputReelSensorEmpty));
+                        break;
+                    case 0x13:
+                        Services.Store.Dispatch(new HomeRemovePlcErrorAction(PlcErrors.InputReelSensorEmpty.Id));
+                        break;
+                    case 0x14:
+                        Services.Store.Dispatch(new HomeAddPlcErrorAction(PlcErrors.OutputReelSensorEmpty));
+                        break;
+                    case 0x15:
+                        Services.Store.Dispatch(new HomeRemovePlcErrorAction(PlcErrors.OutputReelSensorEmpty.Id));
+                        break;
+                    case 0x16:
+                        Services.Store.Dispatch(new HomeAddPlcErrorAction(PlcErrors.ChipPositionSensor));
+                        break;
+                    case 0x17:
+                        Services.Store.Dispatch(new HomeRemovePlcErrorAction(PlcErrors.ChipPositionSensor.Id));
+                        break;
+                    case 0x18:
+                        Services.Store.Dispatch(new HomeAddPlcErrorAction(PlcErrors.ReaderOperationSensor));
+                        break;
+                    case 0x19:
+                        Services.Store.Dispatch(new HomeRemovePlcErrorAction(PlcErrors.ReaderOperationSensor.Id));
+                        break;
+                    default:
+                        return;
+                }
+                Services.Store.Dispatch(new HomeChangeAutoStartAction(
+                    new HomeChangeAutoStartActionPayload(AutoStartBtnStatus.Stoped)));
+            }
+        }
+
     }
 }

@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Syncfusion.WinForms.DataGrid.GridDateTimeColumn gridDateTimeColumn2 = new Syncfusion.WinForms.DataGrid.GridDateTimeColumn();
-            Syncfusion.WinForms.DataGrid.GridImageColumn gridImageColumn2 = new Syncfusion.WinForms.DataGrid.GridImageColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn3 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn4 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridDateTimeColumn gridDateTimeColumn1 = new Syncfusion.WinForms.DataGrid.GridDateTimeColumn();
+            Syncfusion.WinForms.DataGrid.GridImageColumn gridImageColumn1 = new Syncfusion.WinForms.DataGrid.GridImageColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn1 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn2 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             this.dgv = new Syncfusion.WinForms.DataGrid.SfDataGrid();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbApp = new System.Windows.Forms.CheckBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbDatabase = new System.Windows.Forms.CheckBox();
             this.cbReaders = new System.Windows.Forms.CheckBox();
             this.cbPLC = new System.Windows.Forms.CheckBox();
@@ -43,9 +46,7 @@
             this.cbWarning = new System.Windows.Forms.CheckBox();
             this.cbError = new System.Windows.Forms.CheckBox();
             this.btnClear = new Syncfusion.WinForms.Controls.SfButton();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tbInnerException = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -59,54 +60,55 @@
             this.dgv.AllowEditing = false;
             this.dgv.AllowGrouping = false;
             this.dgv.AllowSorting = false;
-            gridDateTimeColumn2.AllowEditing = false;
-            gridDateTimeColumn2.AllowGrouping = false;
-            gridDateTimeColumn2.AllowSorting = false;
-            gridDateTimeColumn2.CellStyle.Font.Size = 14F;
-            gridDateTimeColumn2.Format = "hh:mm:ss";
-            gridDateTimeColumn2.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridDateTimeColumn2.HeaderStyle.Font.Size = 14F;
-            gridDateTimeColumn2.HeaderText = "Time";
-            gridDateTimeColumn2.MappingName = "Time";
-            gridDateTimeColumn2.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
-            gridImageColumn2.AllowEditing = false;
-            gridImageColumn2.AllowGrouping = false;
-            gridImageColumn2.AllowSorting = false;
-            gridImageColumn2.CellStyle.Font.Size = 14F;
-            gridImageColumn2.CellStyle.HorizontalAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            gridImageColumn2.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridImageColumn2.HeaderStyle.Font.Size = 14F;
-            gridImageColumn2.HeaderText = "Severity";
-            gridImageColumn2.MappingName = "Image";
-            gridTextColumn3.AllowEditing = false;
-            gridTextColumn3.AllowGrouping = false;
-            gridTextColumn3.AllowSorting = false;
-            gridTextColumn3.AutoSizeColumnsMode = Syncfusion.WinForms.DataGrid.Enums.AutoSizeColumnsMode.Fill;
-            gridTextColumn3.CellStyle.Font.Size = 14F;
-            gridTextColumn3.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridTextColumn3.HeaderStyle.Font.Size = 14F;
-            gridTextColumn3.HeaderText = "Message";
-            gridTextColumn3.MappingName = "Message";
-            gridTextColumn3.ShowToolTip = true;
-            gridTextColumn4.AllowEditing = false;
-            gridTextColumn4.AllowGrouping = false;
-            gridTextColumn4.AllowSorting = false;
-            gridTextColumn4.CellStyle.Font.Size = 14F;
-            gridTextColumn4.CellStyle.HorizontalAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            gridTextColumn4.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridTextColumn4.HeaderStyle.Font.Size = 14F;
-            gridTextColumn4.HeaderText = "Category";
-            gridTextColumn4.MappingName = "Category";
-            this.dgv.Columns.Add(gridDateTimeColumn2);
-            this.dgv.Columns.Add(gridImageColumn2);
-            this.dgv.Columns.Add(gridTextColumn3);
-            this.dgv.Columns.Add(gridTextColumn4);
+            gridDateTimeColumn1.AllowEditing = false;
+            gridDateTimeColumn1.AllowGrouping = false;
+            gridDateTimeColumn1.AllowSorting = false;
+            gridDateTimeColumn1.CellStyle.Font.Size = 14F;
+            gridDateTimeColumn1.Format = "hh:mm:ss";
+            gridDateTimeColumn1.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            gridDateTimeColumn1.HeaderStyle.Font.Size = 14F;
+            gridDateTimeColumn1.HeaderText = "Time";
+            gridDateTimeColumn1.MappingName = "Time";
+            gridDateTimeColumn1.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
+            gridImageColumn1.AllowEditing = false;
+            gridImageColumn1.AllowGrouping = false;
+            gridImageColumn1.AllowSorting = false;
+            gridImageColumn1.CellStyle.Font.Size = 14F;
+            gridImageColumn1.CellStyle.HorizontalAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            gridImageColumn1.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            gridImageColumn1.HeaderStyle.Font.Size = 14F;
+            gridImageColumn1.HeaderText = "Severity";
+            gridImageColumn1.MappingName = "Image";
+            gridTextColumn1.AllowEditing = false;
+            gridTextColumn1.AllowGrouping = false;
+            gridTextColumn1.AllowSorting = false;
+            gridTextColumn1.AutoSizeColumnsMode = Syncfusion.WinForms.DataGrid.Enums.AutoSizeColumnsMode.Fill;
+            gridTextColumn1.CellStyle.Font.Size = 14F;
+            gridTextColumn1.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            gridTextColumn1.HeaderStyle.Font.Size = 14F;
+            gridTextColumn1.HeaderText = "Message";
+            gridTextColumn1.MappingName = "Message";
+            gridTextColumn1.ShowToolTip = true;
+            gridTextColumn2.AllowEditing = false;
+            gridTextColumn2.AllowGrouping = false;
+            gridTextColumn2.AllowSorting = false;
+            gridTextColumn2.CellStyle.Font.Size = 14F;
+            gridTextColumn2.CellStyle.HorizontalAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            gridTextColumn2.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            gridTextColumn2.HeaderStyle.Font.Size = 14F;
+            gridTextColumn2.HeaderText = "Category";
+            gridTextColumn2.MappingName = "Category";
+            this.dgv.Columns.Add(gridDateTimeColumn1);
+            this.dgv.Columns.Add(gridImageColumn1);
+            this.dgv.Columns.Add(gridTextColumn1);
+            this.dgv.Columns.Add(gridTextColumn2);
             this.dgv.Location = new System.Drawing.Point(34, 35);
             this.dgv.Name = "dgv";
             this.dgv.RowHeight = 40;
-            this.dgv.Size = new System.Drawing.Size(794, 784);
+            this.dgv.Size = new System.Drawing.Size(794, 673);
             this.dgv.Style.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.dgv.TabIndex = 3;
+            this.dgv.SelectionChanged += new Syncfusion.WinForms.DataGrid.Events.SelectionChangedEventHandler(this.dgv_SelectionChanged);
             // 
             // groupBox1
             // 
@@ -141,6 +143,33 @@
             this.cbApp.Text = "APP";
             this.cbApp.UseVisualStyleBackColor = true;
             this.cbApp.CheckedChanged += new System.EventHandler(this.cbCheckedChanged);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Yaqoot300.Properties.Resources.icon_info_32x32;
+            this.pictureBox3.Location = new System.Drawing.Point(141, 139);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox3.TabIndex = 9;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Yaqoot300.Properties.Resources.icon_warning_32x32;
+            this.pictureBox2.Location = new System.Drawing.Point(141, 95);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Yaqoot300.Properties.Resources.icon_error_32x32;
+            this.pictureBox1.Location = new System.Drawing.Point(141, 51);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // cbDatabase
             // 
@@ -243,38 +272,20 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // pictureBox3
+            // tbInnerException
             // 
-            this.pictureBox3.Image = global::Yaqoot300.Properties.Resources.icon_info_32x32;
-            this.pictureBox3.Location = new System.Drawing.Point(141, 139);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox3.TabIndex = 9;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Yaqoot300.Properties.Resources.icon_warning_32x32;
-            this.pictureBox2.Location = new System.Drawing.Point(141, 95);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Yaqoot300.Properties.Resources.icon_error_32x32;
-            this.pictureBox1.Location = new System.Drawing.Point(141, 51);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.tbInnerException.Location = new System.Drawing.Point(34, 728);
+            this.tbInnerException.Multiline = true;
+            this.tbInnerException.Name = "tbInnerException";
+            this.tbInnerException.Size = new System.Drawing.Size(794, 107);
+            this.tbInnerException.TabIndex = 7;
             // 
             // MessagesDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 861);
+            this.Controls.Add(this.tbInnerException);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgv);
@@ -289,6 +300,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -308,5 +320,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckBox cbApp;
         private Syncfusion.WinForms.Controls.SfButton btnClear;
+        private System.Windows.Forms.TextBox tbInnerException;
     }
 }

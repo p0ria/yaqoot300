@@ -52,16 +52,22 @@ namespace Yaqoot300
                 case Mode.Manual:
                     if (_currentPage == null || _currentPage == Mode.Service)
                     {
-                        this.Controls.Clear();
-                        this.Controls.Add(_homePage);
+                        this.SafeInvoke(() =>
+                        {
+                            this.Controls.Clear();
+                            this.Controls.Add(_homePage);
+                        });
                     }
                     break;
 
                 case Mode.Service:
                     if (_currentPage != Mode.Service)
                     {
-                        this.Controls.Clear();
-                        this.Controls.Add(_servicePage);
+                        this.SafeInvoke(() =>
+                        {
+                            this.Controls.Clear();
+                            this.Controls.Add(_servicePage);
+                        });
                     }
                     break;
             }

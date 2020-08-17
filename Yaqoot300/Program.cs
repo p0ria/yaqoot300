@@ -15,11 +15,18 @@ namespace Yaqoot300
         [STAThread]
         static void Main()
         {
+            Application.ApplicationExit += ApplicationOnApplicationExit;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             var mainForm = new MainForm();
             Services.MainForm = mainForm;
             Application.Run(mainForm);
+            
+        }
+
+        private static void ApplicationOnApplicationExit(object sender, EventArgs eventArgs)
+        {
+            Services.PlcConnection?.Dispose();
         }
     }
 }

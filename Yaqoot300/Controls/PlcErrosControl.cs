@@ -37,14 +37,17 @@ namespace Yaqoot300.Controls
 
         private void SetErrors()
         {
-            this.panelErrors.Controls.Clear();
-            foreach (var error in Store.Home.PlcErrors)
+            this.SafeInvoke(() =>
             {
-                this.panelErrors.Controls.Add(new PlcErrorControl
+                this.panelErrors.Controls.Clear();
+                foreach (var error in Store.Home.PlcErrors)
                 {
-                    Error = error
-                });
-            }
+                    this.panelErrors.Controls.Add(new PlcErrorControl
+                    {
+                        Error = error
+                    });
+                }
+            });  
         }
 
         private Store Store => Services.Store;

@@ -80,6 +80,7 @@ namespace Yaqoot300.Pages
             this.lblJob = new System.Windows.Forms.Label();
             this.gpConnectionsStatus = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.connectionsControl1 = new Yaqoot300.Controls.ConnectionsControl();
             this.panelActions = new System.Windows.Forms.Panel();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panelHeader = new System.Windows.Forms.Panel();
@@ -89,13 +90,14 @@ namespace Yaqoot300.Pages
             this.lampCtrlRed = new Yaqoot300.Controls.LampControl();
             this.lblMode = new System.Windows.Forms.Label();
             this.btnSelectJob = new System.Windows.Forms.Button();
-            this.connectionsControl1 = new Yaqoot300.Controls.ConnectionsControl();
+            this.plcErrosControl1 = new Yaqoot300.Controls.PlcErrosControl();
             this.gpReaders.SuspendLayout();
             this.panel3.SuspendLayout();
             this.gbReaders.SuspendLayout();
             this.panel1.SuspendLayout();
             this.gpConnectionsStatus.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panelFooter.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -681,6 +683,13 @@ namespace Yaqoot300.Pages
             this.panel2.Size = new System.Drawing.Size(602, 131);
             this.panel2.TabIndex = 3;
             // 
+            // connectionsControl1
+            // 
+            this.connectionsControl1.Location = new System.Drawing.Point(0, 0);
+            this.connectionsControl1.Name = "connectionsControl1";
+            this.connectionsControl1.Size = new System.Drawing.Size(602, 131);
+            this.connectionsControl1.TabIndex = 0;
+            // 
             // panelActions
             // 
             this.panelActions.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -692,6 +701,7 @@ namespace Yaqoot300.Pages
             // panelFooter
             // 
             this.panelFooter.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panelFooter.Controls.Add(this.plcErrosControl1);
             this.panelFooter.Location = new System.Drawing.Point(0, 833);
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Size = new System.Drawing.Size(1280, 157);
@@ -775,12 +785,12 @@ namespace Yaqoot300.Pages
             this.btnSelectJob.UseVisualStyleBackColor = true;
             this.btnSelectJob.Click += new System.EventHandler(this.btnSelectJob_Click);
             // 
-            // connectionsControl1
+            // plcErrosControl1
             // 
-            this.connectionsControl1.Location = new System.Drawing.Point(0, 0);
-            this.connectionsControl1.Name = "connectionsControl1";
-            this.connectionsControl1.Size = new System.Drawing.Size(602, 131);
-            this.connectionsControl1.TabIndex = 0;
+            this.plcErrosControl1.Location = new System.Drawing.Point(26, 35);
+            this.plcErrosControl1.Name = "plcErrosControl1";
+            this.plcErrosControl1.Size = new System.Drawing.Size(1230, 100);
+            this.plcErrosControl1.TabIndex = 0;
             // 
             // HomePage
             // 
@@ -802,6 +812,7 @@ namespace Yaqoot300.Pages
             this.panel1.PerformLayout();
             this.gpConnectionsStatus.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panelFooter.ResumeLayout(false);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.ResumeLayout(false);
@@ -870,5 +881,6 @@ namespace Yaqoot300.Pages
         private System.Windows.Forms.Button btnMessages;
         private System.Windows.Forms.Panel panel2;
         private Controls.ConnectionsControl connectionsControl1;
+        private Controls.PlcErrosControl plcErrosControl1;
     }
 }

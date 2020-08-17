@@ -20,6 +20,8 @@ namespace Yaqoot300.Commons
             public Severity Severity { get; set; }
             public string Message { get; set; }
             public MessageCategory Category { get; set; }
+
+            public Exception InnerException { get; set; }
         }
 
         private MessagesDialog _dlg;
@@ -41,9 +43,9 @@ namespace Yaqoot300.Commons
             InvalidateDlg();
         }
 
-        public void Error(string message, MessageCategory category)
+        public void Error(string message, MessageCategory category, Exception innerException = null)
         {
-            AddMessage(Severity.Error, message, category);
+            AddMessage(Severity.Error, message, category, innerException);
         }
 
         public void Warning(string message, MessageCategory category)
@@ -56,7 +58,7 @@ namespace Yaqoot300.Commons
             AddMessage(Severity.Info, message, category);
         }
 
-        private void AddMessage(Severity severity, string message, MessageCategory category)
+        private void AddMessage(Severity severity, string message, MessageCategory category, Exception innerException = null)
         {
             if (_messages.Count >= Constants.MESSAGES_MAX) _messages.RemoveAt(0);
             this._messages.Add(new Item
@@ -64,7 +66,8 @@ namespace Yaqoot300.Commons
                 Time = DateTime.Now,
                 Severity = severity,
                 Message = message,
-                Category = category
+                Category = category,
+                InnerException = innerException
             });
             InvalidateDlg();
         }

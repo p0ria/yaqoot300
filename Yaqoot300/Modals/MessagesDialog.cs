@@ -68,7 +68,8 @@ namespace Yaqoot300.Modals
                                 ? IBA.Icon_Warning_32x32
                                 : IBA.Icon_Info_32x32,
                         Message = m.Message,
-                        Category = m.Category
+                        Category = m.Category,
+                        InnerException = m.InnerException
                     });
                 dgv.DataSource = null;
                 if (ds.Any()) this.dgv.DataSource = ds;
@@ -89,6 +90,19 @@ namespace Yaqoot300.Modals
         private void RaiseCleared()
         {
             this.Cleared?.Invoke(this, null);
+        }
+
+        private void dgv_SelectionChanged(object sender, Syncfusion.WinForms.DataGrid.Events.SelectionChangedEventArgs e)
+        {
+            var selectedItem = dgv.SelectedItem as dynamic;
+            if (selectedItem != null && selectedItem.InnerException != null)
+            {
+                this.tbInnerException.Text = selectedItem.InnerException.ToString();
+            }
+            else
+            {
+                this.tbInnerException.Text = String.Empty;
+            }
         }
     }
 }

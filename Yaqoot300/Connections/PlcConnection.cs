@@ -12,7 +12,7 @@ using Yaqoot300.State.Home.Actions;
 
 namespace Yaqoot300.Connections
 {
-    public class PlcConnection
+    public class PlcConnection: IDisposable
     {
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
@@ -60,7 +60,7 @@ namespace Yaqoot300.Connections
             {
                 Services.Store.Dispatch(new AppConnectionsChangedAction(
                     new AppConnectionsChangedActionPayload { ServerConnected = ConnectionStatus.Disconnected }));
-                Services.Messages.Error($"Server unable to listen on '{Services.Config.Server.Ip}:{Services.Config.Server.Port}'", MessageCategory.PLC);
+                Services.Messages.Error($"Server unable to listen on '{Services.Config.Server.Ip}:{Services.Config.Server.Port}'", MessageCategory.PLC, e);
             }
         }
 
@@ -93,5 +93,9 @@ namespace Yaqoot300.Connections
 
         public bool IsConnected => !string.IsNullOrEmpty(client);
 
+        public void Dispose()
+        {
+            server?.Dispose();
+        }
     }
 }

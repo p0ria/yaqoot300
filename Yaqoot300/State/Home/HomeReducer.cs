@@ -24,7 +24,7 @@ namespace Yaqoot300.State.Home
                     if (changeAutoStartPayload.Status.HasValue)
                     {
                         state.Auto.StartBtn.Status = changeAutoStartPayload.Status.Value;
-                        // Services.Messages.Info("Auto Button State Changed To " + state.Auto.StartBtn.Status, MessageCategory.App);
+                         Services.Messages.Info("Auto Button State Changed To " + state.Auto.StartBtn.Status, MessageCategory.App);
                         switch (changeAutoStartPayload.Status)
                         {
                             case AutoStartBtnStatus.Starting:
@@ -34,7 +34,7 @@ namespace Yaqoot300.State.Home
                                     switch (canStart)
                                     {
                                         case null:
-                                            // Services.Messages.Info("Start is in progress", MessageCategory.App);
+                                            Services.Messages.Info("Start is in progress", MessageCategory.App);
                                             break;
                                         case true:
                                             Services.Signals.Send(GuiSignals.Started);
@@ -63,11 +63,11 @@ namespace Yaqoot300.State.Home
 
                 case HomeActionTypes.ADD_PLC_ERROR:
                     var addPlcErrorPayload = ((HomeAddPlcErrorAction)action).Payload;
-                    if (state.PlcErrors.Any(error => error.Id != addPlcErrorPayload.Id))
+                    if (state.PlcErrors.All(error => error.Id != addPlcErrorPayload.Id))
                     {
                         state.PlcErrors.Add(addPlcErrorPayload);
-//                        if(addPlcErrorPayload.Type == PlcErrorType.Error) Services.Messages.Error(addPlcErrorPayload.Message, MessageCategory.PLC);
-//                        else Services.Messages.Warning(addPlcErrorPayload.Message, MessageCategory.PLC);
+                        if(addPlcErrorPayload.Type == PlcErrorType.Error) Services.Messages.Error(addPlcErrorPayload.Message, MessageCategory.PLC);
+                        else Services.Messages.Warning(addPlcErrorPayload.Message, MessageCategory.PLC);
                     }
                     break;
 
