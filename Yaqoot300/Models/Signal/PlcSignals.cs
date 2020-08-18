@@ -127,7 +127,8 @@ namespace Yaqoot300.Models.Signal
                         break;
 
                     case 2:
-                        Services.Store.Dispatch(new ServiceChangeSettingsFailAction());
+                        Services.Store.Dispatch(new ServiceChangeSettingsFailAction(
+                            new ServiceChangeSettingsFailActionPayload("PLC rejected settings change")));
                         break;
                 }
                 

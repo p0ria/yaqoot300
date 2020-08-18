@@ -26,23 +26,6 @@ namespace Yaqoot300.Controls
             Store.StoreChanged += OnStoreChanged;
         }
 
-        private void btnStart_Click(object sender, EventArgs e)
-        {
-            switch (Store.Home.Auto.StartBtn.Status)
-            {
-                case AutoStartBtnStatus.Stoped:
-                    Services.Store.Dispatch(new PlcStartReadyChangedAction(null));
-                    Store.Dispatch(new HomeChangeAutoStartAction(
-                        new HomeChangeAutoStartActionPayload(AutoStartBtnStatus.Starting, false)));
-                    break;
-                case AutoStartBtnStatus.Started:
-                    Services.Signals.Send(GuiSignals.Stop);
-                    Store.Dispatch(new HomeChangeAutoStartAction(
-                        new HomeChangeAutoStartActionPayload(AutoStartBtnStatus.Stoped)));
-                    break;
-            }
-        }
-
         private void OnStoreChanged(object sender, string changeType)
         {
             switch (changeType)
@@ -84,6 +67,23 @@ namespace Yaqoot300.Controls
                     }
                     break;
 
+            }
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            switch (Store.Home.Auto.StartBtn.Status)
+            {
+                case AutoStartBtnStatus.Stoped:
+                    Services.Store.Dispatch(new PlcStartReadyChangedAction(null));
+                    Store.Dispatch(new HomeChangeAutoStartAction(
+                        new HomeChangeAutoStartActionPayload(AutoStartBtnStatus.Starting, false)));
+                    break;
+                case AutoStartBtnStatus.Started:
+                    Services.Signals.Send(GuiSignals.Stop);
+                    Store.Dispatch(new HomeChangeAutoStartAction(
+                        new HomeChangeAutoStartActionPayload(AutoStartBtnStatus.Stoped)));
+                    break;
             }
         }
 

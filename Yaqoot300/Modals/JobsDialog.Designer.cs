@@ -34,6 +34,7 @@
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn4 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCreate = new Yaqoot300.Controls.LoadingButtonControl();
             this.tbGood = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.tbTotal = new System.Windows.Forms.NumericUpDown();
@@ -41,7 +42,6 @@
             this.tbLotNumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv = new Syncfusion.WinForms.DataGrid.SfDataGrid();
-            this.btnCreate = new Yaqoot300.Controls.LoadingButtonControl();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbGood)).BeginInit();
@@ -55,7 +55,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.groupBox1.Location = new System.Drawing.Point(710, 36);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(342, 792);
+            this.groupBox1.Size = new System.Drawing.Size(342, 668);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Create Job";
@@ -73,8 +73,18 @@
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.panel1.Location = new System.Drawing.Point(3, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(336, 762);
+            this.panel1.Size = new System.Drawing.Size(336, 638);
             this.panel1.TabIndex = 0;
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.Label = "Create";
+            this.btnCreate.Location = new System.Drawing.Point(117, 535);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(6);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(213, 75);
+            this.btnCreate.Status = Yaqoot300.Controls.LoadingButtonControl.LoadingButtonControlStatus.Visible;
+            this.btnCreate.TabIndex = 7;
             // 
             // tbGood
             // 
@@ -183,33 +193,23 @@
             this.dgv.Location = new System.Drawing.Point(26, 36);
             this.dgv.Name = "dgv";
             this.dgv.RowHeight = 40;
-            this.dgv.Size = new System.Drawing.Size(647, 789);
+            this.dgv.Size = new System.Drawing.Size(647, 668);
             this.dgv.Style.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.dgv.TabIndex = 2;
             this.dgv.Text = "sfDataGrid1";
             this.dgv.CurrentCellEndEdit += new Syncfusion.WinForms.DataGrid.Events.CurrentCellEndEditEventHandler(this.dgv_CurrentCellEndEdit);
             // 
-            // btnCreate
-            // 
-            this.btnCreate.Label = "Create";
-            this.btnCreate.Location = new System.Drawing.Point(106, 631);
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(6);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(213, 75);
-            this.btnCreate.Status = Yaqoot300.Controls.LoadingButtonControl.LoadingButtonControlStatus.Visible;
-            this.btnCreate.TabIndex = 7;
-            // 
-            // JobDialog
+            // JobsDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 861);
+            this.ClientSize = new System.Drawing.Size(1084, 731);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "JobDialog";
+            this.Name = "JobsDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Select Job";
             this.groupBox1.ResumeLayout(false);

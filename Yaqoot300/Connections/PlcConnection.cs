@@ -29,9 +29,6 @@ namespace Yaqoot300.Connections
                 server.ClientConnected += ClientConnected;
                 server.ClientDisconnected += ClientDisconnected;
                 server.DataReceived += OnDataReceived;
-
-                //TODO: It must be moved after log in
-                Listen();
             }
             catch (Exception ex)
             {
@@ -41,16 +38,29 @@ namespace Yaqoot300.Connections
             }
         }
 
-        public void Send(params byte[] data)
+        public bool Send(params byte[] data)
         {
-            if(IsConnected)
-                server.Send(client, data);
+            try
+            {
+                if (IsConnected)
+                {
+                    server.Send(client, data);
+                    return true;
+                }
+                return false;
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
         public void Listen()
         {
             try
             {
+                TcpUtils.ReleasePort(Services.Config.Server.Port);
                 server.Start();
                 Services.Store.Dispatch(new AppConnectionsChangedAction(
                     new AppConnectionsChangedActionPayload {ServerConnected = ConnectionStatus.Connected}));
@@ -95,8 +105,23 @@ namespace Yaqoot300.Connections
 
         public void Dispose()
         {
-            if(IsConnected) server?.DisconnectClient(client);
-            server?.Dispose();
+            try
+            {
+                if (IsConnected) server?.DisconnectClient(client);
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
+
+            try
+            {
+                server?.Dispose();
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
         }
     }
 }

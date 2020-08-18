@@ -47,13 +47,15 @@ namespace Yaqoot300.Models.Signal
             }
         }
 
-        public void Send(byte[] id, params byte[] data)
+        public bool Send(byte[] id, params byte[] data)
         {
             var signal = new List<byte>(id);
             if(data != null && data.Length > 0 ) signal.AddRange(data);
             var byteArr = signal.ToArray();
-            Services.PlcConnection.Send(byteArr);
-            Services.Messages.Info($"[Sent] {SignalUtils.GetGuiSignalName(byteArr)} 0x{Utils.ByteArrayToHexString(byteArr)}", MessageCategory.PLC);
+            var sent = Services.PlcConnection.Send(byteArr);
+            if(sent) Services.Messages.Info($"[Sent] {SignalUtils.GetGuiSignalName(byteArr)} 0x{Utils.ByteArrayToHexString(byteArr)}", MessageCategory.PLC);
+            else Services.Messages.Error($"[Error Sending] {SignalUtils.GetGuiSignalName(byteArr)} 0x{Utils.ByteArrayToHexString(byteArr)}", MessageCategory.PLC);
+            return sent;
         }
     }
 }

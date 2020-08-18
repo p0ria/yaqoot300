@@ -127,5 +127,11 @@ namespace Yaqoot300.Pages
         {
             Services.Messages.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Services.PlcConnection.Listen();
+            Services.MainForm.Activate();
+        }
     }
 }

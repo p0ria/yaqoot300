@@ -109,34 +109,51 @@ namespace Yaqoot300.State.Service
 
                 case ServiceActionTypes.CHANGE_SETTINGS:
                     var changeSettingsPayload = ((ServiceChangeSettingsAction)action).Payload;
-                    state.PendingSettings = changeSettingsPayload;
+                    state.PendingSettings = new ServicePendingSettingsState(changeSettingsPayload);
                     if (Services.Store.Service.Settings.ActiveReaders != changeSettingsPayload.ActiveReaders)
                     {
-                        Services.Signals.Send(GuiSignals.ServiceNumOfActiveReaders, (byte)changeSettingsPayload.ActiveReaders);
+                        if(!Services.Signals.Send(GuiSignals.ServiceNumOfActiveReaders, (byte)changeSettingsPayload.ActiveReaders))
+                            Services.Store.Dispatch(new ServiceChangeSettingsFailAction(new ServiceChangeSettingsFailActionPayload("Error sending signal")));
                     }
                     if (Services.Store.Service.Settings.FeedInSteps != changeSettingsPayload.FeedInSteps)
                     {
-                        Services.Signals.Send(GuiSignals.ServiceNumOfFeedInStep, (byte)changeSettingsPayload.FeedInSteps);
+                        if(!Services.Signals.Send(GuiSignals.ServiceNumOfFeedInStep, (byte)changeSettingsPayload.FeedInSteps))
+                            Services.Store.Dispatch(new ServiceChangeSettingsFailAction(new ServiceChangeSettingsFailActionPayload("Error sending signal")));
                     }
                     if (Services.Store.Service.Settings.M3StepLength != changeSettingsPayload.M3StepLength)
                     {
-                        Services.Signals.Send(GuiSignals.ServiceM3StepLength, (byte)changeSettingsPayload.M3StepLength);
+                        if(!Services.Signals.Send(GuiSignals.ServiceM3StepLength, (byte)changeSettingsPayload.M3StepLength))
+                            Services.Store.Dispatch(new ServiceChangeSettingsFailAction(new ServiceChangeSettingsFailActionPayload("Error sending signal")));
+
                     }
                     if (Services.Store.Service.Settings.M4Speed != changeSettingsPayload.M4Speed)
                     {
-                        Services.Signals.Send(GuiSignals.ServiceM4Speed, (byte)changeSettingsPayload.M4Speed);
+                        if(!Services.Signals.Send(GuiSignals.ServiceM4Speed, (byte)changeSettingsPayload.M4Speed))
+                            Services.Store.Dispatch(new ServiceChangeSettingsFailAction(new ServiceChangeSettingsFailActionPayload("Error sending signal")));
                     }
+                    Task.Run(() =>
+                    {
+                        var pendingId = state.PendingSettings.Id;
+                        Thread.Sleep(Constants.ACK_TIMEOUT);
+                        if(state.PendingSettings != null && state.PendingSettings.Id == pendingId)
+                            Services.Store.Dispatch(new ServiceChangeSettingsFailAction(new ServiceChangeSettingsFailActionPayload("Change settings timed out", pendingId)));
+                    });
                     break;
 
                 case ServiceActionTypes.CHANGE_SETTINGS_SUCCESS:
-
                     state.Settings = state.PendingSettings;
                     state.PendingSettings = null;
                     break;
 
                 case ServiceActionTypes.CHANGE_SETTINGS_FAIL:
-                    state.PendingSettings = null;
-                    Services.Messages.Error("Change PLC Settings Failed", MessageCategory.PLC);
+                    var changeSettingsFailedPayload = ((ServiceChangeSettingsFailAction)action).Payload;
+                    if (changeSettingsFailedPayload?.PendingId == null ||
+                        changeSettingsFailedPayload.PendingId == state.PendingSettings.Id)
+                    {
+                        state.PendingSettings = null;
+                        Services.Messages.Error("Change PLC Settings Failed" +
+                                                (string.IsNullOrEmpty(changeSettingsFailedPayload?.Error) ? "" : $", {changeSettingsFailedPayload.Error}"), MessageCategory.PLC);
+                    }
                     break;
 
                 case ServiceActionTypes.TEST_READERS:

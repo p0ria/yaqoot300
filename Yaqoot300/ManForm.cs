@@ -24,6 +24,7 @@ namespace Yaqoot300
         public MainForm()
         {
             InitializeComponent();
+            this.Closing += OnClosing;
             _homePage = new HomePage();
             _servicePage = new ServicePage();
             Services.Store.StoreChanged += OnStoreChanged;
@@ -72,6 +73,11 @@ namespace Yaqoot300
                     break;
             }
             _currentPage = newPage;
+        }
+
+        private void OnClosing(object sender, CancelEventArgs cancelEventArgs)
+        {
+            Services.PlcConnection?.Dispose();
         }
 
     }

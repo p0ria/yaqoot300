@@ -105,6 +105,7 @@
     <Compile Include="Commons\IBA.cs" />
     <Compile Include="Commons\MessagesService.cs" />
     <Compile Include="Commons\SignalUtils.cs" />
+    <Compile Include="Commons\TcpUtils.cs" />
     <Compile Include="Controls\ConnectionsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -337,6 +338,7 @@
     <Compile Include="State\Service\Actions\ServiceAssignReaderActionPayload.cs" />
     <Compile Include="State\Service\Actions\ServiceChangeSettingsAction.cs" />
     <Compile Include="State\Service\Actions\ServiceChangeSettingsFailAction.cs" />
+    <Compile Include="State\Service\Actions\ServiceChangeSettingsFailActionPayload.cs" />
     <Compile Include="State\Service\Actions\ServiceChangeSettingsSuccessAction.cs" />
     <Compile Include="State\Service\Actions\ServiceSensorsChangedAction.cs" />
     <Compile Include="State\Service\Actions\ServiceSensorsChangedActionPayload.cs" />
@@ -356,6 +358,7 @@
     <Compile Include="State\Service\State\ServiceM4State.cs" />
     <Compile Include="State\Service\State\ServiceMotorsState.cs" />
     <Compile Include="State\Service\State\ServiceMotorState.cs" />
+    <Compile Include="State\Service\State\ServicePendingSettingsState.cs" />
     <Compile Include="State\Service\State\ServiceSettingsState.cs" />
     <Compile Include="State\Service\State\ServiceSetupReadersState.cs" />
     <Compile Include="State\Service\State\ServiceState.cs" />

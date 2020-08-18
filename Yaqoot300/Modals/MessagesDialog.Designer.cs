@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Syncfusion.WinForms.DataGrid.GridDateTimeColumn gridDateTimeColumn1 = new Syncfusion.WinForms.DataGrid.GridDateTimeColumn();
             Syncfusion.WinForms.DataGrid.GridImageColumn gridImageColumn1 = new Syncfusion.WinForms.DataGrid.GridImageColumn();
+            Syncfusion.WinForms.DataGrid.GridDateTimeColumn gridDateTimeColumn1 = new Syncfusion.WinForms.DataGrid.GridDateTimeColumn();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn1 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn2 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             this.dgv = new Syncfusion.WinForms.DataGrid.SfDataGrid();
@@ -60,6 +60,15 @@
             this.dgv.AllowEditing = false;
             this.dgv.AllowGrouping = false;
             this.dgv.AllowSorting = false;
+            gridImageColumn1.AllowEditing = false;
+            gridImageColumn1.AllowGrouping = false;
+            gridImageColumn1.AllowSorting = false;
+            gridImageColumn1.CellStyle.Font.Size = 14F;
+            gridImageColumn1.CellStyle.HorizontalAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            gridImageColumn1.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            gridImageColumn1.HeaderStyle.Font.Size = 14F;
+            gridImageColumn1.HeaderText = "Severity";
+            gridImageColumn1.MappingName = "Image";
             gridDateTimeColumn1.AllowEditing = false;
             gridDateTimeColumn1.AllowGrouping = false;
             gridDateTimeColumn1.AllowSorting = false;
@@ -70,15 +79,6 @@
             gridDateTimeColumn1.HeaderText = "Time";
             gridDateTimeColumn1.MappingName = "Time";
             gridDateTimeColumn1.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
-            gridImageColumn1.AllowEditing = false;
-            gridImageColumn1.AllowGrouping = false;
-            gridImageColumn1.AllowSorting = false;
-            gridImageColumn1.CellStyle.Font.Size = 14F;
-            gridImageColumn1.CellStyle.HorizontalAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            gridImageColumn1.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            gridImageColumn1.HeaderStyle.Font.Size = 14F;
-            gridImageColumn1.HeaderText = "Severity";
-            gridImageColumn1.MappingName = "Image";
             gridTextColumn1.AllowEditing = false;
             gridTextColumn1.AllowGrouping = false;
             gridTextColumn1.AllowSorting = false;
@@ -98,14 +98,14 @@
             gridTextColumn2.HeaderStyle.Font.Size = 14F;
             gridTextColumn2.HeaderText = "Category";
             gridTextColumn2.MappingName = "Category";
-            this.dgv.Columns.Add(gridDateTimeColumn1);
             this.dgv.Columns.Add(gridImageColumn1);
+            this.dgv.Columns.Add(gridDateTimeColumn1);
             this.dgv.Columns.Add(gridTextColumn1);
             this.dgv.Columns.Add(gridTextColumn2);
             this.dgv.Location = new System.Drawing.Point(34, 35);
             this.dgv.Name = "dgv";
             this.dgv.RowHeight = 40;
-            this.dgv.Size = new System.Drawing.Size(794, 673);
+            this.dgv.Size = new System.Drawing.Size(794, 577);
             this.dgv.Style.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.dgv.TabIndex = 3;
             this.dgv.SelectionChanged += new Syncfusion.WinForms.DataGrid.Events.SelectionChangedEventHandler(this.dgv_SelectionChanged);
@@ -274,17 +274,18 @@
             // 
             // tbInnerException
             // 
-            this.tbInnerException.Location = new System.Drawing.Point(34, 728);
+            this.tbInnerException.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tbInnerException.Location = new System.Drawing.Point(34, 618);
             this.tbInnerException.Multiline = true;
             this.tbInnerException.Name = "tbInnerException";
-            this.tbInnerException.Size = new System.Drawing.Size(794, 107);
+            this.tbInnerException.Size = new System.Drawing.Size(794, 101);
             this.tbInnerException.TabIndex = 7;
             // 
             // MessagesDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 861);
+            this.ClientSize = new System.Drawing.Size(1084, 731);
             this.Controls.Add(this.tbInnerException);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.groupBox1);

@@ -62,6 +62,7 @@ namespace Yaqoot300.Pages
             this.btnSelectJob = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.plcErrosControl1 = new Yaqoot300.Controls.PlcErrosControl();
+            this.button1 = new System.Windows.Forms.Button();
             this.gpReaders.SuspendLayout();
             this.panel3.SuspendLayout();
             this.gbReaders.SuspendLayout();
@@ -320,6 +321,7 @@ namespace Yaqoot300.Pages
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panelHeader.Controls.Add(this.button1);
             this.panelHeader.Controls.Add(this.btnMessages);
             this.panelHeader.Controls.Add(this.lampCtrlYellow);
             this.panelHeader.Controls.Add(this.lampCtrlGreen);
@@ -397,7 +399,7 @@ namespace Yaqoot300.Pages
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel4.BackColor = System.Drawing.SystemColors.HighlightText;
             this.panel4.Controls.Add(this.plcErrosControl1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
@@ -411,6 +413,16 @@ namespace Yaqoot300.Pages
             this.plcErrosControl1.Name = "plcErrosControl1";
             this.plcErrosControl1.Size = new System.Drawing.Size(85, 741);
             this.plcErrosControl1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(432, 32);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 46);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Listen";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // HomePage
             // 
@@ -473,5 +485,6 @@ namespace Yaqoot300.Pages
         private Controls.PlcErrosControl plcErrosControl1;
         private System.Windows.Forms.Panel panel3;
         private Controls.HomeReadersControl homeReadersControl1;
+        private System.Windows.Forms.Button button1;
     }
 }

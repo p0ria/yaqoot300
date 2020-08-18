@@ -1,10 +1,1 @@
-// In Start
-	GUI init start:
-		Send Start signal to PLC
-		Change Auto Start Btn Status to Starting
-		on PLC start ack, Start Btn status change to started
-		if timesout , Start Btn status change to stoped(on stop reducer we send a stop signal to plc)
-	
-	PLC init start:
-		Change Auto Start Btn Status to Starting
-		On checkins service callback if it was ok we send start
+netstat -ano | findstr :9000
