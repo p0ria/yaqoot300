@@ -37,7 +37,7 @@
             this.panelErrors.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.panelErrors.Location = new System.Drawing.Point(0, 0);
             this.panelErrors.Name = "panelErrors";
-            this.panelErrors.Size = new System.Drawing.Size(1230, 100);
+            this.panelErrors.Size = new System.Drawing.Size(100, 768);
             this.panelErrors.TabIndex = 2;
             // 
             // PlcErrosControl
@@ -46,7 +46,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelErrors);
             this.Name = "PlcErrosControl";
-            this.Size = new System.Drawing.Size(1230, 100);
+            this.Size = new System.Drawing.Size(100, 768);
             this.ResumeLayout(false);
 
         }

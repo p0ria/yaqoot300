@@ -10,7 +10,9 @@ using System.Windows.Forms;
 using Yaqoot300.Commons;
 using Yaqoot300.Controls;
 using Yaqoot300.Interfaces;
+using Yaqoot300.Modals;
 using Yaqoot300.State;
+using Yaqoot300.State.Job.Actions;
 using Yaqoot300.State.Service;
 using Yaqoot300.State.Service.Actions;
 
@@ -18,8 +20,6 @@ namespace Yaqoot300.Pages
 {
     public partial class ServicePage : UserControl
     {
-        private Timer _m3Timer;
-        private Timer _m4Timer;
         private SensorControl[] _sensors;
         private TestReaderControl[] _testReaders;
         private SetupReaderControl[] _setupReaders;
@@ -27,29 +27,9 @@ namespace Yaqoot300.Pages
         {
             InitializeComponent();
             Store.StoreChanged += OnStoreChanged;
-            this.InitMotors();
             this.InitSensorControls();
-            this.InitSettings();
             this.InitTestReaders();
             this.InitSetupReaders();
-        }
-
-        private void InitMotors()
-        {
-            this.mt0.MouseDown += OnMotorMouseDown;
-            this.mt1.MouseDown += OnMotorMouseDown;
-            this.mt2.MouseDown += OnMotorMouseDown;
-            this.mt3.MouseDown += OnMotorMouseDown;
-            this.mt0.MouseUp += OnMotorMouseUp;
-            this.mt1.MouseUp += OnMotorMouseUp;
-            this.mt2.MouseUp += OnMotorMouseUp;
-            this.mt4.BtnClicked += Mt4OnBtnClicked;
-            _m3Timer = new Timer();
-            _m3Timer.Interval = 2000;
-            _m3Timer.Tick += M3TimerOnTick;
-            _m4Timer = new Timer();
-            _m4Timer.Interval = 2000;
-            _m4Timer.Tick += M4TimerOnTick;
         }
 
         private void InitSensorControls()
@@ -69,15 +49,6 @@ namespace Yaqoot300.Pages
             _sensors[11] = sensor12;
             _sensors[12] = sensor13;
             _sensors[13] = sensor14;
-        }
-
-        private void InitSettings()
-        {
-            this.scActiveReaders.ValueChanged += settingsSliderOnValueChanged;
-            this.scFeedInSteps.ValueChanged += settingsSliderOnValueChanged;
-            this.scM3StepLength.ValueChanged += settingsSliderOnValueChanged;
-            this.scM4Speed.ValueChanged += settingsSliderOnValueChanged;
-            this.btnSave.BtnClicked += OnBtnSaveClicked;
         }
 
         private void InitTestReaders()
@@ -176,47 +147,11 @@ namespace Yaqoot300.Pages
             Store.Dispatch(new ServiceTestReadersAction());
         }
 
-        private void OnBtnSaveClicked(object sender, EventArgs eventArgs)
-        {
-            ChangeSlidersEnable(false);
-            ChangeBtnSaveStatus(LoadingButtonControl.LoadingButtonControlStatus.Loading);
-            Store.Dispatch(new ServiceChangeSettingsAction(new ServiceSettingsState
-            {
-                ActiveReaders = scActiveReaders.Value,
-                FeedInSteps = scFeedInSteps.Value,
-                M3StepLength = scM3StepLength.Value,
-                M4Speed = scM4Speed.Value
-            }));
-        }
-
-        private void ChangeSlidersEnable(bool enable)
-        {
-            this.scActiveReaders.Enabled = enable;
-            this.scFeedInSteps.Enabled = enable;
-            this.scM3StepLength.Enabled = enable;
-            this.scM4Speed.Enabled = enable;
-        }
-
-        private void ChangeBtnSaveStatus(LoadingButtonControl.LoadingButtonControlStatus status)
-        {
-            this.btnSave.Status = status;
-        }
+        
 
         private void ChangeBtnTestReadersStatus(LoadingButtonControl.LoadingButtonControlStatus status)
         {
             this.btnTestReaders.Status = status;
-        }
-
-        private void settingsSliderOnValueChanged(object sender, int i1)
-        {
-            bool dirty = this.scActiveReaders.Value != Store.Service.Settings.ActiveReaders;
-            if (!dirty && this.scFeedInSteps.Value != Store.Service.Settings.FeedInSteps) dirty = true;
-            if (!dirty && this.scM3StepLength.Value != Store.Service.Settings.M3StepLength) dirty = true;
-            if (!dirty && this.scM4Speed.Value != Store.Service.Settings.M4Speed) dirty = true;
-            this.btnSave.Status =
-                dirty
-                    ? LoadingButtonControl.LoadingButtonControlStatus.Visible
-                    : LoadingButtonControl.LoadingButtonControlStatus.Invisible;
         }
 
         private void OnStoreChanged(object sender, string changeType)
@@ -224,36 +159,9 @@ namespace Yaqoot300.Pages
             switch (changeType)
             {
                 case null:
-                    SetM0();
-                    SetM1();
-                    SetM2();
-                    SetM3();
-                    SetM4();
                     SetSensors();
-                    SetSettings();
                     SetTestReaders();
                     SetSetupReaders();
-                    break;
-                case ServiceActionTypes.CHANGE_M0:
-                    SetM0();
-                    break;
-                case ServiceActionTypes.CHANGE_M1:
-                    SetM1();
-                    break;
-                case ServiceActionTypes.CHANGE_M2:
-                    SetM2();
-                    break;
-                case ServiceActionTypes.CHANGE_M3:
-                    SetM3();
-                    break;
-                case ServiceActionTypes.CHANGE_M4:
-                    SetM4();
-                    break;
-                case ServiceActionTypes.CHANGE_SETTINGS_SUCCESS:
-                case ServiceActionTypes.CHANGE_SETTINGS_FAIL:
-                    SetSettings();
-                    ChangeSlidersEnable(true);
-                    ChangeBtnSaveStatus(LoadingButtonControl.LoadingButtonControlStatus.Invisible);
                     break;
                 case ServiceActionTypes.TEST_READERS:
                     SetTestReaders();
@@ -275,108 +183,6 @@ namespace Yaqoot300.Pages
 
         private Store Store => Services.Store;
 
-        private void OnMotorMouseDown(object sender, MouseEventArgs mouseEventArgs)
-        {
-            if (sender == mt0)
-            {
-                if (!Store.Service.Motors.M0.IsEnabled || Store.Service.Motors.M0.Status == RotateMotorStatus.Started) return;
-                Store.Dispatch(new ServiceChangeM0Action(new ServiceChangeMotorActionPayload(RotateMotorStatus.Started)));
-            }
-            else if (sender == mt1)
-            {
-                if (!Store.Service.Motors.M1.IsEnabled || Store.Service.Motors.M1.Status == RotateMotorStatus.Started) return;
-                Store.Dispatch(new ServiceChangeM1Action(new ServiceChangeMotorActionPayload(RotateMotorStatus.Started)));
-            }
-            else if (sender == mt2)
-            {
-                if (!Store.Service.Motors.M2.IsEnabled || Store.Service.Motors.M2.Status == RotateMotorStatus.Started) return;
-                Store.Dispatch(new ServiceChangeM2Action(new ServiceChangeMotorActionPayload(RotateMotorStatus.Started)));
-            }
-            else if (sender == mt3)
-            {
-                if (!Store.Service.Motors.M3.IsEnabled || Store.Service.Motors.M3.Status == RotateMotorStatus.Started) return;
-                Store.Dispatch(new ServiceChangeM3Action(new ServiceChangeMotorActionPayload(RotateMotorStatus.Started, false)));
-                _m3Timer.Start();
-            }
-        }
-
-        private void OnMotorMouseUp(object sender, MouseEventArgs mouseEventArgs)
-        {
-            if (sender == mt0)
-            {
-                Store.Dispatch(new ServiceChangeM0Action(new ServiceChangeMotorActionPayload(RotateMotorStatus.Stopped)));
-            }    
-            else if (sender == mt1)
-            {
-                Store.Dispatch(new ServiceChangeM1Action(new ServiceChangeMotorActionPayload(RotateMotorStatus.Stopped)));
-            }       
-            else if (sender == mt2)
-            {
-                Store.Dispatch(new ServiceChangeM2Action(new ServiceChangeMotorActionPayload(RotateMotorStatus.Stopped)));
-            }
-        }
-
-        private void Mt4OnBtnClicked(object sender, UpDownMotorControl.BtnClickedType arg)
-        {
-            if (Store.Service.Motors.M4.Status != UpDownMotorStatus.Idle) return;
-            switch (arg)
-            {
-                case UpDownMotorControl.BtnClickedType.Up:
-                    Store.Dispatch(new ServiceChangeM4Action(new ServiceChangeM4ActionPayload(UpDownMotorStatus.GoingUp, false, false)));
-                    break;
-                case UpDownMotorControl.BtnClickedType.Down:
-                    Store.Dispatch(new ServiceChangeM4Action(new ServiceChangeM4ActionPayload(UpDownMotorStatus.GoingDown, false, false)));
-                    break;
-            }
-            _m4Timer.Start();
-        }
-
-        private void SetM0()
-        {
-            this.SafeInvoke(() =>
-            {
-                mt0.IsEnabled = Store.Service.Motors.M0.Status == RotateMotorStatus.Started;
-                mt0.Cursor = Store.Service.Motors.M0.IsEnabled ? Cursors.Hand : Cursors.No;
-            });
-        }
-
-        private void SetM1()
-        {
-            this.SafeInvoke(() =>
-            {
-                mt1.IsEnabled = Store.Service.Motors.M1.Status == RotateMotorStatus.Started;
-                mt1.Cursor = Store.Service.Motors.M1.IsEnabled ? Cursors.Hand : Cursors.No;
-            });
-        }
-
-        private void SetM2()
-        {
-            this.SafeInvoke(() =>
-            {
-                mt2.IsEnabled = Store.Service.Motors.M2.Status == RotateMotorStatus.Started;
-                mt2.Cursor = Store.Service.Motors.M2.IsEnabled ? Cursors.Hand : Cursors.No;
-            });
-        }
-
-        private void SetM3()
-        {
-            this.SafeInvoke(() =>
-            {
-                mt3.IsEnabled = Store.Service.Motors.M3.Status == RotateMotorStatus.Started;
-                mt3.Cursor = Store.Service.Motors.M3.IsEnabled ? Cursors.Hand : Cursors.No;
-            });
-        }
-
-        private void SetM4()
-        {
-            this.SafeInvoke(() =>
-            {
-                mt4.Status = Store.Service.Motors.M4.Status;
-                mt4.IsUpEnabled = Store.Service.Motors.M4.IsUpEnabled;
-                mt4.IsDownEnabled = Store.Service.Motors.M4.IsDownEnabled;
-            });
-        }
-
         private void SetSensors()
         {
             this.SafeInvoke(() =>
@@ -388,16 +194,6 @@ namespace Yaqoot300.Pages
             });
         }
 
-        private void SetSettings()
-        {
-            this.SafeInvoke(() =>
-            {
-                this.scActiveReaders.Value = Store.Service.Settings.ActiveReaders;
-                this.scFeedInSteps.Value = Store.Service.Settings.FeedInSteps;
-                this.scM3StepLength.Value = Store.Service.Settings.M3StepLength;
-                this.scM4Speed.Value = Store.Service.Settings.M4Speed;
-            });
-        }
 
         private void SetSetupReaders()
         {
@@ -426,16 +222,19 @@ namespace Yaqoot300.Pages
             });
         }
 
-        private void M3TimerOnTick(object sender, EventArgs eventArgs)
+        private void btnSelectJob_Click(object sender, EventArgs e)
         {
-            _m3Timer.Stop();
-            Store.Dispatch(new ServiceChangeM3Action(new ServiceChangeMotorActionPayload(RotateMotorStatus.Stopped, true)));
+            using (var dlg = new JobsDialog())
+            {
+                dlg.ShowDialog();
+                Store.Dispatch(new JobSelectJobAction(dlg.SelectedJobId));
+            }
         }
 
-        private void M4TimerOnTick(object sender, EventArgs eventArgs)
+        private void btnMessages_Click(object sender, EventArgs e)
         {
-            _m4Timer.Stop();
-            Store.Dispatch(new ServiceChangeM4Action(new ServiceChangeM4ActionPayload(UpDownMotorStatus.Idle, true, true)));
+            Services.Messages.ShowDialog();
         }
+
     }
 }
