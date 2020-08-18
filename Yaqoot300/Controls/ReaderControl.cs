@@ -12,12 +12,12 @@ using Color = System.Drawing.Color;
 
 namespace Yaqoot300.Controls
 {
-    public partial class ReaderController : UserControl
+    public partial class ReaderControl : UserControl
     {
         private int _number;
         private ReaderStatus _status;
         private float _percent;
-        public ReaderController()
+        public ReaderControl()
         {
             InitializeComponent();
             this.Percent = 100;

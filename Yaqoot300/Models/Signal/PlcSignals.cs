@@ -109,12 +109,7 @@ namespace Yaqoot300.Models.Signal
                         Services.Store.Dispatch(new HomeLoadOS());
                         break;
                     case 0x03:
-                        Services.Store.Dispatch(new HomeLoadOSSuccess(
-                            new[]
-                            {
-                                new ReaderResponse {ReaderName = "ACS 39U 4", Status = ReaderStatus.Success},
-                                new ReaderResponse {ReaderName = "ACS 39U 6", Status = ReaderStatus.Fail},
-                            }));
+                        // M4 UP
                         break;
                 }
             }

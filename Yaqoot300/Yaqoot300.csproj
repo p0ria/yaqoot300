@@ -111,6 +111,12 @@
     <Compile Include="Controls\ConnectionsControl.Designer.cs">
       <DependentUpon>ConnectionsControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\HomeReadersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HomeReadersControl.Designer.cs">
+      <DependentUpon>HomeReadersControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ServiceConnectionsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -122,6 +128,18 @@
     </Compile>
     <Compile Include="Controls\ServiceJobStatisticsControl.Designer.cs">
       <DependentUpon>ServiceJobStatisticsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ServiceMotorsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ServiceMotorsControl.Designer.cs">
+      <DependentUpon>ServiceMotorsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ServiceSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ServiceSettingsControl.Designer.cs">
+      <DependentUpon>ServiceSettingsControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IpPort.cs" />
     <Compile Include="Commons\UiExtensionMethods.cs" />
@@ -203,11 +221,11 @@
     <Compile Include="Controls\MotorControl.Designer.cs">
       <DependentUpon>MotorControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ReaderController.cs">
+    <Compile Include="Controls\ReaderControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ReaderController.Designer.cs">
-      <DependentUpon>ReaderController.cs</DependentUpon>
+    <Compile Include="Controls\ReaderControl.Designer.cs">
+      <DependentUpon>ReaderControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\ReaderStatus.cs" />
     <Compile Include="Interfaces\Signal.cs" />
@@ -350,6 +368,9 @@
     <EmbeddedResource Include="Controls\ConnectionsControl.resx">
       <DependentUpon>ConnectionsControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HomeReadersControl.resx">
+      <DependentUpon>HomeReadersControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\PlcErrorControl.resx">
       <DependentUpon>PlcErrorControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -368,8 +389,8 @@
     <EmbeddedResource Include="Controls\PlcErrosControl.resx">
       <DependentUpon>PlcErrosControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ReaderController.resx">
-      <DependentUpon>ReaderController.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\ReaderControl.resx">
+      <DependentUpon>ReaderControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SensorControl.resx">
       <DependentUpon>SensorControl.cs</DependentUpon>
@@ -379,6 +400,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ServiceJobStatisticsControl.resx">
       <DependentUpon>ServiceJobStatisticsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ServiceMotorsControl.resx">
+      <DependentUpon>ServiceMotorsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ServiceSettingsControl.resx">
+      <DependentUpon>ServiceSettingsControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SetupReaderControl.resx">
       <DependentUpon>SetupReaderControl.cs</DependentUpon>

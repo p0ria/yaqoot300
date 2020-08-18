@@ -32,35 +32,6 @@
             this.tpPlcConfig = new System.Windows.Forms.TabPage();
             this.gbSensors = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.bbSettings = new System.Windows.Forms.GroupBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.gbMotors = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tpReadersConfig = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.lbReaders = new System.Windows.Forms.ListBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.btnMessages = new System.Windows.Forms.Button();
-            this.btnSelectJob = new System.Windows.Forms.Button();
-            this.serviceJobStatisticsControl1 = new Yaqoot300.Controls.ServiceJobStatisticsControl();
-            this.serviceConnectionsControl1 = new Yaqoot300.Controls.ServiceConnectionsControl();
             this.sensor14 = new Yaqoot300.Controls.SensorControl();
             this.sensor13 = new Yaqoot300.Controls.SensorControl();
             this.sensor12 = new Yaqoot300.Controls.SensorControl();
@@ -75,16 +46,20 @@
             this.sensor3 = new Yaqoot300.Controls.SensorControl();
             this.sensor1 = new Yaqoot300.Controls.SensorControl();
             this.sensor2 = new Yaqoot300.Controls.SensorControl();
-            this.btnSave = new Yaqoot300.Controls.LoadingButtonControl();
-            this.scM4Speed = new Yaqoot300.Controls.SliderControl();
-            this.scM3StepLength = new Yaqoot300.Controls.SliderControl();
-            this.scFeedInSteps = new Yaqoot300.Controls.SliderControl();
-            this.scActiveReaders = new Yaqoot300.Controls.SliderControl();
-            this.mt4 = new Yaqoot300.Controls.UpDownMotorControl();
-            this.mt3 = new Yaqoot300.Controls.MotorControl();
-            this.mt2 = new Yaqoot300.Controls.MotorControl();
-            this.mt0 = new Yaqoot300.Controls.MotorControl();
-            this.mt1 = new Yaqoot300.Controls.MotorControl();
+            this.bbSettings = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.serviceSettingsControl1 = new Yaqoot300.Controls.ServiceSettingsControl();
+            this.gbMotors = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.serviceMotorsControl1 = new Yaqoot300.Controls.ServiceMotorsControl();
+            this.tpReadersConfig = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.sr30 = new Yaqoot300.Controls.SetupReaderControl();
             this.sr28 = new Yaqoot300.Controls.SetupReaderControl();
             this.sr26 = new Yaqoot300.Controls.SetupReaderControl();
@@ -115,6 +90,9 @@
             this.sr5 = new Yaqoot300.Controls.SetupReaderControl();
             this.sr3 = new Yaqoot300.Controls.SetupReaderControl();
             this.sr1 = new Yaqoot300.Controls.SetupReaderControl();
+            this.lbReaders = new System.Windows.Forms.ListBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.btnTestReaders = new Yaqoot300.Controls.LoadingButtonControl();
             this.tr30 = new Yaqoot300.Controls.TestReaderControl();
             this.tr29 = new Yaqoot300.Controls.TestReaderControl();
@@ -146,6 +124,11 @@
             this.tr3 = new Yaqoot300.Controls.TestReaderControl();
             this.tr2 = new Yaqoot300.Controls.TestReaderControl();
             this.tr1 = new Yaqoot300.Controls.TestReaderControl();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.serviceJobStatisticsControl1 = new Yaqoot300.Controls.ServiceJobStatisticsControl();
+            this.btnMessages = new System.Windows.Forms.Button();
+            this.btnSelectJob = new System.Windows.Forms.Button();
+            this.serviceConnectionsControl1 = new Yaqoot300.Controls.ServiceConnectionsControl();
             this.tabService.SuspendLayout();
             this.tpPlcConfig.SuspendLayout();
             this.gbSensors.SuspendLayout();
@@ -168,10 +151,10 @@
             this.tabService.Controls.Add(this.tpPlcConfig);
             this.tabService.Controls.Add(this.tpReadersConfig);
             this.tabService.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabService.Location = new System.Drawing.Point(223, 0);
+            this.tabService.Location = new System.Drawing.Point(217, 0);
             this.tabService.Name = "tabService";
             this.tabService.SelectedIndex = 0;
-            this.tabService.Size = new System.Drawing.Size(1151, 776);
+            this.tabService.Size = new System.Drawing.Size(1157, 776);
             this.tabService.TabIndex = 11;
             // 
             // tpPlcConfig
@@ -183,7 +166,7 @@
             this.tpPlcConfig.Location = new System.Drawing.Point(4, 34);
             this.tpPlcConfig.Name = "tpPlcConfig";
             this.tpPlcConfig.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPlcConfig.Size = new System.Drawing.Size(1143, 738);
+            this.tpPlcConfig.Size = new System.Drawing.Size(1149, 738);
             this.tpPlcConfig.TabIndex = 0;
             this.tpPlcConfig.Text = "PLC Configutaion";
             // 
@@ -219,387 +202,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1088, 148);
             this.panel3.TabIndex = 0;
-            // 
-            // bbSettings
-            // 
-            this.bbSettings.Controls.Add(this.panel2);
-            this.bbSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bbSettings.Location = new System.Drawing.Point(524, 213);
-            this.bbSettings.Name = "bbSettings";
-            this.bbSettings.Size = new System.Drawing.Size(586, 492);
-            this.bbSettings.TabIndex = 1;
-            this.bbSettings.TabStop = false;
-            this.bbSettings.Text = "Settings";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnSave);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.scM4Speed);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.scM3StepLength);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.scFeedInSteps);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.scActiveReaders);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(3, 27);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(580, 462);
-            this.panel2.TabIndex = 0;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(16, 318);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(118, 25);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "M4 Speed";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(16, 223);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(178, 25);
-            this.label8.TabIndex = 24;
-            this.label8.Text = "M3 Step Length";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(16, 128);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(158, 25);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Feed In Steps";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(16, 33);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(172, 25);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "Active Readers";
-            // 
-            // gbMotors
-            // 
-            this.gbMotors.Controls.Add(this.panel1);
-            this.gbMotors.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbMotors.Location = new System.Drawing.Point(19, 213);
-            this.gbMotors.Name = "gbMotors";
-            this.gbMotors.Size = new System.Drawing.Size(480, 492);
-            this.gbMotors.TabIndex = 0;
-            this.gbMotors.TabStop = false;
-            this.gbMotors.Text = "Motors";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.mt4);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.mt3);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.mt2);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.mt0);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.mt1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(3, 27);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(474, 462);
-            this.panel1.TabIndex = 0;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(238, 232);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 31);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "M4";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(82, 232);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 31);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "M3";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(359, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 31);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "M2";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(61, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 31);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "M0";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(210, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 31);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "M1";
-            // 
-            // tpReadersConfig
-            // 
-            this.tpReadersConfig.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tpReadersConfig.Controls.Add(this.groupBox2);
-            this.tpReadersConfig.Controls.Add(this.groupBox1);
-            this.tpReadersConfig.Location = new System.Drawing.Point(4, 34);
-            this.tpReadersConfig.Name = "tpReadersConfig";
-            this.tpReadersConfig.Padding = new System.Windows.Forms.Padding(3);
-            this.tpReadersConfig.Size = new System.Drawing.Size(1143, 738);
-            this.tpReadersConfig.TabIndex = 1;
-            this.tpReadersConfig.Text = "Readers Configuration";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.panel5);
-            this.groupBox2.Location = new System.Drawing.Point(19, 312);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1111, 412);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Setup Readers";
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Controls.Add(this.sr30);
-            this.panel5.Controls.Add(this.sr28);
-            this.panel5.Controls.Add(this.sr26);
-            this.panel5.Controls.Add(this.sr24);
-            this.panel5.Controls.Add(this.sr22);
-            this.panel5.Controls.Add(this.sr20);
-            this.panel5.Controls.Add(this.sr18);
-            this.panel5.Controls.Add(this.sr16);
-            this.panel5.Controls.Add(this.sr14);
-            this.panel5.Controls.Add(this.sr12);
-            this.panel5.Controls.Add(this.sr10);
-            this.panel5.Controls.Add(this.sr8);
-            this.panel5.Controls.Add(this.sr6);
-            this.panel5.Controls.Add(this.sr4);
-            this.panel5.Controls.Add(this.sr2);
-            this.panel5.Controls.Add(this.sr29);
-            this.panel5.Controls.Add(this.sr27);
-            this.panel5.Controls.Add(this.sr25);
-            this.panel5.Controls.Add(this.sr23);
-            this.panel5.Controls.Add(this.sr21);
-            this.panel5.Controls.Add(this.sr19);
-            this.panel5.Controls.Add(this.sr17);
-            this.panel5.Controls.Add(this.sr15);
-            this.panel5.Controls.Add(this.sr13);
-            this.panel5.Controls.Add(this.sr11);
-            this.panel5.Controls.Add(this.sr9);
-            this.panel5.Controls.Add(this.sr7);
-            this.panel5.Controls.Add(this.sr5);
-            this.panel5.Controls.Add(this.sr3);
-            this.panel5.Controls.Add(this.sr1);
-            this.panel5.Controls.Add(this.lbReaders);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel5.Location = new System.Drawing.Point(3, 27);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1105, 382);
-            this.panel5.TabIndex = 0;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.label11);
-            this.panel6.Controls.Add(this.label10);
-            this.panel6.Controls.Add(this.panel8);
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Location = new System.Drawing.Point(445, 13);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(315, 83);
-            this.panel6.TabIndex = 31;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(240, 35);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(50, 13);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Assigned";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(82, 35);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(27, 13);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "N/A";
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Location = new System.Drawing.Point(192, 21);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(42, 38);
-            this.panel8.TabIndex = 1;
-            // 
-            // panel7
-            // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Location = new System.Drawing.Point(34, 21);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(42, 38);
-            this.panel7.TabIndex = 0;
-            // 
-            // lbReaders
-            // 
-            this.lbReaders.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lbReaders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbReaders.FormattingEnabled = true;
-            this.lbReaders.ItemHeight = 20;
-            this.lbReaders.Location = new System.Drawing.Point(0, 0);
-            this.lbReaders.Name = "lbReaders";
-            this.lbReaders.Size = new System.Drawing.Size(158, 382);
-            this.lbReaders.TabIndex = 0;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.panel4);
-            this.groupBox1.Location = new System.Drawing.Point(19, 19);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1111, 276);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Test Readers";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.btnTestReaders);
-            this.panel4.Controls.Add(this.tr30);
-            this.panel4.Controls.Add(this.tr29);
-            this.panel4.Controls.Add(this.tr28);
-            this.panel4.Controls.Add(this.tr27);
-            this.panel4.Controls.Add(this.tr26);
-            this.panel4.Controls.Add(this.tr25);
-            this.panel4.Controls.Add(this.tr24);
-            this.panel4.Controls.Add(this.tr23);
-            this.panel4.Controls.Add(this.tr22);
-            this.panel4.Controls.Add(this.tr21);
-            this.panel4.Controls.Add(this.tr20);
-            this.panel4.Controls.Add(this.tr19);
-            this.panel4.Controls.Add(this.tr18);
-            this.panel4.Controls.Add(this.tr17);
-            this.panel4.Controls.Add(this.tr16);
-            this.panel4.Controls.Add(this.tr15);
-            this.panel4.Controls.Add(this.tr14);
-            this.panel4.Controls.Add(this.tr13);
-            this.panel4.Controls.Add(this.tr12);
-            this.panel4.Controls.Add(this.tr11);
-            this.panel4.Controls.Add(this.tr10);
-            this.panel4.Controls.Add(this.tr9);
-            this.panel4.Controls.Add(this.tr8);
-            this.panel4.Controls.Add(this.tr7);
-            this.panel4.Controls.Add(this.tr6);
-            this.panel4.Controls.Add(this.tr5);
-            this.panel4.Controls.Add(this.tr4);
-            this.panel4.Controls.Add(this.tr3);
-            this.panel4.Controls.Add(this.tr2);
-            this.panel4.Controls.Add(this.tr1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel4.Location = new System.Drawing.Point(3, 27);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1105, 246);
-            this.panel4.TabIndex = 0;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel9.Controls.Add(this.serviceJobStatisticsControl1);
-            this.panel9.Controls.Add(this.btnMessages);
-            this.panel9.Controls.Add(this.btnSelectJob);
-            this.panel9.Controls.Add(this.serviceConnectionsControl1);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel9.Location = new System.Drawing.Point(0, 0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(221, 768);
-            this.panel9.TabIndex = 12;
-            // 
-            // btnMessages
-            // 
-            this.btnMessages.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMessages.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnMessages.Location = new System.Drawing.Point(21, 95);
-            this.btnMessages.Name = "btnMessages";
-            this.btnMessages.Size = new System.Drawing.Size(179, 46);
-            this.btnMessages.TabIndex = 17;
-            this.btnMessages.Text = "Messages";
-            this.btnMessages.UseVisualStyleBackColor = true;
-            this.btnMessages.Click += new System.EventHandler(this.btnMessages_Click);
-            // 
-            // btnSelectJob
-            // 
-            this.btnSelectJob.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSelectJob.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnSelectJob.Location = new System.Drawing.Point(21, 32);
-            this.btnSelectJob.Name = "btnSelectJob";
-            this.btnSelectJob.Size = new System.Drawing.Size(179, 46);
-            this.btnSelectJob.TabIndex = 16;
-            this.btnSelectJob.Text = "Select Job";
-            this.btnSelectJob.UseVisualStyleBackColor = true;
-            this.btnSelectJob.Click += new System.EventHandler(this.btnSelectJob_Click);
-            // 
-            // serviceJobStatisticsControl1
-            // 
-            this.serviceJobStatisticsControl1.Location = new System.Drawing.Point(11, 183);
-            this.serviceJobStatisticsControl1.Name = "serviceJobStatisticsControl1";
-            this.serviceJobStatisticsControl1.Size = new System.Drawing.Size(200, 200);
-            this.serviceJobStatisticsControl1.TabIndex = 18;
-            // 
-            // serviceConnectionsControl1
-            // 
-            this.serviceConnectionsControl1.Location = new System.Drawing.Point(11, 405);
-            this.serviceConnectionsControl1.Name = "serviceConnectionsControl1";
-            this.serviceConnectionsControl1.Size = new System.Drawing.Size(200, 335);
-            this.serviceConnectionsControl1.TabIndex = 0;
             // 
             // sensor14
             // 
@@ -741,113 +343,174 @@
             this.sensor2.Size = new System.Drawing.Size(120, 40);
             this.sensor2.TabIndex = 1;
             // 
-            // btnSave
+            // bbSettings
             // 
-            this.btnSave.Label = "SAVE";
-            this.btnSave.Location = new System.Drawing.Point(352, 371);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(213, 75);
-            this.btnSave.Status = Yaqoot300.Controls.LoadingButtonControl.LoadingButtonControlStatus.Invisible;
-            this.btnSave.TabIndex = 27;
+            this.bbSettings.Controls.Add(this.panel2);
+            this.bbSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbSettings.Location = new System.Drawing.Point(524, 213);
+            this.bbSettings.Name = "bbSettings";
+            this.bbSettings.Size = new System.Drawing.Size(586, 492);
+            this.bbSettings.TabIndex = 1;
+            this.bbSettings.TabStop = false;
+            this.bbSettings.Text = "Settings";
             // 
-            // scM4Speed
+            // panel2
             // 
-            this.scM4Speed.Location = new System.Drawing.Point(189, 297);
-            this.scM4Speed.Max = 4;
-            this.scM4Speed.Min = 1;
-            this.scM4Speed.Name = "scM4Speed";
-            this.scM4Speed.Size = new System.Drawing.Size(376, 80);
-            this.scM4Speed.TabIndex = 25;
-            this.scM4Speed.TickFrequency = 1;
-            this.scM4Speed.Value = 2;
+            this.panel2.Controls.Add(this.serviceSettingsControl1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(3, 27);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(580, 462);
+            this.panel2.TabIndex = 0;
             // 
-            // scM3StepLength
+            // serviceSettingsControl1
             // 
-            this.scM3StepLength.Location = new System.Drawing.Point(189, 201);
-            this.scM3StepLength.Max = 7;
-            this.scM3StepLength.Min = 1;
-            this.scM3StepLength.Name = "scM3StepLength";
-            this.scM3StepLength.Size = new System.Drawing.Size(376, 80);
-            this.scM3StepLength.TabIndex = 23;
-            this.scM3StepLength.TickFrequency = 1;
-            this.scM3StepLength.Value = 6;
+            this.serviceSettingsControl1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.serviceSettingsControl1.Location = new System.Drawing.Point(0, 0);
+            this.serviceSettingsControl1.Name = "serviceSettingsControl1";
+            this.serviceSettingsControl1.Size = new System.Drawing.Size(580, 462);
+            this.serviceSettingsControl1.TabIndex = 0;
             // 
-            // scFeedInSteps
+            // gbMotors
             // 
-            this.scFeedInSteps.Location = new System.Drawing.Point(189, 105);
-            this.scFeedInSteps.Max = 10;
-            this.scFeedInSteps.Min = 1;
-            this.scFeedInSteps.Name = "scFeedInSteps";
-            this.scFeedInSteps.Size = new System.Drawing.Size(376, 80);
-            this.scFeedInSteps.TabIndex = 21;
-            this.scFeedInSteps.TickFrequency = 1;
-            this.scFeedInSteps.Value = 5;
+            this.gbMotors.Controls.Add(this.panel1);
+            this.gbMotors.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbMotors.Location = new System.Drawing.Point(19, 213);
+            this.gbMotors.Name = "gbMotors";
+            this.gbMotors.Size = new System.Drawing.Size(480, 492);
+            this.gbMotors.TabIndex = 0;
+            this.gbMotors.TabStop = false;
+            this.gbMotors.Text = "Motors";
             // 
-            // scActiveReaders
+            // panel1
             // 
-            this.scActiveReaders.Location = new System.Drawing.Point(189, 9);
-            this.scActiveReaders.Max = 30;
-            this.scActiveReaders.Min = 0;
-            this.scActiveReaders.Name = "scActiveReaders";
-            this.scActiveReaders.Size = new System.Drawing.Size(376, 80);
-            this.scActiveReaders.TabIndex = 0;
-            this.scActiveReaders.TickFrequency = 2;
-            this.scActiveReaders.Value = 30;
+            this.panel1.Controls.Add(this.serviceMotorsControl1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(3, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(474, 462);
+            this.panel1.TabIndex = 0;
             // 
-            // mt4
+            // serviceMotorsControl1
             // 
-            this.mt4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.mt4.IsDownEnabled = false;
-            this.mt4.IsUpEnabled = false;
-            this.mt4.Location = new System.Drawing.Point(200, 275);
-            this.mt4.Name = "mt4";
-            this.mt4.Size = new System.Drawing.Size(216, 132);
-            this.mt4.Status = Yaqoot300.Interfaces.UpDownMotorStatus.Idle;
-            this.mt4.TabIndex = 19;
+            this.serviceMotorsControl1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.serviceMotorsControl1.Location = new System.Drawing.Point(0, 0);
+            this.serviceMotorsControl1.Name = "serviceMotorsControl1";
+            this.serviceMotorsControl1.Size = new System.Drawing.Size(474, 462);
+            this.serviceMotorsControl1.TabIndex = 0;
             // 
-            // mt3
+            // tpReadersConfig
             // 
-            this.mt3.BackColor = System.Drawing.Color.Transparent;
-            this.mt3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mt3.IsEnabled = false;
-            this.mt3.Location = new System.Drawing.Point(46, 275);
-            this.mt3.Margin = new System.Windows.Forms.Padding(48, 44, 48, 44);
-            this.mt3.Name = "mt3";
-            this.mt3.Size = new System.Drawing.Size(130, 128);
-            this.mt3.TabIndex = 16;
+            this.tpReadersConfig.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tpReadersConfig.Controls.Add(this.groupBox2);
+            this.tpReadersConfig.Controls.Add(this.groupBox1);
+            this.tpReadersConfig.Location = new System.Drawing.Point(4, 34);
+            this.tpReadersConfig.Name = "tpReadersConfig";
+            this.tpReadersConfig.Padding = new System.Windows.Forms.Padding(3);
+            this.tpReadersConfig.Size = new System.Drawing.Size(1143, 738);
+            this.tpReadersConfig.TabIndex = 1;
+            this.tpReadersConfig.Text = "Readers Configuration";
             // 
-            // mt2
+            // groupBox2
             // 
-            this.mt2.BackColor = System.Drawing.Color.Transparent;
-            this.mt2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mt2.IsEnabled = false;
-            this.mt2.Location = new System.Drawing.Point(325, 72);
-            this.mt2.Margin = new System.Windows.Forms.Padding(24, 23, 24, 23);
-            this.mt2.Name = "mt2";
-            this.mt2.Size = new System.Drawing.Size(128, 130);
-            this.mt2.TabIndex = 14;
+            this.groupBox2.Controls.Add(this.panel5);
+            this.groupBox2.Location = new System.Drawing.Point(19, 312);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1111, 412);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Setup Readers";
             // 
-            // mt0
+            // panel5
             // 
-            this.mt0.BackColor = System.Drawing.Color.Transparent;
-            this.mt0.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mt0.IsEnabled = false;
-            this.mt0.Location = new System.Drawing.Point(21, 72);
-            this.mt0.Margin = new System.Windows.Forms.Padding(12);
-            this.mt0.Name = "mt0";
-            this.mt0.Size = new System.Drawing.Size(128, 130);
-            this.mt0.TabIndex = 12;
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Controls.Add(this.sr30);
+            this.panel5.Controls.Add(this.sr28);
+            this.panel5.Controls.Add(this.sr26);
+            this.panel5.Controls.Add(this.sr24);
+            this.panel5.Controls.Add(this.sr22);
+            this.panel5.Controls.Add(this.sr20);
+            this.panel5.Controls.Add(this.sr18);
+            this.panel5.Controls.Add(this.sr16);
+            this.panel5.Controls.Add(this.sr14);
+            this.panel5.Controls.Add(this.sr12);
+            this.panel5.Controls.Add(this.sr10);
+            this.panel5.Controls.Add(this.sr8);
+            this.panel5.Controls.Add(this.sr6);
+            this.panel5.Controls.Add(this.sr4);
+            this.panel5.Controls.Add(this.sr2);
+            this.panel5.Controls.Add(this.sr29);
+            this.panel5.Controls.Add(this.sr27);
+            this.panel5.Controls.Add(this.sr25);
+            this.panel5.Controls.Add(this.sr23);
+            this.panel5.Controls.Add(this.sr21);
+            this.panel5.Controls.Add(this.sr19);
+            this.panel5.Controls.Add(this.sr17);
+            this.panel5.Controls.Add(this.sr15);
+            this.panel5.Controls.Add(this.sr13);
+            this.panel5.Controls.Add(this.sr11);
+            this.panel5.Controls.Add(this.sr9);
+            this.panel5.Controls.Add(this.sr7);
+            this.panel5.Controls.Add(this.sr5);
+            this.panel5.Controls.Add(this.sr3);
+            this.panel5.Controls.Add(this.sr1);
+            this.panel5.Controls.Add(this.lbReaders);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel5.Location = new System.Drawing.Point(3, 27);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1105, 382);
+            this.panel5.TabIndex = 0;
             // 
-            // mt1
+            // panel6
             // 
-            this.mt1.BackColor = System.Drawing.Color.Transparent;
-            this.mt1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mt1.IsEnabled = false;
-            this.mt1.Location = new System.Drawing.Point(173, 74);
-            this.mt1.Margin = new System.Windows.Forms.Padding(6);
-            this.mt1.Name = "mt1";
-            this.mt1.Size = new System.Drawing.Size(128, 128);
-            this.mt1.TabIndex = 10;
+            this.panel6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.label11);
+            this.panel6.Controls.Add(this.label10);
+            this.panel6.Controls.Add(this.panel8);
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Location = new System.Drawing.Point(445, 13);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(315, 83);
+            this.panel6.TabIndex = 31;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(240, 35);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(50, 13);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Assigned";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(82, 35);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(27, 13);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "N/A";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.White;
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Location = new System.Drawing.Point(192, 21);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(42, 38);
+            this.panel8.TabIndex = 1;
+            // 
+            // panel7
+            // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Location = new System.Drawing.Point(34, 21);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(42, 38);
+            this.panel7.TabIndex = 0;
             // 
             // sr30
             // 
@@ -1269,6 +932,67 @@
             this.sr1.Size = new System.Drawing.Size(50, 50);
             this.sr1.TabIndex = 1;
             // 
+            // lbReaders
+            // 
+            this.lbReaders.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lbReaders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbReaders.FormattingEnabled = true;
+            this.lbReaders.ItemHeight = 20;
+            this.lbReaders.Location = new System.Drawing.Point(0, 0);
+            this.lbReaders.Name = "lbReaders";
+            this.lbReaders.Size = new System.Drawing.Size(158, 382);
+            this.lbReaders.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.panel4);
+            this.groupBox1.Location = new System.Drawing.Point(19, 19);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1111, 276);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Test Readers";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnTestReaders);
+            this.panel4.Controls.Add(this.tr30);
+            this.panel4.Controls.Add(this.tr29);
+            this.panel4.Controls.Add(this.tr28);
+            this.panel4.Controls.Add(this.tr27);
+            this.panel4.Controls.Add(this.tr26);
+            this.panel4.Controls.Add(this.tr25);
+            this.panel4.Controls.Add(this.tr24);
+            this.panel4.Controls.Add(this.tr23);
+            this.panel4.Controls.Add(this.tr22);
+            this.panel4.Controls.Add(this.tr21);
+            this.panel4.Controls.Add(this.tr20);
+            this.panel4.Controls.Add(this.tr19);
+            this.panel4.Controls.Add(this.tr18);
+            this.panel4.Controls.Add(this.tr17);
+            this.panel4.Controls.Add(this.tr16);
+            this.panel4.Controls.Add(this.tr15);
+            this.panel4.Controls.Add(this.tr14);
+            this.panel4.Controls.Add(this.tr13);
+            this.panel4.Controls.Add(this.tr12);
+            this.panel4.Controls.Add(this.tr11);
+            this.panel4.Controls.Add(this.tr10);
+            this.panel4.Controls.Add(this.tr9);
+            this.panel4.Controls.Add(this.tr8);
+            this.panel4.Controls.Add(this.tr7);
+            this.panel4.Controls.Add(this.tr6);
+            this.panel4.Controls.Add(this.tr5);
+            this.panel4.Controls.Add(this.tr4);
+            this.panel4.Controls.Add(this.tr3);
+            this.panel4.Controls.Add(this.tr2);
+            this.panel4.Controls.Add(this.tr1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel4.Location = new System.Drawing.Point(3, 27);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1105, 246);
+            this.panel4.TabIndex = 0;
+            // 
             // btnTestReaders
             // 
             this.btnTestReaders.Label = "Test Readers";
@@ -1638,6 +1362,57 @@
             this.tr1.Status = Yaqoot300.Interfaces.TestReaderStatus.NoOp;
             this.tr1.TabIndex = 0;
             // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel9.Controls.Add(this.serviceJobStatisticsControl1);
+            this.panel9.Controls.Add(this.btnMessages);
+            this.panel9.Controls.Add(this.btnSelectJob);
+            this.panel9.Controls.Add(this.serviceConnectionsControl1);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(221, 768);
+            this.panel9.TabIndex = 12;
+            // 
+            // serviceJobStatisticsControl1
+            // 
+            this.serviceJobStatisticsControl1.Location = new System.Drawing.Point(11, 183);
+            this.serviceJobStatisticsControl1.Name = "serviceJobStatisticsControl1";
+            this.serviceJobStatisticsControl1.Size = new System.Drawing.Size(200, 200);
+            this.serviceJobStatisticsControl1.TabIndex = 18;
+            // 
+            // btnMessages
+            // 
+            this.btnMessages.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMessages.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnMessages.Location = new System.Drawing.Point(21, 95);
+            this.btnMessages.Name = "btnMessages";
+            this.btnMessages.Size = new System.Drawing.Size(179, 46);
+            this.btnMessages.TabIndex = 17;
+            this.btnMessages.Text = "Messages";
+            this.btnMessages.UseVisualStyleBackColor = true;
+            this.btnMessages.Click += new System.EventHandler(this.btnMessages_Click);
+            // 
+            // btnSelectJob
+            // 
+            this.btnSelectJob.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSelectJob.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnSelectJob.Location = new System.Drawing.Point(21, 32);
+            this.btnSelectJob.Name = "btnSelectJob";
+            this.btnSelectJob.Size = new System.Drawing.Size(179, 46);
+            this.btnSelectJob.TabIndex = 16;
+            this.btnSelectJob.Text = "Select Job";
+            this.btnSelectJob.UseVisualStyleBackColor = true;
+            this.btnSelectJob.Click += new System.EventHandler(this.btnSelectJob_Click);
+            // 
+            // serviceConnectionsControl1
+            // 
+            this.serviceConnectionsControl1.Location = new System.Drawing.Point(11, 405);
+            this.serviceConnectionsControl1.Name = "serviceConnectionsControl1";
+            this.serviceConnectionsControl1.Size = new System.Drawing.Size(200, 335);
+            this.serviceConnectionsControl1.TabIndex = 0;
+            // 
             // ServicePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1653,10 +1428,8 @@
             this.panel3.ResumeLayout(false);
             this.bbSettings.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.gbMotors.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.tpReadersConfig.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -1676,16 +1449,6 @@
         private System.Windows.Forms.GroupBox gbMotors;
         private System.Windows.Forms.GroupBox bbSettings;
         private System.Windows.Forms.Panel panel1;
-        private Controls.UpDownMotorControl mt4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private Controls.MotorControl mt3;
-        private System.Windows.Forms.Label label3;
-        private Controls.MotorControl mt2;
-        private System.Windows.Forms.Label label2;
-        private Controls.MotorControl mt0;
-        private System.Windows.Forms.Label label1;
-        private Controls.MotorControl mt1;
         private System.Windows.Forms.GroupBox gbSensors;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
@@ -1703,15 +1466,6 @@
         private Controls.SensorControl sensor4;
         private Controls.SensorControl sensor3;
         private Controls.SensorControl sensor1;
-        private Controls.SliderControl scActiveReaders;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private Controls.SliderControl scFeedInSteps;
-        private System.Windows.Forms.Label label8;
-        private Controls.SliderControl scM3StepLength;
-        private System.Windows.Forms.Label label9;
-        private Controls.SliderControl scM4Speed;
-        private Controls.LoadingButtonControl btnSave;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel5;
@@ -1788,5 +1542,7 @@
         private System.Windows.Forms.Button btnMessages;
         private System.Windows.Forms.Button btnSelectJob;
         private Controls.ServiceJobStatisticsControl serviceJobStatisticsControl1;
+        private Controls.ServiceMotorsControl serviceMotorsControl1;
+        private Controls.ServiceSettingsControl serviceSettingsControl1;
     }
 }

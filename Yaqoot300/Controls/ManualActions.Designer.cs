@@ -40,7 +40,7 @@
             this.btnOsLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.btnOsLoad.Location = new System.Drawing.Point(0, 13);
             this.btnOsLoad.Name = "btnOsLoad";
-            this.btnOsLoad.Size = new System.Drawing.Size(200, 100);
+            this.btnOsLoad.Size = new System.Drawing.Size(200, 80);
             this.btnOsLoad.TabIndex = 1;
             this.btnOsLoad.Text = "Load OS";
             this.btnOsLoad.UseVisualStyleBackColor = false;
@@ -52,7 +52,7 @@
             this.btnCycle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.btnCycle.Location = new System.Drawing.Point(250, 13);
             this.btnCycle.Name = "btnCycle";
-            this.btnCycle.Size = new System.Drawing.Size(200, 100);
+            this.btnCycle.Size = new System.Drawing.Size(200, 80);
             this.btnCycle.TabIndex = 2;
             this.btnCycle.Text = "Cycle";
             this.btnCycle.UseVisualStyleBackColor = false;
@@ -64,7 +64,7 @@
             this.btnFeedIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.btnFeedIn.Location = new System.Drawing.Point(500, 13);
             this.btnFeedIn.Name = "btnFeedIn";
-            this.btnFeedIn.Size = new System.Drawing.Size(200, 100);
+            this.btnFeedIn.Size = new System.Drawing.Size(200, 80);
             this.btnFeedIn.TabIndex = 3;
             this.btnFeedIn.Text = "Feed In";
             this.btnFeedIn.UseVisualStyleBackColor = false;
@@ -79,7 +79,7 @@
             this.Controls.Add(this.btnOsLoad);
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.Name = "ManualActions";
-            this.Size = new System.Drawing.Size(700, 130);
+            this.Size = new System.Drawing.Size(700, 100);
             this.ResumeLayout(false);
 
         }

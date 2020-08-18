@@ -1,6 +1,6 @@
 ﻿namespace Yaqoot300.Controls
 {
-    partial class ReaderController
+    partial class ReaderControl
     {
         /// <summary> 
         /// Required designer variable.

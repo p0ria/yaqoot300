@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using Yaqoot300.Commons;
 using Yaqoot300.Interfaces;
 using Yaqoot300.Models.Signal;
+using Yaqoot300.Models.ThinClient;
 using Yaqoot300.State.Home.Actions;
 using Yaqoot300.State.PLC.Actions;
 
@@ -82,9 +83,20 @@ namespace Yaqoot300.State.Home
                         if(Services.Store.Service.SetupReaders[r.ReaderNumber] != null)
                             r.Status = ReaderStatus.Busy;
                     });
+                    Task.Run(() =>
+                    {
+                        Thread.Sleep(3000);
+                        Services.Store.Dispatch(new HomeLoadOSSuccess(
+                            new[]
+                            {
+                                new ReaderResponse {ReaderName = "ACS 39U 4", Status = ReaderStatus.Success},
+                                new ReaderResponse {ReaderName = "ACS 39U 6", Status = ReaderStatus.Fail},
+                            }));
+                    });
                     break;
 
                 case HomeActionTypes.LOAD_OS_SUCCESS:
+                    Services.Signals.Send(GuiSignals.OSLoadFinished);
                     var updateReadersPayload = ((HomeLoadOSSuccess)action).Payload;
                     state.HomeReaders.Readers.ForEach(r =>
                     {

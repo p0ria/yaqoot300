@@ -95,6 +95,7 @@ namespace Yaqoot300.Connections
 
         public void Dispose()
         {
+            if(IsConnected) server?.DisconnectClient(client);
             server?.Dispose();
         }
     }

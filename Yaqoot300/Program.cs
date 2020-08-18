@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,7 +16,7 @@ namespace Yaqoot300
         [STAThread]
         static void Main()
         {
-            Application.ApplicationExit += ApplicationOnApplicationExit;
+            Application.ApplicationExit += OnApplicationExit;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             var mainForm = new MainForm();
@@ -24,7 +25,7 @@ namespace Yaqoot300
             
         }
 
-        private static void ApplicationOnApplicationExit(object sender, EventArgs eventArgs)
+        private static void OnApplicationExit(object sender, EventArgs eventArgs)
         {
             Services.PlcConnection?.Dispose();
         }
