@@ -109,51 +109,54 @@ namespace Yaqoot300.State.Service
 
                 case ServiceActionTypes.CHANGE_SETTINGS:
                     var changeSettingsPayload = ((ServiceChangeSettingsAction)action).Payload;
-                    state.PendingSettings = new ServicePendingSettingsState(changeSettingsPayload);
-                    if (Services.Store.Service.Settings.ActiveReaders != changeSettingsPayload.ActiveReaders)
+                    state.PendingSettings = changeSettingsPayload;
+                    bool sent = true;
+                    if (changeSettingsPayload.ActiveReaders.HasValue)
                     {
-                        if(!Services.Signals.Send(GuiSignals.ServiceNumOfActiveReaders, (byte)changeSettingsPayload.ActiveReaders))
-                            Services.Store.Dispatch(new ServiceChangeSettingsFailAction(new ServiceChangeSettingsFailActionPayload("Error sending signal")));
+                        sent = Services.Signals.Send(GuiSignals.ServiceNumOfActiveReaders, (byte) changeSettingsPayload.ActiveReaders);
                     }
-                    if (Services.Store.Service.Settings.FeedInSteps != changeSettingsPayload.FeedInSteps)
+                    if (changeSettingsPayload.FeedInSteps.HasValue)
                     {
-                        if(!Services.Signals.Send(GuiSignals.ServiceNumOfFeedInStep, (byte)changeSettingsPayload.FeedInSteps))
-                            Services.Store.Dispatch(new ServiceChangeSettingsFailAction(new ServiceChangeSettingsFailActionPayload("Error sending signal")));
+                        sent = Services.Signals.Send(GuiSignals.ServiceNumOfFeedInStep, (byte) changeSettingsPayload.FeedInSteps);
                     }
-                    if (Services.Store.Service.Settings.M3StepLength != changeSettingsPayload.M3StepLength)
+                    if (changeSettingsPayload.M3StepLength.HasValue)
                     {
-                        if(!Services.Signals.Send(GuiSignals.ServiceM3StepLength, (byte)changeSettingsPayload.M3StepLength))
-                            Services.Store.Dispatch(new ServiceChangeSettingsFailAction(new ServiceChangeSettingsFailActionPayload("Error sending signal")));
+                        sent = Services.Signals.Send(GuiSignals.ServiceM3StepLength, (byte)changeSettingsPayload.M3StepLength);
 
                     }
-                    if (Services.Store.Service.Settings.M4Speed != changeSettingsPayload.M4Speed)
+                    if (changeSettingsPayload.M3Speed.HasValue)
                     {
-                        if(!Services.Signals.Send(GuiSignals.ServiceM4Speed, (byte)changeSettingsPayload.M4Speed))
-                            Services.Store.Dispatch(new ServiceChangeSettingsFailAction(new ServiceChangeSettingsFailActionPayload("Error sending signal")));
+                        sent = Services.Signals.Send(GuiSignals.ServiceM3Speed, (byte)changeSettingsPayload.M3Speed);
                     }
-                    Task.Run(() =>
+                    if (changeSettingsPayload.M4Speed.HasValue)
                     {
-                        var pendingId = state.PendingSettings.Id;
-                        Thread.Sleep(Constants.ACK_TIMEOUT);
-                        if(state.PendingSettings != null && state.PendingSettings.Id == pendingId)
-                            Services.Store.Dispatch(new ServiceChangeSettingsFailAction(new ServiceChangeSettingsFailActionPayload("Change settings timed out", pendingId)));
-                    });
+                        sent = Services.Signals.Send(GuiSignals.ServiceM4Speed, (byte) changeSettingsPayload.M4Speed);
+                    }
+                    if(sent)
+                        Services.Store.Dispatch(new ServiceChangeSettingsSuccessAction());
+                    else
+                        Services.Store.Dispatch(new ServiceChangeSettingsFailAction("Error sending signal"));                      
                     break;
 
                 case ServiceActionTypes.CHANGE_SETTINGS_SUCCESS:
-                    state.Settings = state.PendingSettings;
+                    if (state.PendingSettings.ActiveReaders.HasValue)
+                        state.Settings.ActiveReaders = state.PendingSettings.ActiveReaders.Value;
+                    if (state.PendingSettings.FeedInSteps.HasValue)
+                        state.Settings.FeedInSteps = state.PendingSettings.FeedInSteps.Value;
+                    if (state.PendingSettings.M3StepLength.HasValue)
+                        state.Settings.M3StepLength = state.PendingSettings.M3StepLength.Value;
+                    if (state.PendingSettings.M3Speed.HasValue)
+                        state.Settings.M3Speed = state.PendingSettings.M3Speed.Value;
+                    if (state.PendingSettings.M4Speed.HasValue)
+                        state.Settings.M4Speed = state.PendingSettings.M4Speed.Value;
                     state.PendingSettings = null;
                     break;
 
                 case ServiceActionTypes.CHANGE_SETTINGS_FAIL:
                     var changeSettingsFailedPayload = ((ServiceChangeSettingsFailAction)action).Payload;
-                    if (changeSettingsFailedPayload?.PendingId == null ||
-                        changeSettingsFailedPayload.PendingId == state.PendingSettings.Id)
-                    {
-                        state.PendingSettings = null;
-                        Services.Messages.Error("Change PLC Settings Failed" +
-                                                (string.IsNullOrEmpty(changeSettingsFailedPayload?.Error) ? "" : $", {changeSettingsFailedPayload.Error}"), MessageCategory.PLC);
-                    }
+                    state.PendingSettings = null;
+                    Services.Messages.Error("Change PLC Settings Failed" +
+                                            (string.IsNullOrEmpty(changeSettingsFailedPayload) ? "" : $", {changeSettingsFailedPayload}"), MessageCategory.PLC);
                     break;
 
                 case ServiceActionTypes.TEST_READERS:

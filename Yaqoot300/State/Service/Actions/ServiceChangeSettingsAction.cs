@@ -4,7 +4,7 @@ namespace Yaqoot300.State.Service.Actions
 {
     public class ServiceChangeSettingsAction : IAction
     {
-        public ServiceChangeSettingsAction(ServiceSettingsState payload)
+        public ServiceChangeSettingsAction(ServicePendingSettingsState payload)
         {
             this.Payload = payload;
         }
@@ -14,6 +14,6 @@ namespace Yaqoot300.State.Service.Actions
             get { return ServiceActionTypes.CHANGE_SETTINGS; }
         }
 
-        public ServiceSettingsState Payload { get; set; }
+        public ServicePendingSettingsState Payload { get; set; }
     }
 }

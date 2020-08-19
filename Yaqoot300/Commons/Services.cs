@@ -27,25 +27,16 @@ namespace Yaqoot300.Commons
         static Services()
         {
             Messages = new MessagesService();
-            Config = LoadFromConfigFile();
+            Config = Config.FromFile;
+            if (Config == null)
+            {
+                Messages.Error("Unable to load config.json file", MessageCategory.App);
+                Config = Config.Default;
+            }
             Store = new Store();
             Signals = new Signals();
             PlcConnection = new PlcConnection();
             CheckingsService = new CheckingsService();
-        }
-
-        static Config LoadFromConfigFile()
-        {
-            try
-            {
-                var json = File.ReadAllText("config.json");
-                return Utils.ParseJson<Config>(json);
-            }
-            catch (Exception e)
-            {
-                Messages.Error("Unable to load config.json file", MessageCategory.App);
-                return Config.Default;
-            }
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Yaqoot300.Commons;
 using Yaqoot300.Interfaces;
+using Yaqoot300.Modals;
 using Yaqoot300.Models.Signal;
 using Yaqoot300.Models.ThinClient;
 using Yaqoot300.State.Home.Actions;
@@ -69,6 +70,11 @@ namespace Yaqoot300.State.Home
                         state.PlcErrors.Add(addPlcErrorPayload);
                         if(addPlcErrorPayload.Type == PlcErrorType.Error) Services.Messages.Error(addPlcErrorPayload.Message, MessageCategory.PLC);
                         else Services.Messages.Warning(addPlcErrorPayload.Message, MessageCategory.PLC);
+                        if(addPlcErrorPayload.Type == PlcErrorType.Error)
+                            Task.Run(() =>
+                            {
+                                Services.Store.Dispatch(new HomeShowErrorDialogAction(addPlcErrorPayload));
+                            });
                     }
                     break;
 
@@ -77,7 +83,13 @@ namespace Yaqoot300.State.Home
                     state.PlcErrors.RemoveAll(error => error.Id == removePlcErrorPayload);
                     break;
 
-                case HomeActionTypes.LOAD_OS:
+                case HomeActionTypes.SHOW_ERROR_DIALOG:
+                    var showErrorDlgPayload = ((HomeShowErrorDialogAction)action).Payload;
+                    var dlg = new PlcErrorDialog(showErrorDlgPayload);
+                    dlg.ShowDialog();
+                    break;
+
+      case HomeActionTypes.LOAD_OS:
                     state.HomeReaders.Readers.ForEach(r =>
                     {
                         if(Services.Store.Service.SetupReaders[r.ReaderNumber] != null)
@@ -119,6 +131,8 @@ namespace Yaqoot300.State.Home
                     MessageBox.Show("LOAD OS FAILED");
                     state.HomeReaders.Readers.ForEach(r => r.Status = ReaderStatus.Fail);
                     break;
+
+                
             }
         }
     }

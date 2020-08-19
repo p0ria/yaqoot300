@@ -5,15 +5,15 @@ namespace Yaqoot300.State.Service.Actions
 {
     public class ServiceChangeSettingsFailAction : IAction
     {
-        public ServiceChangeSettingsFailActionPayload Payload { get; set; }
+        public string Payload { get; set; }
         public string Type
         {
             get { return ServiceActionTypes.CHANGE_SETTINGS_FAIL; }
         }
 
-        public ServiceChangeSettingsFailAction(ServiceChangeSettingsFailActionPayload payload = null)
+        public ServiceChangeSettingsFailAction(string error = null)
         {
-            this.Payload = payload;
+            this.Payload = error;
         }
     }
 }

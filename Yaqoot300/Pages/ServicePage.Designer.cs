@@ -409,7 +409,7 @@
             this.tpReadersConfig.Location = new System.Drawing.Point(4, 34);
             this.tpReadersConfig.Name = "tpReadersConfig";
             this.tpReadersConfig.Padding = new System.Windows.Forms.Padding(3);
-            this.tpReadersConfig.Size = new System.Drawing.Size(1143, 738);
+            this.tpReadersConfig.Size = new System.Drawing.Size(1149, 738);
             this.tpReadersConfig.TabIndex = 1;
             this.tpReadersConfig.Text = "Readers Configuration";
             // 
@@ -1420,6 +1420,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.tabService);
+            this.DoubleBuffered = true;
             this.Name = "ServicePage";
             this.Size = new System.Drawing.Size(1366, 768);
             this.tabService.ResumeLayout(false);

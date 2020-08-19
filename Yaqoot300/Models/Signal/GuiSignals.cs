@@ -15,8 +15,9 @@ namespace Yaqoot300.Models.Signal
         public static readonly byte[] OSLoadFinished = { 0x86, 0 };
         public static readonly byte[] ServiceNumOfActiveReaders = { 0x87 };
         public static readonly byte[] ServiceNumOfFeedInStep = { 0x88 };
-        public static readonly byte[] ServiceM4Speed = { 0x89 };
+        public static readonly byte[] ServiceM4Speed = { 0x10, 0x00};
         public static readonly byte[] ServiceM3StepLength = { 0x8A };
+        public static readonly byte[] ServiceM3Speed = {0x8D};
         public static readonly byte[] ServiceM4Up = { 0x8B, 0x01 };
         public static readonly byte[] ServiceM4Down = { 0x8B, 0x02 };
         public static readonly byte[] ServiceM3Run = { 0x8C, 0x01 };

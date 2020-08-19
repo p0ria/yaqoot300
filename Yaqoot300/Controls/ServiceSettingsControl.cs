@@ -25,11 +25,11 @@ namespace Yaqoot300.Controls
 
         private void InitSettings()
         {
-            this.scActiveReaders.ValueChanged += settingsSliderOnValueChanged;
-            this.scFeedInSteps.ValueChanged += settingsSliderOnValueChanged;
-            this.scM3StepLength.ValueChanged += settingsSliderOnValueChanged;
-            this.scM4Speed.ValueChanged += settingsSliderOnValueChanged;
-            this.btnSave.BtnClicked += OnBtnSaveClicked;
+            this.scActiveReaders.ValueChanged += SettingsSliderOnValueChanged;
+            this.scFeedInSteps.ValueChanged += SettingsSliderOnValueChanged;
+            this.scM3StepLength.ValueChanged += SettingsSliderOnValueChanged;
+            this.scM3Speed.ValueChanged += SettingsSliderOnValueChanged;
+            this.scM4Speed.ValueChanged += SettingsSliderOnValueChanged;
         }
 
         private void OnStoreChanged(object sender, string changeType)
@@ -43,7 +43,6 @@ namespace Yaqoot300.Controls
                 case ServiceActionTypes.CHANGE_SETTINGS_FAIL:
                     SetSettings();
                     ChangeSlidersEnable(true);
-                    ChangeBtnSaveStatus(LoadingButtonControl.LoadingButtonControlStatus.Invisible);
                     break;
             }
         }
@@ -55,21 +54,9 @@ namespace Yaqoot300.Controls
                 this.scActiveReaders.Value = Store.Service.Settings.ActiveReaders;
                 this.scFeedInSteps.Value = Store.Service.Settings.FeedInSteps;
                 this.scM3StepLength.Value = Store.Service.Settings.M3StepLength;
+                this.scM3Speed.Value = Store.Service.Settings.M3Speed;
                 this.scM4Speed.Value = Store.Service.Settings.M4Speed;
             });
-        }
-
-        private void OnBtnSaveClicked(object sender, EventArgs eventArgs)
-        {
-            ChangeSlidersEnable(false);
-            ChangeBtnSaveStatus(LoadingButtonControl.LoadingButtonControlStatus.Loading);
-            Store.Dispatch(new ServiceChangeSettingsAction(new ServiceSettingsState
-            {
-                ActiveReaders = scActiveReaders.Value,
-                FeedInSteps = scFeedInSteps.Value,
-                M3StepLength = scM3StepLength.Value,
-                M4Speed = scM4Speed.Value
-            }));
         }
 
         private void ChangeSlidersEnable(bool enable)
@@ -77,24 +64,26 @@ namespace Yaqoot300.Controls
             this.scActiveReaders.Enabled = enable;
             this.scFeedInSteps.Enabled = enable;
             this.scM3StepLength.Enabled = enable;
+            this.scM3Speed.Enabled = enable;
             this.scM4Speed.Enabled = enable;
         }
 
-        private void ChangeBtnSaveStatus(LoadingButtonControl.LoadingButtonControlStatus status)
-        {
-            this.btnSave.Status = status;
-        }
 
-        private void settingsSliderOnValueChanged(object sender, int i1)
+        private void SettingsSliderOnValueChanged(object sender, int i1)
         {
-            bool dirty = this.scActiveReaders.Value != Store.Service.Settings.ActiveReaders;
-            if (!dirty && this.scFeedInSteps.Value != Store.Service.Settings.FeedInSteps) dirty = true;
-            if (!dirty && this.scM3StepLength.Value != Store.Service.Settings.M3StepLength) dirty = true;
-            if (!dirty && this.scM4Speed.Value != Store.Service.Settings.M4Speed) dirty = true;
-            this.btnSave.Status =
-                dirty
-                    ? LoadingButtonControl.LoadingButtonControlStatus.Visible
-                    : LoadingButtonControl.LoadingButtonControlStatus.Invisible;
+            ChangeSlidersEnable(false);
+            var pendingSettings = new ServicePendingSettingsState();
+            if (scActiveReaders.Value != Store.Service.Settings.ActiveReaders)
+                pendingSettings.ActiveReaders = scActiveReaders.Value;
+            if (scFeedInSteps.Value != Store.Service.Settings.FeedInSteps)
+                pendingSettings.FeedInSteps = scFeedInSteps.Value;
+            if (scM3StepLength.Value != Store.Service.Settings.M3StepLength)
+                pendingSettings.M3StepLength = scM3StepLength.Value;
+            if (scM3Speed.Value != Store.Service.Settings.M3Speed)
+                pendingSettings.M3Speed = scM3Speed.Value;
+            if (scM4Speed.Value != Store.Service.Settings.M4Speed)
+                pendingSettings.M4Speed = scM4Speed.Value;
+            Store.Dispatch(new ServiceChangeSettingsAction(pendingSettings));
         }
 
         private Store Store => Services.Store;

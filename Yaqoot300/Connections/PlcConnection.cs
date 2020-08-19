@@ -29,6 +29,9 @@ namespace Yaqoot300.Connections
                 server.ClientConnected += ClientConnected;
                 server.ClientDisconnected += ClientDisconnected;
                 server.DataReceived += OnDataReceived;
+
+                //TODO: Remove
+                Listen();
             }
             catch (Exception ex)
             {
@@ -92,7 +95,7 @@ namespace Yaqoot300.Connections
         private void ClientDisconnected(object sender, ClientDisconnectedEventArgs e)
         {
             client = null;
-            Services.Messages.Info($"Client '{e.IpPort}' disconnected from server, {e.Reason}", MessageCategory.PLC);
+            Services.Messages.Error($"Client '{e.IpPort}' disconnected from server, {e.Reason}", MessageCategory.PLC);
             Services.Store.Dispatch(new HomeChangeAutoStartAction(
                 new HomeChangeAutoStartActionPayload(AutoStartBtnStatus.Stoped, true)));
             Services.Store.Dispatch(new AppConnectionsChangedAction(new AppConnectionsChangedActionPayload

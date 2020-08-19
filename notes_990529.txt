@@ -1,0 +1,2 @@
+If any error exist, disable Auto and Manual buttons
+Change Feed In background to more contrast

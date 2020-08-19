@@ -48,6 +48,7 @@ namespace Yaqoot300.State.Service
                 ActiveReaders = 16,
                 FeedInSteps = 7,
                 M3StepLength = 2,
+                M3Speed = 6,
                 M4Speed = 3
             },
             TestReaders = new ServiceTestReadersState

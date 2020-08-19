@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,21 @@ namespace Yaqoot300.Commons
                 };
             }
         }
-    }
 
+        public static Config FromFile
+        {
+            get
+            {
+                try
+                {
+                    var json = File.ReadAllText("config.json");
+                    return Utils.ParseJson<Config>(json);
+                }
+                catch (Exception e)
+                {
+                    return null;
+                }
+            }
+        }
+    }
 }

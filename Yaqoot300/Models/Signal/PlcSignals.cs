@@ -115,23 +115,24 @@ namespace Yaqoot300.Models.Signal
             }
         }
 
+
         [Signal(0x08)]
-        public byte[] SettingsAck
+        public byte[] ManualAck
         {
             set
             {
                 switch (value[1])
                 {
                     case 1:
-                        Services.Store.Dispatch(new ServiceChangeSettingsSuccessAction());
+                        // Cycle can start
                         break;
-
-                    case 2:
-                        Services.Store.Dispatch(new ServiceChangeSettingsFailAction(
-                            new ServiceChangeSettingsFailActionPayload("PLC rejected settings change")));
+                    case 2:       
+                        // OsLoad can start
+                        break;
+                    case 3:
+                        // FeedIn can start
                         break;
                 }
-                
             }
         }
 

@@ -306,6 +306,7 @@
     <Compile Include="State\Home\Actions\HomeLoadOSSuccess.cs" />
     <Compile Include="State\Home\Actions\HomeRemovePlcErrorAction.cs" />
     <Compile Include="State\Home\Actions\HomeLoadOS.cs" />
+    <Compile Include="State\Home\Actions\HomeShowErrorDialogAction.cs" />
     <Compile Include="State\Home\HomeReducer.cs" />
     <Compile Include="State\Home\InitialHomeState.cs" />
     <Compile Include="State\Home\State\AutoStartBtnState.cs" />
@@ -338,7 +339,6 @@
     <Compile Include="State\Service\Actions\ServiceAssignReaderActionPayload.cs" />
     <Compile Include="State\Service\Actions\ServiceChangeSettingsAction.cs" />
     <Compile Include="State\Service\Actions\ServiceChangeSettingsFailAction.cs" />
-    <Compile Include="State\Service\Actions\ServiceChangeSettingsFailActionPayload.cs" />
     <Compile Include="State\Service\Actions\ServiceChangeSettingsSuccessAction.cs" />
     <Compile Include="State\Service\Actions\ServiceSensorsChangedAction.cs" />
     <Compile Include="State\Service\Actions\ServiceSensorsChangedActionPayload.cs" />

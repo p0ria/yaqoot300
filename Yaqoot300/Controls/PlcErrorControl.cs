@@ -10,7 +10,9 @@ using System.Windows.Forms;
 using Yaqoot300.Commons;
 using Yaqoot300.Modals;
 using Yaqoot300.Properties;
+using Yaqoot300.State;
 using Yaqoot300.State.Home;
+using Yaqoot300.State.Home.Actions;
 
 namespace Yaqoot300.Controls
 {
@@ -26,8 +28,9 @@ namespace Yaqoot300.Controls
 
         private void btnError_Click(object sender, EventArgs e)
         {
-            var dlg = new PlcErrorDialog(Error);
-            dlg.Show(this);
+            Store.Dispatch(new HomeShowErrorDialogAction(this.Error));
         }
+
+        private Store Store => Services.Store;
     }
 }

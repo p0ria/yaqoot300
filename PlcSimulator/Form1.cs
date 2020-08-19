@@ -29,6 +29,9 @@ namespace PlcSimulator
             SignalLogs.SignalsListBox = lbSignals;
             this.Closed += OnClosed;
             this.tabControl1.SelectedIndex = 1;
+            var config = Config.FromFile ?? Config.Default;
+            tbIp.Text = config.Server.Ip;
+            tbPort.Text = config.Server.Port.ToString();
         }
 
         private void ClientOnConnectChanged(object sender, bool isConnected)
