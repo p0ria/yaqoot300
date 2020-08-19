@@ -25,6 +25,7 @@ namespace Yaqoot300.Controls
             Store.StoreChanged += OnStoreChanged;
             _timer.Interval = Constants.SETTINGS_DEBOUNCE_TIME;
             _timer.Tick += OnSave;
+            this.Disposed += OnDisposed;
         }
 
         private void InitSettings()
@@ -122,8 +123,14 @@ namespace Yaqoot300.Controls
 
         private void OnSave(object sender, EventArgs eventArgs)
         {
+            _timer.Enabled = false;
             ChangeSlidersEnable(false);
             Store.Dispatch(new ServiceChangeSettingsAction(_pendingSettings));
+        }
+
+        private void OnDisposed(object sender, EventArgs eventArgs)
+        {
+            _timer?.Dispose();
         }
 
         private Store Store => Services.Store;
