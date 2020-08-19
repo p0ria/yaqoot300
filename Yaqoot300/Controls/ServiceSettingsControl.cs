@@ -16,11 +16,15 @@ namespace Yaqoot300.Controls
 {
     public partial class ServiceSettingsControl : UserControl
     {
+        private readonly ServicePendingSettingsState _pendingSettings = new ServicePendingSettingsState();
+        private readonly Timer _timer = new Timer();
         public ServiceSettingsControl()
         {
             InitializeComponent();
             this.InitSettings();
             Store.StoreChanged += OnStoreChanged;
+            _timer.Interval = Constants.SETTINGS_DEBOUNCE_TIME;
+            _timer.Tick += OnSave;
         }
 
         private void InitSettings()
@@ -41,6 +45,7 @@ namespace Yaqoot300.Controls
                     break;
                 case ServiceActionTypes.CHANGE_SETTINGS_SUCCESS:
                 case ServiceActionTypes.CHANGE_SETTINGS_FAIL:
+                    ResetPendingSettings();
                     SetSettings();
                     ChangeSlidersEnable(true);
                     break;
@@ -59,31 +64,66 @@ namespace Yaqoot300.Controls
             });
         }
 
-        private void ChangeSlidersEnable(bool enable)
+        private void ResetPendingSettings()
         {
-            this.scActiveReaders.Enabled = enable;
-            this.scFeedInSteps.Enabled = enable;
-            this.scM3StepLength.Enabled = enable;
-            this.scM3Speed.Enabled = enable;
-            this.scM4Speed.Enabled = enable;
+            _pendingSettings.ActiveReaders = null;
+            _pendingSettings.FeedInSteps = null;
+            _pendingSettings.M3StepLength = null;
+            _pendingSettings.M3Speed = null;
+            _pendingSettings.M4Speed = null;
+        }
+
+        private void ChangeSlidersEnable(bool enable, params Control[] excludes)
+        {
+            this.scActiveReaders.Enabled = excludes.Contains(scActiveReaders) ? !enable : enable;
+            this.scFeedInSteps.Enabled = excludes.Contains(scFeedInSteps) ? !enable : enable; ;
+            this.scM3StepLength.Enabled = excludes.Contains(scM3StepLength) ? !enable : enable;
+            this.scM3Speed.Enabled = excludes.Contains(scM3Speed) ? !enable : enable;
+            this.scM4Speed.Enabled = excludes.Contains(scM4Speed) ? !enable : enable;
         }
 
 
         private void SettingsSliderOnValueChanged(object sender, int i1)
         {
-            ChangeSlidersEnable(false);
-            var pendingSettings = new ServicePendingSettingsState();
+            _timer.Enabled = false;
+
             if (scActiveReaders.Value != Store.Service.Settings.ActiveReaders)
-                pendingSettings.ActiveReaders = scActiveReaders.Value;
+            {
+                _pendingSettings.ActiveReaders = scActiveReaders.Value;
+                ChangeSlidersEnable(false, scActiveReaders);
+            }
+
             if (scFeedInSteps.Value != Store.Service.Settings.FeedInSteps)
-                pendingSettings.FeedInSteps = scFeedInSteps.Value;
+            {
+                _pendingSettings.FeedInSteps = scFeedInSteps.Value;
+                ChangeSlidersEnable(false, scFeedInSteps);
+            }
+
             if (scM3StepLength.Value != Store.Service.Settings.M3StepLength)
-                pendingSettings.M3StepLength = scM3StepLength.Value;
+            {
+                _pendingSettings.M3StepLength = scM3StepLength.Value;
+                ChangeSlidersEnable(false, scM3StepLength);
+            }
+
             if (scM3Speed.Value != Store.Service.Settings.M3Speed)
-                pendingSettings.M3Speed = scM3Speed.Value;
+            {
+                _pendingSettings.M3Speed = scM3Speed.Value;
+                ChangeSlidersEnable(false, scM3Speed);
+            }
+
             if (scM4Speed.Value != Store.Service.Settings.M4Speed)
-                pendingSettings.M4Speed = scM4Speed.Value;
-            Store.Dispatch(new ServiceChangeSettingsAction(pendingSettings));
+            {
+                _pendingSettings.M4Speed = scM4Speed.Value;
+                ChangeSlidersEnable(false, scM4Speed);
+            }
+                
+            _timer.Enabled = true;
+        }
+
+        private void OnSave(object sender, EventArgs eventArgs)
+        {
+            ChangeSlidersEnable(false);
+            Store.Dispatch(new ServiceChangeSettingsAction(_pendingSettings));
         }
 
         private Store Store => Services.Store;

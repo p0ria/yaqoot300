@@ -11,7 +11,7 @@ namespace Yaqoot300.State.App
     {
         private static readonly AppState _instance = new AppState
         {
-            SelectedMode = Mode.Service,
+            SelectedMode = Mode.Auto,
             Connections =
             {
                 ServerConnection = ConnectionStatus.Disconnected,

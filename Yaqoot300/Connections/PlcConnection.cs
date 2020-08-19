@@ -31,7 +31,7 @@ namespace Yaqoot300.Connections
                 server.DataReceived += OnDataReceived;
 
                 //TODO: Remove
-                Listen();
+                // Listen();
             }
             catch (Exception ex)
             {

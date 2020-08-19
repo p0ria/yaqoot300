@@ -11,6 +11,6 @@ namespace Yaqoot300.Commons
         public const int READERS_COUNT = 30;
         public const int SENSORS_LENGTH = 14;
         public const int MESSAGES_MAX = 50;
-        public const int ACK_TIMEOUT = 5000;
+        public const int SETTINGS_DEBOUNCE_TIME = 2000;
     }
 }
