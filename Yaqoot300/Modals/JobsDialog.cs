@@ -16,6 +16,7 @@ using Yaqoot300.Controls;
 using Yaqoot300.Models;
 using Yaqoot300.State;
 using Yaqoot300.State.Job.Actions;
+using Shared.common;
 
 namespace Yaqoot300.Modals
 {

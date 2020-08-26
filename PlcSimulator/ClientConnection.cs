@@ -42,7 +42,7 @@ namespace PlcSimulator
                 bytesList.AddRange(data);
                 var bytes = bytesList.ToArray();
                 this.client.Send(bytes.ToArray());
-                SignalLogs.Log($"[Sent] {SignalUtils.GetPlcSignalName(bytes)} 0x{Utils.ByteArrayToHexString(bytes)}");
+                SignalLogs.Log($"[Sent] {SignalUtils.GetPlcSignalName(bytes)} 0x{Shared.Common.Utils.ByteArrayToHexString(bytes)}");
             }
         }
 
@@ -66,7 +66,7 @@ namespace PlcSimulator
 
         void DataReceived(object sender, DataReceivedFromServerEventArgs e)
         {
-            SignalLogs.Log($"[Recieved] {SignalUtils.GetGuiSignalName(e.Data)} 0x{Utils.ByteArrayToHexString(e.Data)}");
+            SignalLogs.Log($"[Recieved] {SignalUtils.GetGuiSignalName(e.Data)} 0x{Shared.Common.Utils.ByteArrayToHexString(e.Data)}");
         }
 
         public void Dispose()

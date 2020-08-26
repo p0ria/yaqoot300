@@ -4,13 +4,14 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Yaqoot300.Interfaces;
+using Shared.common;
+using Shared.Interfaces;
 
-namespace Yaqoot300.Commons
+namespace Shared.Common
 {
     public class Config
     {
-        public IpPort Server { get; set; }
+        public ServerConfig Server { get; set; }
 
         public static Config Default
         {
@@ -18,7 +19,7 @@ namespace Yaqoot300.Commons
             {
                 return new Config
                 {
-                    Server = new IpPort
+                    Server = new ServerConfig
                     {
                         Ip = "127.0.0.1",
                         Port = 9000
@@ -42,5 +43,17 @@ namespace Yaqoot300.Commons
                 }
             }
         }
+    }
+
+    class ConfigFile
+    {
+        public enum ConfigFileEnvironment
+        {
+            Development, Production
+        }
+        public ConfigFileEnvironment Environment { get; set; }
+        public ServerConfig Server { get; set; }
+        
+        
     }
 }

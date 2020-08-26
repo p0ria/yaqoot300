@@ -6,7 +6,7 @@ using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Yaqoot300.Commons
+namespace Shared.Common
 {
     public static class TcpUtils
     {

@@ -1,4 +1,4 @@
-﻿using Yaqoot300.Commons;
+﻿using Shared.Common;
 
 namespace Yaqoot300.Interfaces
 {

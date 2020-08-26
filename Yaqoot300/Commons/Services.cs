@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using Shared.Common;
 using Yaqoot300.Connections;
 using Yaqoot300.Interfaces;
 using Yaqoot300.Modals;

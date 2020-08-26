@@ -26,7 +26,7 @@ namespace Yaqoot300.Models.Signal
 
         public void Receive(params byte[] bytes)
         {
-            Services.Messages.Info($"[Recieved] {SignalUtils.GetPlcSignalName(bytes)} 0x{Utils.ByteArrayToHexString(bytes)}", MessageCategory.PLC);
+            Services.Messages.Info($"[Recieved] {SignalUtils.GetPlcSignalName(bytes)} 0x{Shared.Common.Utils.ByteArrayToHexString(bytes)}", MessageCategory.PLC);
             foreach (var pi in _plcProps)
             {
                 var sr = pi.GetCustomAttribute<SignalAttribute>();
@@ -53,8 +53,8 @@ namespace Yaqoot300.Models.Signal
             if(data != null && data.Length > 0 ) signal.AddRange(data);
             var byteArr = signal.ToArray();
             var sent = Services.PlcConnection.Send(byteArr);
-            if(sent) Services.Messages.Info($"[Sent] {SignalUtils.GetGuiSignalName(byteArr)} 0x{Utils.ByteArrayToHexString(byteArr)}", MessageCategory.PLC);
-            else Services.Messages.Error($"[Error Sending] {SignalUtils.GetGuiSignalName(byteArr)} 0x{Utils.ByteArrayToHexString(byteArr)}", MessageCategory.PLC);
+            if(sent) Services.Messages.Info($"[Sent] {SignalUtils.GetGuiSignalName(byteArr)} 0x{Shared.Common.Utils.ByteArrayToHexString(byteArr)}", MessageCategory.PLC);
+            else Services.Messages.Error($"[Error Sending] {SignalUtils.GetGuiSignalName(byteArr)} 0x{Shared.Common.Utils.ByteArrayToHexString(byteArr)}", MessageCategory.PLC);
             return sent;
         }
     }

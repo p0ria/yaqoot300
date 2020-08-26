@@ -1,6 +1,6 @@
-﻿namespace Yaqoot300.Interfaces
+﻿namespace Shared.Interfaces
 {
-    public class IpPort
+    public class ServerConfig
     {
         public string Ip { get; set; }
         public int Port { get; set; }

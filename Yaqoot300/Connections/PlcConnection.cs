@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Shared.Common;
 using SimpleTcp;
 using Yaqoot300.Commons;
 using Yaqoot300.Interfaces;

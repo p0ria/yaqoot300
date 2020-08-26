@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PlcSimulator.Common;
+using Shared.Common;
 using SimpleTcp;
 using Yaqoot300.Commons;
-using Yaqoot300.Connections;
 using Yaqoot300.Interfaces;
 
 namespace PlcSimulator
@@ -71,7 +71,7 @@ namespace PlcSimulator
         private void btnSend_Click(object sender, EventArgs e)
         {
             var selectedSignal = cbSignalIds.SelectedItem as Signal;
-            var data = selectedSignal.value.Length <= 1 ? Utils.HexStringToByteArray(tbSignalData.Text) : new byte[]{};
+            var data = selectedSignal.value.Length <= 1 ? Shared.Common.Utils.HexStringToByteArray(tbSignalData.Text) : new byte[]{};
             _client.Send(selectedSignal.value, data);
         }
 

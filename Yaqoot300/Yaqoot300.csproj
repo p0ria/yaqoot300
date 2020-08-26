@@ -36,48 +36,48 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\log4net\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Newtonsoft.Json\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="SimpleTcp, Version=2.0.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SuperSimpleTcp.2.0.6\lib\net461\SimpleTcp.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\SimpleTcp\SimpleTcp.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Core.WinForms, Version=18.2460.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\Syncfusion.Core.WinForms.dll</HintPath>
+      <HintPath>..\lib\Syncfusion\Syncfusion.Core.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Data.WinForms, Version=18.2460.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\Syncfusion.Data.WinForms.dll</HintPath>
+      <HintPath>..\lib\Syncfusion\Syncfusion.Data.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Grid.Windows, Version=18.2460.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\Syncfusion.Grid.Windows.dll</HintPath>
+      <HintPath>..\lib\Syncfusion\Syncfusion.Grid.Windows.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.GridCommon.WinForms, Version=18.2460.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\Syncfusion.GridCommon.WinForms.dll</HintPath>
+      <HintPath>..\lib\Syncfusion\Syncfusion.GridCommon.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.SfDataGrid.WinForms, Version=18.2460.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\Syncfusion.SfDataGrid.WinForms.dll</HintPath>
+      <HintPath>..\lib\Syncfusion\Syncfusion.SfDataGrid.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.SfInput.WinForms, Version=18.2460.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\Syncfusion.SfInput.WinForms.dll</HintPath>
+      <HintPath>..\lib\Syncfusion\Syncfusion.SfInput.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.SfListView.WinForms, Version=18.2460.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\Syncfusion.SfListView.WinForms.dll</HintPath>
+      <HintPath>..\lib\Syncfusion\Syncfusion.SfListView.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Shared.Base, Version=18.2460.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\Syncfusion.Shared.Base.dll</HintPath>
+      <HintPath>..\lib\Syncfusion\Syncfusion.Shared.Base.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -100,12 +100,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commons\CheckingsService.cs" />
-    <Compile Include="Commons\Config.cs" />
     <Compile Include="Commons\Constants.cs" />
     <Compile Include="Commons\IBA.cs" />
     <Compile Include="Commons\MessagesService.cs" />
     <Compile Include="Commons\SignalUtils.cs" />
-    <Compile Include="Commons\TcpUtils.cs" />
     <Compile Include="Controls\ConnectionsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -142,7 +140,6 @@
     <Compile Include="Controls\ServiceSettingsControl.Designer.cs">
       <DependentUpon>ServiceSettingsControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\IpPort.cs" />
     <Compile Include="Commons\UiExtensionMethods.cs" />
     <Compile Include="Commons\Utils.cs" />
     <Compile Include="Controls\LoadingButtonControl.cs">
@@ -469,7 +466,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\Shared.csproj">
+      <Project>{CACEA78D-6A71-4CCD-8C31-754D43294E86}</Project>
+      <Name>Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Images\circle_cross_32x32.png" />
     <None Include="Resources\Images\circle_tick_32x32.png" />
