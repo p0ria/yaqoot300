@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Shared.common;
 using Shared.Common;
+using Shared.ThinClient.Responses;
 using SimpleTcp;
 
 namespace ThinClientSrvc
 {
-    public class TCConnection
+    public class TCConnection : IDisposable
     {
         protected static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private readonly TcpServer server;
@@ -28,9 +30,6 @@ namespace ThinClientSrvc
                 server.ClientConnected += ClientConnected;
                 server.ClientDisconnected += ClientDisconnected;
                 server.DataReceived += OnDataReceived;
-
-                //TODO: Remove
-                 Listen();
             }
             catch (Exception ex)
             {
@@ -39,13 +38,13 @@ namespace ThinClientSrvc
             }
         }
 
-        public bool Send(params byte[] data)
+        public bool Send(object data)
         {
             try
             {
                 if (IsConnected)
                 {
-                    server.Send(client, data);
+                    server.Send(client, data.ToJson());
                     return true;
                 }
                 return false;
@@ -92,14 +91,6 @@ namespace ThinClientSrvc
 
         public void Dispose()
         {
-            try
-            {
-                if (IsConnected) server?.DisconnectClient(client);
-            }
-            catch (Exception)
-            {
-                // ignored
-            }
 
             try
             {

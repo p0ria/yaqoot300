@@ -12,6 +12,9 @@ namespace Shared.Common
     public class Config
     {
         public ServerConfig Server { get; set; }
+        public TCConfig Client1 { get; set; }
+        public TCConfig Client2 { get; set; }
+        public TCConfig Client3 { get; set; }
 
         public static Config Default
         {
@@ -35,7 +38,10 @@ namespace Shared.Common
                 try
                 {
                     var json = File.ReadAllText("config.json");
-                    return Utils.ParseJson<Config>(json);
+                    var configFile = Utils.ParseJson<ConfigFile>(json);
+                    return configFile.Environment == ConfigFile.ConfigFileEnvironment.Development
+                        ? configFile.Development
+                        : configFile.Production;
                 }
                 catch (Exception e)
                 {
@@ -52,8 +58,8 @@ namespace Shared.Common
             Development, Production
         }
         public ConfigFileEnvironment Environment { get; set; }
-        public ServerConfig Server { get; set; }
-        
-        
+        public Config Development { get; set; }
+        public Config Production { get; set; }
+
     }
 }

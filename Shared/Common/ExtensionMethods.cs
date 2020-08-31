@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using Shared.ThinClient.Requests;
 
 namespace Shared.common
@@ -21,6 +22,11 @@ namespace Shared.common
 
                 return (T)formatter.Deserialize(ms);
             }
+        }
+
+        public static string ToJson(this object obj)
+        {
+            return JsonConvert.SerializeObject(obj);
         }
         public static OSLoadRequest AsOSLoadRequest(this TCRequest @this)
         {

@@ -104,6 +104,7 @@
     <Compile Include="Commons\IBA.cs" />
     <Compile Include="Commons\MessagesService.cs" />
     <Compile Include="Commons\SignalUtils.cs" />
+    <Compile Include="Connections\TCConnection.cs" />
     <Compile Include="Controls\ConnectionsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

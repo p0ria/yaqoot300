@@ -1,5 +1,5 @@
 ﻿{
-  "Env": "development", 
+  "Environment": "Production",
   "Development": {
     "Server": {
       "Ip": "127.0.0.1",
@@ -8,17 +8,17 @@
     "Client1": {
       "Ip": "17.0.0.1",
       "Port": 30001,
-      "Serial":  "A0000000" 
+      "Serial": "A0000000"
     },
     "Client2": {
       "Ip": "17.0.0.1",
       "Port": 30002,
-      "Serial":  "B0000000"
+      "Serial": "B0000000"
     },
     "Client3": {
       "Ip": "17.0.0.1",
       "Port": 30003,
-      "Serial":  "C0000000"
+      "Serial": "C0000000"
     }
   },
   "Production": {

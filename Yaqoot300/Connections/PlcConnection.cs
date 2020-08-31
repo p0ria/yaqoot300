@@ -111,15 +111,6 @@ namespace Yaqoot300.Connections
         {
             try
             {
-                if (IsConnected) server?.DisconnectClient(client);
-            }
-            catch (Exception)
-            {
-                // ignored
-            }
-
-            try
-            {
                 server?.Dispose();
             }
             catch (Exception)
