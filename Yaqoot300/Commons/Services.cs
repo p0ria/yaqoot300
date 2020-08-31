@@ -22,6 +22,7 @@ namespace Yaqoot300.Commons
         public static MessagesService Messages { get; }
         public static Signals Signals { get; }
         public static PlcConnection PlcConnection { get; }
+        public static List<TCConnection> TCConnections { get; }
         public static CheckingsService CheckingsService { get; }
         public static Form MainForm { get; set; }
         
@@ -37,6 +38,12 @@ namespace Yaqoot300.Commons
             Store = new Store();
             Signals = new Signals();
             PlcConnection = new PlcConnection();
+            TCConnections = new List<TCConnection>
+            {
+                new TCConnection(Config.Client1.Ip, Config.Client1.Port, Config.Client1.Serial),
+                new TCConnection(Config.Client2.Ip, Config.Client2.Port, Config.Client2.Serial),
+                new TCConnection(Config.Client3.Ip, Config.Client3.Port, Config.Client3.Serial),
+            };
             CheckingsService = new CheckingsService();
         }
     }

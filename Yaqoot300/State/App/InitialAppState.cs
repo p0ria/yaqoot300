@@ -17,9 +17,9 @@ namespace Yaqoot300.State.App
                 ServerConnection = ConnectionStatus.Disconnected,
                 DbConnection = ConnectionStatus.Connected,
                 PLCConnection = ConnectionStatus.Disconnected,
-                ThinClient1Connection = ConnectionStatus.Connected,
-                ThinClient2Connection = ConnectionStatus.Connected,
-                ThinClient3Connection = ConnectionStatus.Connected
+                ThinClient1Connection = ConnectionStatus.Disconnected,
+                ThinClient2Connection = ConnectionStatus.Disconnected,
+                ThinClient3Connection = ConnectionStatus.Disconnected
             }
         };
 

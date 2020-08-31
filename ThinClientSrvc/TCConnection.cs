@@ -63,10 +63,12 @@ namespace ThinClientSrvc
                 TcpUtils.ReleasePort(port);
                 server.Start();
                 log.Info($"The server is listening on {ip}:{port}");
+                Console.WriteLine($"The server is listening on {ip}:{port}");
             }
             catch (Exception e)
             {
                 log.Error($"Server unable to listen on '{ip}:{port}'");
+                throw e;
             }
         }
 

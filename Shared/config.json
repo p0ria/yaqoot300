@@ -1,22 +1,22 @@
 ﻿{
-  "Environment": "Production",
+  "Environment": "Development",
   "Development": {
     "Server": {
       "Ip": "127.0.0.1",
       "Port": 29999
     },
     "Client1": {
-      "Ip": "17.0.0.1",
+      "Ip": "127.0.0.1",
       "Port": 30001,
       "Serial": "A0000000"
     },
     "Client2": {
-      "Ip": "17.0.0.1",
+      "Ip": "127.0.0.1",
       "Port": 30002,
       "Serial": "B0000000"
     },
     "Client3": {
-      "Ip": "17.0.0.1",
+      "Ip": "127.0.0.1",
       "Port": 30003,
       "Serial": "C0000000"
     }

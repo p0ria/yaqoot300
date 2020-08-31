@@ -12,7 +12,7 @@ namespace ThinClientSrvc
         static void Main(string[] args)
         {
             var config = Config.FromFile.Client1;
-            TCConnection connection = new TCConnection(config.Ip, config.Port);
+            var connection = new TCConnection(config.Ip, config.Port);
             connection.Listen();
 
             Console.ReadKey(true);
