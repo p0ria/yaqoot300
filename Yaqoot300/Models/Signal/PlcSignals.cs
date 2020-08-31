@@ -95,6 +95,20 @@ namespace Yaqoot300.Models.Signal
             }
         }
 
+        [Signal(0x06)]
+        public byte[] ManualAck
+        {
+            set
+            {
+                switch (value[1])
+                {
+                    case 0x01:
+                        Services.Store.Dispatch(new HomeChangeManualBtnAction(ManualBtnStatus.Idle));
+                        break;
+                }
+            }
+        }
+
         [Signal(0x07)]
         public byte[] StepCycle
         {
@@ -106,31 +120,19 @@ namespace Yaqoot300.Models.Signal
                         // M3 Step
                         break;
                     case 0x02:
-                        Services.Store.Dispatch(new HomeLoadOS());
+                        switch (Services.Store.App.SelectedMode)
+                        {
+                            case Interfaces.Mode.Auto:
+                            case Interfaces.Mode.Manual:
+                                Services.Store.Dispatch(new HomeLoadOS());
+                                break;
+                            case Interfaces.Mode.Service:
+                                // test readers
+                                break;
+                        }                      
                         break;
                     case 0x03:
                         // M4 UP
-                        break;
-                }
-            }
-        }
-
-
-        [Signal(0x08)]
-        public byte[] ManualAck
-        {
-            set
-            {
-                switch (value[1])
-                {
-                    case 1:
-                        // Cycle can start
-                        break;
-                    case 2:       
-                        // OsLoad can start
-                        break;
-                    case 3:
-                        // FeedIn can start
                         break;
                 }
             }
@@ -221,6 +223,7 @@ namespace Yaqoot300.Models.Signal
                 }
                 Services.Store.Dispatch(new HomeChangeAutoStartAction(
                     new HomeChangeAutoStartActionPayload(AutoStartBtnStatus.Stoped)));
+                Services.Store.Dispatch(new HomeChangeManualBtnAction(ManualBtnStatus.Idle));
             }
         }
 

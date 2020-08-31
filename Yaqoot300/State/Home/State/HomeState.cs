@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Yaqoot300.Commons;
-using Yaqoot300.Interfaces;
 
 namespace Yaqoot300.State.Home
 {
@@ -11,6 +10,7 @@ namespace Yaqoot300.State.Home
     {
         public HomeReadersState HomeReaders { get; set; }
         public AutoState Auto { get; set; }
+        public ManualState Manual { get; set; }
 
         public List<PlcErrorState> PlcErrors { get; set; }
 
@@ -18,6 +18,7 @@ namespace Yaqoot300.State.Home
         {
             this.HomeReaders = new HomeReadersState();
             this.Auto = new AutoState();
+            this.Manual = new ManualState();
             this.PlcErrors = new List<PlcErrorState>();
         }
     }

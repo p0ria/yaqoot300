@@ -20,7 +20,9 @@ namespace Yaqoot300.Models.Signal
         public static readonly byte[] ServiceM3Speed = {0x8D};
         public static readonly byte[] ServiceM4Up = { 0x8B, 0x01 };
         public static readonly byte[] ServiceM4Down = { 0x8B, 0x02 };
+        public static readonly byte[] ServiceM4Stop = { 0x8B, 0x00 };
         public static readonly byte[] ServiceM3Run = { 0x8C, 0x01 };
+        public static readonly byte[] ServiceM3Stop = { 0x8C, 0x00 };
         public static readonly byte[] ServiceM0Run = { 0x8C, 0x02 };
         public static readonly byte[] ServiceM0Stop = { 0x8C, 0xF2 };
         public static readonly byte[] ServiceM1Run = { 0x8C, 0x03 };

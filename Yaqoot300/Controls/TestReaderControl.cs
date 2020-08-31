@@ -37,11 +37,11 @@ namespace Yaqoot300.Controls
                         this.ForeColor = Color.Black;
                         break;
                     case TestReaderStatus.Success:
-                        this.BackColor = Color.LawnGreen;
+                        this.BackColor = Color.MediumSeaGreen;
                         this.ForeColor = Color.Black;
                         break;
                     case TestReaderStatus.Fail:
-                        this.BackColor = Color.Red;
+                        this.BackColor = Color.DarkRed;
                         this.ForeColor = Color.White;
                         break;
                     case TestReaderStatus.Off:

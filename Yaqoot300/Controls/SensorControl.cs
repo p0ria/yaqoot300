@@ -36,7 +36,7 @@ namespace Yaqoot300.Controls
             set
             {
                 _isOn = value;
-                this.BackColor = _isOn ? Color.LawnGreen : Color.LightGray;
+                this.BackColor = _isOn ? Color.MediumSeaGreen : Color.LightGray;
             }
         }
     }

@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Yaqoot300.Commons;
 using Yaqoot300.Interfaces;
@@ -14,7 +7,6 @@ using Yaqoot300.Models.Signal;
 using Yaqoot300.State;
 using Yaqoot300.State.Home.Actions;
 using Yaqoot300.State.PLC.Actions;
-using Timer = System.Threading.Timer;
 
 namespace Yaqoot300.Controls
 {
@@ -37,7 +29,7 @@ namespace Yaqoot300.Controls
                         case AutoStartBtnStatus.Stoped:
                             this.SafeInvoke(() =>
                             {
-                                this.btnStart.Text = "Start";
+                                this.btnStart.Text = "START";
                                 this.btnStart.ForeColor = Color.White;
                                 this.btnStart.BackColor = Color.DodgerBlue;
                                 this.pbLoading.Visible = false;
@@ -56,7 +48,7 @@ namespace Yaqoot300.Controls
                         case AutoStartBtnStatus.Started:
                             this.SafeInvoke(() =>
                             {
-                                this.btnStart.Text = "Stop";
+                                this.btnStart.Text = "STOP";
                                 this.btnStart.ForeColor = Color.White;
                                 this.btnStart.BackColor = Color.DarkOrange;
                                 this.pbLoading.Visible = false;

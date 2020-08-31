@@ -5,12 +5,15 @@ using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Yaqoot300.Commons;
 using Yaqoot300.Interfaces;
+using Yaqoot300.Models.Signal;
 using Yaqoot300.State;
 using Yaqoot300.State.Service.Actions;
+using Timer = System.Windows.Forms.Timer;
 
 namespace Yaqoot300.Controls
 {
@@ -138,7 +141,13 @@ namespace Yaqoot300.Controls
             else if (sender == mt3)
             {
                 if (!Store.Service.Motors.M3.IsEnabled || Store.Service.Motors.M3.Status == RotateMotorStatus.Started) return;
+                Services.Signals.Send(GuiSignals.ServiceM3Run);
                 Store.Dispatch(new ServiceChangeM3Action(new ServiceChangeMotorActionPayload(RotateMotorStatus.Started, false)));
+                Task.Run(() =>
+                {
+                    Thread.Sleep(10);
+                    Services.Signals.Send(GuiSignals.ServiceM3Stop);
+                });
                 _m3Timer.Start();
             }
         }
@@ -177,7 +186,8 @@ namespace Yaqoot300.Controls
         private void M3TimerOnTick(object sender, EventArgs eventArgs)
         {
             _m3Timer.Stop();
-            Store.Dispatch(new ServiceChangeM3Action(new ServiceChangeMotorActionPayload(RotateMotorStatus.Stopped, true)));
+            Store.Dispatch(
+                        new ServiceChangeM3Action(new ServiceChangeMotorActionPayload(RotateMotorStatus.Stopped, true)));
         }
 
         private void M4TimerOnTick(object sender, EventArgs eventArgs)

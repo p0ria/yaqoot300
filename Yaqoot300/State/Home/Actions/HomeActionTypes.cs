@@ -10,5 +10,6 @@ namespace Yaqoot300.State.Home.Actions
         public const string LOAD_OS = "[HOME] Load OS";
         public const string LOAD_OS_SUCCESS = "[HOME] Load OS Success";
         public const string LOAD_OS_FAIL = "[HOME] Load OS Fail";
+        public const string CHANGE_MANUAL_BTN = "[HOME] Change Manual Btn";
     }
 }

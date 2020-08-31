@@ -63,6 +63,31 @@ namespace Yaqoot300.State.Home
                         state.Auto.StartBtn.IsEnabled = changeAutoStartPayload.IsEnabled.Value;
                     break;
 
+                case HomeActionTypes.CHANGE_MANUAL_BTN:
+                    var changeManualBtnPayload = ((HomeChangeManualBtnAction)action).Payload;
+                    if(state.Manual.BtnStatus == changeManualBtnPayload) return;
+                    state.Manual.BtnStatus = changeManualBtnPayload;
+                    switch (changeManualBtnPayload)
+                    {
+                        case ManualBtnStatus.LoadOS:
+                            Services.Signals.Send(GuiSignals.ManualOsLoad);
+                            break;
+
+                        case ManualBtnStatus.Cycle:
+                            Services.Signals.Send(GuiSignals.ManualCycle);
+                            break;
+
+                        case ManualBtnStatus.FeedIn:
+                            Services.Signals.Send(GuiSignals.ManualFeedIn);
+                            Task.Run(() =>
+                            {
+                                Thread.Sleep(1000);
+                                Services.Store.Dispatch(new HomeChangeManualBtnAction(ManualBtnStatus.Idle));
+                            });
+                            break;
+                    }
+                    break;
+
                 case HomeActionTypes.ADD_PLC_ERROR:
                     var addPlcErrorPayload = ((HomeAddPlcErrorAction)action).Payload;
                     if (state.PlcErrors.All(error => error.Id != addPlcErrorPayload.Id))
@@ -89,7 +114,7 @@ namespace Yaqoot300.State.Home
                     dlg.ShowDialog();
                     break;
 
-      case HomeActionTypes.LOAD_OS:
+                case HomeActionTypes.LOAD_OS:
                     state.HomeReaders.Readers.ForEach(r =>
                     {
                         if(Services.Store.Service.SetupReaders[r.ReaderNumber] != null)

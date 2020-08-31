@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using log4net.Appender;
 
 namespace Yaqoot300.Controls
 {
-    [DefaultEvent("BtnClicked")]
     public partial class LoadingButtonControl : UserControl
     {
+        private Color _backColor = Color.DodgerBlue;
         public enum LoadingButtonControlStatus
         {
             Invisible, Visible, Loading
@@ -26,11 +27,6 @@ namespace Yaqoot300.Controls
         {
             InitializeComponent();
             this.btnSave.Click += (s, e) => this.BtnClicked?.Invoke(s, e);
-        }
-
-        private void BtnSaveOnClick(object sender, EventArgs eventArgs)
-        {
-            throw new NotImplementedException();
         }
 
         public LoadingButtonControlStatus Status
@@ -61,6 +57,28 @@ namespace Yaqoot300.Controls
         {
             get { return this.btnSave.Text; }
             set { this.btnSave.Text = value; }
+        }
+
+        protected override void OnEnabledChanged(EventArgs e)
+        {
+            base.OnEnabledChanged(e);
+            btnSave.Enabled = this.Enabled;
+            if (this.Enabled) btnSave.BackColor = _backColor;
+            else btnSave.BackColor = Color.DarkGray;
+        }
+
+        public override Color BackColor
+        {
+            set
+            {
+                _backColor = value;
+                btnSave.BackColor = value;
+            }
+        }
+
+        public override Color ForeColor
+        {
+            set { btnSave.ForeColor = value; }
         }
     }
 }

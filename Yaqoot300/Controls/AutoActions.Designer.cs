@@ -37,7 +37,7 @@
             // 
             this.btnStart.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnStart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.btnStart.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnStart.Location = new System.Drawing.Point(159, 8);
             this.btnStart.Name = "btnStart";

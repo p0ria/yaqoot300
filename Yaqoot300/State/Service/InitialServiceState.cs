@@ -46,7 +46,7 @@ namespace Yaqoot300.State.Service
             Settings = new ServiceSettingsState
             {
                 ActiveReaders = 16,
-                FeedInSteps = 7,
+                FeedInSteps = 3,
                 M3StepLength = 2,
                 M3Speed = 6,
                 M4Speed = 3

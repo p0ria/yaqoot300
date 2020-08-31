@@ -24,6 +24,10 @@ namespace Yaqoot300.State.Home
                             IsEnabled = true
                         }
                     },
+                    Manual = new ManualState
+                    {
+                        BtnStatus = ManualBtnStatus.Idle
+                    },
                     HomeReaders = new HomeReadersState(),
                     PlcErrors = new List<PlcErrorState>()
                 };

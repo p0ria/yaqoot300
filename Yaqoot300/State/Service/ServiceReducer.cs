@@ -78,12 +78,6 @@ namespace Yaqoot300.State.Service
                     if (changeM3Payload.Status != null)
                     {
                         state.Motors.M3.Status = changeM3Payload.Status.Value;
-                        switch (changeM3Payload.Status.Value)
-                        {
-                            case RotateMotorStatus.Started:
-                                Services.Signals.Send(GuiSignals.ServiceM3Run);
-                                break;
-                        }
                     }
                     if (changeM3Payload.IsEnabled != null) state.Motors.M3.IsEnabled = changeM3Payload.IsEnabled.Value;
                     break;
@@ -100,6 +94,9 @@ namespace Yaqoot300.State.Service
                                 break;
                             case UpDownMotorStatus.GoingDown:
                                 Services.Signals.Send(GuiSignals.ServiceM4Down);
+                                break;
+                            case UpDownMotorStatus.Idle:
+                                Services.Signals.Send(GuiSignals.ServiceM4Stop);
                                 break;
                         }
                     }
