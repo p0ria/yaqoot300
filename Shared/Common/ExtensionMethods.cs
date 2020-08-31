@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Shared.ThinClient.Requests;
 
-namespace Shared.common
+namespace Shared.Common
 {
     public static class ExtensionMethods
     {

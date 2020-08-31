@@ -1,0 +1,9 @@
+-- remove feed in steps 
+-- remove m4 speed
+-- Lamp in service menu
+-- f2 start
+-- f3 stop
+-- 0x0410 --> m4 up
+-- 0x0420 --> m5 down
+	add up down to testreaders
+	+ add enable\disable to up down buttons
