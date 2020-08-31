@@ -12,5 +12,6 @@ namespace Yaqoot300.Commons
         public const int SENSORS_LENGTH = 14;
         public const int MESSAGES_MAX = 50;
         public const int SETTINGS_DEBOUNCE_TIME = 2000;
+        public const int SIGNAL_BYTES_COUNT = 2;
     }
 }

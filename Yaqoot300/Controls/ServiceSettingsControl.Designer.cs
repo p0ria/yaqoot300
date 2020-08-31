@@ -76,7 +76,7 @@
             // scM3StepLength
             // 
             this.scM3StepLength.Location = new System.Drawing.Point(200, 175);
-            this.scM3StepLength.Max = 7;
+            this.scM3StepLength.Max = 10;
             this.scM3StepLength.Min = 1;
             this.scM3StepLength.Name = "scM3StepLength";
             this.scM3StepLength.Size = new System.Drawing.Size(376, 80);
@@ -98,13 +98,13 @@
             // scFeedInSteps
             // 
             this.scFeedInSteps.Location = new System.Drawing.Point(200, 89);
-            this.scFeedInSteps.Max = 10;
-            this.scFeedInSteps.Min = 1;
+            this.scFeedInSteps.Max = 5;
+            this.scFeedInSteps.Min = 2;
             this.scFeedInSteps.Name = "scFeedInSteps";
             this.scFeedInSteps.Size = new System.Drawing.Size(376, 80);
             this.scFeedInSteps.TabIndex = 30;
             this.scFeedInSteps.TickFrequency = 1;
-            this.scFeedInSteps.Value = 5;
+            this.scFeedInSteps.Value = 3;
             // 
             // label6
             // 
@@ -121,7 +121,7 @@
             // 
             this.scActiveReaders.Location = new System.Drawing.Point(200, 3);
             this.scActiveReaders.Max = 30;
-            this.scActiveReaders.Min = 0;
+            this.scActiveReaders.Min = 6;
             this.scActiveReaders.Name = "scActiveReaders";
             this.scActiveReaders.Size = new System.Drawing.Size(376, 80);
             this.scActiveReaders.TabIndex = 28;

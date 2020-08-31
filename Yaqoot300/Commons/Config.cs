@@ -36,7 +36,7 @@ namespace Yaqoot300.Commons
                     var json = File.ReadAllText("config.json");
                     return Utils.ParseJson<Config>(json);
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     return null;
                 }

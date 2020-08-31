@@ -24,9 +24,22 @@ namespace Yaqoot300.Models.Signal
                 .Where(p => p.GetCustomAttribute<SignalAttribute>() != null);
         }
 
-        public void Receive(params byte[] bytes)
+        public void OnRecived(byte[] bytes)
         {
-            Services.Messages.Info($"[Recieved] {SignalUtils.GetPlcSignalName(bytes)} 0x{Utils.ByteArrayToHexString(bytes)}", MessageCategory.PLC);
+            for (int i = 0; i < bytes.Length; i+= Constants.SIGNAL_BYTES_COUNT)
+            {
+                var chunk = new List<byte>();
+                for (int j = 0; j < Constants.SIGNAL_BYTES_COUNT; j++)
+                {
+                    if(i + j < bytes.Length) chunk.Add(bytes[i + j]);
+                }
+                Receive(chunk.ToArray());
+            }
+        }
+
+        private void Receive(params byte[] bytes)
+        {
+           // Services.Messages.Info($"[Recieved] {SignalUtils.GetPlcSignalName(bytes)} 0x{Utils.ByteArrayToHexString(bytes)}", MessageCategory.PLC);
             foreach (var pi in _plcProps)
             {
                 var sr = pi.GetCustomAttribute<SignalAttribute>();

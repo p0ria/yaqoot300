@@ -189,6 +189,7 @@
     </Compile>
     <Compile Include="Interfaces\ConnectionStatus.cs" />
     <Compile Include="Interfaces\AutoStartBtnStatus.cs" />
+    <Compile Include="Interfaces\ManualBtnStatus.cs" />
     <Compile Include="Interfaces\MessageCategory.cs" />
     <Compile Include="Interfaces\Mode.cs" />
     <Compile Include="Commons\Services.cs" />
@@ -302,6 +303,7 @@
     <Compile Include="State\Home\Actions\HomeAddPlcErrorAction.cs" />
     <Compile Include="State\Home\Actions\HomeChangeAutoStartAction.cs" />
     <Compile Include="State\Home\Actions\HomeChangeAutoStartActionPayload.cs" />
+    <Compile Include="State\Home\Actions\HomeChangeManualBtnAction.cs" />
     <Compile Include="State\Home\Actions\HomeLoadOSFail.cs" />
     <Compile Include="State\Home\Actions\HomeLoadOSSuccess.cs" />
     <Compile Include="State\Home\Actions\HomeRemovePlcErrorAction.cs" />
@@ -312,6 +314,7 @@
     <Compile Include="State\Home\State\AutoStartBtnState.cs" />
     <Compile Include="State\Home\State\AutoState.cs" />
     <Compile Include="State\Home\State\HomeReadersState.cs" />
+    <Compile Include="State\Home\State\ManualState.cs" />
     <Compile Include="State\Home\State\PlcErrorState.cs" />
     <Compile Include="State\Home\State\HomeReaderState.cs" />
     <Compile Include="State\Home\State\HomeState.cs" />
@@ -471,6 +474,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Resources\Images\yellow_circle_64x64.png" />
     <None Include="Resources\Images\circle_cross_32x32.png" />
     <None Include="Resources\Images\circle_tick_32x32.png" />
     <None Include="Resources\Images\cross_24x24.png" />
@@ -498,7 +502,6 @@
     <None Include="Resources\Images\tick_24x24.png" />
     <Content Include="Resources\Images\tick_32x32.png" />
     <None Include="Resources\Images\tick_64x64.png" />
-    <Content Include="Resources\Images\yellow_circle_64x64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

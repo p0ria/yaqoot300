@@ -31,7 +31,7 @@ namespace Yaqoot300.Connections
                 server.DataReceived += OnDataReceived;
 
                 //TODO: Remove
-                // Listen();
+                 Listen();
             }
             catch (Exception ex)
             {
@@ -89,7 +89,7 @@ namespace Yaqoot300.Connections
 
         private void OnDataReceived(object sender, DataReceivedFromClientEventArgs e)
         {
-            Services.Signals.Receive(e.Data);
+            Services.Signals.OnRecived(e.Data);
         }
 
         private void ClientDisconnected(object sender, ClientDisconnectedEventArgs e)
